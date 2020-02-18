@@ -7,15 +7,15 @@
   
   <title>SpringMVC中的“拦截器” | Tornado4651</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拦截器 与过滤器的不同：1、过滤器在DispatcherServlet之前执行，进行访问资源的过滤，如session验证用户是否登陆等功能 2、拦截器在DispatcherServlet之后执行 在SpringMVC中的自定义拦截器实现方式实现HandlerInterceptor接口或者可以继承HandlerInterceptorAdaptor适配器。以上两者的区别：实现接口时必须冲重写preHa">
+  <meta name="description" content="[toc]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC中的“拦截器”">
 <meta property="og:url" content="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="拦截器 与过滤器的不同：1、过滤器在DispatcherServlet之前执行，进行访问资源的过滤，如session验证用户是否登陆等功能 2、拦截器在DispatcherServlet之后执行 在SpringMVC中的自定义拦截器实现方式实现HandlerInterceptor接口或者可以继承HandlerInterceptorAdaptor适配器。以上两者的区别：实现接口时必须冲重写preHa">
+<meta property="og:description" content="[toc]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-16T12:23:05.714Z">
-<meta property="article:modified_time" content="2020-02-17T08:53:41.450Z">
+<meta property="article:modified_time" content="2020-02-18T11:29:42.824Z">
 <meta property="article:author" content="Tornado4651">
 <meta property="article:tag" content="SpringMVC">
 <meta property="article:tag" content="拦截器">
@@ -98,14 +98,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="拦截器-与过滤器的不同："><a href="#拦截器-与过滤器的不同：" class="headerlink" title="拦截器 与过滤器的不同："></a>拦截器 与过滤器的不同：</h1><p>1、过滤器在DispatcherServlet之前执行，进行访问资源的过滤，如session验证用户是否登陆等功能</p>
+        <p>[toc]</p>
+<a id="more"></a>
+
+<h1 id="拦截器-与过滤器的不同："><a href="#拦截器-与过滤器的不同：" class="headerlink" title="拦截器 与过滤器的不同："></a>拦截器 与过滤器的不同：</h1><p>1、过滤器在DispatcherServlet之前执行，进行访问资源的过滤，如session验证用户是否登陆等功能</p>
 <p>2、拦截器在DispatcherServlet之后执行</p>
 <h1 id="在SpringMVC中的自定义拦截器实现方式"><a href="#在SpringMVC中的自定义拦截器实现方式" class="headerlink" title="在SpringMVC中的自定义拦截器实现方式"></a>在SpringMVC中的自定义拦截器实现方式</h1><p>实现HandlerInterceptor接口或者可以继承HandlerInterceptorAdaptor适配器。以上两者的<strong>区别</strong>：实现接口时必须冲重写preHandle、postHandle、afterCompletion这三个方法；而如果只想使用其中一个方法，只需要继承HandlerInterceptorAdaptor这个适配器类即可！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" data-id="ck6q9aavo000uk4cze4xlf8we" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" data-id="ck6rt79js000ugscz6b46gj18" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li></ul>

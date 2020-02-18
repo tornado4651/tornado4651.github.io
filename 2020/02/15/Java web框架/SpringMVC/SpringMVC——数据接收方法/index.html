@@ -7,15 +7,15 @@
   
   <title>SpringMVC中数据的传递和视图解析 | Tornado4651</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、模型输出数据org.springframework.web.servlet.ModelAndView 1234567@RequestMapping(&quot;testModelAndView&quot;)	public ModelAndView testModelAndView(ModelAndView modelAndView) &amp;#123;		modelAndView.addObject(&quot;ModelAnd">
+  <meta name="description" content="[toc]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC中数据的传递和视图解析">
 <meta property="og:url" content="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="一、模型输出数据org.springframework.web.servlet.ModelAndView 1234567@RequestMapping(&quot;testModelAndView&quot;)	public ModelAndView testModelAndView(ModelAndView modelAndView) &amp;#123;		modelAndView.addObject(&quot;ModelAnd">
+<meta property="og:description" content="[toc]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-15T13:49:41.301Z">
-<meta property="article:modified_time" content="2020-02-17T08:53:09.767Z">
+<meta property="article:modified_time" content="2020-02-18T11:29:49.912Z">
 <meta property="article:author" content="Tornado4651">
 <meta property="article:tag" content="ModelAndView">
 <meta property="article:tag" content="视图解析">
@@ -98,7 +98,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、模型输出数据"><a href="#一、模型输出数据" class="headerlink" title="一、模型输出数据"></a>一、模型输出数据</h1><p>org.springframework.web.servlet.ModelAndView</p>
+        <p>[toc]</p>
+<a id="more"></a>
+
+<h1 id="一、模型输出数据"><a href="#一、模型输出数据" class="headerlink" title="一、模型输出数据"></a>一、模型输出数据</h1><p>org.springframework.web.servlet.ModelAndView</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"testModelAndView"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">testModelAndView</span><span class="params">(ModelAndView modelAndView)</span> </span>&#123;</span><br><span class="line">		modelAndView.addObject(<span class="string">"ModelAndViewMsg"</span>, <span class="string">"You got a String type Object from ModelAndView!"</span>);</span><br><span class="line">		modelAndView.setViewName(<span class="string">"success"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> modelAndView;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 <p>org.springframework.ui.Model</p>
@@ -116,7 +119,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck6q9aavr000xk4czfgqk6vzh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck6rt79jw000xgsczc7p24zc6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li></ul>

@@ -96,11 +96,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/17/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/#more">Read More</a>
+          </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/17/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/" data-id="ck6q9aav10007k4cz08knf2h7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/17/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/" data-id="ck6rt79jh000hgscz0gvn48yy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li></ul>
@@ -138,11 +143,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/#more">Read More</a>
+          </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/" data-id="ck6q9aavh000rk4cz60xy9hr1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/" data-id="ck6rt79jq000tgsczabcd8r0h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/REST/" rel="tag">REST</a></li></ul>
@@ -180,54 +190,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、为什么需要整合"><a href="#一、为什么需要整合" class="headerlink" title="一、为什么需要整合"></a>一、为什么需要整合</h1><p>Spring框架主要提供思想，并且实现便利的DI和AOP。</p>
-<p>而SpringMVC又可以将Spirng很具体的实现在web应用上，但仅仅是处理web上会变的简单高效，后端的整体支持还需要Spring这个大框架的支持</p>
-<h1 id="二、Spring的最基础配置"><a href="#二、Spring的最基础配置" class="headerlink" title="二、Spring的最基础配置"></a>二、Spring的最基础配置</h1><p>Spring主要是IOC控制反转思想，具体来说，就是容器对java对象的自动实例化，自动装配，并在创建好之后存入Spring容器中，开发人员在程序中调用时及时返回，但返回后具体怎么用还是要看开发人员。</p>
-<p>实现在代码中，可以简单的看作，Spring容器就是自己定义的xml配置文件。Spring的IOC容器创建方法：</p>
-<p>非web环境下：</p>
-<p>Spring的xml配置框架：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"自定义的唯一标识符，一般都是将类名首字母小写"</span> <span class="attr">class</span>=<span class="string">"具体要装配类的全类名"</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"类中的成员变量名"</span> <span class="attr">value</span>=<span class="string">"你要赋予的值"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"构造器中的形参名"</span> <span class="attr">value</span>=<span class="string">"形参对应的值"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在.java文件中的具体调用Spring容器，并且从容器中获得自动装配好的bean对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 具体的包名</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XXXX</span></span>&#123;</span><br><span class="line">  ApllicationContext applicationContext = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"具体路径以及xml配置文件名"</span>);</span><br><span class="line">  <span class="comment">//从Spring的IOC容器中获得创建好的bean对象，如自定义的Person</span></span><br><span class="line"> 	Persoon person = applicationContext.getBean(<span class="string">"person"</span>, Person<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">  <span class="comment">//传统方法</span></span><br><span class="line">  Person person = <span class="keyword">new</span> Person();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="三、SpringMVC框架的基本配置"><a href="#三、SpringMVC框架的基本配置" class="headerlink" title="三、SpringMVC框架的基本配置"></a>三、SpringMVC框架的基本配置</h1><p>SpringMVC是指Spring大框架中的WEB部分，主要是依靠”org.springframework.web.servlet.DispatcherServlet“这个具体的Servlet实现将web请求转发给SpringMVC组件做进一步处理</p>
-<p>具体实现：</p>
-<p>web项目的入口web.xml中配置SpringMVC所提供的DespatcherServlet连接到具体的springMVC配置文件中（DispatcherServlet只是基本配置，还有filter等）：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:SpringMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>然后再在SpringMVC的具体xml文件中的配置：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:mvc</span>=<span class="string">"http://www.springframework.org/schema/mvc"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">&lt;!-- 配置视图解析器 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"internalResourceViewResolver"</span> <span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.view.InternalResourceViewResolver"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"prefix"</span> <span class="attr">value</span>=<span class="string">"/WEB-INF/content/"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suffix"</span> <span class="attr">value</span>=<span class="string">".jsp"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--- 基本默认配置 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:annotation-driven</span> /&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h1 id="四、Spring和SpringMVC最基础的整合"><a href="#四、Spring和SpringMVC最基础的整合" class="headerlink" title="四、Spring和SpringMVC最基础的整合"></a>四、Spring和SpringMVC最基础的整合</h1><p>因为ServletContext是web应用中最基础的组件（Tomcat一启动，ServletContext就被创建了），所以应该创建一个监听器，用于监听ServletContext，监听到ServletContext对像被创建，就立即创建IOC容器。并且为了让所有的controller（handler）能够使用IOC容器自动管理bean对象，所有还要将IOC容器绑定到ServletContext中，以便让所有的组件能共享到IOC容器。</p>
-<p>具体实现方法：</p>
-<p>在动态web工程的必备配置文件：web.xml中作出如下配置：ContextLoaderListener用于在tomcat启动创建contextServlet时创建一个统一的applicationContext对象，用于以后的调用。DispatcherServlet指定到SpringMVC的具体配置。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  	<span class="comment">&lt;!-- Bootstraps the root web application context before servlet initialization --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">	<span class="comment">&lt;!-- needed for ContextLoaderListener --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:Spring.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- The front controller of this Spring Web application, responsible for handling all application requests --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:springMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在上面的基础配置上，我们便可以在指定的param-value下创建具体的Spring和Springmvc配置文件了.</p>
-<p>Spring.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.tornado4651.SS"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- Spring不需要管理web请求的相关操作 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">context:exclude-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Controller"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>SpringMVC.xml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:mvc</span>=<span class="string">"http://www.springframework.org/schema/mvc"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.tornado4651.SS"</span> <span class="attr">use-default-filters</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">		<span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		注意：因为Spring和SpringMVC都需要启动组建扫描以自动装配带有注解的类、方法、参数，所以</span></span><br><span class="line"><span class="comment">		而SpringMVC又是web服务，主要负责请求的接收、转发、重定向等操作，因此只扫描带有Controller的注解即可</span></span><br><span class="line"><span class="comment">		 --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">context:include-filter</span> <span class="attr">type</span>=<span class="string">"annotation"</span> <span class="attr">expression</span>=<span class="string">"org.springframework.stereotype.Controller"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br><span class="line">  </span><br><span class="line">	<span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span>/&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h1>
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" data-id="ck6q9aaux0003k4cz6die50k4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" data-id="ck6rt79j40004gscz44td32ts" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li></ul>
@@ -265,14 +237,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="拦截器-与过滤器的不同："><a href="#拦截器-与过滤器的不同：" class="headerlink" title="拦截器 与过滤器的不同："></a>拦截器 与过滤器的不同：</h1><p>1、过滤器在DispatcherServlet之前执行，进行访问资源的过滤，如session验证用户是否登陆等功能</p>
-<p>2、拦截器在DispatcherServlet之后执行</p>
-<h1 id="在SpringMVC中的自定义拦截器实现方式"><a href="#在SpringMVC中的自定义拦截器实现方式" class="headerlink" title="在SpringMVC中的自定义拦截器实现方式"></a>在SpringMVC中的自定义拦截器实现方式</h1><p>实现HandlerInterceptor接口或者可以继承HandlerInterceptorAdaptor适配器。以上两者的<strong>区别</strong>：实现接口时必须冲重写preHandle、postHandle、afterCompletion这三个方法；而如果只想使用其中一个方法，只需要继承HandlerInterceptorAdaptor这个适配器类即可！</p>
-
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" data-id="ck6q9aavo000uk4cze4xlf8we" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" data-id="ck6rt79js000ugscz6b46gj18" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li></ul>
@@ -310,11 +284,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="IOC-与-DI概念"><a href="#IOC-与-DI概念" class="headerlink" title="IOC 与 DI概念"></a>IOC 与 DI概念</h1><h1 id="我对IOC思想的理解"><a href="#我对IOC思想的理解" class="headerlink" title="我对IOC思想的理解"></a>我对IOC思想的理解</h1><h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><h1 id="底层分析"><a href="#底层分析" class="headerlink" title="底层分析"></a>底层分析</h1><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" data-id="ck6q9aavf000pk4czajlg8ww7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" data-id="ck6rt79jp000rgscz1ym31r2c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li></ul>
@@ -352,34 +331,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>具体应用举例：计算器类的功能实现</p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbxzygask6j30lq0cegr7.jpg" alt="AOP"></p>
-<p>概念：</p>
-<p><strong>AOP**</strong>术语**</p>
-<p><strong>1</strong> <strong>横切关注点</strong></p>
-<p>从每个方法中抽取出来的同一类非核心业务。如日志和验证参数</p>
-<p><strong>2</strong> <strong>切面**</strong>(Aspect)**</p>
-<p>由关注点所组成的大类，可以有多个切面将自己的关注点切入到目标类上</p>
-<p><strong>3</strong> <strong>通知**</strong>(Advice)**</p>
-<p>每个切面中具体的功能，与关注点类似，可以理解为“关注点在切面中的具体实现就叫通知”，通知相比关注点可以细分。如日志在切面中分成：前置日志，后置日志，报错日志等。。。</p>
-<p><strong>4</strong> <strong>目标**</strong>(Target)**</p>
-<p>也就是目标类，切面中的通知要通知的类</p>
-<p><strong>5</strong> <strong>代理**</strong>(Proxy)**</p>
-<p>向目标对象应用通知之后创建的代理对象</p>
-<p><strong>6</strong> <strong>连接点**</strong>(Joinpoint)**</p>
-<p>横切关注点在程序代码中的具体体现，对应程序执行的某个特定位置。例如：类某个方法调用前、调用后、方法捕获到异常后等。</p>
-<p><strong>7</strong> <strong>切入点**</strong>(pointcut)<strong>**：</strong></p>
-<p>定位连接点的方式。每个类的方法中都包含多个连接点，所以连接点是类中客观存在的事物。如果把连接点看作数据库中的记录，那么切入点就是查询条件——AOP可以通过切入点定位到特定的连接点。切点通过org.springframework.aop.Pointcut 接口进行描述，它使用类和方法作为连接点的查询条件。</p>
-<p><strong>4.2.8</strong> <strong>图解</strong></p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gby00xs8uuj30jy0bq777.jpg" alt="image"></p>
-<p><strong>具体实现：</strong></p>
-<p><strong>Spring自带有AOP框架，但是AspectJ框架更合适，并且Spring支持AspectJ框架，所以大多数情况使用AspectJ框架</strong></p>
-<p><strong>在Spring框架的基础上，导入Spring-aop的jar包和</strong></p>
-
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/" data-id="ck6q9aave000ok4cz7sxubuqd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/" data-id="ck6rt79jm000ogscz72jz9eit" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li></ul>
@@ -417,44 +378,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbxzy7odsoj30iw0bcjuf.jpg" alt="Spring框架"></p>
-<p><strong>我理解的Spring框架</strong></p>
-<p>Spring框架给我一种对java应用的各方面功能的高度概括提炼，将各种复杂配置封装成框架底层，并添加进一些特殊管理方式和新思想，使得使用更加简便。</p>
-<p>但是凡事具有两面性，框架的继承度越高，虽然使得入门简便了，但是灵活性大大降低，虽然各类功能的开发在一定程度上缓解了很大一部分的开发灵活性，但仍然需要有时修改底层源代码对Spring框架作出最适合自己的改变。</p>
-<p><strong>Spring的具体实现：</strong></p>
-<p>若抛开上图的WEB组件不谈，那么可以将Spring框架直接嵌套在Java Project上使用，无需创建JavaEE Project</p>
-<p>具体实现方法，在Java项目中导入Spring-beans.jar; Spring-context.jar; Spring-core.jar; spring-expression.jar四个基础包即可简单使用依赖注入功能</p>
-<p><strong>Spring知识点概括：</strong></p>
-<p><strong>Ioc控制反转思想：</strong></p>
-<p><strong>DI依赖注入具体实现：</strong></p>
-<p><strong>基于XML配置：</strong></p>
-<p><strong>基于注释配置：</strong></p>
-<p><strong>实践：c3p0连接池和jdbc的使用对比</strong></p>
-<p><strong>AOP切面：</strong></p>
-<p><strong>实际例子中的需求描述：</strong></p>
-<p><strong>动态代理：</strong></p>
-<p><strong>AOP思想：</strong></p>
-<p><strong>AOP术语：</strong></p>
-<p><strong>AspectJ：</strong></p>
-<p><strong>通知类型：</strong></p>
-<p> <strong>基于注释的配置：</strong></p>
-<p><strong>基于XML的配置：</strong></p>
-<p><strong>Spring的事务管理：</strong></p>
-<p><strong>JdbcTemplate：</strong></p>
-<p>xml中必要的配置：</p>
-<p>JdbcTemplate的增删改查：</p>
-<p><strong>NamedPararmeterJdbcTemplate:</strong></p>
-<p>xml中必要的配置</p>
-<p>具名的增删改查：</p>
-<p><strong>Spring事务管理：</strong></p>
-<p>与Jdbc的事务管理对比</p>
-<p>使用Spring的DataSourceTransactionManager事务管理器</p>
-<p><strong>Spring中事务的传播行为、隔离级别、回滚设置、超时、只读 等属性设置</strong></p>
-
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" data-id="ck6q9aavj000tk4cz3g433elc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" data-id="ck6rt79jn000pgsczbq2u94db" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring%E7%90%86%E8%A7%A3/" rel="tag">Spring理解</a></li></ul>
@@ -492,25 +425,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、模型输出数据"><a href="#一、模型输出数据" class="headerlink" title="一、模型输出数据"></a>一、模型输出数据</h1><p>org.springframework.web.servlet.ModelAndView</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"testModelAndView"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">testModelAndView</span><span class="params">(ModelAndView modelAndView)</span> </span>&#123;</span><br><span class="line">		modelAndView.addObject(<span class="string">"ModelAndViewMsg"</span>, <span class="string">"You got a String type Object from ModelAndView!"</span>);</span><br><span class="line">		modelAndView.setViewName(<span class="string">"success"</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">return</span> modelAndView;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-<p>org.springframework.ui.Model</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"testModel"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">testModel</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">		model.addAttribute(<span class="string">"ModelMsg"</span>, <span class="string">"You got a String type Object from model"</span>);</span><br><span class="line">    </span><br><span class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>java.util.Map&lt;K, V&gt;</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"testMap"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">testMap</span><span class="params">(Map&lt;String, Object&gt; map)</span> </span>&#123;</span><br><span class="line">		map.put(<span class="string">"MapMsg"</span>, <span class="string">"You got a String type Object from map"</span>);</span><br><span class="line">    </span><br><span class="line">		<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="二、视图-与-视图解析"><a href="#二、视图-与-视图解析" class="headerlink" title="二、视图 与 视图解析"></a>二、视图 与 视图解析</h1><p>控制器返回的ModelAndView的对象后，都会又视图解析器ViewResolver处理成视图，最终进行页面的跳  转</p>
-
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck6q9aavr000xk4czfgqk6vzh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck6rt79jw000xgsczc7p24zc6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li></ul>
@@ -551,28 +475,16 @@
         <blockquote>
 <p><strong>关键词：SpringMVC框架在web应用中的引入；前段控制器；处理器；处理器映射器；处理器适配器；试图解析器</strong></p>
 </blockquote>
-<h2 id="一、SpringMVC框架的实现"><a href="#一、SpringMVC框架的实现" class="headerlink" title="一、SpringMVC框架的实现"></a>一、SpringMVC框架的实现</h2><p>Java Web项目统一由classpath下的web.xml管理，而MVC中的C即指代servlet或filter之一的“前段控制器”，只有这一部分的引入才决定了整个项目的框架是什么。</p>
-<p>而在SpringMVC框架中，最主要的就是org.springframework.web.servlet.DispatcherServlet的实现：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springMvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>/WEB-INF/springMvc-config.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="二、SpringMVC的请求相应流程如下："><a href="#二、SpringMVC的请求相应流程如下：" class="headerlink" title="二、SpringMVC的请求相应流程如下："></a>二、SpringMVC的请求相应流程如下：</h2><ol>
-<li>用户向浏览器发送请求，请求被Spring的“前端控制器DispatcherServlet”截获</li>
-<li>将URL请求转换为URI，调用“处理器映射器HandlerMapping”，获得Controller配置的相关对象。</li>
-<li>“前端控制器DispatcherServlet”根据获得的Handler，选择合适的“处理器适配器HandlerAdapter”，其代码结构清晰，便于维护，可复用性高。适配器调用具体的Handller进行对请求的实际处理。</li>
-<li>定义Contoller类，其中包含具体的业务实现方法。Cotroller的实现可以通过注释方法：@Controller+@RequestMapping实现；也可以使用继承方法：implements Contoller+@Override public ModelAndView handleRequest()实现。当使用前者注释方法时，不需要在xml配置文件中特定声名bean了，直接自动扫描即可。【注：这一步中根据相关配置，Spring将帮你做一些额外配置：消息转换；数据转换；数据格式化；数据验证，具体含义及实现方法另寻详解】</li>
-<li>Handler(即Controller类的具体方法)执行完毕后，向DispathcherServlet返回一个ModelAndView对象，其中包含有视图名(和模型)</li>
-<li>“前端控制器DipatcherServlet”根据返回的ModelAndView对象，选择一个合适的“试图解析器ViewResolver”。</li>
-<li>“试图解析器ViewResolver”对ModelAndView进行解析渲染</li>
-<li>最终将渲染好的结果视图返回给用户</li>
-</ol>
-<p><img src="https://tva1.sinaimg.cn/large/006tNbRwly1gaxai0mrrlj31ae0u0qgz.jpg" alt="SpringMVC相应流程图"></p>
-<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbykyher0zj30t60m6wi5.jpg" alt="image-20200216215030102"></p>
-
+<p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/" data-id="ck6q9aavz001sk4cz9xdm722r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/15/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/" data-id="ck6rt79jy000ygsczdlhj3l8x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li></ul>
@@ -611,536 +523,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>[toc]</p>
-<h1 id="一、数据库的好处"><a href="#一、数据库的好处" class="headerlink" title="一、数据库的好处"></a>一、数据库的好处</h1><ol>
-<li>持久化数据到本地</li>
-<li>可以实现结构化查询，方便管理</li>
-</ol>
-<h1 id="二、数据库的相关概念"><a href="#二、数据库的相关概念" class="headerlink" title="二、数据库的相关概念"></a>二、数据库的相关概念</h1><ol>
-<li>DB：数据库，保存一组有组织的数据的容器</li>
-<li>DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据</li>
-<li>SQL:结构化查询语言，用于和DBMS通信的语言</li>
-</ol>
-<h3 id="数据库存储数据的特点"><a href="#数据库存储数据的特点" class="headerlink" title="数据库存储数据的特点"></a>数据库存储数据的特点</h3><ol>
-<li>将数据放到表中，表再放到库中</li>
-<li>一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。</li>
-<li>表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。</li>
-<li>表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似java 中的”属性”</li>
-<li>表中的数据是按行存储的，每一行类似于java中的“对象”。</li>
-</ol>
-<h3 id="MySQL服务的启动和停止"><a href="#MySQL服务的启动和停止" class="headerlink" title="MySQL服务的启动和停止"></a>MySQL服务的启动和停止</h3><p>方式一：计算机——右击管理——服务</p>
-<p>方式二：通过管理员身份运行<br>    net start 服务名（启动服务）<br>    net stop 服务名（停止服务）</p>
-<h3 id="MySQL服务的登录和退出"><a href="#MySQL服务的登录和退出" class="headerlink" title="MySQL服务的登录和退出"></a>MySQL服务的登录和退出</h3><p>方式一：通过mysql自带的客户端<br>只限于root用户</p>
-<p>方式二：通过windows自带的客户端<br>登录：<br>mysql 【-h主机名 -P端口号 】-u用户名 -p密码</p>
-<p>退出：<br>exit或ctrl+C</p>
-<h1 id="三、MySQL的常见命令"><a href="#三、MySQL的常见命令" class="headerlink" title="三、MySQL的常见命令"></a>三、MySQL的常见命令</h1><h2 id="1-查看当前所有的数据库"><a href="#1-查看当前所有的数据库" class="headerlink" title="1.查看当前所有的数据库"></a>1.查看当前所有的数据库</h2><pre><code>show databases;</code></pre><h2 id="2-打开指定的库"><a href="#2-打开指定的库" class="headerlink" title="2.打开指定的库"></a>2.打开指定的库</h2><pre><code>use 库名</code></pre><h2 id="3-查看当前库的所有表"><a href="#3-查看当前库的所有表" class="headerlink" title="3.查看当前库的所有表"></a>3.查看当前库的所有表</h2><pre><code>show tables;</code></pre><h2 id="4-查看其它库的所有表"><a href="#4-查看其它库的所有表" class="headerlink" title="4.查看其它库的所有表"></a>4.查看其它库的所有表</h2><pre><code>show tables from 库名;</code></pre><h2 id="5-创建表"><a href="#5-创建表" class="headerlink" title="5.创建表"></a>5.创建表</h2><p>create table 表名(</p>
-<pre><code>    列名 列类型,
-    列名 列类型，
-    。。。
-);</code></pre><h2 id="6-查看表结构"><a href="#6-查看表结构" class="headerlink" title="6.查看表结构"></a>6.查看表结构</h2><pre><code>desc 表名;</code></pre><h2 id="7-查看服务器的版本"><a href="#7-查看服务器的版本" class="headerlink" title="7.查看服务器的版本"></a>7.查看服务器的版本</h2><pre><code>方式一：登录到mysql服务端
-select version();
-方式二：没有登录到mysql服务端
-mysql --version
-或
-mysql --V</code></pre><h2 id="8-MySQL的语法规范"><a href="#8-MySQL的语法规范" class="headerlink" title="8.MySQL的语法规范"></a>8.MySQL的语法规范</h2><pre><code>1.不区分大小写,但建议关键字大写，表名、列名小写
-2.每条命令最好用分号结尾
-3.每条命令根据需要，可以进行缩进 或换行
-4.注释
-    单行注释：#注释文字
-    单行注释：-- 注释文字
-    多行注释：/* 注释文字  */</code></pre><p>​    </p>
-<h1 id="四、SQL的语言分类"><a href="#四、SQL的语言分类" class="headerlink" title="四、SQL的语言分类"></a>四、SQL的语言分类</h1><pre><code>DQL（Data Query Language）：数据查询语言
-    select 
-DML(Data Manipulate Language):数据操作语言
-    insert 、update、delete
-DDL（Data Define Languge）：数据定义语言
-    create、drop、alter
-TCL（Transaction Control Language）：事务控制语言
-    commit、rollback</code></pre><h1 id="五、DQL语言的学习"><a href="#五、DQL语言的学习" class="headerlink" title="五、DQL语言的学习"></a>五、DQL语言的学习</h1><pre><code>show databases;         查看所有的数据库
-use 库名；              打开指定 的库
-show tables ;           显示库中的所有表
-show tables from 库名;  显示指定库中的所有表
-create table 表名(
-    字段名 字段类型,    
-    字段名 字段类型
-); 创建表
-
-desc 表名;              查看指定表的结构
-select * from 表名;     显示表中的所有数据</code></pre><h2 id="进阶1：基础查询"><a href="#进阶1：基础查询" class="headerlink" title="进阶1：基础查询"></a>进阶1：基础查询</h2><p>语法：</p>
-<pre><code> SELECT 要查询的东西
-【FROM 表名】;</code></pre><p>特点：</p>
-<p>①通过select查询完的结果 ，是一个虚拟的表格，不是真实存在</p>
-<p>② 要查询的东西 可以是常量值、可以是表达式、可以是字段、可以是函数</p>
-<h2 id="进阶2：条件查询"><a href="#进阶2：条件查询" class="headerlink" title="进阶2：条件查询"></a>进阶2：条件查询</h2><p>条件查询：根据条件过滤原始表的数据，查询到想要的数据<br>语法：<br>    select<br>        要查询的字段|表达式|常量值|函数<br>    from<br>        表<br>    where<br>        条件 ;</p>
-<p>分类：</p>
-<pre><code>1、条件表达式
-    示例：salary&gt;10000
-    条件运算符：
-    &gt; &lt; &gt;= &lt;= = != &lt;&gt;
-
-2、逻辑表达式
-示例：salary&gt;10000 &amp;&amp; salary&lt;20000
-逻辑运算符：
-    and（&amp;&amp;）:两个条件如果同时成立，结果为true，否则为false
-    or(||)：两个条件只要有一个成立，结果为true，否则为false
-    not(!)：如果条件成立，则not后为false，否则为true
-3、模糊查询
-示例：last_name like &apos;表达式&apos;</code></pre><h2 id="进阶3：排序查询"><a href="#进阶3：排序查询" class="headerlink" title="进阶3：排序查询"></a>进阶3：排序查询</h2><p>语法：</p>
-<pre><code>select
-    要查询的东西
-from
-    表
-where 
-    条件
-
-order by 排序的字段|表达式|函数|别名 【asc|desc】</code></pre><h2 id="进阶4：常见函数"><a href="#进阶4：常见函数" class="headerlink" title="进阶4：常见函数"></a>进阶4：常见函数</h2><p>单行函数</p>
-<pre><code> 1、字符函数
-    concat拼接
-    substr截取子串
-    upper转换成大写
-    lower转换成小写
-    trim去前后指定的空格和字符
-    ltrim去左边空格
-    rtrim去右边空格
-    replace替换
-    lpad左填充
-    rpad右填充
-    instr返回子串第一次出现的索引
-    length 获取字节个数
-2、数学函数
-    round 四舍五入
-    rand 随机数
-    floor向下取整
-    ceil向上取整
-    mod取余
-    truncate截断
-3、日期函数
-    now当前系统日期+时间
-    curdate当前系统日期
-    curtime当前系统时间
-    str_to_date 将字符转换成日期
-    date_format将日期转换成字符
-4、流程控制函数
-    if 处理双分支
-    case语句 处理多分支
-        情况1：处理等值判断
-        情况2：处理条件判断
-
-5、其他函数
-    version版本
-    database当前库
-    user当前连接用户</code></pre><p>分组函数</p>
-<pre><code>sum 求和
-max 最大值
-min 最小值
-avg 平均值
-count 计数</code></pre><p>特点：</p>
-<pre><code>1、以上五个分组函数都忽略null值，除了count(*)
-2、sum和avg一般用于处理数值型
-    max、min、count可以处理任何数据类型
-3、都可以搭配distinct使用，用于统计去重后的结果
-4、count的参数可以支持：
-    字段、*、常量值，一般放1,表示计算所有行</code></pre><h2 id="进阶5：分组查询"><a href="#进阶5：分组查询" class="headerlink" title="进阶5：分组查询"></a>进阶5：分组查询</h2><p>语法：</p>
-<pre><code>select 查询的字段，分组函数
-from 表
-group by 分组的字段</code></pre><p>特点：</p>
-<pre><code>1、可以按单个字段分组
-2、和分组函数一同查询的字段最好是分组后的字段
-3、分组筛选
-4、可以按多个字段分组，字段之间用逗号隔开
-5、可以支持排序
-6、having后可以支持别名</code></pre><table>
-<thead>
-<tr>
-<th>区别</th>
-<th>针对的表</th>
-<th>位置</th>
-<th>关键字</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>分组前筛选</td>
-<td>原始表</td>
-<td>group by的前面</td>
-<td>where</td>
-</tr>
-<tr>
-<td>分组后筛选</td>
-<td>分组后的结果集</td>
-<td>group by的后面</td>
-<td>having</td>
-</tr>
-</tbody></table>
-<h2 id="进阶6：多表连接查询"><a href="#进阶6：多表连接查询" class="headerlink" title="进阶6：多表连接查询"></a>进阶6：多表连接查询</h2><pre><code>笛卡尔乘积：如果连接条件省略或无效则会出现
-解决办法：添加上连接条件</code></pre><p>1、传统模式下的连接 ：等值连接——非等值连接</p>
-<pre><code>1.等值连接的结果 = 多个表的交集
-2.n表连接，至少需要n-1个连接条件
-3.多个表不分主次，没有顺序要求
-4.一般为表起别名，提高阅读性和性能</code></pre><p>2、ql99语法：通过join关键字实现连接</p>
-<pre><code>含义：1999年推出的sql语法
-支持：
-等值连接、非等值连接 （内连接）
-外连接
-交叉连接</code></pre><p>语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select 字段，...</span><br><span class="line">from 表1</span><br><span class="line">【inner|left outer|right outer|cross】join 表2 on  连接条件</span><br><span class="line">【inner|left outer|right outer|cross】join 表3 on  连接条件</span><br><span class="line">【where 筛选条件】</span><br><span class="line">【group by 分组字段】</span><br><span class="line">【having 分组后的筛选条件】</span><br><span class="line">【order by 排序的字段或表达式】</span><br></pre></td></tr></table></figure>
-
-<p>好处：语句上，连接条件和筛选条件实现了分离，简洁明了！</p>
-<p>3、自连接</p>
-<p>案例：查询员工名和直接上级的名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql99</span><br><span class="line">	SELECT e.last_name,m.last_name</span><br><span class="line">	FROM employees e</span><br><span class="line">	JOIN employees m ON e.&#96;manager_id&#96;&#x3D;m.&#96;employee_id&#96;;</span><br><span class="line">sql92</span><br><span class="line">	SELECT e.last_name,m.last_name</span><br><span class="line">	FROM employees e,employees m </span><br><span class="line">	WHERE e.&#96;manager_id&#96;&#x3D;m.&#96;employee_id&#96;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="进阶7：子查询"><a href="#进阶7：子查询" class="headerlink" title="进阶7：子查询"></a>进阶7：子查询</h2><p>含义：<br>    一条查询语句中又嵌套了另一条完整的select语句，其中被嵌套的select语句，称为子查询或内查询,在外面的查询语句，称为主查询或外查询</p>
-<p>特点：</p>
-<pre><code>1、子查询都放在小括号内
-2、子查询可以放在from后面、select后面、where后面、having后面，但一般放在条件的右侧
-3、子查询优先于主查询执行，主查询使用了子查询的执行结果
-4、子查询根据查询结果的行数不同分为以下两类：
-① 单行子查询
-    结果集只有一行
-    一般搭配单行操作符使用：&gt; &lt; = &lt;&gt; &gt;= &lt;= 
-    非法使用子查询的情况：
-    a、子查询的结果为一组值
-    b、子查询的结果为空
-
-② 多行子查询
-    结果集有多行
-    一般搭配多行操作符使用：any、all、in、not in
-    in： 属于子查询结果中的任意一个就行
-    any和all往往可以用其他查询代替</code></pre><h2 id="进阶8：分页查询"><a href="#进阶8：分页查询" class="headerlink" title="进阶8：分页查询"></a>进阶8：分页查询</h2><p>应用场景：</p>
-<pre><code>实际的web项目中需要根据用户的需求提交对应的分页查询的sql语句</code></pre><p>语法：</p>
-<pre><code>select 字段|表达式,...
-from 表
-【where 条件】
-【group by 分组字段】
-【having 条件】
-【order by 排序的字段】
-limit 【起始的条目索引，】条目数;</code></pre><p>特点：</p>
-<pre><code>1.起始条目索引从0开始
-2.limit子句放在查询语句的最后
-3.公式：select * from  表 limit （page-1）*sizePerPage,sizePerPage
-假如:
-每页显示条目数sizePerPage
-要显示的页数 page</code></pre><h2 id="进阶9：联合查询"><a href="#进阶9：联合查询" class="headerlink" title="进阶9：联合查询"></a>进阶9：联合查询</h2><p>关键字：union 联合、合并</p>
-<p>语法：</p>
-<pre><code>select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】
-select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】
-select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】
-.....
-select 字段|常量|表达式|函数 【from 表】 【where 条件】</code></pre><p>特点：</p>
-<pre><code>1、多条查询语句的查询的列数必须是一致的
-2、多条查询语句的查询的列的类型几乎相同
-3、union代表去重，union all代表不去重</code></pre><h1 id="六、DML语言的学习"><a href="#六、DML语言的学习" class="headerlink" title="六、DML语言的学习"></a>六、DML语言的学习</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>语法：</p>
-<pre><code>insert into 表名(字段名，...)
-values(值1，...);</code></pre><p>特点：</p>
-<pre><code>1、字段类型和值类型一致或兼容，而且一一对应
-2、可以为空的字段，可以不用插入值，或用null填充
-3、不可以为空的字段，必须插入值
-4、字段个数和值的个数必须一致
-5、字段可以省略，但默认所有字段，并且顺序和表中的存储顺序一致</code></pre><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>修改单表语法：</p>
-<pre><code>update 表名 set 字段=新值,字段=新值
-【where 条件】</code></pre><p>修改多表语法：</p>
-<pre><code>update 表1 别名1,表2 别名2
-set 字段=新值，字段=新值
-where 连接条件
-and 筛选条件</code></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>方式1：delete语句 </p>
-<pre><code>单表的删除： ★
-    delete from 表名 【where 筛选条件】
-多表的删除：
-    delete 别名1，别名2
-    from 表1 别名1，表2 别名2
-    where 连接条件
-    and 筛选条件;</code></pre><p>方式2：truncate语句</p>
-<pre><code>truncate table 表名</code></pre><p>两种方式的区别【面试题】</p>
-<pre><code>1.truncate不能加where条件，而delete可以加where条件
-2.truncate的效率高一丢丢
-3.truncate 删除带自增长的列的表后，如果再插入数据，数据从1开始
-  delete 删除带自增长列的表后，如果再插入数据，数据从上一次的断点处开始
-4.truncate删除不能回滚，delete删除可以回滚</code></pre><h1 id="七、DDL语言的学习"><a href="#七、DDL语言的学习" class="headerlink" title="七、DDL语言的学习"></a>七、DDL语言的学习</h1><h2 id="库和表的管理"><a href="#库和表的管理" class="headerlink" title="库和表的管理"></a>库和表的管理</h2><p>库的管理：</p>
-<p>1、创建库</p>
-<pre><code>create database 库名</code></pre><p>2、删除库</p>
-<pre><code>drop database 库名</code></pre><p>表的管理：</p>
-<p>1.创建表</p>
-<pre><code>CREATE TABLE IF NOT EXISTS stuinfo(
-    stuId INT,
-    stuName VARCHAR(20),
-    gender CHAR,
-    bornDate DATETIME
-);
-
-DESC studentinfo;</code></pre><p>2.修改表 alter</p>
-<pre><code>ALTER TABLE 表名 ADD|MODIFY|DROP|CHANGE COLUMN 字段名 【字段类型】;</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">①修改字段名</span><br><span class="line">ALTER TABLE studentinfo CHANGE  COLUMN sex gender CHAR;</span><br><span class="line"></span><br><span class="line">②修改表名</span><br><span class="line">ALTER TABLE stuinfo RENAME [TO]  studentinfo;</span><br><span class="line">#③修改字段类型和列级约束</span><br><span class="line">ALTER TABLE studentinfo MODIFY COLUMN borndate DATE ;</span><br><span class="line"></span><br><span class="line">④添加字段</span><br><span class="line">ALTER TABLE studentinfo ADD COLUMN email VARCHAR(20) first;</span><br><span class="line"></span><br><span class="line">⑤删除字段</span><br><span class="line">ALTER TABLE studentinfo DROP COLUMN email;</span><br></pre></td></tr></table></figure>
-
-
-<p>3.删除表</p>
-<pre><code>DROP TABLE [IF EXISTS] studentinfo;</code></pre><h2 id="常见类型"><a href="#常见类型" class="headerlink" title="常见类型"></a>常见类型</h2><pre><code>整型：Int
-小数：
-    浮点型:FLOAT
-    定点型:DOUBLE
-字符型：CHAR VARCHAR()
-日期型：DATE(),NOW()
-Blob类型：</code></pre><h2 id="常见约束"><a href="#常见约束" class="headerlink" title="常见约束"></a>常见约束</h2><pre><code>NOT NULL
-DEFAULT
-UNIQUE
-CHECK
-PRIMARY KEY
-FOREIGN KEY</code></pre><h1 id="八、TCL语言的学习——事物"><a href="#八、TCL语言的学习——事物" class="headerlink" title="八、TCL语言的学习——事物"></a>八、TCL语言的学习——事物</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><pre><code>通过一组逻辑操作单元（一组DML——sql语句），将数据从一种状态切换到另外一种状态</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>（ACID）
-原子性：要么都执行，要么都回滚
-一致性：保证数据的状态操作前和操作后保持一致
-隔离性：多个事务同时操作相同数据库的同一个数据时，一个事务的执行不受另外一个事务的干扰
-持久性：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改</code></pre><h2 id="相关步骤："><a href="#相关步骤：" class="headerlink" title="相关步骤："></a>相关步骤：</h2><pre><code>1、开启事务
-2、编写事务的一组逻辑操作单元（多条sql语句）
-3、提交事务或回滚事务</code></pre><h2 id="事务的分类："><a href="#事务的分类：" class="headerlink" title="事务的分类："></a>事务的分类：</h2><p>隐式事务，没有明显的开启和结束事务的标志</p>
-<pre><code>比如
-insert、update、delete语句本身就是一个事务</code></pre><p>显式事务，具有明显的开启和结束事务的标志</p>
-<pre><code>1、开启事务
-取消自动提交事务的功能
-
-2、编写事务的一组逻辑操作单元（多条sql语句）
-insert
-update
-delete
-
-3、提交事务或回滚事务</code></pre><h2 id="使用到的关键字"><a href="#使用到的关键字" class="headerlink" title="使用到的关键字"></a>使用到的关键字</h2><pre><code>set autocommit=0;
-start transaction;
-commit;
-rollback;
-
-savepoint  断点
-commit to 断点
-rollback to 断点</code></pre><h2 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别:"></a>事务的隔离级别:</h2><p>事务并发问题如何发生？</p>
-<pre><code>当多个事务同时操作同一个数据库的相同数据时</code></pre><p>事务的并发问题有哪些？</p>
-<pre><code>脏读：一个事务读取到了另外一个事务未提交的数据
-不可重复读：同一个事务中，多次读取到的数据不一致
-幻读：一个事务读取数据时，另外一个事务进行更新，导致第一个事务读取到了没有更新的数据</code></pre><p>如何避免事务的并发问题？</p>
-<pre><code>通过设置事务的隔离级别
-1、READ UNCOMMITTED     不可避免脏读
-2、READ COMMITTED       可以避免脏读
-3、REPEATABLE READ      可以避免脏读、不可重复读和一部分幻读
-4、SERIALIZABLE         可以避免脏读、不可重复读和幻读</code></pre><p>设置隔离级别：</p>
-<pre><code>set session|global transaction isolation level 隔离级别名;</code></pre><p>查看隔离级别：</p>
-<pre><code>select @@tx_isolation;</code></pre><h1 id="九、视图"><a href="#九、视图" class="headerlink" title="九、视图"></a>九、视图</h1><h2 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h2><p>理解成一张虚拟的表</p>
-<h2 id="视图和表的区别"><a href="#视图和表的区别" class="headerlink" title="视图和表的区别"></a>视图和表的区别</h2><table>
-<thead>
-<tr>
-<th>区别</th>
-<th>使用方式</th>
-<th>占用物理空间</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>视图</td>
-<td>完全相同</td>
-<td>不占用，仅仅保存的是sql逻辑</td>
-</tr>
-<tr>
-<td>表</td>
-<td>完全相同</td>
-<td>占用</td>
-</tr>
-</tbody></table>
-<h2 id="视图的好处："><a href="#视图的好处：" class="headerlink" title="视图的好处："></a>视图的好处：</h2><pre><code>1、sql语句提高重用性，效率高
-2、和表实现了分离，提高了安全性</code></pre><h2 id="视图的创建"><a href="#视图的创建" class="headerlink" title="视图的创建"></a>视图的创建</h2><pre><code>语法：
-CREATE VIEW  视图名
-AS
-查询语句;</code></pre><h2 id="视图的增删改查"><a href="#视图的增删改查" class="headerlink" title="视图的增删改查"></a>视图的增删改查</h2><p>1、查看视图的数据</p>
-<pre><code>SELECT * FROM my_v4;
-SELECT * FROM my_v1 WHERE last_name=&apos;Partners&apos;;</code></pre><p>2、插入视图的数据</p>
-<pre><code>INSERT INTO my_v4(last_name,department_id) VALUES(&apos;虚竹&apos;,90);</code></pre><p>3、修改视图的数据</p>
-<pre><code>UPDATE my_v4 SET last_name =&apos;梦姑&apos; WHERE last_name=&apos;虚竹&apos;;</code></pre><p>4、删除视图的数据</p>
-<pre><code>DELETE FROM my_v4;</code></pre><h2 id="某些视图不能更新"><a href="#某些视图不能更新" class="headerlink" title="某些视图不能更新"></a>某些视图不能更新</h2><pre><code>包含以下关键字的sql语句：分组函数、distinct、group  by、having、union或者union all
-常量视图
-Select中包含子查询
-join
-from一个不能更新的视图
-where子句的子查询引用了from子句中的表</code></pre><h2 id="视图逻辑的更新"><a href="#视图逻辑的更新" class="headerlink" title="视图逻辑的更新"></a>视图逻辑的更新</h2><p>方式一：</p>
-<pre><code>CREATE OR REPLACE VIEW test_v7
-AS
-SELECT last_name FROM employees
-WHERE employee_id&gt;100;</code></pre><p>方式二:</p>
-<pre><code>ALTER VIEW test_v7
-AS
-SELECT employee_id FROM employees;
-
-SELECT * FROM test_v7;</code></pre><h2 id="视图的删除"><a href="#视图的删除" class="headerlink" title="视图的删除"></a>视图的删除</h2><pre><code>DROP VIEW test_v1,test_v2,test_v3;</code></pre><h2 id="视图结构的查看"><a href="#视图结构的查看" class="headerlink" title="视图结构的查看"></a>视图结构的查看</h2><pre><code>DESC test_v7;
-SHOW CREATE VIEW test_v7;</code></pre><h1 id="十、存储过程和函数"><a href="#十、存储过程和函数" class="headerlink" title="十、存储过程和函数"></a>十、存储过程和函数</h1><h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><h3 id="含义：-1"><a href="#含义：-1" class="headerlink" title="含义："></a>含义：</h3><p>一组经过预先编译的sql语句的集合</p>
-<h3 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h3><pre><code>1、提高了sql语句的重用性，减少了开发程序员的压力
-2、提高了效率
-3、减少了传输次数</code></pre><h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><pre><code>1、无返回无参
-2、仅仅带in类型，无返回有参
-3、仅仅带out类型，有返回无参
-4、既带in又带out，有返回有参
-5、带inout，有返回有参
-注意：in、out、inout都可以在一个存储过程中带多个</code></pre><h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><p>语法：</p>
-<pre><code>create procedure 存储过程名(in|out|inout 参数名  参数类型,...)
-begin
-    存储过程体
-
-end</code></pre><p>注意</p>
-<pre><code>1、需要设置新的结束标记
-delimiter 新的结束标记
-示例：
-delimiter $
-CREATE PROCEDURE 存储过程名(IN|OUT|INOUT 参数名  参数类型,...)
-BEGIN
-    sql语句1;
-    sql语句2;
-END $
-
-2、存储过程体中可以有多条sql语句，如果仅仅一条sql语句，则可以省略begin end
-
-3、参数前面的符号的意思
-in:该参数只能作为输入 （该参数不能做返回值）
-out：该参数只能作为输出（该参数只能做返回值）
-inout：既能做输入又能做输出</code></pre><h3 id="调用存储过程"><a href="#调用存储过程" class="headerlink" title="调用存储过程"></a>调用存储过程</h3><pre><code>call 存储过程名(实参列表)</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h3><p>学过的函数：</p>
-<pre><code>LENGTH、SUBSTR、CONCAT等</code></pre><p>语法：</p>
-<pre><code>CREATE FUNCTION 函数名(参数名 参数类型,...) RETURNS 返回类型
-BEGIN
-    函数体
-
-END</code></pre><h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><pre><code>SELECT 函数名（实参列表）</code></pre><h2 id="函数和存储过程的区别"><a href="#函数和存储过程的区别" class="headerlink" title="函数和存储过程的区别"></a>函数和存储过程的区别</h2><table>
-<thead>
-<tr>
-<th>区别</th>
-<th>关键字</th>
-<th>调用语法</th>
-<th>返回值</th>
-<th>应用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>函数</td>
-<td>FUNCTION</td>
-<td>SELECT 函数()</td>
-<td>只能是一个</td>
-<td>一般用于查询结果为一个值并返回时，当有返回值而且仅仅一个</td>
-</tr>
-<tr>
-<td>存储过程</td>
-<td>PROCEDURE</td>
-<td>CALL 存储过程()</td>
-<td>可以有0个或多个</td>
-<td>一般用于更新</td>
-</tr>
-</tbody></table>
-<h1 id="十一、变量"><a href="#十一、变量" class="headerlink" title="十一、变量"></a>十一、变量</h1><h2 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h2><p>1、全局变量</p>
-<p>作用域：针对于所有会话（连接）有效，但不能跨重启</p>
-<pre><code>查看所有全局变量
-SHOW GLOBAL VARIABLES;
-查看满足条件的部分系统变量
-SHOW GLOBAL VARIABLES LIKE &apos;%char%&apos;;
-查看指定的系统变量的值
-SELECT @@global.autocommit;
-为某个系统变量赋值
-SET @@global.autocommit=0;
-SET GLOBAL autocommit=0;</code></pre><p>2、会话变量</p>
-<p>作用域：针对于当前会话（连接）有效</p>
-<pre><code>查看所有会话变量
-SHOW SESSION VARIABLES;
-查看满足条件的部分会话变量
-SHOW SESSION VARIABLES LIKE &apos;%char%&apos;;
-查看指定的会话变量的值
-SELECT @@autocommit;
-SELECT @@session.tx_isolation;
-为某个会话变量赋值
-SET @@session.tx_isolation=&apos;read-uncommitted&apos;;
-SET SESSION tx_isolation=&apos;read-committed&apos;;</code></pre><h2 id="自定义变量"><a href="#自定义变量" class="headerlink" title="自定义变量"></a>自定义变量</h2><p>1、用户变量</p>
-<p>声明并初始化：</p>
-<pre><code>SET @变量名=值;
-SET @变量名:=值;
-SELECT @变量名:=值;</code></pre><p>赋值：</p>
-<pre><code>方式一：一般用于赋简单的值
-SET 变量名=值;
-SET 变量名:=值;
-SELECT 变量名:=值;
-
-
-方式二：一般用于赋表 中的字段值
-SELECT 字段名或表达式 INTO 变量
-FROM 表;</code></pre><p>使用：</p>
-<pre><code>select @变量名;</code></pre><p>2、局部变量</p>
-<p>声明：</p>
-<pre><code>declare 变量名 类型 【default 值】;</code></pre><p>赋值：</p>
-<pre><code>方式一：一般用于赋简单的值
-SET 变量名=值;
-SET 变量名:=值;
-SELECT 变量名:=值;
-
-
-方式二：一般用于赋表 中的字段值
-SELECT 字段名或表达式 INTO 变量
-FROM 表;</code></pre><p>使用：</p>
-<pre><code>select 变量名</code></pre><p>自定义变量的区别：</p>
-<table>
-<thead>
-<tr>
-<th>区别</th>
-<th>作用域</th>
-<th>定义位置</th>
-<th>语法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>用户变量</td>
-<td>当前会话</td>
-<td>会话的任何地方</td>
-<td>加@符号，不用指定类型</td>
-</tr>
-<tr>
-<td>局部变量</td>
-<td>定义它的BEGIN END中</td>
-<td>BEGIN END的第一句话</td>
-<td>一般不用加@,需要指定类型</td>
-</tr>
-</tbody></table>
-<h1 id="十二、流程控制结构"><a href="#十二、流程控制结构" class="headerlink" title="十二、流程控制结构"></a>十二、流程控制结构</h1><h2 id="if函数"><a href="#if函数" class="headerlink" title="if函数"></a>if函数</h2><p>语法：</p>
-<pre><code>if(条件，值1，值2)</code></pre><p>特点：</p>
-<pre><code>可以用在任何位置</code></pre><h2 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h2><p>语法：</p>
-<pre><code>情况一：类似于switch
-case 表达式
-when 值1 then 结果1或语句1(如果是语句，需要加分号) 
-when 值2 then 结果2或语句2(如果是语句，需要加分号)
-...
-else 结果n或语句n(如果是语句，需要加分号)
-end 【case】（如果是放在begin end中需要加上case，如果放在select后面不需要）</code></pre><p>​<br>​    情况二：类似于多重if<br>​    case<br>​    when 条件1 then 结果1或语句1(如果是语句，需要加分号)<br>​    when 条件2 then 结果2或语句2(如果是语句，需要加分号)<br>​    …<br>​    else 结果n或语句n(如果是语句，需要加分号)<br>​    end 【case】（如果是放在begin end中需要加上case，如果放在select后面不需要）</p>
-<p>特点：<br>    可以用在任何位置</p>
-<h2 id="if-elseif语句"><a href="#if-elseif语句" class="headerlink" title="if elseif语句"></a>if elseif语句</h2><p>语法：</p>
-<pre><code>if 情况1 then 语句1;
-elseif 情况2 then 语句2;
-...
-else 语句n;
-end if;</code></pre><p>特点：<br>    只能用在begin end中！！！！！！！！！！！！！！！</p>
-<h2 id="三者比较："><a href="#三者比较：" class="headerlink" title="三者比较："></a>三者比较：</h2><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>应用场合</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>if函数</td>
-<td>简单双分支</td>
-</tr>
-<tr>
-<td>case结构</td>
-<td>等值判断 的多分支</td>
-</tr>
-<tr>
-<td>if结构</td>
-<td>区间判断 的多分支</td>
-</tr>
-</tbody></table>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>语法：</p>
-<pre><code>【标签：】WHILE 循环条件  DO
-    循环体
-END WHILE 【标签】;</code></pre><p>特点：</p>
-<pre><code>1、只能放在BEGIN END里面
-
-2、如果要搭配leave跳转语句，需要使用标签，否则可以不用标签
-
-3、leave类似于java中的break语句，跳出所在循环！！！</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/" data-id="ck6q9aauy0004k4czb1652rq6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/" data-id="ck6rt79j30003gsczbpl6h0on" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li></ul>
