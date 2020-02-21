@@ -10,15 +10,15 @@
   <meta name="description" content="[toc]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring+SpringMVC的整合">
-<meta property="og:url" content="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/index.html">
 <meta property="og:site_name" content="Tornado4651">
 <meta property="og:description" content="[toc]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-16T15:09:36.322Z">
 <meta property="article:modified_time" content="2020-02-18T11:30:30.911Z">
 <meta property="article:author" content="Tornado4651">
-<meta property="article:tag" content="Spring">
 <meta property="article:tag" content="SpringMVC">
+<meta property="article:tag" content="Spring">
 <meta property="article:tag" content="整合">
 <meta name="twitter:card" content="summary">
   
@@ -73,9 +73,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Java web框架/Spring 与SpringMVC的整合" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java web框架/SpringMVC/Spring 与SpringMVC的整合" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" class="article-date">
+    <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" class="article-date">
   <time datetime="2020-02-16T15:09:36.322Z" itemprop="datePublished">2020-02-16</time>
 </a>
     
@@ -102,9 +102,9 @@
         <p>[toc]</p>
 <a id="more"></a>
 
-<h1 id="一、为什么需要整合"><a href="#一、为什么需要整合" class="headerlink" title="一、为什么需要整合"></a>一、为什么需要整合</h1><p>Spring框架主要提供思想，并且实现便利的DI和AOP。</p>
+<h1><span id="一-为什么需要整合">一、为什么需要整合</span></h1><p>Spring框架主要提供思想，并且实现便利的DI和AOP。</p>
 <p>而SpringMVC又可以将Spirng很具体的实现在web应用上，但仅仅是处理web上会变的简单高效，后端的整体支持还需要Spring这个大框架的支持</p>
-<h1 id="二、Spring的最基础配置"><a href="#二、Spring的最基础配置" class="headerlink" title="二、Spring的最基础配置"></a>二、Spring的最基础配置</h1><p>Spring主要是IOC控制反转思想，具体来说，就是容器对java对象的自动实例化，自动装配，并在创建好之后存入Spring容器中，开发人员在程序中调用时及时返回，但返回后具体怎么用还是要看开发人员。</p>
+<h1><span id="二-spring的最基础配置">二、Spring的最基础配置</span></h1><p>Spring主要是IOC控制反转思想，具体来说，就是容器对java对象的自动实例化，自动装配，并在创建好之后存入Spring容器中，开发人员在程序中调用时及时返回，但返回后具体怎么用还是要看开发人员。</p>
 <p>实现在代码中，可以简单的看作，Spring容器就是自己定义的xml配置文件。Spring的IOC容器创建方法：</p>
 <p>非web环境下：</p>
 <p>Spring的xml配置框架：</p>
@@ -115,7 +115,7 @@
 
 
 
-<h1 id="三、SpringMVC框架的基本配置"><a href="#三、SpringMVC框架的基本配置" class="headerlink" title="三、SpringMVC框架的基本配置"></a>三、SpringMVC框架的基本配置</h1><p>SpringMVC是指Spring大框架中的WEB部分，主要是依靠”org.springframework.web.servlet.DispatcherServlet“这个具体的Servlet实现将web请求转发给SpringMVC组件做进一步处理</p>
+<h1><span id="三-springmvc框架的基本配置">三、SpringMVC框架的基本配置</span></h1><p>SpringMVC是指Spring大框架中的WEB部分，主要是依靠”org.springframework.web.servlet.DispatcherServlet“这个具体的Servlet实现将web请求转发给SpringMVC组件做进一步处理</p>
 <p>具体实现：</p>
 <p>web项目的入口web.xml中配置SpringMVC所提供的DespatcherServlet连接到具体的springMVC配置文件中（DispatcherServlet只是基本配置，还有filter等）：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:SpringMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -131,7 +131,7 @@
 
 
 
-<h1 id="四、Spring和SpringMVC最基础的整合"><a href="#四、Spring和SpringMVC最基础的整合" class="headerlink" title="四、Spring和SpringMVC最基础的整合"></a>四、Spring和SpringMVC最基础的整合</h1><p>因为ServletContext是web应用中最基础的组件（Tomcat一启动，ServletContext就被创建了），所以应该创建一个监听器，用于监听ServletContext，监听到ServletContext对像被创建，就立即创建IOC容器。并且为了让所有的controller（handler）能够使用IOC容器自动管理bean对象，所有还要将IOC容器绑定到ServletContext中，以便让所有的组件能共享到IOC容器。</p>
+<h1><span id="四-spring和springmvc最基础的整合">四、Spring和SpringMVC最基础的整合</span></h1><p>因为ServletContext是web应用中最基础的组件（Tomcat一启动，ServletContext就被创建了），所以应该创建一个监听器，用于监听ServletContext，监听到ServletContext对像被创建，就立即创建IOC容器。并且为了让所有的controller（handler）能够使用IOC容器自动管理bean对象，所有还要将IOC容器绑定到ServletContext中，以便让所有的组件能共享到IOC容器。</p>
 <p>具体实现方法：</p>
 <p>在动态web工程的必备配置文件：web.xml中作出如下配置：ContextLoaderListener用于在tomcat启动创建contextServlet时创建一个统一的applicationContext对象，用于以后的调用。DispatcherServlet指定到SpringMVC的具体配置。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  	<span class="comment">&lt;!-- Bootstraps the root web application context before servlet initialization --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">	<span class="comment">&lt;!-- needed for ContextLoaderListener --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:Spring.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- The front controller of this Spring Web application, responsible for handling all application requests --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:springMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -145,11 +145,11 @@
 
 
 
-<h1 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h1>
+<h1><span id="五-总结">五、总结</span></h1>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" data-id="ck6rt79j40004gscz44td32ts" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" data-id="ck6wbjmof000qfqcz49j65vcd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li></ul>
@@ -160,7 +160,7 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/Others/REST%E9%A3%8E%E6%A0%BC/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
@@ -188,7 +188,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-web-%E6%A1%86%E6%9E%B6/">Java web 框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-web-%E6%A1%86%E6%9E%B6/Other/">Other</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -198,7 +198,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring%E7%90%86%E8%A7%A3/" rel="tag">Spring理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring%E7%90%86%E8%A7%A3/" rel="tag">Spring理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">项目管理</a></li></ul>
     </div>
   </div>
 
@@ -208,7 +208,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring%E7%90%86%E8%A7%A3/" style="font-size: 10px;">Spring理解</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a>
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring%E7%90%86%E8%A7%A3/" style="font-size: 10px;">Spring理解</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">项目管理</a>
     </div>
   </div>
 
@@ -230,23 +230,23 @@
       <ul>
         
           <li>
+            <a href="/2020/02/20/Java%20web%E6%A1%86%E6%9E%B6/Mybatis/SSM%E6%95%B4%E5%90%88/">Java web框架/Mybatis/SSM整合</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/17/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/">2020年初对“小米”品牌的重新认识</a>
           </li>
         
           <li>
-            <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/">REST规范</a>
+            <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/Others/REST%E9%A3%8E%E6%A0%BC/">REST规范</a>
           </li>
         
           <li>
-            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">Spring+SpringMVC的整合</a>
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">Spring+SpringMVC的整合</a>
           </li>
         
           <li>
             <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/">SpringMVC中的“拦截器”</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/">Spring的IOC思想与DI</a>
           </li>
         
       </ul>

@@ -5,17 +5,17 @@
   
 
   
-  <title>测试文章 | Tornado4651</title>
+  <title>MySql数据库基础 | Tornado4651</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="[toc]">
+  <meta name="description" content="一、数据库的好处 二、数据库的相关概念 数据库存储数据的特点 MySQL服务的启动和停止 MySQL服务的登录和退出   三、MySQL的常见命令 1.查看当前所有的数据库 2.打开指定的库 3.查看当前库的所有表 4.查看其它库的所有表 5.创建表 6.查看表结构 7.查看服务器的版本 8.MySQL的语法规范   四、SQL的语言分类 五、DQL语言的学习 进阶1：基础查询 进阶2：条件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文章">
+<meta property="og:title" content="MySql数据库基础">
 <meta property="og:url" content="http://yoursite.com/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="[toc]">
+<meta property="og:description" content="一、数据库的好处 二、数据库的相关概念 数据库存储数据的特点 MySQL服务的启动和停止 MySQL服务的登录和退出   三、MySQL的常见命令 1.查看当前所有的数据库 2.打开指定的库 3.查看当前库的所有表 4.查看其它库的所有表 5.创建表 6.查看表结构 7.查看服务器的版本 8.MySQL的语法规范   四、SQL的语言分类 五、DQL语言的学习 进阶1：基础查询 进阶2：条件">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-11T07:10:30.000Z">
-<meta property="article:modified_time" content="2020-02-18T11:31:49.804Z">
+<meta property="article:modified_time" content="2020-02-21T15:09:39.025Z">
 <meta property="article:author" content="Tornado4651">
 <meta property="article:tag" content="Mysql">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      测试文章
+      MySql数据库基础
     </h1>
   
 
@@ -97,54 +97,154 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>[toc]</p>
+        <!-- toc -->
+
+<ul>
+<li><a href="#一-数据库的好处">一、数据库的好处</a></li>
+<li><a href="#二-数据库的相关概念">二、数据库的相关概念</a><ul>
+<li><a href="#数据库存储数据的特点">数据库存储数据的特点</a></li>
+<li><a href="#mysql服务的启动和停止">MySQL服务的启动和停止</a></li>
+<li><a href="#mysql服务的登录和退出">MySQL服务的登录和退出</a></li>
+</ul>
+</li>
+<li><a href="#三-mysql的常见命令">三、MySQL的常见命令</a><ul>
+<li><a href="#1查看当前所有的数据库">1.查看当前所有的数据库</a></li>
+<li><a href="#2打开指定的库">2.打开指定的库</a></li>
+<li><a href="#3查看当前库的所有表">3.查看当前库的所有表</a></li>
+<li><a href="#4查看其它库的所有表">4.查看其它库的所有表</a></li>
+<li><a href="#5创建表">5.创建表</a></li>
+<li><a href="#6查看表结构">6.查看表结构</a></li>
+<li><a href="#7查看服务器的版本">7.查看服务器的版本</a></li>
+<li><a href="#8mysql的语法规范">8.MySQL的语法规范</a></li>
+</ul>
+</li>
+<li><a href="#四-sql的语言分类">四、SQL的语言分类</a></li>
+<li><a href="#五-dql语言的学习">五、DQL语言的学习</a><ul>
+<li><a href="#进阶1基础查询">进阶1：基础查询</a></li>
+<li><a href="#进阶2条件查询">进阶2：条件查询</a></li>
+<li><a href="#进阶3排序查询">进阶3：排序查询</a></li>
+<li><a href="#进阶4常见函数">进阶4：常见函数</a></li>
+<li><a href="#进阶5分组查询">进阶5：分组查询</a></li>
+<li><a href="#进阶6多表连接查询">进阶6：多表连接查询</a></li>
+<li><a href="#进阶7子查询">进阶7：子查询</a></li>
+<li><a href="#进阶8分页查询">进阶8：分页查询</a></li>
+<li><a href="#进阶9联合查询">进阶9：联合查询</a></li>
+</ul>
+</li>
+<li><a href="#六-dml语言的学习">六、DML语言的学习</a><ul>
+<li><a href="#插入">插入</a></li>
+<li><a href="#修改">修改</a></li>
+<li><a href="#删除">删除</a></li>
+</ul>
+</li>
+<li><a href="#七-ddl语言的学习">七、DDL语言的学习</a><ul>
+<li><a href="#库和表的管理">库和表的管理</a></li>
+<li><a href="#常见类型">常见类型</a></li>
+<li><a href="#常见约束">常见约束</a></li>
+</ul>
+</li>
+<li><a href="#八-tcl语言的学习事物">八、TCL语言的学习——事物</a><ul>
+<li><a href="#含义">含义</a></li>
+<li><a href="#特点">特点</a></li>
+<li><a href="#相关步骤">相关步骤：</a></li>
+<li><a href="#事务的分类">事务的分类：</a></li>
+<li><a href="#使用到的关键字">使用到的关键字</a></li>
+<li><a href="#事务的隔离级别">事务的隔离级别:</a></li>
+</ul>
+</li>
+<li><a href="#九-视图">九、视图</a><ul>
+<li><a href="#含义">含义：</a></li>
+<li><a href="#视图和表的区别">视图和表的区别</a></li>
+<li><a href="#视图的好处">视图的好处：</a></li>
+<li><a href="#视图的创建">视图的创建</a></li>
+<li><a href="#视图的增删改查">视图的增删改查</a></li>
+<li><a href="#某些视图不能更新">某些视图不能更新</a></li>
+<li><a href="#视图逻辑的更新">视图逻辑的更新</a></li>
+<li><a href="#视图的删除">视图的删除</a></li>
+<li><a href="#视图结构的查看">视图结构的查看</a></li>
+</ul>
+</li>
+<li><a href="#十-存储过程和函数">十、存储过程和函数</a><ul>
+<li><a href="#存储过程">存储过程</a><ul>
+<li><a href="#含义-1">含义：</a></li>
+<li><a href="#好处">好处：</a></li>
+<li><a href="#分类">分类：</a></li>
+<li><a href="#创建存储过程">创建存储过程</a></li>
+<li><a href="#调用存储过程">调用存储过程</a></li>
+</ul>
+</li>
+<li><a href="#函数">函数</a><ul>
+<li><a href="#创建函数">创建函数</a></li>
+<li><a href="#调用函数">调用函数</a></li>
+</ul>
+</li>
+<li><a href="#函数和存储过程的区别">函数和存储过程的区别</a></li>
+</ul>
+</li>
+<li><a href="#十一-变量">十一、变量</a><ul>
+<li><a href="#系统变量">系统变量</a></li>
+<li><a href="#自定义变量">自定义变量</a></li>
+</ul>
+</li>
+<li><a href="#十二-流程控制结构">十二、流程控制结构</a><ul>
+<li><a href="#if函数">if函数</a></li>
+<li><a href="#case语句">case语句</a></li>
+<li><a href="#if-elseif语句">if elseif语句</a></li>
+<li><a href="#三者比较">三者比较：</a></li>
+<li><a href="#循环">循环</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
 <a id="more"></a>
 
-<h1 id="一、数据库的好处"><a href="#一、数据库的好处" class="headerlink" title="一、数据库的好处"></a>一、数据库的好处</h1><ol>
+<p>[toc]</p>
+<h1><span id="一-数据库的好处">一、数据库的好处</span></h1><ol>
 <li>持久化数据到本地</li>
 <li>可以实现结构化查询，方便管理</li>
 </ol>
-<h1 id="二、数据库的相关概念"><a href="#二、数据库的相关概念" class="headerlink" title="二、数据库的相关概念"></a>二、数据库的相关概念</h1><ol>
+<h1><span id="二-数据库的相关概念">二、数据库的相关概念</span></h1><ol>
 <li>DB：数据库，保存一组有组织的数据的容器</li>
 <li>DBMS：数据库管理系统，又称为数据库软件（产品），用于管理DB中的数据</li>
 <li>SQL:结构化查询语言，用于和DBMS通信的语言</li>
 </ol>
-<h3 id="数据库存储数据的特点"><a href="#数据库存储数据的特点" class="headerlink" title="数据库存储数据的特点"></a>数据库存储数据的特点</h3><ol>
+<h3><span id="数据库存储数据的特点">数据库存储数据的特点</span></h3><ol>
 <li>将数据放到表中，表再放到库中</li>
 <li>一个数据库中可以有多个表，每个表都有一个的名字，用来标识自己。表名具有唯一性。</li>
 <li>表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类”的设计。</li>
 <li>表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似java 中的”属性”</li>
 <li>表中的数据是按行存储的，每一行类似于java中的“对象”。</li>
 </ol>
-<h3 id="MySQL服务的启动和停止"><a href="#MySQL服务的启动和停止" class="headerlink" title="MySQL服务的启动和停止"></a>MySQL服务的启动和停止</h3><p>方式一：计算机——右击管理——服务</p>
+<h3><span id="mysql服务的启动和停止">MySQL服务的启动和停止</span></h3><p>方式一：计算机——右击管理——服务</p>
 <p>方式二：通过管理员身份运行<br>    net start 服务名（启动服务）<br>    net stop 服务名（停止服务）</p>
-<h3 id="MySQL服务的登录和退出"><a href="#MySQL服务的登录和退出" class="headerlink" title="MySQL服务的登录和退出"></a>MySQL服务的登录和退出</h3><p>方式一：通过mysql自带的客户端<br>只限于root用户</p>
+<h3><span id="mysql服务的登录和退出">MySQL服务的登录和退出</span></h3><p>方式一：通过mysql自带的客户端<br>只限于root用户</p>
 <p>方式二：通过windows自带的客户端<br>登录：<br>mysql 【-h主机名 -P端口号 】-u用户名 -p密码</p>
 <p>退出：<br>exit或ctrl+C</p>
-<h1 id="三、MySQL的常见命令"><a href="#三、MySQL的常见命令" class="headerlink" title="三、MySQL的常见命令"></a>三、MySQL的常见命令</h1><h2 id="1-查看当前所有的数据库"><a href="#1-查看当前所有的数据库" class="headerlink" title="1.查看当前所有的数据库"></a>1.查看当前所有的数据库</h2><pre><code>show databases;</code></pre><h2 id="2-打开指定的库"><a href="#2-打开指定的库" class="headerlink" title="2.打开指定的库"></a>2.打开指定的库</h2><pre><code>use 库名</code></pre><h2 id="3-查看当前库的所有表"><a href="#3-查看当前库的所有表" class="headerlink" title="3.查看当前库的所有表"></a>3.查看当前库的所有表</h2><pre><code>show tables;</code></pre><h2 id="4-查看其它库的所有表"><a href="#4-查看其它库的所有表" class="headerlink" title="4.查看其它库的所有表"></a>4.查看其它库的所有表</h2><pre><code>show tables from 库名;</code></pre><h2 id="5-创建表"><a href="#5-创建表" class="headerlink" title="5.创建表"></a>5.创建表</h2><p>create table 表名(</p>
+<h1><span id="三-mysql的常见命令">三、MySQL的常见命令</span></h1><h2><span id="1查看当前所有的数据库">1.查看当前所有的数据库</span></h2><pre><code>show databases;</code></pre><h2><span id="2打开指定的库">2.打开指定的库</span></h2><pre><code>use 库名</code></pre><h2><span id="3查看当前库的所有表">3.查看当前库的所有表</span></h2><pre><code>show tables;</code></pre><h2><span id="4查看其它库的所有表">4.查看其它库的所有表</span></h2><pre><code>show tables from 库名;</code></pre><h2><span id="5创建表">5.创建表</span></h2><p>create table 表名(</p>
 <pre><code>    列名 列类型,
     列名 列类型，
     。。。
-);</code></pre><h2 id="6-查看表结构"><a href="#6-查看表结构" class="headerlink" title="6.查看表结构"></a>6.查看表结构</h2><pre><code>desc 表名;</code></pre><h2 id="7-查看服务器的版本"><a href="#7-查看服务器的版本" class="headerlink" title="7.查看服务器的版本"></a>7.查看服务器的版本</h2><pre><code>方式一：登录到mysql服务端
+);</code></pre><h2><span id="6查看表结构">6.查看表结构</span></h2><pre><code>desc 表名;</code></pre><h2><span id="7查看服务器的版本">7.查看服务器的版本</span></h2><pre><code>方式一：登录到mysql服务端
 select version();
 方式二：没有登录到mysql服务端
 mysql --version
 或
-mysql --V</code></pre><h2 id="8-MySQL的语法规范"><a href="#8-MySQL的语法规范" class="headerlink" title="8.MySQL的语法规范"></a>8.MySQL的语法规范</h2><pre><code>1.不区分大小写,但建议关键字大写，表名、列名小写
+mysql --V</code></pre><h2><span id="8mysql的语法规范">8.MySQL的语法规范</span></h2><pre><code>1.不区分大小写,但建议关键字大写，表名、列名小写
 2.每条命令最好用分号结尾
 3.每条命令根据需要，可以进行缩进 或换行
 4.注释
     单行注释：#注释文字
     单行注释：-- 注释文字
     多行注释：/* 注释文字  */</code></pre><p>​    </p>
-<h1 id="四、SQL的语言分类"><a href="#四、SQL的语言分类" class="headerlink" title="四、SQL的语言分类"></a>四、SQL的语言分类</h1><pre><code>DQL（Data Query Language）：数据查询语言
+<h1><span id="四-sql的语言分类">四、SQL的语言分类</span></h1><pre><code>DQL（Data Query Language）：数据查询语言
     select 
 DML(Data Manipulate Language):数据操作语言
     insert 、update、delete
 DDL（Data Define Languge）：数据定义语言
     create、drop、alter
 TCL（Transaction Control Language）：事务控制语言
-    commit、rollback</code></pre><h1 id="五、DQL语言的学习"><a href="#五、DQL语言的学习" class="headerlink" title="五、DQL语言的学习"></a>五、DQL语言的学习</h1><pre><code>show databases;         查看所有的数据库
+    commit、rollback</code></pre><h1><span id="五-dql语言的学习">五、DQL语言的学习</span></h1><pre><code>show databases;         查看所有的数据库
 use 库名；              打开指定 的库
 show tables ;           显示库中的所有表
 show tables from 库名;  显示指定库中的所有表
@@ -154,12 +254,12 @@ create table 表名(
 ); 创建表
 
 desc 表名;              查看指定表的结构
-select * from 表名;     显示表中的所有数据</code></pre><h2 id="进阶1：基础查询"><a href="#进阶1：基础查询" class="headerlink" title="进阶1：基础查询"></a>进阶1：基础查询</h2><p>语法：</p>
+select * from 表名;     显示表中的所有数据</code></pre><h2><span id="进阶1基础查询">进阶1：基础查询</span></h2><p>语法：</p>
 <pre><code> SELECT 要查询的东西
 【FROM 表名】;</code></pre><p>特点：</p>
 <p>①通过select查询完的结果 ，是一个虚拟的表格，不是真实存在</p>
 <p>② 要查询的东西 可以是常量值、可以是表达式、可以是字段、可以是函数</p>
-<h2 id="进阶2：条件查询"><a href="#进阶2：条件查询" class="headerlink" title="进阶2：条件查询"></a>进阶2：条件查询</h2><p>条件查询：根据条件过滤原始表的数据，查询到想要的数据<br>语法：<br>    select<br>        要查询的字段|表达式|常量值|函数<br>    from<br>        表<br>    where<br>        条件 ;</p>
+<h2><span id="进阶2条件查询">进阶2：条件查询</span></h2><p>条件查询：根据条件过滤原始表的数据，查询到想要的数据<br>语法：<br>    select<br>        要查询的字段|表达式|常量值|函数<br>    from<br>        表<br>    where<br>        条件 ;</p>
 <p>分类：</p>
 <pre><code>1、条件表达式
     示例：salary&gt;10000
@@ -173,7 +273,7 @@ select * from 表名;     显示表中的所有数据</code></pre><h2 id="进阶
     or(||)：两个条件只要有一个成立，结果为true，否则为false
     not(!)：如果条件成立，则not后为false，否则为true
 3、模糊查询
-示例：last_name like &apos;表达式&apos;</code></pre><h2 id="进阶3：排序查询"><a href="#进阶3：排序查询" class="headerlink" title="进阶3：排序查询"></a>进阶3：排序查询</h2><p>语法：</p>
+示例：last_name like &apos;表达式&apos;</code></pre><h2><span id="进阶3排序查询">进阶3：排序查询</span></h2><p>语法：</p>
 <pre><code>select
     要查询的东西
 from
@@ -181,7 +281,7 @@ from
 where 
     条件
 
-order by 排序的字段|表达式|函数|别名 【asc|desc】</code></pre><h2 id="进阶4：常见函数"><a href="#进阶4：常见函数" class="headerlink" title="进阶4：常见函数"></a>进阶4：常见函数</h2><p>单行函数</p>
+order by 排序的字段|表达式|函数|别名 【asc|desc】</code></pre><h2><span id="进阶4常见函数">进阶4：常见函数</span></h2><p>单行函数</p>
 <pre><code> 1、字符函数
     concat拼接
     substr截取子串
@@ -228,7 +328,7 @@ count 计数</code></pre><p>特点：</p>
     max、min、count可以处理任何数据类型
 3、都可以搭配distinct使用，用于统计去重后的结果
 4、count的参数可以支持：
-    字段、*、常量值，一般放1,表示计算所有行</code></pre><h2 id="进阶5：分组查询"><a href="#进阶5：分组查询" class="headerlink" title="进阶5：分组查询"></a>进阶5：分组查询</h2><p>语法：</p>
+    字段、*、常量值，一般放1,表示计算所有行</code></pre><h2><span id="进阶5分组查询">进阶5：分组查询</span></h2><p>语法：</p>
 <pre><code>select 查询的字段，分组函数
 from 表
 group by 分组的字段</code></pre><p>特点：</p>
@@ -259,7 +359,7 @@ group by 分组的字段</code></pre><p>特点：</p>
 <td>having</td>
 </tr>
 </tbody></table>
-<h2 id="进阶6：多表连接查询"><a href="#进阶6：多表连接查询" class="headerlink" title="进阶6：多表连接查询"></a>进阶6：多表连接查询</h2><pre><code>笛卡尔乘积：如果连接条件省略或无效则会出现
+<h2><span id="进阶6多表连接查询">进阶6：多表连接查询</span></h2><pre><code>笛卡尔乘积：如果连接条件省略或无效则会出现
 解决办法：添加上连接条件</code></pre><p>1、传统模式下的连接 ：等值连接——非等值连接</p>
 <pre><code>1.等值连接的结果 = 多个表的交集
 2.n表连接，至少需要n-1个连接条件
@@ -277,7 +377,7 @@ group by 分组的字段</code></pre><p>特点：</p>
 <p>案例：查询员工名和直接上级的名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql99</span><br><span class="line">	SELECT e.last_name,m.last_name</span><br><span class="line">	FROM employees e</span><br><span class="line">	JOIN employees m ON e.&#96;manager_id&#96;&#x3D;m.&#96;employee_id&#96;;</span><br><span class="line">sql92</span><br><span class="line">	SELECT e.last_name,m.last_name</span><br><span class="line">	FROM employees e,employees m </span><br><span class="line">	WHERE e.&#96;manager_id&#96;&#x3D;m.&#96;employee_id&#96;;</span><br></pre></td></tr></table></figure>
 
-<h2 id="进阶7：子查询"><a href="#进阶7：子查询" class="headerlink" title="进阶7：子查询"></a>进阶7：子查询</h2><p>含义：<br>    一条查询语句中又嵌套了另一条完整的select语句，其中被嵌套的select语句，称为子查询或内查询,在外面的查询语句，称为主查询或外查询</p>
+<h2><span id="进阶7子查询">进阶7：子查询</span></h2><p>含义：<br>    一条查询语句中又嵌套了另一条完整的select语句，其中被嵌套的select语句，称为子查询或内查询,在外面的查询语句，称为主查询或外查询</p>
 <p>特点：</p>
 <pre><code>1、子查询都放在小括号内
 2、子查询可以放在from后面、select后面、where后面、having后面，但一般放在条件的右侧
@@ -294,7 +394,7 @@ group by 分组的字段</code></pre><p>特点：</p>
     结果集有多行
     一般搭配多行操作符使用：any、all、in、not in
     in： 属于子查询结果中的任意一个就行
-    any和all往往可以用其他查询代替</code></pre><h2 id="进阶8：分页查询"><a href="#进阶8：分页查询" class="headerlink" title="进阶8：分页查询"></a>进阶8：分页查询</h2><p>应用场景：</p>
+    any和all往往可以用其他查询代替</code></pre><h2><span id="进阶8分页查询">进阶8：分页查询</span></h2><p>应用场景：</p>
 <pre><code>实际的web项目中需要根据用户的需求提交对应的分页查询的sql语句</code></pre><p>语法：</p>
 <pre><code>select 字段|表达式,...
 from 表
@@ -308,7 +408,7 @@ limit 【起始的条目索引，】条目数;</code></pre><p>特点：</p>
 3.公式：select * from  表 limit （page-1）*sizePerPage,sizePerPage
 假如:
 每页显示条目数sizePerPage
-要显示的页数 page</code></pre><h2 id="进阶9：联合查询"><a href="#进阶9：联合查询" class="headerlink" title="进阶9：联合查询"></a>进阶9：联合查询</h2><p>关键字：union 联合、合并</p>
+要显示的页数 page</code></pre><h2><span id="进阶9联合查询">进阶9：联合查询</span></h2><p>关键字：union 联合、合并</p>
 <p>语法：</p>
 <pre><code>select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】
 select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】
@@ -317,20 +417,20 @@ select 字段|常量|表达式|函数 【from 表】 【where 条件】 union �
 select 字段|常量|表达式|函数 【from 表】 【where 条件】</code></pre><p>特点：</p>
 <pre><code>1、多条查询语句的查询的列数必须是一致的
 2、多条查询语句的查询的列的类型几乎相同
-3、union代表去重，union all代表不去重</code></pre><h1 id="六、DML语言的学习"><a href="#六、DML语言的学习" class="headerlink" title="六、DML语言的学习"></a>六、DML语言的学习</h1><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>语法：</p>
+3、union代表去重，union all代表不去重</code></pre><h1><span id="六-dml语言的学习">六、DML语言的学习</span></h1><h2><span id="插入">插入</span></h2><p>语法：</p>
 <pre><code>insert into 表名(字段名，...)
 values(值1，...);</code></pre><p>特点：</p>
 <pre><code>1、字段类型和值类型一致或兼容，而且一一对应
 2、可以为空的字段，可以不用插入值，或用null填充
 3、不可以为空的字段，必须插入值
 4、字段个数和值的个数必须一致
-5、字段可以省略，但默认所有字段，并且顺序和表中的存储顺序一致</code></pre><h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><p>修改单表语法：</p>
+5、字段可以省略，但默认所有字段，并且顺序和表中的存储顺序一致</code></pre><h2><span id="修改">修改</span></h2><p>修改单表语法：</p>
 <pre><code>update 表名 set 字段=新值,字段=新值
 【where 条件】</code></pre><p>修改多表语法：</p>
 <pre><code>update 表1 别名1,表2 别名2
 set 字段=新值，字段=新值
 where 连接条件
-and 筛选条件</code></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>方式1：delete语句 </p>
+and 筛选条件</code></pre><h2><span id="删除">删除</span></h2><p>方式1：delete语句 </p>
 <pre><code>单表的删除： ★
     delete from 表名 【where 筛选条件】
 多表的删除：
@@ -343,7 +443,7 @@ and 筛选条件</code></pre><h2 id="删除"><a href="#删除" class="headerlink
 2.truncate的效率高一丢丢
 3.truncate 删除带自增长的列的表后，如果再插入数据，数据从1开始
   delete 删除带自增长列的表后，如果再插入数据，数据从上一次的断点处开始
-4.truncate删除不能回滚，delete删除可以回滚</code></pre><h1 id="七、DDL语言的学习"><a href="#七、DDL语言的学习" class="headerlink" title="七、DDL语言的学习"></a>七、DDL语言的学习</h1><h2 id="库和表的管理"><a href="#库和表的管理" class="headerlink" title="库和表的管理"></a>库和表的管理</h2><p>库的管理：</p>
+4.truncate删除不能回滚，delete删除可以回滚</code></pre><h1><span id="七-ddl语言的学习">七、DDL语言的学习</span></h1><h2><span id="库和表的管理">库和表的管理</span></h2><p>库的管理：</p>
 <p>1、创建库</p>
 <pre><code>create database 库名</code></pre><p>2、删除库</p>
 <pre><code>drop database 库名</code></pre><p>表的管理：</p>
@@ -360,24 +460,24 @@ DESC studentinfo;</code></pre><p>2.修改表 alter</p>
 
 
 <p>3.删除表</p>
-<pre><code>DROP TABLE [IF EXISTS] studentinfo;</code></pre><h2 id="常见类型"><a href="#常见类型" class="headerlink" title="常见类型"></a>常见类型</h2><pre><code>整型：Int
+<pre><code>DROP TABLE [IF EXISTS] studentinfo;</code></pre><h2><span id="常见类型">常见类型</span></h2><pre><code>整型：Int
 小数：
     浮点型:FLOAT
     定点型:DOUBLE
 字符型：CHAR VARCHAR()
 日期型：DATE(),NOW()
-Blob类型：</code></pre><h2 id="常见约束"><a href="#常见约束" class="headerlink" title="常见约束"></a>常见约束</h2><pre><code>NOT NULL
+Blob类型：</code></pre><h2><span id="常见约束">常见约束</span></h2><pre><code>NOT NULL
 DEFAULT
 UNIQUE
 CHECK
 PRIMARY KEY
-FOREIGN KEY</code></pre><h1 id="八、TCL语言的学习——事物"><a href="#八、TCL语言的学习——事物" class="headerlink" title="八、TCL语言的学习——事物"></a>八、TCL语言的学习——事物</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><pre><code>通过一组逻辑操作单元（一组DML——sql语句），将数据从一种状态切换到另外一种状态</code></pre><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>（ACID）
+FOREIGN KEY</code></pre><h1><span id="八-tcl语言的学习事物">八、TCL语言的学习——事物</span></h1><h2><span id="含义">含义</span></h2><pre><code>通过一组逻辑操作单元（一组DML——sql语句），将数据从一种状态切换到另外一种状态</code></pre><h2><span id="特点">特点</span></h2><pre><code>（ACID）
 原子性：要么都执行，要么都回滚
 一致性：保证数据的状态操作前和操作后保持一致
 隔离性：多个事务同时操作相同数据库的同一个数据时，一个事务的执行不受另外一个事务的干扰
-持久性：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改</code></pre><h2 id="相关步骤："><a href="#相关步骤：" class="headerlink" title="相关步骤："></a>相关步骤：</h2><pre><code>1、开启事务
+持久性：一个事务一旦提交，则数据将持久化到本地，除非其他事务对其进行修改</code></pre><h2><span id="相关步骤">相关步骤：</span></h2><pre><code>1、开启事务
 2、编写事务的一组逻辑操作单元（多条sql语句）
-3、提交事务或回滚事务</code></pre><h2 id="事务的分类："><a href="#事务的分类：" class="headerlink" title="事务的分类："></a>事务的分类：</h2><p>隐式事务，没有明显的开启和结束事务的标志</p>
+3、提交事务或回滚事务</code></pre><h2><span id="事务的分类">事务的分类：</span></h2><p>隐式事务，没有明显的开启和结束事务的标志</p>
 <pre><code>比如
 insert、update、delete语句本身就是一个事务</code></pre><p>显式事务，具有明显的开启和结束事务的标志</p>
 <pre><code>1、开启事务
@@ -388,14 +488,14 @@ insert
 update
 delete
 
-3、提交事务或回滚事务</code></pre><h2 id="使用到的关键字"><a href="#使用到的关键字" class="headerlink" title="使用到的关键字"></a>使用到的关键字</h2><pre><code>set autocommit=0;
+3、提交事务或回滚事务</code></pre><h2><span id="使用到的关键字">使用到的关键字</span></h2><pre><code>set autocommit=0;
 start transaction;
 commit;
 rollback;
 
 savepoint  断点
 commit to 断点
-rollback to 断点</code></pre><h2 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别:"></a>事务的隔离级别:</h2><p>事务并发问题如何发生？</p>
+rollback to 断点</code></pre><h2><span id="事务的隔离级别">事务的隔离级别:</span></h2><p>事务并发问题如何发生？</p>
 <pre><code>当多个事务同时操作同一个数据库的相同数据时</code></pre><p>事务的并发问题有哪些？</p>
 <pre><code>脏读：一个事务读取到了另外一个事务未提交的数据
 不可重复读：同一个事务中，多次读取到的数据不一致
@@ -406,8 +506,8 @@ rollback to 断点</code></pre><h2 id="事务的隔离级别"><a href="#事务�
 3、REPEATABLE READ      可以避免脏读、不可重复读和一部分幻读
 4、SERIALIZABLE         可以避免脏读、不可重复读和幻读</code></pre><p>设置隔离级别：</p>
 <pre><code>set session|global transaction isolation level 隔离级别名;</code></pre><p>查看隔离级别：</p>
-<pre><code>select @@tx_isolation;</code></pre><h1 id="九、视图"><a href="#九、视图" class="headerlink" title="九、视图"></a>九、视图</h1><h2 id="含义："><a href="#含义：" class="headerlink" title="含义："></a>含义：</h2><p>理解成一张虚拟的表</p>
-<h2 id="视图和表的区别"><a href="#视图和表的区别" class="headerlink" title="视图和表的区别"></a>视图和表的区别</h2><table>
+<pre><code>select @@tx_isolation;</code></pre><h1><span id="九-视图">九、视图</span></h1><h2><span id="含义">含义：</span></h2><p>理解成一张虚拟的表</p>
+<h2><span id="视图和表的区别">视图和表的区别</span></h2><table>
 <thead>
 <tr>
 <th>区别</th>
@@ -426,21 +526,21 @@ rollback to 断点</code></pre><h2 id="事务的隔离级别"><a href="#事务�
 <td>占用</td>
 </tr>
 </tbody></table>
-<h2 id="视图的好处："><a href="#视图的好处：" class="headerlink" title="视图的好处："></a>视图的好处：</h2><pre><code>1、sql语句提高重用性，效率高
-2、和表实现了分离，提高了安全性</code></pre><h2 id="视图的创建"><a href="#视图的创建" class="headerlink" title="视图的创建"></a>视图的创建</h2><pre><code>语法：
+<h2><span id="视图的好处">视图的好处：</span></h2><pre><code>1、sql语句提高重用性，效率高
+2、和表实现了分离，提高了安全性</code></pre><h2><span id="视图的创建">视图的创建</span></h2><pre><code>语法：
 CREATE VIEW  视图名
 AS
-查询语句;</code></pre><h2 id="视图的增删改查"><a href="#视图的增删改查" class="headerlink" title="视图的增删改查"></a>视图的增删改查</h2><p>1、查看视图的数据</p>
+查询语句;</code></pre><h2><span id="视图的增删改查">视图的增删改查</span></h2><p>1、查看视图的数据</p>
 <pre><code>SELECT * FROM my_v4;
 SELECT * FROM my_v1 WHERE last_name=&apos;Partners&apos;;</code></pre><p>2、插入视图的数据</p>
 <pre><code>INSERT INTO my_v4(last_name,department_id) VALUES(&apos;虚竹&apos;,90);</code></pre><p>3、修改视图的数据</p>
 <pre><code>UPDATE my_v4 SET last_name =&apos;梦姑&apos; WHERE last_name=&apos;虚竹&apos;;</code></pre><p>4、删除视图的数据</p>
-<pre><code>DELETE FROM my_v4;</code></pre><h2 id="某些视图不能更新"><a href="#某些视图不能更新" class="headerlink" title="某些视图不能更新"></a>某些视图不能更新</h2><pre><code>包含以下关键字的sql语句：分组函数、distinct、group  by、having、union或者union all
+<pre><code>DELETE FROM my_v4;</code></pre><h2><span id="某些视图不能更新">某些视图不能更新</span></h2><pre><code>包含以下关键字的sql语句：分组函数、distinct、group  by、having、union或者union all
 常量视图
 Select中包含子查询
 join
 from一个不能更新的视图
-where子句的子查询引用了from子句中的表</code></pre><h2 id="视图逻辑的更新"><a href="#视图逻辑的更新" class="headerlink" title="视图逻辑的更新"></a>视图逻辑的更新</h2><p>方式一：</p>
+where子句的子查询引用了from子句中的表</code></pre><h2><span id="视图逻辑的更新">视图逻辑的更新</span></h2><p>方式一：</p>
 <pre><code>CREATE OR REPLACE VIEW test_v7
 AS
 SELECT last_name FROM employees
@@ -449,16 +549,16 @@ WHERE employee_id&gt;100;</code></pre><p>方式二:</p>
 AS
 SELECT employee_id FROM employees;
 
-SELECT * FROM test_v7;</code></pre><h2 id="视图的删除"><a href="#视图的删除" class="headerlink" title="视图的删除"></a>视图的删除</h2><pre><code>DROP VIEW test_v1,test_v2,test_v3;</code></pre><h2 id="视图结构的查看"><a href="#视图结构的查看" class="headerlink" title="视图结构的查看"></a>视图结构的查看</h2><pre><code>DESC test_v7;
-SHOW CREATE VIEW test_v7;</code></pre><h1 id="十、存储过程和函数"><a href="#十、存储过程和函数" class="headerlink" title="十、存储过程和函数"></a>十、存储过程和函数</h1><h2 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h2><h3 id="含义：-1"><a href="#含义：-1" class="headerlink" title="含义："></a>含义：</h3><p>一组经过预先编译的sql语句的集合</p>
-<h3 id="好处："><a href="#好处：" class="headerlink" title="好处："></a>好处：</h3><pre><code>1、提高了sql语句的重用性，减少了开发程序员的压力
+SELECT * FROM test_v7;</code></pre><h2><span id="视图的删除">视图的删除</span></h2><pre><code>DROP VIEW test_v1,test_v2,test_v3;</code></pre><h2><span id="视图结构的查看">视图结构的查看</span></h2><pre><code>DESC test_v7;
+SHOW CREATE VIEW test_v7;</code></pre><h1><span id="十-存储过程和函数">十、存储过程和函数</span></h1><h2><span id="存储过程">存储过程</span></h2><h3><span id="含义">含义：</span></h3><p>一组经过预先编译的sql语句的集合</p>
+<h3><span id="好处">好处：</span></h3><pre><code>1、提高了sql语句的重用性，减少了开发程序员的压力
 2、提高了效率
-3、减少了传输次数</code></pre><h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><pre><code>1、无返回无参
+3、减少了传输次数</code></pre><h3><span id="分类">分类：</span></h3><pre><code>1、无返回无参
 2、仅仅带in类型，无返回有参
 3、仅仅带out类型，有返回无参
 4、既带in又带out，有返回有参
 5、带inout，有返回有参
-注意：in、out、inout都可以在一个存储过程中带多个</code></pre><h3 id="创建存储过程"><a href="#创建存储过程" class="headerlink" title="创建存储过程"></a>创建存储过程</h3><p>语法：</p>
+注意：in、out、inout都可以在一个存储过程中带多个</code></pre><h3><span id="创建存储过程">创建存储过程</span></h3><p>语法：</p>
 <pre><code>create procedure 存储过程名(in|out|inout 参数名  参数类型,...)
 begin
     存储过程体
@@ -479,13 +579,13 @@ END $
 3、参数前面的符号的意思
 in:该参数只能作为输入 （该参数不能做返回值）
 out：该参数只能作为输出（该参数只能做返回值）
-inout：既能做输入又能做输出</code></pre><h3 id="调用存储过程"><a href="#调用存储过程" class="headerlink" title="调用存储过程"></a>调用存储过程</h3><pre><code>call 存储过程名(实参列表)</code></pre><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="创建函数"><a href="#创建函数" class="headerlink" title="创建函数"></a>创建函数</h3><p>学过的函数：</p>
+inout：既能做输入又能做输出</code></pre><h3><span id="调用存储过程">调用存储过程</span></h3><pre><code>call 存储过程名(实参列表)</code></pre><h2><span id="函数">函数</span></h2><h3><span id="创建函数">创建函数</span></h3><p>学过的函数：</p>
 <pre><code>LENGTH、SUBSTR、CONCAT等</code></pre><p>语法：</p>
 <pre><code>CREATE FUNCTION 函数名(参数名 参数类型,...) RETURNS 返回类型
 BEGIN
     函数体
 
-END</code></pre><h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><pre><code>SELECT 函数名（实参列表）</code></pre><h2 id="函数和存储过程的区别"><a href="#函数和存储过程的区别" class="headerlink" title="函数和存储过程的区别"></a>函数和存储过程的区别</h2><table>
+END</code></pre><h3><span id="调用函数">调用函数</span></h3><pre><code>SELECT 函数名（实参列表）</code></pre><h2><span id="函数和存储过程的区别">函数和存储过程的区别</span></h2><table>
 <thead>
 <tr>
 <th>区别</th>
@@ -510,7 +610,7 @@ END</code></pre><h3 id="调用函数"><a href="#调用函数" class="headerlink"
 <td>一般用于更新</td>
 </tr>
 </tbody></table>
-<h1 id="十一、变量"><a href="#十一、变量" class="headerlink" title="十一、变量"></a>十一、变量</h1><h2 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h2><p>1、全局变量</p>
+<h1><span id="十一-变量">十一、变量</span></h1><h2><span id="系统变量">系统变量</span></h2><p>1、全局变量</p>
 <p>作用域：针对于所有会话（连接）有效，但不能跨重启</p>
 <pre><code>查看所有全局变量
 SHOW GLOBAL VARIABLES;
@@ -531,7 +631,7 @@ SELECT @@autocommit;
 SELECT @@session.tx_isolation;
 为某个会话变量赋值
 SET @@session.tx_isolation=&apos;read-uncommitted&apos;;
-SET SESSION tx_isolation=&apos;read-committed&apos;;</code></pre><h2 id="自定义变量"><a href="#自定义变量" class="headerlink" title="自定义变量"></a>自定义变量</h2><p>1、用户变量</p>
+SET SESSION tx_isolation=&apos;read-committed&apos;;</code></pre><h2><span id="自定义变量">自定义变量</span></h2><p>1、用户变量</p>
 <p>声明并初始化：</p>
 <pre><code>SET @变量名=值;
 SET @变量名:=值;
@@ -580,9 +680,9 @@ FROM 表;</code></pre><p>使用：</p>
 <td>一般不用加@,需要指定类型</td>
 </tr>
 </tbody></table>
-<h1 id="十二、流程控制结构"><a href="#十二、流程控制结构" class="headerlink" title="十二、流程控制结构"></a>十二、流程控制结构</h1><h2 id="if函数"><a href="#if函数" class="headerlink" title="if函数"></a>if函数</h2><p>语法：</p>
+<h1><span id="十二-流程控制结构">十二、流程控制结构</span></h1><h2><span id="if函数">if函数</span></h2><p>语法：</p>
 <pre><code>if(条件，值1，值2)</code></pre><p>特点：</p>
-<pre><code>可以用在任何位置</code></pre><h2 id="case语句"><a href="#case语句" class="headerlink" title="case语句"></a>case语句</h2><p>语法：</p>
+<pre><code>可以用在任何位置</code></pre><h2><span id="case语句">case语句</span></h2><p>语法：</p>
 <pre><code>情况一：类似于switch
 case 表达式
 when 值1 then 结果1或语句1(如果是语句，需要加分号) 
@@ -591,13 +691,13 @@ when 值2 then 结果2或语句2(如果是语句，需要加分号)
 else 结果n或语句n(如果是语句，需要加分号)
 end 【case】（如果是放在begin end中需要加上case，如果放在select后面不需要）</code></pre><p>​<br>​    情况二：类似于多重if<br>​    case<br>​    when 条件1 then 结果1或语句1(如果是语句，需要加分号)<br>​    when 条件2 then 结果2或语句2(如果是语句，需要加分号)<br>​    …<br>​    else 结果n或语句n(如果是语句，需要加分号)<br>​    end 【case】（如果是放在begin end中需要加上case，如果放在select后面不需要）</p>
 <p>特点：<br>    可以用在任何位置</p>
-<h2 id="if-elseif语句"><a href="#if-elseif语句" class="headerlink" title="if elseif语句"></a>if elseif语句</h2><p>语法：</p>
+<h2><span id="if-elseif语句">if elseif语句</span></h2><p>语法：</p>
 <pre><code>if 情况1 then 语句1;
 elseif 情况2 then 语句2;
 ...
 else 语句n;
 end if;</code></pre><p>特点：<br>    只能用在begin end中！！！！！！！！！！！！！！！</p>
-<h2 id="三者比较："><a href="#三者比较：" class="headerlink" title="三者比较："></a>三者比较：</h2><table>
+<h2><span id="三者比较">三者比较：</span></h2><table>
 <thead>
 <tr>
 <th>语法</th>
@@ -617,7 +717,7 @@ end if;</code></pre><p>特点：<br>    只能用在begin end中！！！！！�
 <td>区间判断 的多分支</td>
 </tr>
 </tbody></table>
-<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><p>语法：</p>
+<h2><span id="循环">循环</span></h2><p>语法：</p>
 <pre><code>【标签：】WHILE 循环条件  DO
     循环体
 END WHILE 【标签】;</code></pre><p>特点：</p>
@@ -629,7 +729,7 @@ END WHILE 【标签】;</code></pre><p>特点：</p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/" data-id="ck6rt79j30003gsczbpl6h0on" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/Mysql%E5%9F%BA%E7%A1%80/" data-id="ck6wbjmo1000afqcz93xo4ab9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li></ul>
@@ -668,7 +768,7 @@ END WHILE 【标签】;</code></pre><p>特点：</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-web-%E6%A1%86%E6%9E%B6/">Java web 框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-web-%E6%A1%86%E6%9E%B6/Other/">Other</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/">生活随记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -678,7 +778,7 @@ END WHILE 【标签】;</code></pre><p>特点：</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring%E7%90%86%E8%A7%A3/" rel="tag">Spring理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring%E7%90%86%E8%A7%A3/" rel="tag">Spring理解</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" rel="tag">项目管理</a></li></ul>
     </div>
   </div>
 
@@ -688,7 +788,7 @@ END WHILE 【标签】;</code></pre><p>特点：</p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring%E7%90%86%E8%A7%A3/" style="font-size: 10px;">Spring理解</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a>
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 20px;">SpringMVC</a> <a href="/tags/Spring%E7%90%86%E8%A7%A3/" style="font-size: 10px;">Spring理解</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/" style="font-size: 10px;">项目管理</a>
     </div>
   </div>
 
@@ -710,23 +810,23 @@ END WHILE 【标签】;</code></pre><p>特点：</p>
       <ul>
         
           <li>
+            <a href="/2020/02/20/Java%20web%E6%A1%86%E6%9E%B6/Mybatis/SSM%E6%95%B4%E5%90%88/">Java web框架/Mybatis/SSM整合</a>
+          </li>
+        
+          <li>
             <a href="/2020/02/17/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/">2020年初对“小米”品牌的重新认识</a>
           </li>
         
           <li>
-            <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/REST%E9%A3%8E%E6%A0%BC/">REST规范</a>
+            <a href="/2020/02/17/Java%20web%E6%A1%86%E6%9E%B6/Others/REST%E9%A3%8E%E6%A0%BC/">REST规范</a>
           </li>
         
           <li>
-            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">Spring+SpringMVC的整合</a>
+            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">Spring+SpringMVC的整合</a>
           </li>
         
           <li>
             <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/">SpringMVC中的“拦截器”</a>
-          </li>
-        
-          <li>
-            <a href="/2020/02/16/Java%20web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/">Spring的IOC思想与DI</a>
           </li>
         
       </ul>
