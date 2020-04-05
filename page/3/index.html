@@ -70,6 +70,455 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-零散笔记/Lombok记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/">Lombok记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Lombok的配置以及简单注释说明.</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#使用条件">使用条件</a></li>
+<li><a href="#lombok注解详解">Lombok注解详解</a><ul>
+<li><a href="#getter和setter"><strong>@Getter和@Setter</strong></a></li>
+<li><a href="#tostring"><strong>@ToString</strong></a></li>
+<li><a href="#equalsandhashcode"><strong>@EqualsAndHashCode</strong></a></li>
+<li><a href="#nonnull"><strong>@NonNull</strong></a></li>
+<li><a href="#noargsconstructor-requiredargsconstructor-allargsconstructor"><strong>@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor</strong></a></li>
+<li><a href="#data"><strong>@Data</strong></a></li>
+<li><a href="#builder"><strong>@Builder</strong></a></li>
+<li><a href="#log"><strong>@Log</strong></a></li>
+<li><a href="#val"><strong>val</strong></a></li>
+<li><a href="#cleanup"><strong>@Cleanup</strong></a></li>
+</ul>
+</li>
+<li><a href="#总结">总结</a></li>
+<li><a href="#官网">官网：</a></li>
+</ul>
+<!-- tocstop -->
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/" data-id="ck8mt7dme0028o5fy0j6224g1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lombok/" rel="tag">lombok</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-零散笔记/Maven" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/">Maven</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Maven是一种构建化工具，最主要的功能是帮助我们管理jar包的依赖，以及对我们项目的编译、测试、部署等功能。这篇文章作为maven入门的总结，将集中介绍maven的相关概念和用法、配置等</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#maven约定的目录结构">maven约定的目录结构</a><ul>
+<li><a href="#补充2eclipse中具体web工程视图的具体解释">补充2：eclipse中具体web工程视图的具体解释</a></li>
+</ul>
+</li>
+<li><a href="#常用命令">常用命令：</a></li>
+<li><a href="#坐标">坐标</a></li>
+<li><a href="#仓库">仓库</a></li>
+<li><a href="#maven依赖的相关问题">maven依赖的相关问题</a><ul>
+<li><a href="#依赖方式的配置">依赖方式的配置：</a></li>
+<li><a href="#依赖方式的范围">依赖方式的范围：</a></li>
+<li><a href="#问题总结">问题总结</a></li>
+</ul>
+</li>
+<li><a href="#统一配置">统一配置</a></li>
+<li><a href="#继承项目">继承项目</a></li>
+<li><a href="#聚合项目">聚合项目</a></li>
+<li><a href="#maven仓库网址">Maven仓库网址</a></li>
+</ul>
+<!-- tocstop -->
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/" data-id="ck8mt7dmg002do5fy8hh42ovu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-零散笔记/REST规范" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/">REST规范</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这是一篇我对REST理解的文</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/" data-id="ck8mt7dmi002io5fy0y571uv9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/REST/" rel="tag">REST</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-零散笔记/常用配置文件模版" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E7%89%88/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E7%89%88/">常用配置文件模版</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>常用的配置文件或者依赖的模版记录，方便复制粘贴</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E7%89%88/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E7%89%88/" data-id="ck8mt7dmj002ko5fy14tmhxoj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%A8%A1%E7%89%88/" rel="tag">模版</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java Web框架/Spring/Spring—AOP思想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a>►<a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/">Spring的AOP思想</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#概述">概述</a></li>
+</ul>
+<!-- tocstop -->
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/" data-id="ck8mt7dmx0039o5fy4xl5084f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java Web框架/Spring/Spring—IOC思想 和 DI" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a>►<a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/">Spring的IOC思想与DI</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>IOC：控制反转，是Spring框架所特有的一大主要思想，通过Spring的底层控制，可以为我们开发人员进行很大程度的简化java bean的配置，生成对象等操作</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#ioc-与-di概念">IOC 与 DI概念</a></li>
+<li><a href="#我对ioc思想的理解">我对IOC思想的理解</a></li>
+<li><a href="#具体实现">具体实现</a></li>
+<li><a href="#底层分析">底层分析</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<!-- tocstop -->
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" data-id="ck8mt7dmy003ao5fyhqvifuac" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java Web框架/SpringMVC/SSM整合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a>►<a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/">SSM整合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>这篇文章关于我对Sping + Spring + MyBatis框架整合的简单概括的理解，以及一些简单入门的具体配置方法</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" data-id="ck8mt7dmz003do5fy1ft66xf3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java Web框架/SpringMVC/SpringMVC——拦截器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" class="article-date">
+  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a>►<a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/">SpringMVC中的“拦截器”</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+        
+          <p class="article-more-link">
+            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/" data-id="ck8mt7dmz003eo5fyb4l98dfy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Java Web框架/SpringMVC/SpringMVC——数据接收方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" class="article-date">
@@ -114,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck7es8dx4001zedfy213pc836" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/" data-id="ck8mt7dn0003fo5fygxbp5x8h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li></ul>
@@ -126,14 +575,14 @@
 
 
   
-    <article id="post-生活随记//Mac下设置隐藏文件文件夹" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Java Web框架/SpringMVC/初识SpringMVC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" class="article-date">
+    <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/" class="article-date">
   <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/">生活小记</a>►<a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/"></a>
+    <a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a>►<a class="article-category-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a>
   </div>
 
   </div>
@@ -144,7 +593,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/">Mac下设置隐藏文件/文件夹</a>
+      <a class="article-title" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/">初识SpringMVC</a>
     </h1>
   
 
@@ -153,455 +602,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>在mac上如何将文件和文件夹隐藏起来</p>
+<p>关键词：SpringMVC框架在web应用中的引入；前段控制器；处理器；处理器映射器；处理器适配器；试图解析器</p>
 </blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#设置显示和隐藏文件夹">设置显示和隐藏文件夹</a></li>
-<li><a href="#全局显示和隐藏文件夹">全局显示和隐藏文件夹</a></li>
-</ul>
-<!-- tocstop -->
         
           <p class="article-more-link">
-            <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#more">Read More</a>
+            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" data-id="ck7es8dx60021edfy04u14ale" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/" data-id="ck8mt7dn1003io5fy9j5x6yt5" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" rel="tag">隐藏文件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-生活随记//Mac入门教程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/">生活小记</a>►<a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/"></a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">Mac入门教程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这篇文章写给想要了解或正在纠结是否合适Mac系统的小白，以及最近刚从windows转达Mac尝鲜上手的朋友们。</p>
-</blockquote>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" data-id="ck7es8dxo003yedfychb5796s" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%EF%A3%BF/" rel="tag"></a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-零散笔记/开发工具/Mac系统的开发环境配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>►<a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Mac系统下的开发环境配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这篇文章主要记录了我在配置mac系统下的开发环境的详细步骤以及原理</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#配置homebrew">配置Homebrew</a></li>
-</ul>
-<!-- tocstop -->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" data-id="ck7es8dxp003zedfy96qb95o9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据库/Redis/Redis——Jedis的使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>►<a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/">Redis——Jedis的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Jedis时在java上操控Redis的专用包，这篇文章记录了Jedis库的常用用法</p>
-</blockquote>
-<!--toc-->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="ck7es8dxq0041edfy0xk9748l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据库/Redis/Reids——主从和哨兵" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>►<a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/">Redis——主从复制</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Redis的主从复制功能是在实践中常用到的一个重要功能，能够大大提高数据缓存的安全性和读写性能</p>
-</blockquote>
-<!--toc-->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" data-id="ck7es8dxr0044edfybnikgt0i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-零散笔记/开发工具/IDEA项目配置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a>►<a class="article-category-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/">IDEA项目配置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>作者 | Dulk</p>
-<p>链接 | <a href="http://www.cnblogs.com/deng-cc/p/6416332.html" target="_blank" rel="noopener">www.cnblogs.com/deng-cc/p/6416332.html</a></p>
-</blockquote>
-<!--toc-->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" data-id="ck7es8dxs0047edfy967ucifp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据库/Redis/【译】redis.conf配置文件中文版" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>►<a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/">【译】redis.conf配置文件中文版</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>我将Redis.conf配置文件通过Google翻译成中文，在查看使用时进行一定的修改校准，以便配置参考</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/" data-id="ck7es8dxv004dedfy0oyvamie" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据库/Redis/初识Redis" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>►<a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/">初识Redis</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这篇笔记记录了Redis的产生需求，相关数据库知识，上手操作，以及用法记录</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#nosql和sql的对比">NoSQL和SQL的对比</a></li>
-<li><a href="#redis的安装linux版">Redis的安装（Linux版）：</a></li>
-<li><a href="#redis基本使用命令">Redis基本使用命令</a></li>
-<li><a href="#redis在线查询">redis在线查询</a></li>
-<li><a href="#redis的数据类型51">Redis的数据类型（5+1）</a><ul>
-<li><a href="#数据类型概括">数据类型概括</a></li>
-<li><a href="#key操作">KEY操作</a></li>
-<li><a href="#string型">String型</a></li>
-<li><a href="#list型">List型</a></li>
-<li><a href="#set型">Set型</a></li>
-<li><a href="#zset型">Zset型</a></li>
-<li><a href="#hash型">Hash型</a></li>
-</ul>
-</li>
-<li><a href="#其他">其他</a></li>
-</ul>
-<!-- tocstop -->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" data-id="ck7es8dxw004eedfy0mx9cx62" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-数据库/Redis/Redis——持久化" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" class="article-date">
-  <time datetime="2019-12-31T16:00:00.000Z" itemprop="datePublished">2020-01-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Redis/">Redis</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/">Redis——持久化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Redis的持久化方面主要分为RDB和AOF两个方面，这篇文章主要讲解这两个方面</p>
-</blockquote>
-<!--toc-->
-        
-          <p class="article-more-link">
-            <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" data-id="ck7es8dxy004jedfy5exxevv8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li></ul>
 
     </footer>
   </div>
@@ -614,7 +628,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -625,7 +639,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web/">Java Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Redis/">Redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/">报错记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/">生活小记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/"></a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/">Java Web框架</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/">Spring</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/">SpringMVC</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web%E5%9F%BA%E7%A1%80/">Web基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/">报错记录</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/">摄影</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1/Lightroom/">Lightroom</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/">MyBatis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/">MyBatisPlus</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/">Redis</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/">生活小记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/">科技</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/"></a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/">零散笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -635,7 +649,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea%E6%95%99%E7%A8%8B/" rel="tag">Idea教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse%E6%8A%A5%E9%94%99/" rel="tag">eclipse报错</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exlipse%E6%8A%A5%E9%94%99/" rel="tag">exlipse报错</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jstl/" rel="tag">jstl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lombok/" rel="tag">lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tags/" rel="tag">tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/" rel="tag">tomcat启动失败</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%9E%B6%E6%9E%84/" rel="tag">web架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E8%82%B2%E7%9A%84%E6%84%8F%E4%B9%89/" rel="tag">教育的意义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" rel="tag">运行时环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" rel="tag">隐藏文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EF%A3%BF/" rel="tag"></a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AOP/" rel="tag">AOP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DI/" rel="tag">DI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IOC/" rel="tag">IOC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Idea%E6%95%99%E7%A8%8B/" rel="tag">Idea教程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java-Web/" rel="tag">Java Web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Lightroom/" rel="tag">Lightroom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ModelAndView/" rel="tag">ModelAndView</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/" rel="tag">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mysql/" rel="tag">Mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/REST/" rel="tag">REST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/" rel="tag">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringMVC/" rel="tag">SpringMVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse%E6%8A%A5%E9%94%99/" rel="tag">eclipse报错</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/exlipse%E6%8A%A5%E9%94%99/" rel="tag">exlipse报错</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jstl/" rel="tag">jstl</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/log4j/" rel="tag">log4j</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lombok/" rel="tag">lombok</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tags/" rel="tag">tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/" rel="tag">tomcat启动失败</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web%E6%9E%B6%E6%9E%84/" rel="tag">web架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%87%E9%9D%A2/" rel="tag">切面</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" rel="tag">前段控制器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%90%8E%E6%9C%9F%E8%B0%83%E8%89%B2/" rel="tag">后期调色</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" rel="tag">处理器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" rel="tag">处理器映射器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" rel="tag">处理器适配器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B0%8F%E7%B1%B3/" rel="tag">小米</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" rel="tag">报错记录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" rel="tag">拦截器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E8%82%B2%E7%9A%84%E6%84%8F%E4%B9%89/" rel="tag">教育的意义</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B4%E5%90%88/" rel="tag">整合</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A8%A1%E7%89%88/" rel="tag">模版</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag">环境配置</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" rel="tag">视图解析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" rel="tag">试图解析器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" rel="tag">运行时环境</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" rel="tag">隐藏文件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" rel="tag">项目结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%EF%A3%BF/" rel="tag"></a></li></ul>
     </div>
   </div>
 
@@ -645,7 +659,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/Idea%E6%95%99%E7%A8%8B/" style="font-size: 10px;">Idea教程</a> <a href="/tags/Mac/" style="font-size: 15px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/MyBatis/" style="font-size: 10px;">MyBatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Redis/" style="font-size: 20px;">Redis</a> <a href="/tags/SSM/" style="font-size: 10px;">SSM</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 15px;">SpringMVC</a> <a href="/tags/eclipse%E6%8A%A5%E9%94%99/" style="font-size: 10px;">eclipse报错</a> <a href="/tags/exlipse%E6%8A%A5%E9%94%99/" style="font-size: 10px;">exlipse报错</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jstl/" style="font-size: 10px;">jstl</a> <a href="/tags/lombok/" style="font-size: 10px;">lombok</a> <a href="/tags/tags/" style="font-size: 10px;">tags</a> <a href="/tags/tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/" style="font-size: 10px;">tomcat启动失败</a> <a href="/tags/web%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">web架构</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%99%E8%82%B2%E7%9A%84%E6%84%8F%E4%B9%89/" style="font-size: 10px;">教育的意义</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">环境配置</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a> <a href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">运行时环境</a> <a href="/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" style="font-size: 10px;">隐藏文件</a> <a href="/tags/%EF%A3%BF/" style="font-size: 15px;"></a>
+      <a href="/tags/AOP/" style="font-size: 10px;">AOP</a> <a href="/tags/DI/" style="font-size: 10px;">DI</a> <a href="/tags/IDEA/" style="font-size: 10px;">IDEA</a> <a href="/tags/IOC/" style="font-size: 10px;">IOC</a> <a href="/tags/Idea%E6%95%99%E7%A8%8B/" style="font-size: 10px;">Idea教程</a> <a href="/tags/Java-Web/" style="font-size: 10px;">Java Web</a> <a href="/tags/Lightroom/" style="font-size: 10px;">Lightroom</a> <a href="/tags/Mac/" style="font-size: 13.33px;">Mac</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/ModelAndView/" style="font-size: 10px;">ModelAndView</a> <a href="/tags/MyBatis/" style="font-size: 13.33px;">MyBatis</a> <a href="/tags/Mysql/" style="font-size: 10px;">Mysql</a> <a href="/tags/REST/" style="font-size: 10px;">REST</a> <a href="/tags/Redis/" style="font-size: 20px;">Redis</a> <a href="/tags/SSM/" style="font-size: 10px;">SSM</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/SpringMVC/" style="font-size: 13.33px;">SpringMVC</a> <a href="/tags/eclipse%E6%8A%A5%E9%94%99/" style="font-size: 10px;">eclipse报错</a> <a href="/tags/exlipse%E6%8A%A5%E9%94%99/" style="font-size: 10px;">exlipse报错</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/jstl/" style="font-size: 10px;">jstl</a> <a href="/tags/log4j/" style="font-size: 10px;">log4j</a> <a href="/tags/lombok/" style="font-size: 10px;">lombok</a> <a href="/tags/tags/" style="font-size: 10px;">tags</a> <a href="/tags/tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/" style="font-size: 10px;">tomcat启动失败</a> <a href="/tags/web%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">web架构</a> <a href="/tags/%E5%88%87%E9%9D%A2/" style="font-size: 10px;">切面</a> <a href="/tags/%E5%89%8D%E6%AE%B5%E6%8E%A7%E5%88%B6%E5%99%A8/" style="font-size: 10px;">前段控制器</a> <a href="/tags/%E5%90%8E%E6%9C%9F%E8%B0%83%E8%89%B2/" style="font-size: 13.33px;">后期调色</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8/" style="font-size: 10px;">处理器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E6%98%A0%E5%B0%84%E5%99%A8/" style="font-size: 10px;">处理器映射器</a> <a href="/tags/%E5%A4%84%E7%90%86%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/" style="font-size: 10px;">处理器适配器</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 10px;">小米</a> <a href="/tags/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">报错记录</a> <a href="/tags/%E6%8B%A6%E6%88%AA%E5%99%A8/" style="font-size: 10px;">拦截器</a> <a href="/tags/%E6%95%99%E8%82%B2%E7%9A%84%E6%84%8F%E4%B9%89/" style="font-size: 10px;">教育的意义</a> <a href="/tags/%E6%95%B4%E5%90%88/" style="font-size: 10px;">整合</a> <a href="/tags/%E6%A8%A1%E7%89%88/" style="font-size: 10px;">模版</a> <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 10px;">环境配置</a> <a href="/tags/%E8%A7%86%E5%9B%BE%E8%A7%A3%E6%9E%90/" style="font-size: 10px;">视图解析</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 16.67px;">设计模式</a> <a href="/tags/%E8%AF%95%E5%9B%BE%E8%A7%A3%E6%9E%90%E5%99%A8/" style="font-size: 10px;">试图解析器</a> <a href="/tags/%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" style="font-size: 10px;">运行时环境</a> <a href="/tags/%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/" style="font-size: 10px;">隐藏文件</a> <a href="/tags/%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/" style="font-size: 10px;">项目结构</a> <a href="/tags/%EF%A3%BF/" style="font-size: 13.33px;"></a>
     </div>
   </div>
 
@@ -654,7 +668,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
     </div>
   </div>
 
@@ -667,23 +681,23 @@
       <ul>
         
           <li>
-            <a href="/2020/01/11/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/Mysql%E5%9F%BA%E7%A1%80/">MySql数据库基础</a>
+            <a href="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%EF%BC%88%E4%B8%80%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/">（一）设计模式概括</a>
           </li>
         
           <li>
-            <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/%E3%80%90%E8%BD%AC%E3%80%91%E6%B5%85%E8%B0%88web%E7%BD%91%E7%AB%99%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8F%98%E8%BF%87%E7%A8%8B/">【转】浅谈web网站架构演变过程</a>
+            <a href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/">【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md</a>
           </li>
         
           <li>
-            <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/">eclipse下的tomcat启动失败（Server Tomcat v7.0 Server at localhost failed to start.）</a>
+            <a href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/">jQuery 和 Ajax 知识点记录</a>
           </li>
         
           <li>
-            <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E5%85%B3%E4%BA%8E%E6%95%99%E5%B8%88%E8%83%BD%E5%8A%9B%E4%B8%8E%E6%95%99%E5%AD%A6%E7%8E%AF%E5%A2%83%E5%85%B3%E7%B3%BB%E6%80%9D%E8%80%83/">关于老师能力与教学环境关系的思考</a>
+            <a href="/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/">后期处理中的直方图和曲线图的使用</a>
           </li>
         
           <li>
-            <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/">maven项目中的junit依赖变灰色无法使用的情况</a>
+            <a href="/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%EF%BC%88%E5%9B%9B%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">（四）设计模式————工厂模式</a>
           </li>
         
       </ul>
