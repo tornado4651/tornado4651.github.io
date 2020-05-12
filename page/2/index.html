@@ -293,6 +293,560 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————装饰者模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T00:00:00+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/03/设计模式/设计模式——装饰者模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————装饰者模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#什么是装饰者模式">什么是“装饰者模式”</a></li>
+<li><a href="#模式实现原理">模式实现原理</a></li>
+<li><a href="#具体实现例子">具体实现例子</a><ul>
+<li><a href="#实际场景举例">实际场景举例</a></li>
+<li><a href="#代码实现">代码实现</a></li>
+</ul>
+</li>
+<li><a href="#装饰者模式的特点">装饰者模式的特点</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/" itemprop="url">初识MyBatisPlus</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T00:00:00+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/" itemprop="url" rel="index">
+                    <span itemprop="name">MyBatisPlus</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/03/数据库/MyBatisPlus/初识MyBatisPlus/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/" class="leancloud_visitors" data-flag-title="初识MyBatisPlus">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <!-- toc -->
+
+<ul>
+<li><a href="#与mybatis的比较">与Mybatis的比较：</a></li>
+<li><a href="#mp的hello-world使用">mp的hello world使用</a></li>
+<li><a href="#mybatisplus中的基本crud方法使用">MyBatisPlus中的基本CRUD方法使用</a></li>
+<li><a href="#条件构造器">条件构造器</a></li>
+<li><a href="#代码生成功能">代码生成功能</a></li>
+<li><a href="#全局操作">全局操作</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————观察者模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-02T00:00:00+08:00">
+                2020-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/02/设计模式/设计模式——观察者模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————观察者模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>“观察者模式“是指：在多个对象之间定义一种”一对多”的关系，主要作用是，当其中的“一”对象做出改变时，可以立刻通知所有关注该对象（在该模式下称为“主题”）的观察者们做出更新动作。</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#什么是观察者模式">什么是“观察者模式”</a></li>
+<li><a href="#自己编写实现代码">自己编写实现代码</a></li>
+<li><a href="#使用java自带的观察者模式">使用java自带的观察者模式</a><ul>
+<li><a href="#使用及实现方法">使用及实现方法</a></li>
+<li><a href="#使用java自带观察者模式的特点">使用java自带“观察者模式”的特点</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/%E6%91%84%E5%BD%B1/Lightroom01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -945,7 +1499,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -964,7 +1518,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/" itemprop="url">eclipse下的tomcat启动失败（Server Tomcat v7.0 Server at localhost failed to start.）</a></h1>
+                <a class="post-title-link" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/" itemprop="url">为什么要经常implements Serializable</a></h1>
         
 
         <div class="post-meta">
@@ -999,8 +1553,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -1017,9 +1571,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/报错记录/eclipse下的tomcat启动失败（Server Tomcat v7.0 Server at localhost failed to start.）/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/Java基础/为什么要implements Serializable/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1027,7 +1581,7 @@
 
           
           
-             <span id="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/" class="leancloud_visitors" data-flag-title="eclipse下的tomcat启动失败（Server Tomcat v7.0 Server at localhost failed to start.）">
+             <span id="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/" class="leancloud_visitors" data-flag-title="为什么要经常implements Serializable">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1060,20 +1614,16 @@
       
         
           <blockquote>
-<p>解决eclipse中在tomcat上运行项目时的报错：eclipse下的tomcat启动失败（Server Tomcat v7.0 Server at localhost failed to start.）。但并不是端口号占用</p>
+<p>我理解的implements Serializable作用</p>
 </blockquote>
 <!-- toc -->
 
-<ul>
-<li><a href="#导致报错的操作环境">导致报错的“操作/环境”</a></li>
-<li><a href="#报错提示">报错提示</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-<li><a href="#报错原因分析">报错原因分析</a></li>
-</ul>
+
+
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%8B%E7%9A%84tomcat%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%EF%BC%88Server%20Tomcat%20v7.0%20Server%20at%20localhost%20failed%20to%20start.%EF%BC%89/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1124,7 +1674,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1143,7 +1693,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/" itemprop="url">使用jstl时出错</a></h1>
+                <a class="post-title-link" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/" itemprop="url">项目结构记录</a></h1>
         
 
         <div class="post-meta">
@@ -1178,8 +1728,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
+                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
                   </a>
                 </span>
 
@@ -1196,9 +1746,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/报错记录/使用jstl时出错/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/Java基础/目录结构汇总/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1206,7 +1756,7 @@
 
           
           
-             <span id="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/" class="leancloud_visitors" data-flag-title="使用jstl时出错">
+             <span id="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/" class="leancloud_visitors" data-flag-title="项目结构记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1239,376 +1789,20 @@
       
         
           <blockquote>
-<p>在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结</p>
+<p>这里总结各类项目的目录结构，方便理解查询</p>
 </blockquote>
 <!-- toc -->
 
 <ul>
-<li><a href="#报错描述">报错描述</a></li>
-<li><a href="#报错原因">报错原因</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-<li><a href="#附tld术语解释">附：TLD术语解释：</a></li>
+<li><a href="#java-项目结构">Java 项目结构：</a></li>
+<li><a href="#java-web项目结构">Java Web项目结构：</a></li>
+<li><a href="#maven项目结构">Maven项目结构：</a></li>
+<li><a href="#spring-boot项目结构">Spring Boot项目结构</a></li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" itemprop="url">eclipse的环境配置之导入运行时环境</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/报错记录/eclipse的环境配置之导入运行时环境/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/" class="leancloud_visitors" data-flag-title="eclipse的环境配置之导入运行时环境">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>由于在eclipse中删除了一个本地服务配置而引起的报错</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#报错提示">报错提示</a></li>
-<li><a href="#报错原因分析">报错原因分析</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/" itemprop="url">maven项目中的junit依赖变灰色无法使用的情况</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/报错记录/maven项目的junit依赖变灰色无法使用的情况/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/" class="leancloud_visitors" data-flag-title="maven项目中的junit依赖变灰色无法使用的情况">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>在使用eclipse创建maven项目后，出现junit的jar包和hamcrest的jar包变为灰色的情况</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#问题描述">问题描述</a></li>
-<li><a href="#问题分析">问题分析</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2001,181 +2195,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/" itemprop="url">为什么要经常implements Serializable</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/Java基础/为什么要implements Serializable/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/" class="leancloud_visitors" data-flag-title="为什么要经常implements Serializable">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>我理解的implements Serializable作用</p>
-</blockquote>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/Java%E5%9F%BA%E7%A1%80/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81implements%20Serializable/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2230,7 +2249,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
