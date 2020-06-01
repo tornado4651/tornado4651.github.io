@@ -293,6 +293,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" itemprop="url">ES在实际生产中的经验总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/01/数据库/ElasticSearch/实际生产中的经验总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="ES在实际生产中的经验总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <!-- toc -->
+
+<ul>
+<li><a href="#分词-和-不分词">分词 和 不分词</a></li>
+<li><a href="#范围查询">范围查询</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -312,7 +497,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" itemprop="url">数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用</a></h1>
+                <a class="post-title-link" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" itemprop="url">二、ES的“语法”、“关键字”等使用</a></h1>
         
 
         <div class="post-meta">
@@ -375,7 +560,7 @@
 
           
           
-             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用">
+             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="二、ES的“语法”、“关键字”等使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,12 +610,17 @@
 </li>
 <li><a href="#基本操作crud">基本操作CRUD</a><ul>
 <li><a href="#创建">创建</a></li>
-<li><a href="#查询">查询</a></li>
+<li><a href="#获取">获取</a></li>
 <li><a href="#更新">更新</a></li>
 <li><a href="#删除">删除</a></li>
 </ul>
 </li>
-<li><a href="#关键字汇总记录">关键字汇总记录</a></li>
+<li><a href="#批量操作">批量操作</a><ul>
+<li><a href="#多文档检索mget">多文档检索——mget</a></li>
+<li><a href="#多功能批量操作bulk">多功能批量操作—bulk</a></li>
+</ul>
+</li>
+<li><a href="#关键字-和-api汇总记录">关键字 和 API汇总记录</a></li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
@@ -1866,181 +2056,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" itemprop="url">【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-20T00:00:00+08:00">
-                2020-03-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/20/报错记录/【转】解决log4j.xml问题httpjakarta.apache.orglog4j uri is not registered问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>描述如题<br>原文链接:<a href="https://blog.csdn.net/john_f_lau/article/details/27098087" target="_blank" rel="noopener">https://blog.csdn.net/john_f_lau/article/details/27098087</a></p>
-</blockquote>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2095,7 +2110,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-count">63</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
