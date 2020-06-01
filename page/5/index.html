@@ -293,6 +293,961 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" itemprop="url">Spring的IOC思想与DI</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/Java Web框架/Spring/Spring—IOC思想 和 DI/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" class="leancloud_visitors" data-flag-title="Spring的IOC思想与DI">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>IOC：控制反转，是Spring框架所特有的一大主要思想，通过Spring的底层控制，可以为我们开发人员进行很大程度的简化java bean的配置，生成对象等操作</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#ioc-与-di概念">IOC 与 DI概念</a></li>
+<li><a href="#我对ioc思想的理解">我对IOC思想的理解</a></li>
+<li><a href="#具体实现">具体实现</a></li>
+<li><a href="#底层分析">底层分析</a></li>
+<li><a href="#总结">总结</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" itemprop="url">SSM整合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/Java Web框架/SpringMVC/SSM整合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" class="leancloud_visitors" data-flag-title="SSM整合">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这篇文章关于我对Sping + Spring + MyBatis框架整合的简单概括的理解，以及一些简单入门的具体配置方法</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#ssm框架概述">SSM框架概述</a></li>
+<li><a href="#具体配置">具体配置</a><ul>
+<li><a href="#springmvc部分">SpringMVC部分</a></li>
+<li><a href="#spring部分">Spring部分</a></li>
+<li><a href="#mybatis部分">MyBatis部分</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E7%9A%84AOP%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E7%9A%84AOP%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" itemprop="url">Spring的AOP事务管理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E7%9A%84AOP%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/Java Web框架/Spring/Spring的AOP事务管理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E7%9A%84AOP%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/" class="leancloud_visitors" data-flag-title="Spring的AOP事务管理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这里记录Spring的AOP思想的重要使用方面：声明式事务的实现</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#spring的声明式事务">Spring的声明式事务</a></li>
+<li><a href="#基于注解的声明式事务">“基于注解”的声明式事务</a></li>
+<li><a href="#基于xml配置文件的声明式事务">“基于xml配置文件”的声明式事务</a><ul>
+<li><a href="#具体示例代码">具体示例代码：</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E7%9A%84AOP%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" itemprop="url">Spring的整体认识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/Spring/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/Java Web框架/Spring/对Spring的整体认识/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" class="leancloud_visitors" data-flag-title="Spring的整体认识">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这是一篇关于我对Spring框架的理解总结的文章</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#我理解的spring框架">我理解的Spring框架</a></li>
+<li><a href="#spring的具体实现">Spring的具体实现：</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" itemprop="url">Spring+SpringMVC的整合</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/" itemprop="url" rel="index">
+                    <span itemprop="name">SpringMVC</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/Java Web框架/SpringMVC/Spring 与SpringMVC的整合/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" class="leancloud_visitors" data-flag-title="Spring+SpringMVC的整合">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>关于将非web环境的管理容器Spring 和 web环境的SpringMVC进行整合的实现思路， 具体方法</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#一-为什么需要整合">一、为什么需要整合</a></li>
+<li><a href="#二-spring的最基础配置">二、Spring的最基础配置</a></li>
+<li><a href="#三-springmvc框架的基本配置">三、SpringMVC框架的基本配置</a></li>
+<li><a href="#四-spring和springmvc最基础的整合">四、Spring和SpringMVC最基础的整合</a></li>
+<li><a href="#五-总结">五、总结</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%8B%A6%E6%88%AA%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -617,390 +1572,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SpringMVC%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E6%8E%A5%E6%94%B6%E6%96%B9%E6%B3%95/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" itemprop="url">Spring+SpringMVC的整合</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Web框架</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringMVC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/Java Web框架/SpringMVC/Spring 与SpringMVC的整合/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" class="leancloud_visitors" data-flag-title="Spring+SpringMVC的整合">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>关于将非web环境的管理容器Spring 和 web环境的SpringMVC进行整合的实现思路， 具体方法</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#一-为什么需要整合">一、为什么需要整合</a></li>
-<li><a href="#二-spring的最基础配置">二、Spring的最基础配置</a></li>
-<li><a href="#三-springmvc框架的基本配置">三、SpringMVC框架的基本配置</a></li>
-<li><a href="#四-spring和springmvc最基础的整合">四、Spring和SpringMVC最基础的整合</a></li>
-<li><a href="#五-总结">五、总结</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" itemprop="url">SSM整合</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
-                    <span itemprop="name">Java Web框架</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-Web%E6%A1%86%E6%9E%B6/SpringMVC/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringMVC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/Java Web框架/SpringMVC/SSM整合/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" class="leancloud_visitors" data-flag-title="SSM整合">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这篇文章关于我对Sping + Spring + MyBatis框架整合的简单概括的理解，以及一些简单入门的具体配置方法</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#ssm框架概述">SSM框架概述</a></li>
-<li><a href="#具体配置">具体配置</a><ul>
-<li><a href="#springmvc部分">SpringMVC部分</a></li>
-<li><a href="#spring部分">Spring部分</a></li>
-<li><a href="#mybatis部分">MyBatis部分</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1426,389 +1997,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">Redis——Jedis的使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/数据库/Redis/Redis——Jedis的使用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Redis——Jedis的使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>Jedis时在java上操控Redis的专用包，这篇文章记录了Jedis库的常用用法</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#基本命令使用">基本命令使用</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" itemprop="url">Redis——主从复制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/数据库/Redis/Reids——主从和哨兵/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" class="leancloud_visitors" data-flag-title="Redis——主从复制">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>Redis的主从复制功能是在实践中常用到的一个重要功能，能够大大提高数据缓存的安全性和读写性能</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#主从复制masterslave">主从复制（Master/Slave）</a><ul>
-<li><a href="#配置和使用">配置和使用</a></li>
-<li><a href="#命令行配置">命令行配置：</a></li>
-<li><a href="#主从复制中的情况记录">主从复制中的情况记录</a></li>
-</ul>
-</li>
-<li><a href="#哨兵模式">哨兵模式</a><ul>
-<li><a href="#配置和使用-1">配置和使用</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1942,210 +2130,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%AE%B0%E5%BD%95/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" itemprop="url">Redis——持久化</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
-                    <span itemprop="name">Redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/数据库/Redis/Redis——持久化/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" class="leancloud_visitors" data-flag-title="Redis——持久化">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>Redis的持久化方面主要分为RDB和AOF两个方面，这篇文章主要讲解这两个方面</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#持久化概述">持久化概述</a><ul>
-<li><a href="#redis的持久化">Redis的持久化</a></li>
-</ul>
-</li>
-<li><a href="#rdb">RDB</a><ul>
-<li><a href="#相关配置">相关配置：</a></li>
-<li><a href="#优点">优点</a></li>
-<li><a href="#缺点">缺点</a></li>
-<li><a href="#其他">其他</a></li>
-</ul>
-</li>
-<li><a href="#aof">AOF</a><ul>
-<li><a href="#相关配置和操作">相关配置和操作</a></li>
-<li><a href="#优点">优点：</a></li>
-<li><a href="#缺点-1">缺点</a></li>
-<li><a href="#其他-1">其他</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>

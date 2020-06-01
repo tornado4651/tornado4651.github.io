@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" itemprop="url">初识Redis</a></h1>
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" itemprop="url">Redis——持久化</a></h1>
         
 
         <div class="post-meta">
@@ -376,9 +376,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/数据库/Redis/初识Redis/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/数据库/Redis/Redis——持久化/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" class="leancloud_visitors" data-flag-title="初识Redis">
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/" class="leancloud_visitors" data-flag-title="Redis——持久化">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -419,31 +419,604 @@
       
         
           <blockquote>
-<p>这篇笔记记录了Redis的产生需求，相关数据库知识，上手操作，以及用法记录</p>
+<p>Redis的持久化方面主要分为RDB和AOF两个方面，这篇文章主要讲解这两个方面</p>
 </blockquote>
 <!-- toc -->
 
 <ul>
-<li><a href="#nosql和sql的对比">NoSQL和SQL的对比</a></li>
-<li><a href="#redis的安装linux版">Redis的安装（Linux版）：</a></li>
-<li><a href="#redis基本使用命令">Redis基本使用命令</a></li>
-<li><a href="#redis在线查询">redis在线查询</a></li>
-<li><a href="#redis的数据类型51">Redis的数据类型（5+1）</a><ul>
-<li><a href="#数据类型概括">数据类型概括</a></li>
-<li><a href="#key操作">KEY操作</a></li>
-<li><a href="#string型">String型</a></li>
-<li><a href="#list型">List型</a></li>
-<li><a href="#set型">Set型</a></li>
-<li><a href="#zset型">Zset型</a></li>
-<li><a href="#hash型">Hash型</a></li>
+<li><a href="#持久化概述">持久化概述</a><ul>
+<li><a href="#redis的持久化">Redis的持久化</a></li>
 </ul>
 </li>
+<li><a href="#rdb">RDB</a><ul>
+<li><a href="#相关配置">相关配置：</a></li>
+<li><a href="#优点">优点</a></li>
+<li><a href="#缺点">缺点</a></li>
 <li><a href="#其他">其他</a></li>
+</ul>
+</li>
+<li><a href="#aof">AOF</a><ul>
+<li><a href="#相关配置和操作">相关配置和操作</a></li>
+<li><a href="#优点">优点：</a></li>
+<li><a href="#缺点-1">缺点</a></li>
+<li><a href="#其他-1">其他</a></li>
+</ul>
+</li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94%E6%8C%81%E4%B9%85%E5%8C%96/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">Redis——Jedis的使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/数据库/Redis/Redis——Jedis的使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="Redis——Jedis的使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>Jedis时在java上操控Redis的专用包，这篇文章记录了Jedis库的常用用法</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#基本命令使用">基本命令使用</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Redis%E2%80%94%E2%80%94Jedis%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url">Mac系统下的开发环境配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/零散笔记/开发工具/Mac系统的开发环境配置/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="Mac系统下的开发环境配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这篇文章主要记录了我在配置mac系统下的开发环境的详细步骤以及原理</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#配置homebrew">配置Homebrew</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" itemprop="url">Redis——主从复制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/数据库/Redis/Reids——主从和哨兵/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/" class="leancloud_visitors" data-flag-title="Redis——主从复制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>Redis的主从复制功能是在实践中常用到的一个重要功能，能够大大提高数据缓存的安全性和读写性能</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#主从复制masterslave">主从复制（Master/Slave）</a><ul>
+<li><a href="#配置和使用">配置和使用</a></li>
+<li><a href="#命令行配置">命令行配置：</a></li>
+<li><a href="#主从复制中的情况记录">主从复制中的情况记录</a></li>
+</ul>
+</li>
+<li><a href="#哨兵模式">哨兵模式</a><ul>
+<li><a href="#配置和使用-1">配置和使用</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/Reids%E2%80%94%E2%80%94%E4%B8%BB%E4%BB%8E%E5%92%8C%E5%93%A8%E5%85%B5/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -680,7 +1253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -699,7 +1272,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/" itemprop="url">2020年初对“小米”品牌的重新认识</a></h1>
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" itemprop="url">初识Redis</a></h1>
         
 
         <div class="post-meta">
@@ -734,8 +1307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">生活小记</span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -745,8 +1318,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/" itemprop="url" rel="index">
-                    <span itemprop="name">科技</span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
                   </a>
                 </span>
 
@@ -763,9 +1336,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/生活随记/科技/由“小米品牌”引起的思考/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/数据库/Redis/初识Redis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -773,7 +1346,7 @@
 
           
           
-             <span id="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/" class="leancloud_visitors" data-flag-title="2020年初对“小米”品牌的重新认识">
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" class="leancloud_visitors" data-flag-title="初识Redis">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -805,22 +1378,32 @@
 
       
         
-          <!-- toc -->
+          <blockquote>
+<p>这篇笔记记录了Redis的产生需求，相关数据库知识，上手操作，以及用法记录</p>
+</blockquote>
+<!-- toc -->
 
 <ul>
-<li><a href="#标题一">标题一</a><ul>
-<li><a href="#二级标题">二级标题</a></li>
+<li><a href="#nosql和sql的对比">NoSQL和SQL的对比</a></li>
+<li><a href="#redis的安装linux版">Redis的安装（Linux版）：</a></li>
+<li><a href="#redis基本使用命令">Redis基本使用命令</a></li>
+<li><a href="#redis在线查询">redis在线查询</a></li>
+<li><a href="#redis的数据类型51">Redis的数据类型（5+1）</a><ul>
+<li><a href="#数据类型概括">数据类型概括</a></li>
+<li><a href="#key操作">KEY操作</a></li>
+<li><a href="#string型">String型</a></li>
+<li><a href="#list型">List型</a></li>
+<li><a href="#set型">Set型</a></li>
+<li><a href="#zset型">Zset型</a></li>
+<li><a href="#hash型">Hash型</a></li>
 </ul>
 </li>
-<li><a href="#标题二">标题二</a><ul>
-<li><a href="#二级标题-1">二级标题</a></li>
-</ul>
-</li>
+<li><a href="#其他">其他</a></li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1078,193 +1661,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url">Mac系统下的开发环境配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">零散笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
-                    <span itemprop="name">开发工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/零散笔记/开发工具/Mac系统的开发环境配置/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="Mac系统下的开发环境配置">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这篇文章主要记录了我在配置mac系统下的开发环境的详细步骤以及原理</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#配置homebrew">配置Homebrew</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1415,192 +1811,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" itemprop="url">【转】 MacOS 下安装多个版本的 JDK 并统一管理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">零散笔记</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
-                    <span itemprop="name">开发工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/零散笔记/开发工具/【转】 MacOS  下安装多个版本的-JDK-并统一管理/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" class="leancloud_visitors" data-flag-title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>在网上看到一篇很好的管理mac上java版本的文章，遂拷贝。<br><a href="https://blog.csdn.net/aigestudio/article/details/99641818" target="_blank" rel="noopener">原文链接</a></p>
-</blockquote>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1867,7 +2077,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1886,7 +2096,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" itemprop="url">入手Macbook pro，我的装备大升级！</a></h1>
+                <a class="post-title-link" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" itemprop="url">【转】 MacOS 下安装多个版本的 JDK 并统一管理</a></h1>
         
 
         <div class="post-meta">
@@ -1921,197 +2131,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EF%A3%BF/" itemprop="url" rel="index">
-                    <span itemprop="name"></span>
+                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
                   </a>
                 </span>
 
                 
                 
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01//MacBook Pro——我的装备大升级/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" class="leancloud_visitors" data-flag-title="入手Macbook pro，我的装备大升级！">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>感谢老爸老妈的大力支持，趁着一波教育优惠让我在大学期间获得了梦想的生产力工具，MacBook Pro 2018，已经使用了近半个月了，具体电脑的使用感受过段时间详细叙述，这次先说说我的桌面升级吧，第一次写，望多多包涵，如果你有更好的点子可以留言建议。</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#一-整体">一、整体</a></li>
-<li><a href="#二-更新换代前">二、更新换代前：</a></li>
-<li><a href="#三-新添设备列表">三、新添设备列表：</a></li>
-<li><a href="#四-桌面">四、桌面</a><ul>
-<li><a href="#方案一左右分屏">方案一：左右分屏</a></li>
-<li><a href="#方案二上下分屏">方案二：上下分屏</a><ul>
-<li><a href="#优势">优势：</a></li>
-<li><a href="#不足待改进理想桌面">不足待改进（理想桌面）：</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#五-一些使用分享建议和小感受">五、一些使用分享建议和小感受：</a></li>
-<li><a href="#三个月后的真实使用体验及改进">三个月后的真实使用体验及改进：</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+                  , 
                 
-                <a class="post-title-link" href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url">Mac下设置隐藏文件/文件夹</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%EF%A3%BF/" itemprop="url" rel="index">
-                    <span itemprop="name"></span>
+                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
                   </a>
                 </span>
 
@@ -2128,9 +2160,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01//Mac下设置隐藏文件文件夹/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/零散笔记/开发工具/【转】 MacOS  下安装多个版本的-JDK-并统一管理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -2138,7 +2170,7 @@
 
           
           
-             <span id="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" class="leancloud_visitors" data-flag-title="Mac下设置隐藏文件/文件夹">
+             <span id="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" class="leancloud_visitors" data-flag-title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2171,18 +2203,16 @@
       
         
           <blockquote>
-<p>在mac上如何将文件和文件夹隐藏起来</p>
+<p>在网上看到一篇很好的管理mac上java版本的文章，遂拷贝。<br><a href="https://blog.csdn.net/aigestudio/article/details/99641818" target="_blank" rel="noopener">原文链接</a></p>
 </blockquote>
 <!-- toc -->
 
-<ul>
-<li><a href="#设置显示和隐藏文件夹">设置显示和隐藏文件夹</a></li>
-<li><a href="#全局显示和隐藏文件夹">全局显示和隐藏文件夹</a></li>
-</ul>
+
+
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
