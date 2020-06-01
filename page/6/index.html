@@ -175,7 +175,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url">Mac下设置隐藏文件/文件夹</a></h1>
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" itemprop="url">初识Redis</a></h1>
         
 
         <div class="post-meta">
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">生活小记</span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -358,8 +358,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/" itemprop="url" rel="index">
-                    <span itemprop="name"></span>
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
                   </a>
                 </span>
 
@@ -376,9 +376,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/生活随记//Mac下设置隐藏文件文件夹/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01/数据库/Redis/初识Redis/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +386,7 @@
 
           
           
-             <span id="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" class="leancloud_visitors" data-flag-title="Mac下设置隐藏文件/文件夹">
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" class="leancloud_visitors" data-flag-title="初识Redis">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -419,18 +419,217 @@
       
         
           <blockquote>
-<p>在mac上如何将文件和文件夹隐藏起来</p>
+<p>这篇笔记记录了Redis的产生需求，相关数据库知识，上手操作，以及用法记录</p>
 </blockquote>
 <!-- toc -->
 
 <ul>
-<li><a href="#设置显示和隐藏文件夹">设置显示和隐藏文件夹</a></li>
-<li><a href="#全局显示和隐藏文件夹">全局显示和隐藏文件夹</a></li>
+<li><a href="#nosql和sql的对比">NoSQL和SQL的对比</a></li>
+<li><a href="#redis的安装linux版">Redis的安装（Linux版）：</a></li>
+<li><a href="#redis基本使用命令">Redis基本使用命令</a></li>
+<li><a href="#redis在线查询">redis在线查询</a></li>
+<li><a href="#redis的数据类型51">Redis的数据类型（5+1）</a><ul>
+<li><a href="#数据类型概括">数据类型概括</a></li>
+<li><a href="#key操作">KEY操作</a></li>
+<li><a href="#string型">String型</a></li>
+<li><a href="#list型">List型</a></li>
+<li><a href="#set型">Set型</a></li>
+<li><a href="#zset型">Zset型</a></li>
+<li><a href="#hash型">Hash型</a></li>
+</ul>
+</li>
+<li><a href="#其他">其他</a></li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/" itemprop="url">【译】redis.conf配置文件中文版</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/数据库/Redis/【译】redis.conf配置文件中文版/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/" class="leancloud_visitors" data-flag-title="【译】redis.conf配置文件中文版">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>我将Redis.conf配置文件通过Google翻译成中文，在查看使用时进行一定的修改校准，以便配置参考</p>
+</blockquote>
+<!-- toc -->
+
+
+
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -829,192 +1028,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%BD%AC%E3%80%91Redis%E9%9D%A2%E8%AF%95%E5%9B%9E%E7%AD%94/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" itemprop="url">Mac入门教程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
-                2020-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">生活小记</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/%EF%A3%BF/" itemprop="url" rel="index">
-                    <span itemprop="name"></span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/01/01/生活随记//Mac入门教程/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="leancloud_visitors" data-flag-title="Mac入门教程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这篇文章写给想要了解或正在纠结是否合适Mac系统的小白，以及最近刚从windows转达Mac尝鲜上手的朋友们。</p>
-</blockquote>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%EF%A3%BF/Mac%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1854,7 +1867,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/01/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1873,7 +1886,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/01/01/hello-world/" itemprop="url">【Hello World】</a></h1>
+                <a class="post-title-link" href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" itemprop="url">入手Macbook pro，我的装备大升级！</a></h1>
         
 
         <div class="post-meta">
@@ -1885,8 +1898,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-01T00:00:00+08:00">
-                2019-01-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
               </time>
             
 
@@ -1896,6 +1909,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EF%A3%BF/" itemprop="url" rel="index">
+                    <span itemprop="name"></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1904,9 +1939,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/01/hello-world/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/01/01/hello-world/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/01//MacBook Pro——我的装备大升级/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1914,7 +1949,7 @@
 
           
           
-             <span id="/2019/01/01/hello-world/" class="leancloud_visitors" data-flag-title="【Hello World】">
+             <span id="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" class="leancloud_visitors" data-flag-title="入手Macbook pro，我的装备大升级！">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1947,23 +1982,207 @@
       
         
           <blockquote>
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<p>感谢老爸老妈的大力支持，趁着一波教育优惠让我在大学期间获得了梦想的生产力工具，MacBook Pro 2018，已经使用了近半个月了，具体电脑的使用感受过段时间详细叙述，这次先说说我的桌面升级吧，第一次写，望多多包涵，如果你有更好的点子可以留言建议。</p>
 </blockquote>
 <!-- toc -->
 
 <ul>
-<li><a href="#quick-start">Quick Start</a><ul>
-<li><a href="#create-a-new-post">Create a new post</a></li>
-<li><a href="#run-server">Run server</a></li>
-<li><a href="#generate-static-files">Generate static files</a></li>
-<li><a href="#deploy-to-remote-sites">Deploy to remote sites</a></li>
+<li><a href="#一-整体">一、整体</a></li>
+<li><a href="#二-更新换代前">二、更新换代前：</a></li>
+<li><a href="#三-新添设备列表">三、新添设备列表：</a></li>
+<li><a href="#四-桌面">四、桌面</a><ul>
+<li><a href="#方案一左右分屏">方案一：左右分屏</a></li>
+<li><a href="#方案二上下分屏">方案二：上下分屏</a><ul>
+<li><a href="#优势">优势：</a></li>
+<li><a href="#不足待改进理想桌面">不足待改进（理想桌面）：</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#五-一些使用分享建议和小感受">五、一些使用分享建议和小感受：</a></li>
+<li><a href="#三个月后的真实使用体验及改进">三个月后的真实使用体验及改进：</a></li>
 </ul>
 <!-- tocstop -->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/01/01/hello-world/#more" rel="contents">
+            <a class="btn" href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" itemprop="url">Mac下设置隐藏文件/文件夹</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%EF%A3%BF/" itemprop="url" rel="index">
+                    <span itemprop="name"></span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01//Mac下设置隐藏文件文件夹/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" class="leancloud_visitors" data-flag-title="Mac下设置隐藏文件/文件夹">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>在mac上如何将文件和文件夹隐藏起来</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#设置显示和隐藏文件夹">设置显示和隐藏文件夹</a></li>
+<li><a href="#全局显示和隐藏文件夹">全局显示和隐藏文件夹</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2005,7 +2224,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2055,7 +2274,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2066,7 +2285,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2077,7 +2296,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

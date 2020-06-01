@@ -175,7 +175,7 @@
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -279,6 +279,402 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" itemprop="url">数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:00+08:00">
+                2020-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/05/28/数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#es的概念">ES的概念</a><ul>
+<li><a href="#es中的数据">ES中的“数据”</a></li>
+<li><a href="#文档">文档</a><ul>
+<li><a href="#文档元数据">文档元数据</a></li>
+</ul>
+</li>
+<li><a href="#索引">索引</a></li>
+</ul>
+</li>
+<li><a href="#基本操作crud">基本操作CRUD</a><ul>
+<li><a href="#创建">创建</a></li>
+<li><a href="#查询">查询</a></li>
+<li><a href="#更新">更新</a></li>
+<li><a href="#删除">删除</a></li>
+</ul>
+</li>
+<li><a href="#关键字汇总记录">关键字汇总记录</a></li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" itemprop="url">一、ES基础、安装、使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">
+                2020-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/05/27/数据库/ElasticSearch/一、ES基础、安装、使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="一、ES基础、安装、使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅</p>
+</blockquote>
+<!-- toc -->
+
+<ul>
+<li><a href="#什么是elasticsearch">什么是ElasticSearch？</a></li>
+<li><a href="#安装-配置-es">安装 配置 ES</a><ul>
+<li><a href="#手动本机mac安装">手动本机（Mac）安装</a></li>
+<li><a href="#docker安装">docker安装</a></li>
+</ul>
+</li>
+<li><a href="#安装-配置-kibana">安装 配置 KIBANA</a><ul>
+<li><a href="#直接本机mac安装">直接本机（mac）安装</a></li>
+<li><a href="#docker安装kibana">docker安装kibana</a></li>
+</ul>
+</li>
+<li><a href="#配置es集群和kibana">配置ES集群和KIBANA</a></li>
+<li><a href="#linux下的完整安装配置过程记录">Linux下的完整安装配置过程记录</a></li>
+<li><a href="#基本名词">基本名词</a><ul>
+<li><a href="#es-和-rdbms-的比较">ES 和 RDBMS 的比较</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1645,371 +2041,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" itemprop="url">jQuery 和 Ajax 知识点记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-13T23:51:04+08:00">
-                2020-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">Web基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/13/Web基础/jQuery和Ajax知识点记录/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="jQuery 和 Ajax 知识点记录">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>简单记录JavaWeb基础的一些知识点，以便查看</p>
-</blockquote>
-<!--toc-->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————单例模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-05T00:00:00+08:00">
-                2020-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/05/设计模式/设计模式——单例模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————单例模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>单例模式，是设计模式的基础模式之一。有饿汉式、懒汉式、等方法</p>
-</blockquote>
-<!-- toc -->
-
-<ul>
-<li><a href="#什么是单例模式">什么是“单例模式”？</a></li>
-<li><a href="#单例模式的使用场景">“单例模式”的使用场景</a></li>
-<li><a href="#单例模式的实现方式">单例模式的实现方式</a><ul>
-<li><a href="#饿汉式1之静态常量式不考虑内存浪费时推荐">饿汉式1（之静态常量式）——不考虑内存浪费时推荐</a></li>
-<li><a href="#饿汉式2之静态代码块式">饿汉式2（之静态代码块式）</a></li>
-<li><a href="#懒汉式1线程不安全">懒汉式1（线程不安全）</a></li>
-<li><a href="#懒汉式2线程安全synchronized">懒汉式2（线程安全,synchronized）</a></li>
-<li><a href="#懒汉式3线程安全同步代码块">懒汉式3（线程安全，同步代码块）</a></li>
-<li><a href="#双重检查推荐">双重检查——推荐</a></li>
-<li><a href="#静态内部类推荐">静态内部类——推荐</a></li>
-<li><a href="#枚举推荐">枚举——推荐</a></li>
-</ul>
-</li>
-<li><a href="#单例模式在jdk中的实际应用举例">单例模式在JDK中的实际应用举例：</a></li>
-</ul>
-<!-- tocstop -->
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2059,7 +2095,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2070,7 +2106,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2081,7 +2117,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
