@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法     参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
+<meta name="description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二、ES的“语法”、“关键字”等使用">
 <meta property="og:url" content="http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法     参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
+<meta property="og:description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-27T16:00:00.000Z">
 <meta property="article:modified_time" content="2020-06-01T09:27:28.945Z">
@@ -417,49 +417,52 @@
         <blockquote>
 <p>ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#参考链接">参考链接</a></li>
-<li><a href="#es的概念">ES的概念</a><ul>
-<li><a href="#es中的数据">ES中的“数据”</a></li>
-<li><a href="#文档">文档</a><ul>
-<li><a href="#文档元数据">文档元数据</a></li>
+<li><a href="#can-kao-lian-jie">参考链接</a></li>
+<li><a href="#es-de-gai-nian">ES的概念</a><ul>
+<li><a href="#es-zhong-de-shu-ju">ES中的“数据”</a></li>
+<li><a href="#wen-dang">文档</a><ul>
+<li><a href="#wen-dang-yuan-shu-ju">文档元数据</a></li>
 </ul>
 </li>
-<li><a href="#索引">索引</a></li>
+<li><a href="#suo-yin">索引</a></li>
 </ul>
 </li>
-<li><a href="#基本操作crud">基本操作CRUD</a><ul>
-<li><a href="#创建">创建</a></li>
-<li><a href="#获取">获取</a></li>
-<li><a href="#更新">更新</a></li>
-<li><a href="#删除">删除</a></li>
+<li><a href="#ji-ben-cao-zuo-crud">基本操作CRUD</a><ul>
+<li><a href="#chuang-jian">创建</a></li>
+<li><a href="#huo-qu">获取</a></li>
+<li><a href="#geng-xin">更新</a></li>
+<li><a href="#shan-chu">删除</a></li>
 </ul>
 </li>
-<li><a href="#批量操作">批量操作</a><ul>
-<li><a href="#多文档检索mget">多文档检索——mget</a></li>
-<li><a href="#多功能批量操作bulk">多功能批量操作—bulk</a></li>
+<li><a href="#pi-liang-cao-zuo">批量操作</a><ul>
+<li><a href="#duo-wen-dang-jian-suo-mget">多文档检索——mget</a></li>
+<li><a href="#duo-gong-neng-pi-liang-cao-zuo-bulk">多功能批量操作—bulk</a></li>
 </ul>
 </li>
-<li><a href="#关键字-和-api汇总记录">关键字 和 API汇总记录</a></li>
+<li><a href="#guan-jian-zi-he-api-hui-zong-ji-lu">关键字 和 API汇总记录</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[TOC]</p>
-<h1><span id="参考链接">参考链接</span></h1><p><a href="https://wiki.jikexueyuan.com/project/elasticsearch-definitive-guide-cn/" target="_blank" rel="noopener">Elasticsearch 权威指南（中文版）</a></p>
+<h1><span id="can-kao-lian-jie">参考链接</span><a href="#can-kao-lian-jie" class="header-anchor">[</a></h1><p><a href="https://wiki.jikexueyuan.com/project/elasticsearch-definitive-guide-cn/" target="_blank" rel="noopener">Elasticsearch 权威指南（中文版）</a></p>
 <p><a href="https://www.jianshu.com/p/3873a6290c65" target="_blank" rel="noopener">ES学习教程</a></p>
 <p><a href="https://blog.csdn.net/qq_22612245/article/details/82432107" target="_blank" rel="noopener">elasticsearch 关键词查询-实现like查询</a></p>
-<h1><span id="es的概念">ES的概念</span></h1><h2><span id="es中的数据">ES中的“数据”</span></h2><p>传统意义上“面向对象编程”的数据都是提供在一个Object中，对象(object)是一种语言相关，记录在内存中的的数据结构。为了在网络间发送，或者存储它，我们需要一些标准的格式来表示它。JSON (JavaScript Object Notation是一种可读的以文本来表示对象的方式。它已经成为NoSQL世界中数据交换的一种事实标准。</p>
+<h1><span id="es-de-gai-nian">ES的概念</span><a href="#es-de-gai-nian" class="header-anchor">[</a></h1><h2><span id="es-zhong-de-shu-ju">ES中的“数据”</span><a href="#es-zhong-de-shu-ju" class="header-anchor">[</a></h2><p>传统意义上“面向对象编程”的数据都是提供在一个Object中，对象(object)是一种语言相关，记录在内存中的的数据结构。为了在网络间发送，或者存储它，我们需要一些标准的格式来表示它。JSON (JavaScript Object Notation是一种可读的以文本来表示对象的方式。它已经成为NoSQL世界中数据交换的一种事实标准。</p>
 <p>在ES的世界中，数据被分为以下几个级别的记录方式：</p>
 <blockquote>
 <p>文档 — 索引 — 类型 — id — _source — </p>
 </blockquote>
-<h2><span id="文档">文档</span></h2><p>通常，我们可以认为<strong>对象(object)</strong>和<strong>文档(document)</strong>是等价相通的。不过，他们还是有所差别：对象(Object)是一个JSON结构体——类似于哈希、hashmap、字典或者关联数组；对象(Object)中还可能包含其他对象(Object)。</p>
+<h2><span id="wen-dang">文档</span><a href="#wen-dang" class="header-anchor">[</a></h2><p>通常，我们可以认为<strong>对象(object)</strong>和<strong>文档(document)</strong>是等价相通的。不过，他们还是有所差别：对象(Object)是一个JSON结构体——类似于哈希、hashmap、字典或者关联数组；对象(Object)中还可能包含其他对象(Object)。</p>
 <p> 在Elasticsearch中，<strong>文档(document)</strong>这个术语有着特殊含义。它特指最顶层结构或者<strong>根对象(root object)</strong>序列化成的JSON数据（以唯一ID标识并存储于Elasticsearch中）。</p>
-<h3><span id="文档元数据">文档元数据</span></h3><p>一个文档不只有数据。它还包含了<strong>元数据(metadata)</strong></p>
+<h3><span id="wen-dang-yuan-shu-ju">文档元数据</span><a href="#wen-dang-yuan-shu-ju" class="header-anchor">[</a></h3><p>一个文档不只有数据。它还包含了<strong>元数据(metadata)</strong></p>
 <p>关于文档的信息。三个必须的元数据节点是：</p>
 <table>
 <thead>
@@ -481,7 +484,7 @@
 <td align="center">文档的唯一标识</td>
 </tr>
 </tbody></table>
-<h2><span id="索引">索引</span></h2><h1><span id="基本操作crud">基本操作CRUD</span></h1><h2><span id="创建">创建</span></h2><p>使用<strong>PUT</strong>方法，传入一个新的文档：/index/type/id以及具体的JSON内容时，即为创建</p>
+<h2><span id="suo-yin">索引</span><a href="#suo-yin" class="header-anchor">[</a></h2><h1><span id="ji-ben-cao-zuo-crud">基本操作CRUD</span><a href="#ji-ben-cao-zuo-crud" class="header-anchor">[</a></h1><h2><span id="chuang-jian">创建</span><a href="#chuang-jian" class="header-anchor">[</a></h2><p>使用<strong>PUT</strong>方法，传入一个新的文档：/index/type/id以及具体的JSON内容时，即为创建</p>
 <p>如果创建时不清楚该文档是否存在，可以使用<strong>HEAD</strong>方法检查是否存在</p>
 <ul>
 <li><p>补充操作：</p>
@@ -499,7 +502,7 @@
 
 3. 在创建时就指定版本号，version=【x】
 
-    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PUT /website/blog/2?version=5&amp;version_type=external</span><br><span class="line">&#123;</span><br><span class="line">  "title": "My first external blog entry",</span><br><span class="line">  "text":  "Starting to get the hang of this..."</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2><span id="获取">获取</span></h2><blockquote>
+    <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PUT /website/blog/2?version=5&amp;version_type=external</span><br><span class="line">&#123;</span><br><span class="line">  "title": "My first external blog entry",</span><br><span class="line">  "text":  "Starting to get the hang of this..."</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre><h2><span id="huo-qu">获取</span><a href="#huo-qu" class="header-anchor">[</a></h2><blockquote>
 <p>注意：这里的GET方法操作只是获取<strong>文档信息</strong>而已，并不是完全的返回<strong>文档内容</strong>。</p>
 <p>除非请求方法上写全了index、type、id三大值。</p>
 <p>想要进行条件查询筛选等操作，会在后面的<strong>“_search”</strong>关键字中单独详细记录</p>
@@ -513,7 +516,7 @@
 </ol>
 </li>
 </ul>
-<h2><span id="更新">更新</span></h2><p><strong>1.整个文档更新</strong></p>
+<h2><span id="geng-xin">更新</span><a href="#geng-xin" class="header-anchor">[</a></h2><p><strong>1.整个文档更新</strong></p>
 <p>直接使用PUT方法传入一份完整的新文档，ES会自动进行更新覆盖操作。并返回如下响应</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 更新文档的具体基本信息</span></span><br><span class="line">  <span class="attr">"_index"</span>: <span class="string">"website"</span>,</span><br><span class="line">  <span class="attr">"_type"</span>: <span class="string">"blog"</span>,</span><br><span class="line">  <span class="attr">"_id"</span>: <span class="string">"123"</span>,</span><br><span class="line">  <span class="comment">// 更新后版本号+1</span></span><br><span class="line">  <span class="attr">"_version"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="comment">// 结果提示：更新操作，而不是创建操作</span></span><br><span class="line">  <span class="attr">"result"</span>: <span class="string">"updated"</span>,</span><br><span class="line">  <span class="comment">// 其他信息</span></span><br><span class="line">  <span class="attr">"_shards"</span>: &#123;</span><br><span class="line">    <span class="attr">"total"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">"successful"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">"failed"</span>: <span class="number">0</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"_seq_no"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"_primary_term"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -534,7 +537,7 @@
 <blockquote>
 <p> 为了避免丢失数据，<code>update</code> API在<strong>检索(retrieve)</strong>阶段检索文档的当前<code>_version</code>，然后在<strong>重建索引(reindex)</strong>阶段通过<code>index</code>请求提交。如果其他进程在<strong>检索(retrieve)</strong>和<strong>重建索引(reindex)</strong>阶段修改了文档，<code>_version</code>将不能被匹配，然后更新失败。</p>
 </blockquote>
-<h2><span id="删除">删除</span></h2><p>使用<strong>DELETE</strong>方法。例如：</p>
+<h2><span id="shan-chu">删除</span><a href="#shan-chu" class="header-anchor">[</a></h2><p>使用<strong>DELETE</strong>方法。例如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE /website/blog/123</span><br></pre></td></tr></table></figure>
 
 <p>如果文档被找到，Elasticsearch将返回<code>200 OK</code>状态码和以下响应体。</p>
@@ -543,12 +546,12 @@
 <p>注意：对文档进行DELETE删除操作，不管成功与否，都会将文档的version值+1。因为这是内部记录的一部分，它确保在多节点间不同操作可以有正确的顺序。</p>
 <p>并且删除一个文档也不会立即从磁盘上移除，它只是被标记成已删除。Elasticsearch将会在你之后添加更多索引的时候才会在后台进行删除内容的清理。</p>
 </blockquote>
-<h1><span id="批量操作">批量操作</span></h1><h2><span id="多文档检索mget">多文档检索——mget</span></h2><p>Elasticsearch中检索多个文档，相对于一个一个的检索，更快的方式是在一个请求中使用<strong>multi-get</strong>或<strong>mget</strong> API。</p>
+<h1><span id="pi-liang-cao-zuo">批量操作</span><a href="#pi-liang-cao-zuo" class="header-anchor">[</a></h1><h2><span id="duo-wen-dang-jian-suo-mget">多文档检索——mget</span><a href="#duo-wen-dang-jian-suo-mget" class="header-anchor">[</a></h2><p>Elasticsearch中检索多个文档，相对于一个一个的检索，更快的方式是在一个请求中使用<strong>multi-get</strong>或<strong>mget</strong> API。</p>
 <p>mget参数直接单独作为参数发送即可，不需要写明index、type、id等信息了，因为是多部分请求，所以具体信息都在请求体中。</p>
 <p>mget的请求参数是一个docs的数组，数组中的每一项是具体的文档定位和内容等。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">POST /_mget</span><br><span class="line">&#123;</span><br><span class="line">   "docs" : [</span><br><span class="line">      &#123;</span><br><span class="line">         "_index" : "website",</span><br><span class="line">         "_type" :  "blog",</span><br><span class="line">         "_id" :    2</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">         "_index" : "website",</span><br><span class="line">         "_type" :  "pageviews",</span><br><span class="line">         "_id" :    1,</span><br><span class="line">         "_source": "views"</span><br><span class="line">      &#125;</span><br><span class="line">   ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2><span id="多功能批量操作bulk">多功能批量操作—bulk</span></h2><p><code>bulk</code> API允许我们使用单一请求来实现多个文档的<code>create</code>、<code>index</code>、<code>update</code>或<code>delete</code>。这对索引类似于日志活动这样的数据流非常有用，它们可以以成百上千的数据为一个批次按序进行索引。</p>
+<h2><span id="duo-gong-neng-pi-liang-cao-zuo-bulk">多功能批量操作—bulk</span><a href="#duo-gong-neng-pi-liang-cao-zuo-bulk" class="header-anchor">[</a></h2><p><code>bulk</code> API允许我们使用单一请求来实现多个文档的<code>create</code>、<code>index</code>、<code>update</code>或<code>delete</code>。这对索引类似于日志活动这样的数据流非常有用，它们可以以成百上千的数据为一个批次按序进行索引。</p>
 <p><strong>bulk请求体格式：</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 第一个请求</span><br><span class="line">&#123; 【action】: &#123; 【metadata】 &#125;&#125;\n</span><br><span class="line">&#123; 【request body】        &#125;\n</span><br><span class="line"># 第二个请求</span><br><span class="line">&#123; 【action】: &#123; 【metadata】 &#125;&#125;\n</span><br><span class="line">&#123; 【request body】        &#125;\n</span><br><span class="line"># 第三个请求</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
@@ -611,7 +614,7 @@
 
 
 
-<h1><span id="关键字-和-api汇总记录">关键字 和 API汇总记录</span></h1><table>
+<h1><span id="guan-jian-zi-he-api-hui-zong-ji-lu">关键字 和 API汇总记录</span><a href="#guan-jian-zi-he-api-hui-zong-ji-lu" class="header-anchor">[</a></h1><table>
 <thead>
 <tr>
 <th align="center">API</th>

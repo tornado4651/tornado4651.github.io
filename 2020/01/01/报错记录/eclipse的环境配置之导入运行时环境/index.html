@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="由于在eclipse中删除了一个本地服务配置而引起的报错     报错提示 报错原因分析 解决办法">
+<meta name="description" content="由于在eclipse中删除了一个本地服务配置而引起的报错       报错提示 报错原因分析 解决办法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="eclipse的环境配置之导入运行时环境">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B9%8B%E5%AF%BC%E5%85%A5%E8%BF%90%E8%A1%8C%E6%97%B6%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="由于在eclipse中删除了一个本地服务配置而引起的报错     报错提示 报错原因分析 解决办法">
+<meta property="og:description" content="由于在eclipse中删除了一个本地服务配置而引起的报错       报错提示 报错原因分析 解决办法">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcb977k6prj315f02fjry.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcb985b1umj30qj06kt9w.jpg">
@@ -422,22 +422,26 @@
         <blockquote>
 <p>由于在eclipse中删除了一个本地服务配置而引起的报错</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#报错提示">报错提示</a></li>
-<li><a href="#报错原因分析">报错原因分析</a></li>
-<li><a href="#解决办法">解决办法</a></li>
+<li><a href="#bao-cuo-ti-shi">报错提示</a></li>
+<li><a href="#bao-cuo-yuan-yin-fen-xi">报错原因分析</a></li>
+<li><a href="#jie-jue-ban-fa">解决办法</a></li>
 </ul>
 <!-- tocstop -->
+
+</div>
 
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="报错提示">报错提示</span></h1><p>在移除了工作区中的server后，某一个依赖的项目突然显示报错，并且在配置好重新下载的tomcat后也并没有自动取消报错，报错信息如下：</p>
+<h1><span id="bao-cuo-ti-shi">报错提示</span><a href="#bao-cuo-ti-shi" class="header-anchor">[</a></h1><p>在移除了工作区中的server后，某一个依赖的项目突然显示报错，并且在配置好重新下载的tomcat后也并没有自动取消报错，报错信息如下：</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcb977k6prj315f02fjry.jpg" alt="错误提示1"><br><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcb985b1umj30qj06kt9w.jpg" alt="错误提示2"></p>
-<h1><span id="报错原因分析">报错原因分析</span></h1><p>根据报错错误窗口的提示来看，显然是没有找到tomcat提供的运行时环境javax.http.servlet.HttpServletRequest和javax.http.servlet.HttpServletResponse两个类（该项目没有使用maven构建工具）。于是顺着这个思路和错误提示中出现的build path提示，我在项目的properties中找到java build path，在其中的Librarys页面下添加上了之前因为删除本地server而丢失的依赖包，即可解决。</p>
-<h1><span id="解决办法">解决办法</span></h1><p>右键项目名称，打开properties，在里面搜索“build path”，进如“java build path”，在Libraries窗口下添加项目</p>
+<h1><span id="bao-cuo-yuan-yin-fen-xi">报错原因分析</span><a href="#bao-cuo-yuan-yin-fen-xi" class="header-anchor">[</a></h1><p>根据报错错误窗口的提示来看，显然是没有找到tomcat提供的运行时环境javax.http.servlet.HttpServletRequest和javax.http.servlet.HttpServletResponse两个类（该项目没有使用maven构建工具）。于是顺着这个思路和错误提示中出现的build path提示，我在项目的properties中找到java build path，在其中的Librarys页面下添加上了之前因为删除本地server而丢失的依赖包，即可解决。</p>
+<h1><span id="jie-jue-ban-fa">解决办法</span><a href="#jie-jue-ban-fa" class="header-anchor">[</a></h1><p>右键项目名称，打开properties，在里面搜索“build path”，进如“java build path”，在Libraries窗口下添加项目</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcb9kq4sf1j30s70f9gnv.jpg" alt="截屏2020-02-27下午9.08.46"></p>
 <p>选择“Add Library”添加依赖包，选择“Server Runtime”，在里面找到自己重新配置好的server环境即可。</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcb9mlopkcj30rx0ezjvg.jpg" alt="截屏2020-02-27下午9.10.00"></p>
@@ -474,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/Web%E5%9F%BA%E7%A1%80/web%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E4%BB%A5%E5%8F%8A%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E6%B1%87%E6%80%BB/" rel="next" title="web中的路径以及目录结构">
-                <i class="fa fa-chevron-left"></i> web中的路径以及目录结构
+              <a href="/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/maven%E9%A1%B9%E7%9B%AE%E7%9A%84junit%E4%BE%9D%E8%B5%96%E5%8F%98%E7%81%B0%E8%89%B2%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E6%83%85%E5%86%B5/" rel="next" title="maven项目中的junit依赖变灰色无法使用的情况">
+                <i class="fa fa-chevron-left"></i> maven项目中的junit依赖变灰色无法使用的情况
               </a>
             
           </div>

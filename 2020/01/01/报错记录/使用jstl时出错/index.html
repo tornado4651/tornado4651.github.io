@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结     报错描述 报错原因 解决办法 附：TLD术语解释：">
+<meta name="description" content="在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结       报错描述 报错原因 解决办法 附：TLD术语解释：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用jstl时出错">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E4%BD%BF%E7%94%A8jstl%E6%97%B6%E5%87%BA%E9%94%99/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结     报错描述 报错原因 解决办法 附：TLD术语解释：">
+<meta property="og:description" content="在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结       报错描述 报错原因 解决办法 附：TLD术语解释：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcbej9he1aj30nw06tn20.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcbibred8cj30j8072jrz.jpg">
@@ -420,29 +420,33 @@
         <blockquote>
 <p>在项目的页面中使用到jstl这个工具，但是将项目部署到server上运行时却报错的总结</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#报错描述">报错描述</a></li>
-<li><a href="#报错原因">报错原因</a></li>
-<li><a href="#解决办法">解决办法</a></li>
-<li><a href="#附tld术语解释">附：TLD术语解释：</a></li>
+<li><a href="#bao-cuo-miao-shu">报错描述</a></li>
+<li><a href="#bao-cuo-yuan-yin">报错原因</a></li>
+<li><a href="#jie-jue-ban-fa">解决办法</a></li>
+<li><a href="#fu-tld-zhu-yu-jie-shi">附：TLD术语解释：</a></li>
 </ul>
 <!-- tocstop -->
+
+</div>
 
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="报错描述">报错描述</span></h1><p>在maven项目中配置了jstl工具后，并在启动项目时出现如下问题：</p>
+<h1><span id="bao-cuo-miao-shu">报错描述</span><a href="#bao-cuo-miao-shu" class="header-anchor">[</a></h1><p>在maven项目中配置了jstl工具后，并在启动项目时出现如下问题：</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcbej9he1aj30nw06tn20.jpg" alt="img"></p>
-<h1><span id="报错原因">报错原因</span></h1><p>第一次报错原因：pom.xml文件中对jstl引用错误</p>
+<h1><span id="bao-cuo-yuan-yin">报错原因</span><a href="#bao-cuo-yuan-yin" class="header-anchor">[</a></h1><p>第一次报错原因：pom.xml文件中对jstl引用错误</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcbibred8cj30j8072jrz.jpg" alt="jstl引用"></p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcbigxfvtrj30de09dgm7.jpg" alt="截屏2020-02-28上午2.14.12"></p>
 <p>第二次报错原因：没有加入standard.jar</p>
-<h1><span id="解决办法">解决办法</span></h1><p>在maven的依赖中写成如下配置：</p>
+<h1><span id="jie-jue-ban-fa">解决办法</span><a href="#jie-jue-ban-fa" class="header-anchor">[</a></h1><p>在maven的依赖中写成如下配置：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.servlet<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/taglibs/standard --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>taglibs<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>standard<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1><span id="附tld术语解释">附：TLD术语解释：</span></h1><p>标签库描述文件，如要在JSP页面中实现JSP标签，必须首先定义实现标签的类，然后在标签库描述文件（TLD）中，将写好的类映射成JSP标签,最后在JSP文件中使用定义好的标签，就可以生成动态的JSP内容。<br>作用：他把页面标签和后面的java类影射起来.减少了页面中的代码。使页面清晰。其实标签最后还是被解释成后台的Java代码。</p>
+<h1><span id="fu-tld-zhu-yu-jie-shi">附：TLD术语解释：</span><a href="#fu-tld-zhu-yu-jie-shi" class="header-anchor">[</a></h1><p>标签库描述文件，如要在JSP页面中实现JSP标签，必须首先定义实现标签的类，然后在标签库描述文件（TLD）中，将写好的类映射成JSP标签,最后在JSP文件中使用定义好的标签，就可以生成动态的JSP内容。<br>作用：他把页面标签和后面的java类影射起来.减少了页面中的代码。使页面清晰。其实标签最后还是被解释成后台的Java代码。</p>
 
       
     </div>

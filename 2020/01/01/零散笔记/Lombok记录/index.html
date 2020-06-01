@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="Lombok的配置以及简单注释说明.     使用条件 Lombok注解详解 @Getter和@Setter @ToString @EqualsAndHashCode @NonNull @NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor @Data @Builder @Log val @Cleanup   总结 官网">
+<meta name="description" content="Lombok的配置以及简单注释说明.       使用条件 Lombok注解详解 @Getter和@Setter @ToString @EqualsAndHashCode @NonNull @NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor @Data @Builder @Log val @Cleanup   总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lombok记录">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="Lombok的配置以及简单注释说明.     使用条件 Lombok注解详解 @Getter和@Setter @ToString @EqualsAndHashCode @NonNull @NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor @Data @Builder @Log val @Cleanup   总结 官网">
+<meta property="og:description" content="Lombok的配置以及简单注释说明.       使用条件 Lombok注解详解 @Getter和@Setter @ToString @EqualsAndHashCode @NonNull @NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor @Data @Builder @Log val @Cleanup   总结">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6mxwidcsj30u00g7752.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6mxx6j3pj30u009gaan.jpg">
@@ -445,12 +445,14 @@
         <blockquote>
 <p>Lombok的配置以及简单注释说明.</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#使用条件">使用条件</a></li>
-<li><a href="#lombok注解详解">Lombok注解详解</a><ul>
-<li><a href="#getter和setter"><strong>@Getter和@Setter</strong></a></li>
+<li><a href="#shi-yong-tiao-jian">使用条件</a></li>
+<li><a href="#lombok-zhu-jie-xiang-jie">Lombok注解详解</a><ul>
+<li><a href="#getter-he-setter"><strong>@Getter和@Setter</strong></a></li>
 <li><a href="#tostring"><strong>@ToString</strong></a></li>
 <li><a href="#equalsandhashcode"><strong>@EqualsAndHashCode</strong></a></li>
 <li><a href="#nonnull"><strong>@NonNull</strong></a></li>
@@ -462,33 +464,34 @@
 <li><a href="#cleanup"><strong>@Cleanup</strong></a></li>
 </ul>
 </li>
-<li><a href="#总结">总结</a></li>
-<li><a href="#官网">官网：</a></li>
+<li><a href="#zong-jie">总结</a></li>
+<li><a href="#guan-wang">官网：</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="使用条件">使用条件</span></h1><p>在Repositories中搜索Lombok，安装后重启IDE即可</p>
+<h1><span id="shi-yong-tiao-jian">使用条件</span><a href="#shi-yong-tiao-jian" class="header-anchor">[</a></h1><p>在Repositories中搜索Lombok，安装后重启IDE即可</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mxwidcsj30u00g7752.jpg" alt="img"></p>
 <p>在Maven或Gradle工程中添加依赖</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mxx6j3pj30u009gaan.jpg" alt="img"></p>
-<h1><span id="lombok注解详解">Lombok注解详解</span></h1><p>Lombok官网提供了许多注解，但是 “劲酒虽好，可不要贪杯哦”，接下来逐一讲解官网推荐使用的注解(有些注解和原有Java编写方式没太大差别的也没有在此处列举，如@ Synchronized等)</p>
+<h1><span id="lombok-zhu-jie-xiang-jie">Lombok注解详解</span><a href="#lombok-zhu-jie-xiang-jie" class="header-anchor">[</a></h1><p>Lombok官网提供了许多注解，但是 “劲酒虽好，可不要贪杯哦”，接下来逐一讲解官网推荐使用的注解(有些注解和原有Java编写方式没太大差别的也没有在此处列举，如@ Synchronized等)</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myxap8yj30u00cqdgn.jpg" alt="img"></p>
-<h2><span id="getter和setter"><strong>@Getter和@Setter</strong></span></h2><p>该注解可应用在类或成员变量之上，和我们预想的一样，<code>@Getter</code> 和 <code>@Setter</code> 就是为成员变量自动生成 get 和 set 方法，默认生成访问权限为 public 方法，当然我们也可以指定访问权限 protected 等，如下图：</p>
+<h2><span id="getter-he-setter"><strong>@Getter和@Setter</strong></span><a href="#getter-he-setter" class="header-anchor">[</a></h2><p>该注解可应用在类或成员变量之上，和我们预想的一样，<code>@Getter</code> 和 <code>@Setter</code> 就是为成员变量自动生成 get 和 set 方法，默认生成访问权限为 public 方法，当然我们也可以指定访问权限 protected 等，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myufocmj30u00cpt9t.jpg" alt="img"></p>
 <p>成员变量name指定生成set方法，并且访问权限为protected；boolean类型的成员变量 female 只生成get方法，并修改方法名称为 isFemale()。当把该注解应用在类上，默认为所有非静态成员变量生成 get 和 set 方法，也可以通过 AccessLevel.NONE 手动禁止生成get或set方法，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myp0f75j30u00eqgn2.jpg" alt="img"></p>
-<h2><span id="tostring"><strong>@ToString</strong></span></h2><p>该注解需应用在类上，为我们生成 Object 的 toString 方法，而该注解里面的几个属性能更加丰富我们想要的内容, <code>exclude</code> 属性禁止在 toString 方法中使用某字段，而of属性可以指定需要使用的字段，如下图：</p>
+<h2><span id="tostring"><strong>@ToString</strong></span><a href="#tostring" class="header-anchor">[</a></h2><p>该注解需应用在类上，为我们生成 Object 的 toString 方法，而该注解里面的几个属性能更加丰富我们想要的内容, <code>exclude</code> 属性禁止在 toString 方法中使用某字段，而of属性可以指定需要使用的字段，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mywfkv3j30u008c0tc.jpg" alt="img"></p>
 <p>查看编译后的Employee.class得到我们预期的结果，如下图</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myq9d60j30u006qjrn.jpg" alt="img"></p>
-<h2><span id="equalsandhashcode"><strong>@EqualsAndHashCode</strong></span></h2><p>该注解需应用在类上，使用该注解，lombok会为我们生成 equals(Object other) 和 hashcode() 方法，包括所有非静态属性和非transient的属性，同样该注解也可以通过 exclude 属性排除某些字段，of 属性指定某些字段，也可以通过 callSuper 属性在重写的方法中使用父类的字段，这样我们可以更灵活的定义bean的比对，如下图：</p>
+<h2><span id="equalsandhashcode"><strong>@EqualsAndHashCode</strong></span><a href="#equalsandhashcode" class="header-anchor">[</a></h2><p>该注解需应用在类上，使用该注解，lombok会为我们生成 equals(Object other) 和 hashcode() 方法，包括所有非静态属性和非transient的属性，同样该注解也可以通过 exclude 属性排除某些字段，of 属性指定某些字段，也可以通过 callSuper 属性在重写的方法中使用父类的字段，这样我们可以更灵活的定义bean的比对，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myt0d0bj30u007w0td.jpg" alt="img"></p>
 <p>查看编译后的Employee.class文件，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mz06qxhj30u00pztak.jpg" alt="img"></p>
-<h2><span id="nonnull"><strong>@NonNull</strong></span></h2><p>该注解需应用在方法或构造器的参数上或属性上，用来判断参数的合法性，默认抛出 NullPointerException 异常</p>
+<h2><span id="nonnull"><strong>@NonNull</strong></span><a href="#nonnull" class="header-anchor">[</a></h2><p>该注解需应用在方法或构造器的参数上或属性上，用来判断参数的合法性，默认抛出 NullPointerException 异常</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myuwjt0j30o609g75c.jpg" alt="img"></p>
 <p>查看NonNullExample.class文件，会为我们抛出空指针异常，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mypsfnbj30o80cwdgx.jpg" alt="img"></p>
@@ -496,7 +499,7 @@
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/oTKHc6F8tsg7gJ53pKBMtoiaSA2XESJplyAicsSRicGibReicAUfL34cknU1UYn5Von3DvLzFaa2d1pwhA2BltetuLg/640?wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
 <p>重新编译NonNullExample类，已经为我们抛出非法参数异常：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myqstu7j30ts0dwq4c.jpg" alt="img"></p>
-<h2><span id="noargsconstructor-requiredargsconstructor-allargsconstructor"><strong>@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor</strong></span></h2><p>以上三个注解分别为我们生成无参构造器，指定参数构造器和包含所有参数的构造器，默认情况下，<code>@RequiredArgsConstructor</code>, <code>@AllArgsConstructor</code> 生成的构造器会对所有标记 <code>@NonNull</code> 的属性做非空校验。</p>
+<h2><span id="noargsconstructor-requiredargsconstructor-allargsconstructor"><strong>@NoArgsConstructor, @RequiredArgsConstructor, @AllArgsConstructor</strong></span><a href="#noargsconstructor-requiredargsconstructor-allargsconstructor" class="header-anchor">[</a></h2><p>以上三个注解分别为我们生成无参构造器，指定参数构造器和包含所有参数的构造器，默认情况下，<code>@RequiredArgsConstructor</code>, <code>@AllArgsConstructor</code> 生成的构造器会对所有标记 <code>@NonNull</code> 的属性做非空校验。</p>
 <p>无参构造器很好理解，我们主要看看后两种，先看 <code>@RequiredArgsConstructor</code></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myyuwggj30u00ju3zw.jpg" alt="img"></p>
 <p>从上图中我们可以看出， <code>@RequiredArgsConstructor</code> 注解生成有参数构造器时只会包含有 final 和 <code>@NonNull</code> 标识的 field，同时我们可以指定 staticName 通过生成静态方法来构造对象</p>
@@ -504,38 +507,38 @@
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myu34xij30u00e0753.jpg" alt="img"></p>
 <p>当我们把 staticName 属性去掉我们来看遍以后的文件:</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myvf8vmj30u00f40tm.jpg" alt="img"></p>
-<h2><span id="data"><strong>@Data</strong></span></h2><p>介绍了以上的注解，再来介绍 <code>@Data</code> 就非常容易懂了，<code>@Data</code> 注解应用在类上，是<code>@ToString</code>, <code>@EqualsAndHashCode</code>, <code>@Getter / @Setter</code> 和 <code>@RequiredArgsConstructor</code>合力的体现，如下图：</p>
+<h2><span id="data"><strong>@Data</strong></span><a href="#data" class="header-anchor">[</a></h2><p>介绍了以上的注解，再来介绍 <code>@Data</code> 就非常容易懂了，<code>@Data</code> 注解应用在类上，是<code>@ToString</code>, <code>@EqualsAndHashCode</code>, <code>@Getter / @Setter</code> 和 <code>@RequiredArgsConstructor</code>合力的体现，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myrn8hnj30u00f9jso.jpg" alt="img"></p>
-<h2><span id="builder"><strong>@Builder</strong></span></h2><p>函数式编程或者说流式的操作越来越流行，应用在大多数语言中，让程序更具更简介，可读性更高，编写更连贯，<code>@Builder</code>就带来了这个功能，生成一系列的builder API，该注解也需要应用在类上，看下面的例子就会更加清晰明了。</p>
+<h2><span id="builder"><strong>@Builder</strong></span><a href="#builder" class="header-anchor">[</a></h2><p>函数式编程或者说流式的操作越来越流行，应用在大多数语言中，让程序更具更简介，可读性更高，编写更连贯，<code>@Builder</code>就带来了这个功能，生成一系列的builder API，该注解也需要应用在类上，看下面的例子就会更加清晰明了。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mypak4rj30u00bcmxw.jpg" alt="img"></p>
 <p>编译后的Employee.class文件如下：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mys5rfrj30u00iuwfh.jpg" alt="img"></p>
 <p>妈妈再也不用担心我 set 值那么麻烦了，流式操作搞定：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mysosrsj30r603gdg3.jpg" alt="img"></p>
-<h2><span id="log"><strong>@Log</strong></span></h2><p>该注解需要应用到类上，在编写服务层，需要添加一些日志，以便定位问题，我们通常会定义一个静态常量Logger，然后应用到我们想日志的地方，现在一个注解就可以实现：</p>
+<h2><span id="log"><strong>@Log</strong></span><a href="#log" class="header-anchor">[</a></h2><p>该注解需要应用到类上，在编写服务层，需要添加一些日志，以便定位问题，我们通常会定义一个静态常量Logger，然后应用到我们想日志的地方，现在一个注解就可以实现：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mytizioj30sq0e20u5.jpg" alt="img"></p>
 <p>查看class文件，和我们预想的一样：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mywr9rkj30u009o0v8.jpg" alt="img"></p>
 <p>Log有很多变种，CommonLog，Log4j，Log4j2，Slf4j等，lombok依旧良好的通过变种注解做良好的支持：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6mz0i52nj30u00d875x.jpg" alt="img"></p>
 <p>我实际使用的是 <code>@Slf4j</code> 注解</p>
-<h2><span id="val"><strong>val</strong></span></h2><p>熟悉 Javascript 的同学都知道，var 可以定义任何类型的变量，而在 java 的实现中我们需要指定具体变量的类型，而 val 让我们摆脱指定，编译之后就精准匹配上类型，默认是 final 类型，就像 java8 的函数式表达式，()-&gt;System.out.println(“hello lombok”); 就可以解析到Runnable函数式接口。</p>
+<h2><span id="val"><strong>val</strong></span><a href="#val" class="header-anchor">[</a></h2><p>熟悉 Javascript 的同学都知道，var 可以定义任何类型的变量，而在 java 的实现中我们需要指定具体变量的类型，而 val 让我们摆脱指定，编译之后就精准匹配上类型，默认是 final 类型，就像 java8 的函数式表达式，()-&gt;System.out.println(“hello lombok”); 就可以解析到Runnable函数式接口。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myxuupoj30js0gm0u1.jpg" alt="img"></p>
 <p>查看解析后的class文件：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myvxhu3j30mc0e075i.jpg" alt="img"></p>
-<h2><span id="cleanup"><strong>@Cleanup</strong></span></h2><p>当我们对流进行操作，我们通常需要调用 close 方法来关闭或结束某资源，而 @Cleanup 注解可以帮助我们调用 close 方法，并且放到 try/finally 处理块中，如下图：</p>
+<h2><span id="cleanup"><strong>@Cleanup</strong></span><a href="#cleanup" class="header-anchor">[</a></h2><p>当我们对流进行操作，我们通常需要调用 close 方法来关闭或结束某资源，而 @Cleanup 注解可以帮助我们调用 close 方法，并且放到 try/finally 处理块中，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myzc6xtj30rk0gswgf.jpg" alt="img"></p>
 <p>编译后的class文件如下，我们发现被try/finally包围处理，并调用了流的close方法</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myy7jwpj30tc0y2gns.jpg" alt="img"></p>
 <p>其实在 JDK1.7 之后就有了 <code>try-with-resource</code>，不用我们显式的关闭流，这个请大家自行看吧</p>
-<h1><span id="总结">总结</span></h1><p>Lombok的基本操作流程是这样的：</p>
+<h1><span id="zong-jie">总结</span><a href="#zong-jie" class="header-anchor">[</a></h1><p>Lombok的基本操作流程是这样的：</p>
 <p>\1. 定义编译期的注解</p>
 <p>\2. 利用JSR269 api(Pluggable Annotation Processing API )创建编译期的注解处理器</p>
 <p>\3. 利用tools.jar的javac api处理AST(抽象语法树)</p>
 <p>\4. 将功能注册进jar包</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6myr57yxj309t0kzq3b.jpg" alt="img"></p>
 <p>Lombok 当然还有很多注解，我推荐使用以上就足够了，这个工具是带来便利的，而不能被其捆绑，Lombok 能让我更加专注有效代码排除意义微小的障眼代码（get，set等），另外Lombok生成的代码还能像使用工具类一样方便（@Builder）。</p>
-<h1><span id="官网">官网：</span></h1><p><a href="https://www.projectlombok.org/" target="_blank" rel="noopener">lombok官网</a></p>
+<h1><span id="guan-wang">官网：</span><a href="#guan-wang" class="header-anchor">[</a></h1><p><a href="https://www.projectlombok.org/" target="_blank" rel="noopener">lombok官网</a></p>
 
       
     </div>
@@ -566,8 +569,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/" rel="next" title="Maven">
-                <i class="fa fa-chevron-left"></i> Maven
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%A8%A1%E7%89%88/" rel="next" title="常用配置文件模版">
+                <i class="fa fa-chevron-left"></i> 常用配置文件模版
               </a>
             
           </div>
@@ -576,8 +579,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/GitHub%20%E6%90%9C%E7%B4%A2%E6%96%B9%E5%BC%8F/" rel="prev" title="GitHub搜索方式">
-                GitHub搜索方式 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/" rel="prev" title="REST规范">
+                REST规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

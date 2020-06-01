@@ -424,24 +424,28 @@
       
 
       
-        <!-- toc -->
+        <div class="toc">
+
+<!-- toc -->
 
 <ul>
-<li><a href="#分词-和-不分词">分词 和 不分词</a></li>
-<li><a href="#范围查询">范围查询</a></li>
+<li><a href="#fen-ci-he-bu-fen-ci">分词 和 不分词</a></li>
+<li><a href="#fan-wei-cha-xun">范围查询</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
+
 <a id="more"></a>
 
-<h1><span id="分词-和-不分词">分词 和 不分词</span></h1><p>在实际生产中，分词搜索有些时候会查询出很多不必要的信息，因此需要在配置文档mapping，和查询时对分词进行限制。</p>
+<h1><span id="fen-ci-he-bu-fen-ci">分词 和 不分词</span><a href="#fen-ci-he-bu-fen-ci" class="header-anchor">[</a></h1><p>在实际生产中，分词搜索有些时候会查询出很多不必要的信息，因此需要在配置文档mapping，和查询时对分词进行限制。</p>
 <p><strong>分词查询</strong>：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"match"</span>: &#123;</span><br><span class="line">          <span class="attr">"reportorname"</span>: <span class="string">"tornado4651"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>不分词查询：</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"wildcard"</span>: &#123;</span><br><span class="line">          <span class="attr">"username.keyword"</span>: <span class="string">"tornado4651"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 可以借助通配符搜索</span><br><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"wildcard"</span>: &#123;</span><br><span class="line">          <span class="attr">"username.keyword"</span>: <span class="string">"tornado*"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1><span id="范围查询">范围查询</span></h1>
+<h1><span id="fan-wei-cha-xun">范围查询</span><a href="#fan-wei-cha-xun" class="header-anchor">[</a></h1>
       
     </div>
     

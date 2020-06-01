@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="转载自微信公众号——Java后端的一篇“Redis面试回答知识点”     Redis 是什么 五种数据类型 Redis 缓存 RedisTemplate 的使用方式 使用 Spring Cache 集成 Redis 缓存注解 ①@Cacheable ②@CachePut ③@CacheEvict     缓存问题 Redis 为何这么快 Redis 和 Memcached 的区别 淘汰策略 持">
+<meta name="description" content="转载自微信公众号——Java后端的一篇“Redis面试回答知识点”       Redis 是什么 五种数据类型 Redis 缓存 RedisTemplate 的使用方式 使用 Spring Cache 集成 Redis 缓存注解 ①@Cacheable ②@CachePut ③@CacheEvict     缓存问题 Redis 为何这么快 Redis 和 Memcached 的区别 淘汰策略">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【转】Redis面试回答">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%BD%AC%E3%80%91Redis%E9%9D%A2%E8%AF%95%E5%9B%9E%E7%AD%94/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="转载自微信公众号——Java后端的一篇“Redis面试回答知识点”     Redis 是什么 五种数据类型 Redis 缓存 RedisTemplate 的使用方式 使用 Spring Cache 集成 Redis 缓存注解 ①@Cacheable ②@CachePut ③@CacheEvict     缓存问题 Redis 为何这么快 Redis 和 Memcached 的区别 淘汰策略 持">
+<meta property="og:description" content="转载自微信公众号——Java后端的一篇“Redis面试回答知识点”       Redis 是什么 五种数据类型 Redis 缓存 RedisTemplate 的使用方式 使用 Spring Cache 集成 Redis 缓存注解 ①@Cacheable ②@CachePut ③@CacheEvict     缓存问题 Redis 为何这么快 Redis 和 Memcached 的区别 淘汰策略">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcfkqey6tvj30hs08cjrj.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcflptrq1zj30ik0e40uc.jpg">
@@ -446,37 +446,40 @@
         <blockquote>
 <p>转载自微信公众号——Java后端的一篇“Redis面试回答知识点”</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#redis-是什么">Redis 是什么</a></li>
-<li><a href="#五种数据类型">五种数据类型</a></li>
-<li><a href="#redis-缓存">Redis 缓存</a><ul>
-<li><a href="#redistemplate-的使用方式"><strong>RedisTemplate 的使用方式</strong></a></li>
-<li><a href="#使用-spring-cache-集成-redis"><strong>使用 Spring Cache 集成 Redis</strong></a></li>
-<li><a href="#缓存注解"><strong>缓存注解</strong></a><ul>
-<li><a href="#1cacheable"><strong>①@Cacheable</strong></a></li>
-<li><a href="#2cacheput"><strong>②@CachePut</strong></a></li>
-<li><a href="#3cacheevict"><strong>③@CacheEvict</strong></a></li>
+<li><a href="#redis-shi-shi-me">Redis 是什么</a></li>
+<li><a href="#wu-chong-shu-ju-lei-xing">五种数据类型</a></li>
+<li><a href="#redis-huan-cun">Redis 缓存</a><ul>
+<li><a href="#redistemplate-de-shi-yong-fang-shi"><strong>RedisTemplate 的使用方式</strong></a></li>
+<li><a href="#shi-yong-spring-cache-ji-cheng-redis"><strong>使用 Spring Cache 集成 Redis</strong></a></li>
+<li><a href="#huan-cun-zhu-jie"><strong>缓存注解</strong></a><ul>
+<li><a href="#cacheable"><strong>①@Cacheable</strong></a></li>
+<li><a href="#cacheput"><strong>②@CachePut</strong></a></li>
+<li><a href="#cacheevict"><strong>③@CacheEvict</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#缓存问题">缓存问题</a></li>
-<li><a href="#redis-为何这么快">Redis 为何这么快</a></li>
-<li><a href="#redis-和-memcached-的区别">Redis 和 Memcached 的区别</a></li>
-<li><a href="#淘汰策略">淘汰策略</a></li>
-<li><a href="#持久化">持久化</a></li>
-<li><a href="#主从复制">主从复制</a></li>
-<li><a href="#哨兵">哨兵</a></li>
-<li><a href="#总结">总结</a></li>
+<li><a href="#huan-cun-wen-ti">缓存问题</a></li>
+<li><a href="#redis-wei-he-zhe-me-kuai">Redis 为何这么快</a></li>
+<li><a href="#redis-he-memcached-de-qu-bie">Redis 和 Memcached 的区别</a></li>
+<li><a href="#tao-tai-ce-lue">淘汰策略</a></li>
+<li><a href="#chi-jiu-hua">持久化</a></li>
+<li><a href="#zhu-cong-fu-zhi">主从复制</a></li>
+<li><a href="#shao-bing">哨兵</a></li>
+<li><a href="#zong-jie">总结</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="redis-是什么">Redis 是什么</span></h1><p><strong>面试官：</strong>你先来说下 Redis 是什么吧！</p>
+<h1><span id="redis-shi-shi-me">Redis 是什么</span><a href="#redis-shi-shi-me" class="header-anchor">[</a></h1><p><strong>面试官：</strong>你先来说下 Redis 是什么吧！</p>
 <p><strong>我：</strong>（这不就是总结下 Redis 的定义和特点嘛）Redis 是 C 语言开发的一个开源的（遵从 BSD 协议）高性能键值对（key-value）的内存数据库，可以用作数据库、缓存、消息中间件等。</p>
 <p>它是一种 NoSQL（not-only sql，泛指非关系型数据库）的数据库。</p>
 <p>我顿了一下，接着说，Redis 作为一个内存数据库：</p>
@@ -497,7 +500,7 @@
 <li><p>可以作为消息中间件使用，支持发布订阅。</p>
 </li>
 </ul>
-<h1><span id="五种数据类型">五种数据类型</span></h1><p><strong>面试官：</strong>总结的不错，看来是早有准备啊。刚来听你提到 Redis 支持五种数据类型，那你能简单说下这五种数据类型吗？</p>
+<h1><span id="wu-chong-shu-ju-lei-xing">五种数据类型</span><a href="#wu-chong-shu-ju-lei-xing" class="header-anchor">[</a></h1><p><strong>面试官：</strong>总结的不错，看来是早有准备啊。刚来听你提到 Redis 支持五种数据类型，那你能简单说下这五种数据类型吗？</p>
 <p><strong>我：</strong>当然可以，但是在说之前，我觉得有必要先来了解下 Redis 内部内存管理是如何描述这 5 种数据类型的。</p>
 <p><font color="green">说着，我拿着笔给面试官画了一张图：</font></p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcfkqey6tvj30hs08cjrj.jpg" alt="img"></p>
@@ -521,7 +524,7 @@
 <p><strong>我：</strong>用过的。</p>
 <p><strong>面试官：</strong>那你跟我说下你是怎么用的？</p>
 <p><strong>我：</strong>我是结合 Spring Boot 使用的。一般有两种方式，一种是直接通过 RedisTemplate 来使用，另一种是使用 Spring Cache 集成 Redis（也就是注解的方式）。</p>
-<h1><span id="redis-缓存">Redis 缓存</span></h1><p>直接通过 RedisTemplate 来使用，使用 Spring Cache 集成 Redis pom.xml 中加入以下依赖：</p>
+<h1><span id="redis-huan-cun">Redis 缓存</span><a href="#redis-huan-cun" class="header-anchor">[</a></h1><p>直接通过 RedisTemplate 来使用，使用 Spring Cache 集成 Redis pom.xml 中加入以下依赖：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-pool2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.session<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-session-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
@@ -537,7 +540,7 @@
 <p>创建实体类 User.java：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">662692455422902539L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">User</span><span class="params">(Integer id, String name, Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +</span><br><span class="line">                <span class="string">"id="</span> + id +</span><br><span class="line">                <span class="string">", name='"</span> + name + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", age="</span> + age +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2><span id="redistemplate-的使用方式"><strong>RedisTemplate 的使用方式</strong></span></h2><p>默认情况下的模板只能支持 RedisTemplate&lt;String, String&gt;，也就是只能存入字符串，所以自定义模板很有必要。</p>
+<h2><span id="redistemplate-de-shi-yong-fang-shi"><strong>RedisTemplate 的使用方式</strong></span><a href="#redistemplate-de-shi-yong-fang-shi" class="header-anchor">[</a></h2><p>默认情况下的模板只能支持 RedisTemplate&lt;String, String&gt;，也就是只能存入字符串，所以自定义模板很有必要。</p>
 <p>添加配置类 RedisCacheConfig.java：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@AutoConfigureAfter</span>(RedisAutoConfiguration<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedisCacheConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String, Serializable&gt; <span class="title">redisCacheTemplate</span><span class="params">(LettuceConnectionFactory connectionFactory)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        RedisTemplate&lt;String, Serializable&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        template.setKeySerializer(<span class="keyword">new</span> StringRedisSerializer());</span><br><span class="line">        template.setValueSerializer(<span class="keyword">new</span> GenericJackson2JsonRedisSerializer());</span><br><span class="line">        template.setConnectionFactory(connectionFactory);</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -548,7 +551,7 @@
 
 <p>然后在浏览器访问，观察后台日志 <a href="http://localhost:8082/user/test" target="_blank" rel="noopener">http://localhost:8082/user/test</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcflr76yz8j30hs01idfq.jpg" alt="img"></p>
-<h2><span id="使用-spring-cache-集成-redis"><strong>使用 Spring Cache 集成 Redis</strong></span></h2><p>Spring Cache 具备很好的灵活性，不仅能够使用 SPEL（spring expression language）来定义缓存的 Key 和各种 Condition，还提供了开箱即用的缓存临时存储方案，也支持和主流的专业缓存如 EhCache、Redis、Guava 的集成。</p>
+<h2><span id="shi-yong-spring-cache-ji-cheng-redis"><strong>使用 Spring Cache 集成 Redis</strong></span><a href="#shi-yong-spring-cache-ji-cheng-redis" class="header-anchor">[</a></h2><p>Spring Cache 具备很好的灵活性，不仅能够使用 SPEL（spring expression language）来定义缓存的 Key 和各种 Condition，还提供了开箱即用的缓存临时存储方案，也支持和主流的专业缓存如 EhCache、Redis、Guava 的集成。</p>
 <p>定义接口 UserService.java：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">User <span class="title">save</span><span class="params">(User user)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span> id)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">User <span class="title">get</span><span class="params">(Integer id)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -583,14 +586,14 @@
 <p>④再次调用查询接口，查询 id=4 的用户信息：</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcflsvebr8j30hs00mq2q.jpg" alt="img"></p>
 <p>没有了缓存，所以进入了 get 方法，从 userMap 中获取。</p>
-<h2><span id="缓存注解"><strong>缓存注解</strong></span></h2><h3><span id="1cacheable"><strong>①@Cacheable</strong></span></h3><p>根据方法的请求参数对其结果进行缓存：</p>
+<h2><span id="huan-cun-zhu-jie"><strong>缓存注解</strong></span><a href="#huan-cun-zhu-jie" class="header-anchor">[</a></h2><h3><span id="cacheable"><strong>①@Cacheable</strong></span><a href="#cacheable" class="header-anchor">[</a></h3><p>根据方法的请求参数对其结果进行缓存：</p>
 <ul>
 <li><strong>Key：</strong>缓存的 Key，可以为空，如果指定要按照 SPEL 表达式编写，如果不指定，则按照方法的所有参数进行组合。</li>
 <li><strong>Value：</strong>缓存的名称，必须指定至少一个（如 @Cacheable (value=’user’)或者 @Cacheable(value={‘user1’,’user2’})）</li>
 <li><strong>Condition：</strong>缓存的条件，可以为空，使用 SPEL 编写，返回 true 或者 false，只有为 true 才进行缓存。</li>
 </ul>
-<h3><span id="2cacheput"><strong>②@CachePut</strong></span></h3><p>根据方法的请求参数对其结果进行缓存，和 @Cacheable 不同的是，它每次都会触发真实方法的调用。参数描述见上。</p>
-<h3><span id="3cacheevict"><strong>③@CacheEvict</strong></span></h3><p><font color="green">根据条件对缓存进行清空：</font></p>
+<h3><span id="cacheput"><strong>②@CachePut</strong></span><a href="#cacheput" class="header-anchor">[</a></h3><p>根据方法的请求参数对其结果进行缓存，和 @Cacheable 不同的是，它每次都会触发真实方法的调用。参数描述见上。</p>
+<h3><span id="cacheevict"><strong>③@CacheEvict</strong></span><a href="#cacheevict" class="header-anchor">[</a></h3><p><font color="green">根据条件对缓存进行清空：</font></p>
 <ul>
 <li>Key：同上。</li>
 <li>Value：同上。</li>
@@ -598,7 +601,7 @@
 <li>allEntries：是否清空所有缓存内容，缺省为 false，如果指定为 true，则方法调用后将立即清空所有缓存。</li>
 <li><strong>beforeInvocation：</strong>是否在方法执行前就清空，缺省为 false，如果指定为 true，则在方法还没有执行的时候就清空缓存。缺省情况下，如果方法执行抛出异常，则不会清空缓存。</li>
 </ul>
-<h1><span id="缓存问题">缓存问题</span></h1><p><strong>面试官：</strong>看了一下你的 Demo，简单易懂。那你在实际项目中使用缓存有遇到什么问题或者会遇到什么问题你知道吗？</p>
+<h1><span id="huan-cun-wen-ti">缓存问题</span><a href="#huan-cun-wen-ti" class="header-anchor">[</a></h1><p><strong>面试官：</strong>看了一下你的 Demo，简单易懂。那你在实际项目中使用缓存有遇到什么问题或者会遇到什么问题你知道吗？</p>
 <p><strong>我：</strong>缓存和数据库数据一致性问题：分布式环境下非常容易出现缓存和数据库间数据一致性问题，针对这一点，如果项目对缓存的要求是强一致性的，那么就不要使用缓存。</p>
 <p>我们只能采取合适的策略来降低缓存和数据库间数据不一致的概率，而无法保证两者间的强一致性。</p>
 <p>合适的策略包括合适的缓存更新策略，更新数据库后及时更新缓存、缓存失败时增加重试机制。</p>
@@ -625,7 +628,7 @@
 
 
 <p><strong>面试官：</strong>嗯嗯，还不错。</p>
-<h1><span id="redis-为何这么快">Redis 为何这么快</span></h1><p><strong>面试官：</strong>Redis 作为缓存大家都在用，那 Redis 一定很快咯？</p>
+<h1><span id="redis-wei-he-zhe-me-kuai">Redis 为何这么快</span><a href="#redis-wei-he-zhe-me-kuai" class="header-anchor">[</a></h1><p><strong>面试官：</strong>Redis 作为缓存大家都在用，那 Redis 一定很快咯？</p>
 <p><strong>我：</strong>当然了，官方提供的数据可以达到 100000+ 的 QPS（每秒内的查询次数），这个数据不比 Memcached 差！</p>
 <p><strong>面试官：</strong>Redis 这么快，它的“多线程模型”你了解吗？（露出邪魅一笑）</p>
 <p><strong>我：</strong>您是想问 Redis 这么快，为什么还是单线程的吧。Redis 确实是单进程单线程的模型，因为 Redis 完全是基于内存的操作，CPU 不是 Redis 的瓶颈，Redis 的瓶颈最有可能是机器内存的大小或者网络带宽。</p>
@@ -638,7 +641,7 @@
 <li>采用单线程，避免了不必要的上下文切换和竞争条件，不存在多线程导致的 CPU 切换，不用去考虑各种锁的问题，不存在加锁释放锁操作，没有死锁问题导致的性能消耗。</li>
 <li>使用多路复用 IO 模型，非阻塞 IO。</li>
 </ul>
-<h1><span id="redis-和-memcached-的区别">Redis 和 Memcached 的区别</span></h1><p><strong>面试官：</strong>嗯嗯，说的很详细。那你为什么选择 Redis 的缓存方案而不用 Memcached 呢？</p>
+<h1><span id="redis-he-memcached-de-qu-bie">Redis 和 Memcached 的区别</span><a href="#redis-he-memcached-de-qu-bie" class="header-anchor">[</a></h1><p><strong>面试官：</strong>嗯嗯，说的很详细。那你为什么选择 Redis 的缓存方案而不用 Memcached 呢？</p>
 <p><strong>我：</strong>原因有如下四点：</p>
 <ul>
 <li><strong>存储方式上：</strong>Memcache 会把数据全部存在内存之中，断电后会挂掉，数据不能超过内存大小。Redis 有部分数据存在硬盘上，这样能保证数据的持久性。</li>
@@ -646,11 +649,11 @@
 <li><strong>使用底层模型不同：</strong>它们之间底层实现方式以及与客户端之间通信的应用协议不一样。Redis 直接自己构建了 VM 机制，因为一般的系统调用系统函数的话，会浪费一定的时间去移动和请求。</li>
 <li><strong>Value 的大小：</strong>Redis 可以达到 1GB，而 Memcache 只有 1MB。</li>
 </ul>
-<h1><span id="淘汰策略">淘汰策略</span></h1><p><strong>面试官：</strong>那你说说你知道的 Redis 的淘汰策略有哪些？</p>
+<h1><span id="tao-tai-ce-lue">淘汰策略</span><a href="#tao-tai-ce-lue" class="header-anchor">[</a></h1><p><strong>面试官：</strong>那你说说你知道的 Redis 的淘汰策略有哪些？</p>
 <p><strong>我：</strong>Redis 有六种淘汰策略，如下图：</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcfmjip7x5j30gy0a3jsc.jpg" alt="img"></p>
 <p><strong>补充一下：</strong>Redis 4.0 加入了 LFU（least frequency use）淘汰策略，包括 volatile-lfu 和 allkeys-lfu，通过统计访问频率，将访问频率最少，即最不经常使用的 KV 淘汰。</p>
-<h1><span id="持久化">持久化</span></h1><p><strong>面试官：</strong>你对 Redis 的持久化机制了解吗？能讲一下吗？</p>
+<h1><span id="chi-jiu-hua">持久化</span><a href="#chi-jiu-hua" class="header-anchor">[</a></h1><p><strong>面试官：</strong>你对 Redis 的持久化机制了解吗？能讲一下吗？</p>
 <p><strong>我：</strong>Redis 为了保证效率，数据缓存在了内存中，但是会周期性的把更新的数据写入磁盘或者把修改操作写入追加的记录文件中，以保证数据的持久化。</p>
 <p><font color="green">Redis 的持久化策略有两种：</font></p>
 <ul>
@@ -673,7 +676,7 @@
 <p><strong>我：</strong>如果你非常关心你的数据，但仍然可以承受数分钟内的数据丢失，那么可以额只使用 RDB 持久。AOF 将 Redis 执行的每一条命令追加到磁盘中，处理巨大的写入会降低Redis的性能，不知道你是否可以接受。</p>
 <p>数据库备份和灾难恢复：定时生成 RDB 快照非常便于进行数据库备份，并且 RDB 恢复数据集的速度也要比 AOF 恢复的速度快。</p>
 <p>当然了，Redis 支持同时开启 RDB 和 AOF，系统重启后，Redis 会优先使用 AOF 来恢复数据，这样丢失的数据会最少。</p>
-<h1><span id="主从复制">主从复制</span></h1><p><strong>面试官：</strong>Redis 单节点存在单点故障问题，为了解决单点问题，一般都需要对 Redis 配置从节点，然后使用哨兵来监听主节点的存活状态，如果主节点挂掉，从节点能继续提供缓存功能，你能说说 Redis 主从复制的过程和原理吗？</p>
+<h1><span id="zhu-cong-fu-zhi">主从复制</span><a href="#zhu-cong-fu-zhi" class="header-anchor">[</a></h1><p><strong>面试官：</strong>Redis 单节点存在单点故障问题，为了解决单点问题，一般都需要对 Redis 配置从节点，然后使用哨兵来监听主节点的存活状态，如果主节点挂掉，从节点能继续提供缓存功能，你能说说 Redis 主从复制的过程和原理吗？</p>
 <p>我有点懵，这个说来就话长了。但幸好提前准备了：主从配置结合哨兵模式能解决单点故障问题，提高 Redis 可用性。从节点仅提供读操作，主节点提供写操作。对于读多写少的状况，可给主节点配置多个从节点，从而提高响应效率。</p>
 <p><strong>我顿了一下，接着说：</strong>关于复制过程，是这样的：</p>
 <ul>
@@ -726,7 +729,7 @@
 <p>③当主从连接恢复后，由于从节点之前保存了自身已复制的偏移量和主节点的运行 ID。因此会把它们当做 psync 参数发送给主节点，要求进行部分复制。</p>
 <p>④主节点接收到 psync 命令后首先核对参数 runId 是否与自身一致，如果一致，说明之前复制的是当前主节点。之后根据参数 offset 在复制积压缓冲区中查找，如果 offset 之后的数据存在，则对从节点发送+COUTINUE 命令，表示可以进行部分复制。因为缓冲区大小固定，若发生缓冲溢出，则进行全量复制。</p>
 <p>⑤主节点根据偏移量把复制积压缓冲区里的数据发送给从节点，保证主从复制进入正常状态。</p>
-<h1><span id="哨兵">哨兵</span></h1><p><strong>面试官：</strong>那主从复制会存在哪些问题呢？</p>
+<h1><span id="shao-bing">哨兵</span><a href="#shao-bing" class="header-anchor">[</a></h1><p><strong>面试官：</strong>那主从复制会存在哪些问题呢？</p>
 <p><strong>我：</strong>主从复制会存在以下问题：</p>
 <ul>
 <li><p>一旦主节点宕机，从节点晋升为主节点，同时需要修改应用方的主节点地址，还需要命令所有从节点去复制新的主节点，整个过程需要人工干预。</p>
@@ -771,7 +774,7 @@
 <p>⑦当没有足够数量的 Sentinel 同意主服务器下线时，主服务器的客观下线状态就会被移除。当主服务器重新向 Sentinel 的 PING 命令返回有效回复时，主服务器的主观下线状态就会被移除。</p>
 <p><strong>面试官：</strong>不错，面试前没少下工夫啊，今天 Redis 这关你过了，明天找个时间我们再聊聊其他的。（露出欣慰的微笑）</p>
 <p><strong>我：</strong>没问题。</p>
-<h1><span id="总结">总结</span></h1><p>本文在一次面试的过程中讲述了 Redis 是什么，Redis 的特点和功能，Redis 缓存的使用，Redis 为什么能这么快，Redis 缓存的淘汰策略，持久化的两种方式，Redis 高可用部分的主从复制和哨兵的基本原理。</p>
+<h1><span id="zong-jie">总结</span><a href="#zong-jie" class="header-anchor">[</a></h1><p>本文在一次面试的过程中讲述了 Redis 是什么，Redis 的特点和功能，Redis 缓存的使用，Redis 为什么能这么快，Redis 缓存的淘汰策略，持久化的两种方式，Redis 高可用部分的主从复制和哨兵的基本原理。</p>
 <p>只要功夫深，铁杵磨成针，平时准备好，面试不用慌。虽然面试不一定是这样问的，但万变不离其“宗”。</p>
 
       
@@ -803,8 +806,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" rel="next" title="【转】IDEA项目配置">
-                <i class="fa fa-chevron-left"></i> 【转】IDEA项目配置
+              <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%AF%91%E3%80%91redis.conf%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%B8%AD%E6%96%87%E7%89%88/" rel="next" title="【译】redis.conf配置文件中文版">
+                <i class="fa fa-chevron-left"></i> 【译】redis.conf配置文件中文版
               </a>
             
           </div>

@@ -418,13 +418,17 @@
 
       
         
-          <!-- toc -->
+          <div class="tocStart"></div>
+
+<!-- toc -->
 
 <ul>
-<li><a href="#分词-和-不分词">分词 和 不分词</a></li>
-<li><a href="#范围查询">范围查询</a></li>
+<li><a href="#fen-ci-he-bu-fen-ci">分词 和 不分词</a></li>
+<li><a href="#fan-wei-cha-xun">范围查询</a></li>
 </ul>
 <!-- tocstop -->
+
+<div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/#more" rel="contents">
@@ -595,34 +599,38 @@
           <blockquote>
 <p>ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法</p>
 </blockquote>
+<div class="tocStart"></div>
+
 <!-- toc -->
 
 <ul>
-<li><a href="#参考链接">参考链接</a></li>
-<li><a href="#es的概念">ES的概念</a><ul>
-<li><a href="#es中的数据">ES中的“数据”</a></li>
-<li><a href="#文档">文档</a><ul>
-<li><a href="#文档元数据">文档元数据</a></li>
+<li><a href="#can-kao-lian-jie">参考链接</a></li>
+<li><a href="#es-de-gai-nian">ES的概念</a><ul>
+<li><a href="#es-zhong-de-shu-ju">ES中的“数据”</a></li>
+<li><a href="#wen-dang">文档</a><ul>
+<li><a href="#wen-dang-yuan-shu-ju">文档元数据</a></li>
 </ul>
 </li>
-<li><a href="#索引">索引</a></li>
+<li><a href="#suo-yin">索引</a></li>
 </ul>
 </li>
-<li><a href="#基本操作crud">基本操作CRUD</a><ul>
-<li><a href="#创建">创建</a></li>
-<li><a href="#获取">获取</a></li>
-<li><a href="#更新">更新</a></li>
-<li><a href="#删除">删除</a></li>
+<li><a href="#ji-ben-cao-zuo-crud">基本操作CRUD</a><ul>
+<li><a href="#chuang-jian">创建</a></li>
+<li><a href="#huo-qu">获取</a></li>
+<li><a href="#geng-xin">更新</a></li>
+<li><a href="#shan-chu">删除</a></li>
 </ul>
 </li>
-<li><a href="#批量操作">批量操作</a><ul>
-<li><a href="#多文档检索mget">多文档检索——mget</a></li>
-<li><a href="#多功能批量操作bulk">多功能批量操作—bulk</a></li>
+<li><a href="#pi-liang-cao-zuo">批量操作</a><ul>
+<li><a href="#duo-wen-dang-jian-suo-mget">多文档检索——mget</a></li>
+<li><a href="#duo-gong-neng-pi-liang-cao-zuo-bulk">多功能批量操作—bulk</a></li>
 </ul>
 </li>
-<li><a href="#关键字-和-api汇总记录">关键字 和 API汇总记录</a></li>
+<li><a href="#guan-jian-zi-he-api-hui-zong-ji-lu">关键字 和 API汇总记录</a></li>
 </ul>
 <!-- tocstop -->
+
+<div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#more" rel="contents">
@@ -804,28 +812,32 @@
           <blockquote>
 <p>入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅</p>
 </blockquote>
+<div class="tocStart"></div>
+
 <!-- toc -->
 
 <ul>
-<li><a href="#什么是elasticsearch">什么是ElasticSearch？</a></li>
-<li><a href="#安装-配置-es">安装 配置 ES</a><ul>
-<li><a href="#手动本机mac安装">手动本机（Mac）安装</a></li>
-<li><a href="#docker安装">docker安装</a></li>
+<li><a href="#shi-me-shi-elasticsearch">什么是ElasticSearch？</a></li>
+<li><a href="#an-zhuang-pei-zhi-es">安装 配置 ES</a><ul>
+<li><a href="#shou-dong-ben-ji-mac-an-zhuang">手动本机（Mac）安装</a></li>
+<li><a href="#docker-an-zhuang">docker安装</a></li>
 </ul>
 </li>
-<li><a href="#安装-配置-kibana">安装 配置 KIBANA</a><ul>
-<li><a href="#直接本机mac安装">直接本机（mac）安装</a></li>
-<li><a href="#docker安装kibana">docker安装kibana</a></li>
+<li><a href="#an-zhuang-pei-zhi-kibana">安装 配置 KIBANA</a><ul>
+<li><a href="#zhi-jie-ben-ji-mac-an-zhuang">直接本机（mac）安装</a></li>
+<li><a href="#docker-an-zhuang-kibana">docker安装kibana</a></li>
 </ul>
 </li>
-<li><a href="#配置es集群和kibana">配置ES集群和KIBANA</a></li>
-<li><a href="#linux下的完整安装配置过程记录">Linux下的完整安装配置过程记录</a></li>
-<li><a href="#基本名词">基本名词</a><ul>
-<li><a href="#es-和-rdbms-的比较">ES 和 RDBMS 的比较</a></li>
+<li><a href="#pei-zhi-es-ji-qun-he-kibana">配置ES集群和KIBANA</a></li>
+<li><a href="#linux-xia-de-wan-zheng-an-zhuang-pei-zhi-guo-cheng-ji-lu">Linux下的完整安装配置过程记录</a></li>
+<li><a href="#ji-ben-ming-ci">基本名词</a><ul>
+<li><a href="#es-he-rdbms-de-bi-jiao">ES 和 RDBMS 的比较</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
+
+<div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#more" rel="contents">
@@ -1321,7 +1333,7 @@
       
         
           
-            <h1><span id="互助交流体验">互助交流体验</span></h1><blockquote>
+            <h1><span id="hu-zhu-jiao-liu-ti-yan">互助交流体验</span><a href="#hu-zhu-jiao-liu-ti-yan" class="header-anchor">[</a></h1><blockquote>
 </blockquote>
 
           
@@ -1464,7 +1476,7 @@
       
         
           
-            <h1><span id="互换生活">互换生活</span></h1><blockquote>
+            <h1><span id="hu-huan-sheng-huo">互换生活</span><a href="#hu-huan-sheng-huo" class="header-anchor">[</a></h1><blockquote>
 <p>现代人太需要快生活的节奏了，体验不同的生活，工作。</p>
 </blockquote>
 
@@ -1806,14 +1818,18 @@
           <blockquote>
 <p>总结目前为止所用到的日志系统的，用法，关系，相关知识，如：SLF4J、logback、log4j等……</p>
 </blockquote>
+<div class="tocStart"></div>
+
 <!-- toc -->
 
 <ul>
-<li><a href="#日志系统的概括">日志系统的概括</a></li>
-<li><a href="#不同日志系统的整合">不同日志系统的整合</a></li>
-<li><a href="#其他">其他</a></li>
+<li><a href="#ri-zhi-xi-tong-de-gai-gua">日志系统的概括</a></li>
+<li><a href="#bu-tong-ri-zhi-xi-tong-de-zheng-he">不同日志系统的整合</a></li>
+<li><a href="#qi-ta">其他</a></li>
 </ul>
 <!-- tocstop -->
+
+<div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#more" rel="contents">
@@ -1984,38 +2000,42 @@
           <blockquote>
 <p>这篇是关于设计模式的概念性文章，主要记录设计模式的目的原则等</p>
 </blockquote>
+<div class="tocStart"></div>
+
 <!-- toc -->
 
 <ul>
-<li><a href="#设计模式的目的">设计模式的目的</a></li>
-<li><a href="#oo基础">OO基础</a><ul>
-<li><a href="#三大基本特征">三大基本特征</a><ul>
-<li><a href="#封装">封装</a></li>
-<li><a href="#继承">继承</a></li>
-<li><a href="#多态">多态</a></li>
+<li><a href="#she-ji-mo-shi-de-mu-de">设计模式的目的</a></li>
+<li><a href="#oo-ji-chu">OO基础</a><ul>
+<li><a href="#san-da-ji-ben-te-zheng">三大基本特征</a><ul>
+<li><a href="#feng-zhuang">封装</a></li>
+<li><a href="#ji-cheng">继承</a></li>
+<li><a href="#duo-tai">多态</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#基本原则">基本原则</a><ul>
-<li><a href="#1单一职责原则single-responsibility-principle">1.单一职责原则（single-responsibility principle）</a></li>
-<li><a href="#2接口隔离原则interface-segregation-principle">2.接口隔离原则(Interface-Segregation principle)</a></li>
-<li><a href="#3依赖倒置原则dependency-inversion-principle">3.依赖倒置原则（Dependency-Inversion principle）</a></li>
-<li><a href="#4里氏替换原则liskov-substitution-principle">4.里氏替换原则（Liskov-Substitution principle）</a></li>
-<li><a href="#5-开放封闭原则-open-closed-principle">5.* * 开放封闭原则* *（Open-Closed principle）</a></li>
-<li><a href="#6迪米特法则demeter-principle">6.迪米特法则（Demeter Principle）</a></li>
-<li><a href="#7合成复用原则composite-reuse-principle">7.合成复用原则（Composite Reuse Principle）</a></li>
+<li><a href="#ji-ben-yuan-ze">基本原则</a><ul>
+<li><a href="#1-dan-yi-zhi-ze-yuan-ze-single-responsibility-principle">1.单一职责原则（single-responsibility principle）</a></li>
+<li><a href="#2-jie-kou-ge-chi-yuan-ze-interface-segregation-principle">2.接口隔离原则(Interface-Segregation principle)</a></li>
+<li><a href="#3-yi-lai-dao-zhi-yuan-ze-dependency-inversion-principle">3.依赖倒置原则（Dependency-Inversion principle）</a></li>
+<li><a href="#4-li-shi-ti-huan-yuan-ze-liskov-substitution-principle">4.里氏替换原则（Liskov-Substitution principle）</a></li>
+<li><a href="#5-kai-fang-feng-bi-yuan-ze-open-closed-principle">5.* * 开放封闭原则* *（Open-Closed principle）</a></li>
+<li><a href="#6-di-mi-te-fa-ze-demeter-principle">6.迪米特法则（Demeter Principle）</a></li>
+<li><a href="#7-he-cheng-fu-yong-yuan-ze-composite-reuse-principle">7.合成复用原则（Composite Reuse Principle）</a></li>
 </ul>
 </li>
-<li><a href="#设计原则">设计原则</a></li>
-<li><a href="#oo模式">OO模式</a><ul>
-<li><a href="#策略模式单例模式">策略模式（单例模式）</a></li>
-<li><a href="#观察者模式">观察者模式</a></li>
-<li><a href="#装饰者模式">装饰者模式</a></li>
+<li><a href="#she-ji-yuan-ze">设计原则</a></li>
+<li><a href="#oo-mo-shi">OO模式</a><ul>
+<li><a href="#ce-lue-mo-shi-dan-li-mo-shi">策略模式（单例模式）</a></li>
+<li><a href="#guan-cha-zhe-mo-shi">观察者模式</a></li>
+<li><a href="#zhuang-shi-zhe-mo-shi">装饰者模式</a></li>
 </ul>
 </li>
 </ul>
 <!-- tocstop -->
+
+<div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%EF%BC%88%E4%B8%80%EF%BC%89%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/#more" rel="contents">

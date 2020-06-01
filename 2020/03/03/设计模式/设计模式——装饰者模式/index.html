@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。     什么是“装饰者模式” 模式实现原理 具体实现例子 实际场景举例 代码实现   装饰者模式的特点">
+<meta name="description" content="“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。       什么是“装饰者模式” 模式实现原理 具体实现例子 实际场景举例 代码实现   装饰者模式的特点">
 <meta property="og:type" content="article">
 <meta property="og:title" content="设计模式————装饰者模式">
 <meta property="og:url" content="http://yoursite.com/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。     什么是“装饰者模式” 模式实现原理 具体实现例子 实际场景举例 代码实现   装饰者模式的特点">
+<meta property="og:description" content="“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。       什么是“装饰者模式” 模式实现原理 具体实现例子 实际场景举例 代码实现   装饰者模式的特点">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gdc3vcmjgqj30zc0fsq5s.jpg">
 <meta property="article:published_time" content="2020-03-02T16:00:00.000Z">
@@ -418,32 +418,35 @@
         <blockquote>
 <p>“装饰者模式”主要在为对象添加新个性，更改条件等操作的时候，使用“装饰”这一更有弹性的方式，避免了“继承”导致后期不灵活，代码量和关系臃肿，高耦合的缺点。</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#什么是装饰者模式">什么是“装饰者模式”</a></li>
-<li><a href="#模式实现原理">模式实现原理</a></li>
-<li><a href="#具体实现例子">具体实现例子</a><ul>
-<li><a href="#实际场景举例">实际场景举例</a></li>
-<li><a href="#代码实现">代码实现</a></li>
+<li><a href="#shi-me-shi-zhuang-shi-zhe-mo-shi">什么是“装饰者模式”</a></li>
+<li><a href="#mo-shi-shi-xian-yuan-li">模式实现原理</a></li>
+<li><a href="#ju-ti-shi-xian-li-zi">具体实现例子</a><ul>
+<li><a href="#shi-ji-chang-jing-ju-li">实际场景举例</a></li>
+<li><a href="#dai-ma-shi-xian">代码实现</a></li>
 </ul>
 </li>
-<li><a href="#装饰者模式的特点">装饰者模式的特点</a></li>
+<li><a href="#zhuang-shi-zhe-mo-shi-de-te-dian">装饰者模式的特点</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="什么是装饰者模式">什么是“装饰者模式”</span></h1><p>通常一个目标类总会经过一段时间，出现现有功能不足以满足现有需求的情况，需要添加新的功能时，就需要用到装饰者模式，将新功能部分“灵活“的“装饰”到目标类上，而不是像以往只是简单的通过继承来丰富目标类，添加新功能。</p>
-<h1><span id="模式实现原理">模式实现原理</span></h1><ol>
+<h1><span id="shi-me-shi-zhuang-shi-zhe-mo-shi">什么是“装饰者模式”</span><a href="#shi-me-shi-zhuang-shi-zhe-mo-shi" class="header-anchor">[</a></h1><p>通常一个目标类总会经过一段时间，出现现有功能不足以满足现有需求的情况，需要添加新的功能时，就需要用到装饰者模式，将新功能部分“灵活“的“装饰”到目标类上，而不是像以往只是简单的通过继承来丰富目标类，添加新功能。</p>
+<h1><span id="mo-shi-shi-xian-yuan-li">模式实现原理</span><a href="#mo-shi-shi-xian-yuan-li" class="header-anchor">[</a></h1><ol>
 <li>首先，确定一个“目标类的基础类或者通用接口”，通过继承或实现创建一个装饰者的基础抽象类，以保证“装饰者类”和“目标类”有统一的根。</li>
 <li>装饰者基类中只需定义好基础的装饰功能：目标基类成员变量，装饰构造方法，重写接口方法。</li>
 <li>最后，通过继承装饰者基类创建多个装饰者类。</li>
 <li>装饰者的使用方法：使用传参构造方法装饰目标类（参数中必须有目标类），并返回给目标类对象。</li>
 </ol>
-<h1><span id="具体实现例子">具体实现例子</span></h1><h2><span id="实际场景举例">实际场景举例</span></h2><p>假设需要编写一个咖啡店的系统，用于记录各类咖啡（美式，摩卡，卡布奇诺……），各种配料（糖，奶，豆丁…….）的实现。这个场景中，每一种咖啡都可以使用不同种类不同数量不同顺序的配料调配，如果每增加一种配料都要继承一次基础父类，那样就会变的十分臃肿，高耦合，且代码量剧增。而使用的“装饰者模式”，便能灵活的记录。</p>
-<h2><span id="代码实现">代码实现</span></h2><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdc3vcmjgqj30zc0fsq5s.jpg" alt="代码结构"></p>
+<h1><span id="ju-ti-shi-xian-li-zi">具体实现例子</span><a href="#ju-ti-shi-xian-li-zi" class="header-anchor">[</a></h1><h2><span id="shi-ji-chang-jing-ju-li">实际场景举例</span><a href="#shi-ji-chang-jing-ju-li" class="header-anchor">[</a></h2><p>假设需要编写一个咖啡店的系统，用于记录各类咖啡（美式，摩卡，卡布奇诺……），各种配料（糖，奶，豆丁…….）的实现。这个场景中，每一种咖啡都可以使用不同种类不同数量不同顺序的配料调配，如果每增加一种配料都要继承一次基础父类，那样就会变的十分臃肿，高耦合，且代码量剧增。而使用的“装饰者模式”，便能灵活的记录。</p>
+<h2><span id="dai-ma-shi-xian">代码实现</span><a href="#dai-ma-shi-xian" class="header-anchor">[</a></h2><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gdc3vcmjgqj30zc0fsq5s.jpg" alt="代码结构"></p>
 <p>基础类：饮品</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> HeadFirst.C_Decorator_Pattern.Basic;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 所有饮品的基类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Beverage</span> </span>&#123;</span><br><span class="line">    <span class="comment">//描述当前饮品</span></span><br><span class="line">    <span class="keyword">public</span> String description = <span class="string">"Unknown Beverage"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDescription</span><span class="params">(String desc)</span></span>&#123;</span><br><span class="line">        description = desc;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getDescription</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> description;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//查看这种饮品的价格</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">cost</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -462,7 +465,7 @@
 <p>最后，使用装饰对象制作一杯加奶加摩卡的DarkRoast咖啡</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> HeadFirst.C_Decorator_Pattern;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Basic.Beverage;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Beverage.DarkRoast;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Beverage.Espresso;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Beverage.HouseBlend;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Condiment.Mocha;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Condiment.Soy;</span><br><span class="line"><span class="keyword">import</span> HeadFirst.C_Decorator_Pattern.Condiment.Whip;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StarbuzzCoffee</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      	<span class="comment">//注意这里要用多态的方式创建对象</span></span><br><span class="line">        Beverage darkRoast = <span class="keyword">new</span> DarkRoast();</span><br><span class="line">      </span><br><span class="line">      	<span class="comment">//重点方法：使用装饰者的传参构造方法对咖啡进行装饰————增添配料</span></span><br><span class="line">        darkRoast = <span class="keyword">new</span> Mocha(darkRoast);</span><br><span class="line">        darkRoast = <span class="keyword">new</span> Milk(darkRoast);</span><br><span class="line">      </span><br><span class="line">      	<span class="comment">//通过打印描述和价格，可以看到装饰后的效果</span></span><br><span class="line">        System.out.println(darkRoast.description + <span class="string">" cost$"</span> + darkRoast.cost());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1><span id="装饰者模式的特点">装饰者模式的特点</span></h1><p>优点：灵活化，低耦合的实现了对目标类的功能添加</p>
+<h1><span id="zhuang-shi-zhe-mo-shi-de-te-dian">装饰者模式的特点</span><a href="#zhuang-shi-zhe-mo-shi-de-te-dian" class="header-anchor">[</a></h1><p>优点：灵活化，低耦合的实现了对目标类的功能添加</p>
 <p>缺点，多次装饰可能出现问题</p>
 
       

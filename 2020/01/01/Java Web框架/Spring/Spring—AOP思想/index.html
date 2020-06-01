@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。     概述 具体应用举例：计算器类的功能实现   概念： 具体实现：">
+<meta name="description" content="AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。       概述 具体应用举例：计算器类的功能实现   概念： 具体实现：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring的AOP思想">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94AOP%E6%80%9D%E6%83%B3/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。     概述 具体应用举例：计算器类的功能实现   概念： 具体实现：">
+<meta property="og:description" content="AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。       概述 具体应用举例：计算器类的功能实现   概念： 具体实现：">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gbxzygask6j30lq0cegr7.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gby00xs8uuj30jy0bq777.jpg">
@@ -431,23 +431,26 @@
         <blockquote>
 <p>AOP：切面思想，作为动态代理的升级版，提升了很多情况下的开发效能，这篇文章就会从入门概念，具体配置等，使读者对Spring的AOP切面思想有了具体的理解。</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#概述">概述</a><ul>
-<li><a href="#具体应用举例计算器类的功能实现">具体应用举例：计算器类的功能实现</a></li>
+<li><a href="#gai-shu">概述</a><ul>
+<li><a href="#ju-ti-ying-yong-ju-li-ji-suan-qi-lei-de-gong-neng-shi-xian">具体应用举例：计算器类的功能实现</a></li>
 </ul>
 </li>
-<li><a href="#概念">概念：</a></li>
-<li><a href="#具体实现"><strong>具体实现：</strong></a></li>
+<li><a href="#gai-nian">概念：</a></li>
+<li><a href="#ju-ti-shi-xian"><strong>具体实现：</strong></a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="概述">概述</span></h1><h2><span id="具体应用举例计算器类的功能实现">具体应用举例：计算器类的功能实现</span></h2><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbxzygask6j30lq0cegr7.jpg" alt="AOP"></p>
-<h1><span id="概念">概念：</span></h1><p><strong>AOP术语</strong></p>
+<h1><span id="gai-shu">概述</span><a href="#gai-shu" class="header-anchor">[</a></h1><h2><span id="ju-ti-ying-yong-ju-li-ji-suan-qi-lei-de-gong-neng-shi-xian">具体应用举例：计算器类的功能实现</span><a href="#ju-ti-ying-yong-ju-li-ji-suan-qi-lei-de-gong-neng-shi-xian" class="header-anchor">[</a></h2><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gbxzygask6j30lq0cegr7.jpg" alt="AOP"></p>
+<h1><span id="gai-nian">概念：</span><a href="#gai-nian" class="header-anchor">[</a></h1><p><strong>AOP术语</strong></p>
 <p><strong>1 横切关注点</strong></p>
 <p>从每个方法中抽取出来的同一类非核心业务。如日志和验证参数</p>
 <p><strong>2 切面(Aspect)</strong></p>
@@ -464,7 +467,7 @@
 <p>定位连接点的方式。每个类的方法中都包含多个连接点，所以连接点是类中客观存在的事物。如果把连接点看作数据库中的记录，那么切入点就是查询条件——AOP可以通过切入点定位到特定的连接点。切点通过org.springframework.aop.Pointcut 接口进行描述，它使用类和方法作为连接点的查询条件。</p>
 <p><strong>4.2.8 图解</strong></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gby00xs8uuj30jy0bq777.jpg" alt="image"></p>
-<h1><span id="具体实现"><strong>具体实现：</strong></span></h1><p><strong>Spring自带有AOP框架，但是AspectJ框架更合适，并且Spring支持AspectJ框架，所以大多数情况使用AspectJ框架</strong></p>
+<h1><span id="ju-ti-shi-xian"><strong>具体实现：</strong></span><a href="#ju-ti-shi-xian" class="header-anchor">[</a></h1><p><strong>Spring自带有AOP框架，但是AspectJ框架更合适，并且Spring支持AspectJ框架，所以大多数情况使用AspectJ框架</strong></p>
 <p><strong>在Spring框架的基础上，导入Spring-aop的jar包和</strong></p>
 
       
@@ -498,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/Spring%E2%80%94IOC%E6%80%9D%E6%83%B3%20%E5%92%8C%20DI/" rel="next" title="Spring的IOC思想与DI">
-                <i class="fa fa-chevron-left"></i> Spring的IOC思想与DI
+              <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/Spring/%E5%AF%B9Spring%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" rel="next" title="Spring的整体认识">
+                <i class="fa fa-chevron-left"></i> Spring的整体认识
               </a>
             
           </div>
@@ -508,8 +511,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/01/%EF%A3%BF/Mac%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9/" rel="prev" title="Mac下设置隐藏文件/文件夹">
-                Mac下设置隐藏文件/文件夹 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/01/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" rel="prev" title="入手Macbook pro，我的装备大升级！">
+                入手Macbook pro，我的装备大升级！ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能     环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command + S">
+<meta name="description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能       环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command +">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在MacOS下配置Idea的最全教程">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能     环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command + S">
+<meta property="og:description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能       环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command +">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6nc3kw0jj30j20cejsf.jpg">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6ndfu1zgj30je0cet9d.jpg">
@@ -455,28 +455,30 @@
         <blockquote>
 <p>这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能</p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#环境的基本介绍">环境的基本介绍</a></li>
-<li><a href="#下载安装与认证">下载安装与认证</a><ul>
-<li><a href="#学生认证">学生认证</a></li>
+<li><a href="#huan-jing-de-ji-ben-jie-shao">环境的基本介绍</a></li>
+<li><a href="#xia-zai-an-zhuang-yu-ren-zheng">下载安装与认证</a><ul>
+<li><a href="#xue-sheng-ren-zheng">学生认证</a></li>
 </ul>
 </li>
-<li><a href="#正式使用前的习惯设置以及讲解">正式使用前的习惯设置以及讲解</a><ul>
-<li><a href="#应用的配置文件说明">应用的配置文件说明</a></li>
-<li><a href="#初始化配置">初始化配置</a></li>
-<li><a href="#开发前的一些习惯配置">开发前的一些习惯配置</a><ul>
-<li><a href="#基础配置">基础配置</a></li>
-<li><a href="#配置tomcat服务器">配置tomcat服务器</a></li>
-<li><a href="#配置maven">配置maven：</a></li>
-<li><a href="#配置git">配置git</a></li>
+<li><a href="#zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie">正式使用前的习惯设置以及讲解</a><ul>
+<li><a href="#ying-yong-de-pei-zhi-wen-jian-shuo-ming">应用的配置文件说明</a></li>
+<li><a href="#chu-shi-hua-pei-zhi">初始化配置</a></li>
+<li><a href="#kai-fa-qian-de-yi-xie-xi-guan-pei-zhi">开发前的一些习惯配置</a><ul>
+<li><a href="#ji-chu-pei-zhi">基础配置</a></li>
+<li><a href="#pei-zhi-tomcat-fu-wu-qi">配置tomcat服务器</a></li>
+<li><a href="#pei-zhi-maven">配置maven：</a></li>
+<li><a href="#pei-zhi-git">配置git</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#快捷键">快捷键</a><ul>
-<li><a href="#设置和查找快捷键">设置和查找快捷键</a></li>
+<li><a href="#kuai-jie-jian">快捷键</a><ul>
+<li><a href="#she-zhi-he-cha-zhao-kuai-jie-jian">设置和查找快捷键</a></li>
 <li><a href="#command">Command</a></li>
 <li><a href="#option">Option</a></li>
 <li><a href="#shift">Shift</a></li>
@@ -484,32 +486,34 @@
 <li><a href="#command-shift">Command + Shift</a></li>
 <li><a href="#option-shift">Option + Shift</a></li>
 <li><a href="#command-option-shift">Command + Option + Shift</a></li>
-<li><a href="#其他">其他</a></li>
+<li><a href="#qi-ta">其他</a></li>
 </ul>
 </li>
-<li><a href="#其他使用记录更新中">其他使用记录（更新中……）</a></li>
+<li><a href="#qi-ta-shi-yong-ji-lu-geng-xin-zhong">其他使用记录（更新中……）</a></li>
 </ul>
 <!-- tocstop -->
+
+</div>
 
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="环境的基本介绍">环境的基本介绍</span></h1><p>MacOS Catalina + Idea2019.3 Utrl版本[2020年2月记录]</p>
+<h1><span id="huan-jing-de-ji-ben-jie-shao">环境的基本介绍</span><a href="#huan-jing-de-ji-ben-jie-shao" class="header-anchor">[</a></h1><p>MacOS Catalina + Idea2019.3 Utrl版本[2020年2月记录]</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6nc3kw0jj30j20cejsf.jpg" alt="IDEA图标"></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ndfu1zgj30je0cet9d.jpg" alt="MacOS系统"></p>
-<h1><span id="下载安装与认证">下载安装与认证</span></h1><p>首先，进入<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">jetbrains官网</a>：</p>
+<h1><span id="xia-zai-an-zhuang-yu-ren-zheng">下载安装与认证</span><a href="#xia-zai-an-zhuang-yu-ren-zheng" class="header-anchor">[</a></h1><p>首先，进入<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">jetbrains官网</a>：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc5l00b8tvj31kh0nbq70.jpg" alt="截屏2020-02-22下午11.10.52"></p>
-<h2><span id="学生认证">学生认证</span></h2><p>这里提供大家一个薅羊毛的好方法，注册账号后进行学生认证，每年通过edu邮箱认证一次，就可以免费使用该系列软件，而你的大学edu邮箱即使毕业后也可以继续使用</p>
+<h2><span id="xue-sheng-ren-zheng">学生认证</span><a href="#xue-sheng-ren-zheng" class="header-anchor">[</a></h2><p>这里提供大家一个薅羊毛的好方法，注册账号后进行学生认证，每年通过edu邮箱认证一次，就可以免费使用该系列软件，而你的大学edu邮箱即使毕业后也可以继续使用</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc5llog1ohj316o0kv77f.jpg" alt="学生认证"></p>
 <p>之后下载dmg文件或者使用homebrew安装即可，第一次使用需要身份认证，用你已经通过学生认证的账号登陆就可以免费使用几乎所有jetbrains系列的开发神器了！</p>
-<h1><span id="正式使用前的习惯设置以及讲解">正式使用前的习惯设置以及讲解</span></h1><h2><span id="应用的配置文件说明">应用的配置文件说明</span></h2><p>不论使用dmg安装包还是hombrew安装，Mac上idea的使用文件主要有两个：</p>
+<h1><span id="zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie">正式使用前的习惯设置以及讲解</span><a href="#zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie" class="header-anchor">[</a></h1><h2><span id="ying-yong-de-pei-zhi-wen-jian-shuo-ming">应用的配置文件说明</span><a href="#ying-yong-de-pei-zhi-wen-jian-shuo-ming" class="header-anchor">[</a></h2><p>不论使用dmg安装包还是hombrew安装，Mac上idea的使用文件主要有两个：</p>
 <ol>
 <li><p>/Application下的IntelliJ IDEA.app文件，我们右键–&gt;显示包内容打开后可以看到软件的具体配置（windows下直接进入安装目录即可）。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lqz97ijj30h807y3z5.jpg" alt="app包内容">)这里只需要对bin目录下的idea.vmoptions文件进行适当修改即可。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lryycroj30ke0oljww.jpg" alt="idea.vmoptions文件"></p>
 </li>
 <li><p>配置文件路径：用户家目录/Library/Preferences/IntelliJIdea2019.3 /。这个目下存放了所有idea中的用户配置，如果从未打开过，则不会生成，如果之后的使用中有什么问题，删除该目录，即可重新配置idea。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lvks7wtj30nt0gkaeu.jpg" alt="idea配置文件路径"></p>
 </li>
 </ol>
-<h2><span id="初始化配置">初始化配置</span></h2><p>导入默认设置，如果你以前熟练使用idea并时刻保留着自己独有的一套配置文件，便可以在这里直接选择第一条（config or installation folder）选择你的设置项所在目录导入，快速开发：</p>
+<h2><span id="chu-shi-hua-pei-zhi">初始化配置</span><a href="#chu-shi-hua-pei-zhi" class="header-anchor">[</a></h2><p>导入默认设置，如果你以前熟练使用idea并时刻保留着自己独有的一套配置文件，便可以在这里直接选择第一条（config or installation folder）选择你的设置项所在目录导入，快速开发：</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66htvjdhj30es07hjrh.jpg" alt="截屏2020-02-23上午11.34.32"></p>
 <p>一系列常规初始化选择，大家可以根据自己的喜好选择设置</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66lzcqa2j30ph0ltacw.jpg" alt="截屏2020-02-23上午11.36.18"></p>
@@ -519,7 +523,7 @@
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ihxp89ij30ke0fa0tc.jpg" alt="主界面"></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ijv4b31j308v07ymxi.jpg" alt="配置"></p>
 <p><strong>注意⚠️：这时还不着急新建项目开发，根据我的习惯，在创建项目前进行良好的设置，非常有助于后面项目的创建、导入和维护。</strong></p>
-<h2><span id="开发前的一些习惯配置">开发前的一些习惯配置</span></h2><h3><span id="基础配置">基础配置</span></h3><ul>
+<h2><span id="kai-fa-qian-de-yi-xie-xi-guan-pei-zhi">开发前的一些习惯配置</span><a href="#kai-fa-qian-de-yi-xie-xi-guan-pei-zhi" class="header-anchor">[</a></h2><h3><span id="ji-chu-pei-zhi">基础配置</span><a href="#ji-chu-pei-zhi" class="header-anchor">[</a></h3><ul>
 <li><p>设置字体<br><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6h7hb0o6j30ue0n6q8o.jpg" alt="设置字体"></p>
 </li>
 <li><p>设置滚轮改变字体大小<br><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6bga6inkj30ue0n60vc.jpg" alt="截屏2020-02-23下午2.24.31"></p>
@@ -535,21 +539,21 @@
 <li><p>自动编译设置：<br><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6hm8m2u8j30ue0n6wlc.jpg" alt="自动编译"></p>
 </li>
 </ul>
-<h3><span id="配置tomcat服务器">配置tomcat服务器</span></h3><p>主界面配置（Configure）–&gt; 新项目的运行配置模版（Run Configuration Template for New Projects）</p>
+<h3><span id="pei-zhi-tomcat-fu-wu-qi">配置tomcat服务器</span><a href="#pei-zhi-tomcat-fu-wu-qi" class="header-anchor">[</a></h3><p>主界面配置（Configure）–&gt; 新项目的运行配置模版（Run Configuration Template for New Projects）</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ktbfgydj30li0js0vq.jpg" alt="Run Templation"></p>
 <p>然后根据自己所需创建不同的服务模版，我这里选择的是Tomcat，并添加了本地安装好的Tomcat路径</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6kxy2zlhj30tv0intbi.jpg" alt="截屏2020-02-23下午7.52.19"></p>
-<h3><span id="配置maven">配置maven：</span></h3><p>主界面配置（Configuration） –&gt; 偏好设置（Preferences）–&gt;  Build, Execution, Deployment –&gt; Maven</p>
+<h3><span id="pei-zhi-maven">配置maven：</span><a href="#pei-zhi-maven" class="header-anchor">[</a></h3><p>主界面配置（Configuration） –&gt; 偏好设置（Preferences）–&gt;  Build, Execution, Deployment –&gt; Maven</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6a75zg3hj30ue0n6tc2.jpg" alt="截屏2020-02-23上午11.58.32"></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6k02bwqaj30ue0n6juo.jpg" alt="截屏2020-02-23下午7.19.04"></p>
-<h3><span id="配置git">配置git</span></h3><p>mac系统自带git命令，所以idea会默认指向系统自带的git命令，而windows中则需要自己写入安装git.exe文件的目录。最后可以先使用Test检查是否能用</p>
+<h3><span id="pei-zhi-git">配置git</span><a href="#pei-zhi-git" class="header-anchor">[</a></h3><p>mac系统自带git命令，所以idea会默认指向系统自带的git命令，而windows中则需要自己写入安装git.exe文件的目录。最后可以先使用Test检查是否能用</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6khnsd6hj30ue0n640x.jpg" alt="git"></p>
 <p>登陆github账户以方便操作自己的github上的仓库</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6k47afm1j30r00jw0u8.jpg" alt="github"></p>
 <p>好了！这样一来就可以创建一个项目开始工作了！！！！</p>
-<h1><span id="快捷键">快捷键</span></h1><h2><span id="设置和查找快捷键">设置和查找快捷键</span></h2><p>Preferen —&gt; KeyMap</p>
+<h1><span id="kuai-jie-jian">快捷键</span><a href="#kuai-jie-jian" class="header-anchor">[</a></h1><h2><span id="she-zhi-he-cha-zhao-kuai-jie-jian">设置和查找快捷键</span><a href="#she-zhi-he-cha-zhao-kuai-jie-jian" class="header-anchor">[</a></h2><p>Preferen —&gt; KeyMap</p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6m0s9fcuj30ue0n60uk.jpg" alt="快捷键"></p>
-<h2><span id="command">Command</span></h2><table>
+<h2><span id="command">Command</span><a href="#command" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -693,7 +697,7 @@
 <td align="left">等效于鼠标滚轮向后效果</td>
 </tr>
 </tbody></table>
-<h2><span id="option">Option</span></h2><table>
+<h2><span id="option">Option</span><a href="#option" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -752,7 +756,7 @@
 <td align="left">显示对应数值的选项卡，其中 1 是 Project 用得最多</td>
 </tr>
 </tbody></table>
-<h2><span id="shift">Shift</span></h2><table>
+<h2><span id="shift">Shift</span><a href="#shift" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -781,7 +785,7 @@
 <td align="left">在打开的文件名上按此快捷键，可以关闭当前打开文件</td>
 </tr>
 </tbody></table>
-<h2><span id="comand-option">Comand + Option</span></h2><table>
+<h2><span id="comand-option">Comand + Option</span><a href="#comand-option" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -825,7 +829,7 @@
 <td align="left">前进到上一个操作的地方</td>
 </tr>
 </tbody></table>
-<h2><span id="command-shift">Command + Shift</span></h2><table>
+<h2><span id="command-shift">Command + Shift</span><a href="#command-shift" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -959,7 +963,7 @@
 <td align="left">光标放在方法名上，将方法移动到下一个方法前面，调整方法排序</td>
 </tr>
 </tbody></table>
-<h2><span id="option-shift">Option + Shift</span></h2><table>
+<h2><span id="option-shift">Option + Shift</span><a href="#option-shift" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -988,7 +992,7 @@
 <td align="left">移动光标所在行向下移动</td>
 </tr>
 </tbody></table>
-<h2><span id="command-option-shift">Command + Option + Shift</span></h2><table>
+<h2><span id="command-option-shift">Command + Option + Shift</span><a href="#command-option-shift" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -1007,7 +1011,7 @@
 <td align="left">打开当前项目设置</td>
 </tr>
 </tbody></table>
-<h2><span id="其他">其他</span></h2><table>
+<h2><span id="qi-ta">其他</span><a href="#qi-ta" class="header-anchor">[</a></h2><table>
 <thead>
 <tr>
 <th align="left">Win 快捷键</th>
@@ -1046,7 +1050,7 @@
 <td align="left">从工具窗口进入代码文件窗口</td>
 </tr>
 </tbody></table>
-<h1><span id="其他使用记录更新中">其他使用记录（更新中……）</span></h1>
+<h1><span id="qi-ta-shi-yong-ji-lu-geng-xin-zhong">其他使用记录（更新中……）</span><a href="#qi-ta-shi-yong-ji-lu-geng-xin-zhong" class="header-anchor">[</a></h1>
       
     </div>
     
@@ -1076,8 +1080,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" rel="next" title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
-                <i class="fa fa-chevron-left"></i> 【转】 MacOS 下安装多个版本的 JDK 并统一管理
+              <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E5%A7%8BMyBatis/" rel="next" title="初识MyBatis">
+                <i class="fa fa-chevron-left"></i> 初识MyBatis
               </a>
             
           </div>
@@ -1086,8 +1090,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/" rel="prev" title="【转】IDEA项目配置">
-                【转】IDEA项目配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" rel="prev" title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
+                【转】 MacOS 下安装多个版本的 JDK 并统一管理 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

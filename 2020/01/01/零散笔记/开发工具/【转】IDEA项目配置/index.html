@@ -123,12 +123,12 @@
 
 
 
-<meta name="description" content="作者 | Dulk链接 | www.cnblogs.com&#x2F;deng-cc&#x2F;p&#x2F;6416332.html     项目配置的理解 1.1 Project 1.2 Modules 1.2.1 增删子项目 1.2.2 子项目配置 1.2.3 增删框架（Web部署-1）   1.3 Libraries 1.4 Facets 1.5 Artifacts（Web部署-2）   参考链接">
+<meta name="description" content="作者 | Dulk链接 | www.cnblogs.com&#x2F;deng-cc&#x2F;p&#x2F;6416332.html       项目配置的理解 1.1 Project 1.2 Modules 1.2.1 增删子项目 1.2.2 子项目配置 1.2.3 增删框架（Web部署-1）   1.3 Libraries 1.4 Facets 1.5 Artifacts（Web部署-2）   参考链接">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【转】IDEA项目配置">
 <meta property="og:url" content="http://yoursite.com/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91IDEA%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="作者 | Dulk链接 | www.cnblogs.com&#x2F;deng-cc&#x2F;p&#x2F;6416332.html     项目配置的理解 1.1 Project 1.2 Modules 1.2.1 增删子项目 1.2.2 子项目配置 1.2.3 增删框架（Web部署-1）   1.3 Libraries 1.4 Facets 1.5 Artifacts（Web部署-2）   参考链接">
+<meta property="og:description" content="作者 | Dulk链接 | www.cnblogs.com&#x2F;deng-cc&#x2F;p&#x2F;6416332.html       项目配置的理解 1.1 Project 1.2 Modules 1.2.1 增删子项目 1.2.2 子项目配置 1.2.3 增删框架（Web部署-1）   1.3 Libraries 1.4 Facets 1.5 Artifacts（Web部署-2）   参考链接">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gcee31fkmjj30u00ewjsr.jpg">
 <meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/oTKHc6F8tshHCH5Az9piaaEt0TAR2mqZTp5krt1iaQbOC2uzz1QogTWjeelliaibodabvfFqE8bglDbcX29lud0TNQ/640?wxfrom=5&wx_lazy=1&wx_co=1">
@@ -438,32 +438,35 @@
         <blockquote>
 <p>作者 | Dulk<br>链接 | <a href="http://www.cnblogs.com/deng-cc/p/6416332.html" target="_blank" rel="noopener">www.cnblogs.com/deng-cc/p/6416332.html</a></p>
 </blockquote>
+<div class="toc">
+
 <!-- toc -->
 
 <ul>
-<li><a href="#项目配置的理解">项目配置的理解</a><ul>
-<li><a href="#11-project"><strong>1.1 Project</strong></a></li>
-<li><a href="#12-modules"><strong>1.2 Modules</strong></a><ul>
-<li><a href="#121-增删子项目"><strong>1.2.1 增删子项目</strong></a></li>
-<li><a href="#122-子项目配置"><strong>1.2.2 子项目配置</strong></a></li>
-<li><a href="#123-增删框架web部署-1"><strong>1.2.3 增删框架（Web部署-1）</strong></a></li>
+<li><a href="#xiang-mu-pei-zhi-de-li-jie">项目配置的理解</a><ul>
+<li><a href="#1-1-project"><strong>1.1 Project</strong></a></li>
+<li><a href="#1-2-modules"><strong>1.2 Modules</strong></a><ul>
+<li><a href="#1-2-1-zeng-shan-zi-xiang-mu"><strong>1.2.1 增删子项目</strong></a></li>
+<li><a href="#1-2-2-zi-xiang-mu-pei-zhi"><strong>1.2.2 子项目配置</strong></a></li>
+<li><a href="#1-2-3-zeng-shan-kuang-jia-web-bu-shu-1"><strong>1.2.3 增删框架（Web部署-1）</strong></a></li>
 </ul>
 </li>
-<li><a href="#13-libraries"><strong>1.3 Libraries</strong></a></li>
-<li><a href="#14-facets"><strong>1.4 Facets</strong></a></li>
-<li><a href="#15-artifactsweb部署-2"><strong>1.5 Artifacts（Web部署-2）</strong></a></li>
+<li><a href="#1-3-libraries"><strong>1.3 Libraries</strong></a></li>
+<li><a href="#1-4-facets"><strong>1.4 Facets</strong></a></li>
+<li><a href="#1-5-artifacts-web-bu-shu-2"><strong>1.5 Artifacts（Web部署-2）</strong></a></li>
 </ul>
 </li>
-<li><a href="#参考链接">参考链接</a></li>
+<li><a href="#can-kao-lian-jie">参考链接</a></li>
 </ul>
 <!-- tocstop -->
 
+</div>
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="项目配置的理解">项目配置的理解</span></h1><p>IDEA 中最重要的各种设置项，就是这个 Project Structre 了，关乎你的项目运行，缺胳膊少腿都不行。最近公司正好也是用之前自己比较熟悉的IDEA而不是Eclipse，为了更深入理解和使用，就找来各种资料再研究一下，这里整理后来个输出。</p>
+<h1><span id="xiang-mu-pei-zhi-de-li-jie">项目配置的理解</span><a href="#xiang-mu-pei-zhi-de-li-jie" class="header-anchor">[</a></h1><p>IDEA 中最重要的各种设置项，就是这个 Project Structre 了，关乎你的项目运行，缺胳膊少腿都不行。最近公司正好也是用之前自己比较熟悉的IDEA而不是Eclipse，为了更深入理解和使用，就找来各种资料再研究一下，这里整理后来个输出。</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee31fkmjj30u00ewjsr.jpg" alt="img"></p>
-<h2><span id="11-project"><strong>1.1 Project</strong></span></h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/oTKHc6F8tshHCH5Az9piaaEt0TAR2mqZTp5krt1iaQbOC2uzz1QogTWjeelliaibodabvfFqE8bglDbcX29lud0TNQ/640?wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<h2><span id="1-1-project"><strong>1.1 Project</strong></span><a href="#1-1-project" class="header-anchor">[</a></h2><p><img src="https://mmbiz.qpic.cn/mmbiz_png/oTKHc6F8tshHCH5Az9piaaEt0TAR2mqZTp5krt1iaQbOC2uzz1QogTWjeelliaibodabvfFqE8bglDbcX29lud0TNQ/640?wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
 <p><strong>1. Project name</strong>：</p>
 <p>定义项目的名称；</p>
 <p><strong>2. Project SDK</strong>：</p>
@@ -473,11 +476,11 @@
 <p><strong>4. Project compiler output</strong>：</p>
 <p>项目中的默认编译输出总目录，如图黄色部分，实际上每个模块可以自己设置特殊的输出目录（Modules - (project) - Paths - Use module compile output path），所以这个设置有点鸡肋。</p>
 <p>小插曲：更多 IDEA 相关文章可以本公众号（Java后端）回复 技术博文，获取~</p>
-<h2><span id="12-modules"><strong>1.2 Modules</strong></span></h2><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee346elej30u00gg760.jpg" alt="img"></p>
-<h3><span id="121-增删子项目"><strong>1.2.1 增删子项目</strong></span></h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee32qhyrj30u00ggjt2.jpg" alt="img"></p>
+<h2><span id="1-2-modules"><strong>1.2 Modules</strong></span><a href="#1-2-modules" class="header-anchor">[</a></h2><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee346elej30u00gg760.jpg" alt="img"></p>
+<h3><span id="1-2-1-zeng-shan-zi-xiang-mu"><strong>1.2.1 增删子项目</strong></span><a href="#1-2-1-zeng-shan-zi-xiang-mu" class="header-anchor">[</a></h3><p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee32qhyrj30u00ggjt2.jpg" alt="img"></p>
 <p>一个项目中可以有多个子项目，每个子项目相当于一个模块。一般我们项目只是单独的一个，IntelliJ IDEA 默认也是单子项目的形式，所以只需要配置一个模块。</p>
 <p>（此处的两个项目引入仅作示例参考）</p>
-<h3><span id="122-子项目配置"><strong>1.2.2 子项目配置</strong></span></h3><p>每个子项目都对应了Sources、Paths、Dependencies 三大配置选项：</p>
+<h3><span id="1-2-2-zi-xiang-mu-pei-zhi"><strong>1.2.2 子项目配置</strong></span><a href="#1-2-2-zi-xiang-mu-pei-zhi" class="header-anchor">[</a></h3><p>每个子项目都对应了Sources、Paths、Dependencies 三大配置选项：</p>
 <p><strong>Sources</strong>：</p>
 <p>显示项目的目录资源，那些是项目部署的时候需要的目录，不同颜色代表不同的类型；</p>
 <p><strong>Paths</strong>：</p>
@@ -486,15 +489,15 @@
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee31o2ygj30ty0oytby.jpg" alt="img"></p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee35j35bj30ty0oy0v5.jpg" alt="img"></p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee33dypyj30ty0oydkg.jpg" alt="img"></p>
-<h3><span id="123-增删框架web部署-1"><strong>1.2.3 增删框架（Web部署-1）</strong></span></h3><p>每个子项目之下都可以定义它所使用的框架，这里重点说明一下Web部分的设置。</p>
+<h3><span id="1-2-3-zeng-shan-kuang-jia-web-bu-shu-1"><strong>1.2.3 增删框架（Web部署-1）</strong></span><a href="#1-2-3-zeng-shan-kuang-jia-web-bu-shu-1" class="header-anchor">[</a></h3><p>每个子项目之下都可以定义它所使用的框架，这里重点说明一下Web部分的设置。</p>
 <p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gcee351vghj30u00gggnc.jpg" alt="img"></p>
-<h2><span id="13-libraries"><strong>1.3 Libraries</strong></span></h2><p>这里可以显示所添加的jar包，同时也可以添加jar包，并且可以把多个jar放在一个组里面，类似于jar包整理。</p>
+<h2><span id="1-3-libraries"><strong>1.3 Libraries</strong></span><a href="#1-3-libraries" class="header-anchor">[</a></h2><p>这里可以显示所添加的jar包，同时也可以添加jar包，并且可以把多个jar放在一个组里面，类似于jar包整理。</p>
 <p>这里默认将每个jar包做为了一个单独的组（未测试，待定）。</p>
-<h2><span id="14-facets"><strong>1.4 Facets</strong></span></h2><p>官方的解释是：</p>
+<h2><span id="1-4-facets"><strong>1.4 Facets</strong></span><a href="#1-4-facets" class="header-anchor">[</a></h2><p>官方的解释是：</p>
 <p>When you select a framework (a facet) in the element selector pane, the settings for the framework are shown in the right-hand part of the dialog.</p>
 <p>（当你在左边选择面板点击某个技术框架，右边将会显示这个框架的一些设置）</p>
 <p>说实话，并没有感觉到有什么作用。</p>
-<h2><span id="15-artifactsweb部署-2"><strong>1.5 Artifacts（Web部署-2）</strong></span></h2><p>项目的打包部署设置，这个是项目配置里面比较关键的地方，重点说一下。</p>
+<h2><span id="1-5-artifacts-web-bu-shu-2"><strong>1.5 Artifacts（Web部署-2）</strong></span><a href="#1-5-artifacts-web-bu-shu-2" class="header-anchor">[</a></h2><p>项目的打包部署设置，这个是项目配置里面比较关键的地方，重点说一下。</p>
 <p>先理解下它的含义，来看看官方定义的artifacts：</p>
 <p>An artifact is an assembly of your project assets that you put together to test, deploy or distribute your software solution or its part. Examples are a collection of compiled Java classes or a Java application packaged in a Java archive, a Web application as a directory structure or a Web application archive, etc.</p>
 <p>即编译后的Java类，Web资源等的整合，用以测试、部署等工作。再白话一点，就是说某个module要如何打包，例如war exploded、war、jar、ear等等这种打包形式。某个module有了 Artifacts 就可以部署到应用服务器中了。</p>
@@ -514,7 +517,7 @@
 <p>运行server，运行成功后，如有需要，会自动打开浏览器访问指定url。</p>
 <p>在这里还要注意的是，配置完成的artifact，需要在tomcat中进行添加：</p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/oTKHc6F8tshHCH5Az9piaaEt0TAR2mqZTgROnrP2G5UdI0n4LVovTJMoCFmB6LFrDvz6XsA038I6MEgb7Zecrwg/640?wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
-<h1><span id="参考链接">参考链接</span></h1><p>IntelliJ IDEA 项目相关的几个重要概念介绍</p>
+<h1><span id="can-kao-lian-jie">参考链接</span><a href="#can-kao-lian-jie" class="header-anchor">[</a></h1><p>IntelliJ IDEA 项目相关的几个重要概念介绍</p>
 <p>whudoc.qiniudn.com/2016/IntelliJ-IDEA-Tutorial/project-composition-introduce.html</p>
 <p><a href="http://www.jetbrains.com/help/idea/2016.3/dependencies-tab.html" target="_blank" rel="noopener">www.jetbrains.com/help/idea/2016.3/dependencies-tab.html</a></p>
 <p>Dependencies Tab</p>
@@ -558,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/" rel="next" title="在MacOS下配置Idea的最全教程">
-                <i class="fa fa-chevron-left"></i> 在MacOS下配置Idea的最全教程
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" rel="next" title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
+                <i class="fa fa-chevron-left"></i> 【转】 MacOS 下安装多个版本的 JDK 并统一管理
               </a>
             
           </div>
@@ -568,8 +571,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/01/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%BD%AC%E3%80%91Redis%E9%9D%A2%E8%AF%95%E5%9B%9E%E7%AD%94/" rel="prev" title="【转】Redis面试回答">
-                【转】Redis面试回答 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Mac%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="prev" title="Mac系统下的开发环境配置">
+                Mac系统下的开发环境配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
