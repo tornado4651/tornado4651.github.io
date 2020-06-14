@@ -112,7 +112,6 @@
 
 
 
-  <meta name="keywords" content="数据库,ES," />
 
 
 
@@ -122,20 +121,19 @@
 
 
 
-
-<meta name="description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
+<meta name="description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据     基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   搜索——“_search” 基本搜索：空搜索 多索引多类型搜索 分页搜索   API 和 关键字 汇总记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二、ES的“语法”、“关键字”等使用">
+<meta property="og:title" content="数据库&#x2F;ElasticSearch&#x2F;二、ES的“语法”、“关键字”等使用">
 <meta property="og:url" content="http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据   索引   基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   关键字 和 API汇总记录">
+<meta property="og:description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据     基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   搜索——“_search” 基本搜索：空搜索 多索引多类型搜索 分页搜索   API 和 关键字 汇总记录">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-01T09:27:28.945Z">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg">
+<meta property="article:published_time" content="2020-05-28T09:40:33.309Z">
+<meta property="article:modified_time" content="2020-06-05T06:56:54.505Z">
 <meta property="article:author" content="Tornado4651">
-<meta property="article:tag" content="数据库">
-<meta property="article:tag" content="ES">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg">
 
 
 
@@ -171,7 +169,7 @@
 
 
 
-  <title>二、ES的“语法”、“关键字”等使用 | Tornado4651</title>
+  <title>数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用 | Tornado4651</title>
   
 
 
@@ -315,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二、ES的“语法”、“关键字”等使用</h1>
+          <h1 class="post-title" itemprop="name headline">数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用</h1>
         
 
         <div class="post-meta">
@@ -327,7 +325,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:00+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-28T17:40:33+08:00">
                 2020-05-28
               </time>
             
@@ -337,28 +335,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ElasticSearch/" itemprop="url" rel="index">
-                    <span itemprop="name">ElasticSearch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -378,7 +354,7 @@
 
           
           
-             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="二、ES的“语法”、“关键字”等使用">
+             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -429,7 +405,6 @@
 <li><a href="#wen-dang-yuan-shu-ju">文档元数据</a></li>
 </ul>
 </li>
-<li><a href="#suo-yin">索引</a></li>
 </ul>
 </li>
 <li><a href="#ji-ben-cao-zuo-crud">基本操作CRUD</a><ul>
@@ -444,7 +419,13 @@
 <li><a href="#duo-gong-neng-pi-liang-cao-zuo-bulk">多功能批量操作—bulk</a></li>
 </ul>
 </li>
-<li><a href="#guan-jian-zi-he-api-hui-zong-ji-lu">关键字 和 API汇总记录</a></li>
+<li><a href="#sou-suo-search">搜索——“_search”</a><ul>
+<li><a href="#ji-ben-sou-suo-kong-sou-suo">基本搜索：空搜索</a></li>
+<li><a href="#duo-suo-yin-duo-lei-xing-sou-suo">多索引多类型搜索</a></li>
+<li><a href="#fen-ye-sou-suo">分页搜索</a></li>
+</ul>
+</li>
+<li><a href="#api-he-guan-jian-zi-hui-zong-ji-lu">API 和 关键字 汇总记录</a></li>
 </ul>
 <!-- tocstop -->
 
@@ -455,14 +436,16 @@
 <h1><span id="can-kao-lian-jie">参考链接</span><a href="#can-kao-lian-jie" class="header-anchor">[</a></h1><p><a href="https://wiki.jikexueyuan.com/project/elasticsearch-definitive-guide-cn/" target="_blank" rel="noopener">Elasticsearch 权威指南（中文版）</a></p>
 <p><a href="https://www.jianshu.com/p/3873a6290c65" target="_blank" rel="noopener">ES学习教程</a></p>
 <p><a href="https://blog.csdn.net/qq_22612245/article/details/82432107" target="_blank" rel="noopener">elasticsearch 关键词查询-实现like查询</a></p>
+<p><a href="https://www.cnblogs.com/shoufeng/category/1332134.html" target="_blank" rel="noopener">瘦风的南墙</a></p>
 <h1><span id="es-de-gai-nian">ES的概念</span><a href="#es-de-gai-nian" class="header-anchor">[</a></h1><h2><span id="es-zhong-de-shu-ju">ES中的“数据”</span><a href="#es-zhong-de-shu-ju" class="header-anchor">[</a></h2><p>传统意义上“面向对象编程”的数据都是提供在一个Object中，对象(object)是一种语言相关，记录在内存中的的数据结构。为了在网络间发送，或者存储它，我们需要一些标准的格式来表示它。JSON (JavaScript Object Notation是一种可读的以文本来表示对象的方式。它已经成为NoSQL世界中数据交换的一种事实标准。</p>
 <p>在ES的世界中，数据被分为以下几个级别的记录方式：</p>
 <blockquote>
-<p>文档 — 索引 — 类型 — id — _source — </p>
+<p>文档 — 索引 — 类型 — id —元数据 — “_source”</p>
 </blockquote>
 <h2><span id="wen-dang">文档</span><a href="#wen-dang" class="header-anchor">[</a></h2><p>通常，我们可以认为<strong>对象(object)</strong>和<strong>文档(document)</strong>是等价相通的。不过，他们还是有所差别：对象(Object)是一个JSON结构体——类似于哈希、hashmap、字典或者关联数组；对象(Object)中还可能包含其他对象(Object)。</p>
 <p> 在Elasticsearch中，<strong>文档(document)</strong>这个术语有着特殊含义。它特指最顶层结构或者<strong>根对象(root object)</strong>序列化成的JSON数据（以唯一ID标识并存储于Elasticsearch中）。</p>
-<h3><span id="wen-dang-yuan-shu-ju">文档元数据</span><a href="#wen-dang-yuan-shu-ju" class="header-anchor">[</a></h3><p>一个文档不只有数据。它还包含了<strong>元数据(metadata)</strong></p>
+<h3><span id="wen-dang-yuan-shu-ju">文档元数据</span><a href="#wen-dang-yuan-shu-ju" class="header-anchor">[</a></h3><p>一个文档不只有数据。它还包含了<strong>元数据(metadata)</strong>，如：</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg" alt="截屏2020-06-05 下午2.36.08"></p>
 <p>关于文档的信息。三个必须的元数据节点是：</p>
 <table>
 <thead>
@@ -484,7 +467,7 @@
 <td align="center">文档的唯一标识</td>
 </tr>
 </tbody></table>
-<h2><span id="suo-yin">索引</span><a href="#suo-yin" class="header-anchor">[</a></h2><h1><span id="ji-ben-cao-zuo-crud">基本操作CRUD</span><a href="#ji-ben-cao-zuo-crud" class="header-anchor">[</a></h1><h2><span id="chuang-jian">创建</span><a href="#chuang-jian" class="header-anchor">[</a></h2><p>使用<strong>PUT</strong>方法，传入一个新的文档：/index/type/id以及具体的JSON内容时，即为创建</p>
+<h1><span id="ji-ben-cao-zuo-crud">基本操作CRUD</span><a href="#ji-ben-cao-zuo-crud" class="header-anchor">[</a></h1><h2><span id="chuang-jian">创建</span><a href="#chuang-jian" class="header-anchor">[</a></h2><p>使用<strong>PUT</strong>方法，传入一个新的文档：/index/type/id以及具体的JSON内容时，即为创建</p>
 <p>如果创建时不清楚该文档是否存在，可以使用<strong>HEAD</strong>方法检查是否存在</p>
 <ul>
 <li><p>补充操作：</p>
@@ -592,29 +575,17 @@
 <p>bulk请求体中【metadata】中的index和type如果都相同，可以提出到请求头中，如：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST /website/log/_bulk</span><br><span class="line"><span class="comment">// 与请求头中的index和type相同，不需要指定</span></span><br><span class="line">&#123; <span class="attr">"index"</span>: &#123;&#125;&#125; </span><br><span class="line">&#123; <span class="attr">"event"</span>: <span class="string">"User logged in"</span> &#125;</span><br><span class="line"><span class="comment">// 与请求头中的type值不同，进行指定覆盖</span></span><br><span class="line">&#123; <span class="attr">"index"</span>: &#123; <span class="attr">"_type"</span>: <span class="string">"blog"</span> &#125;&#125;</span><br><span class="line">&#123; <span class="attr">"title"</span>: <span class="string">"Overriding the default type"</span> &#125;</span><br></pre></td></tr></table></figure>
 
+<h1><span id="sou-suo-search">搜索——“_search”</span><a href="#sou-suo-search" class="header-anchor">[</a></h1><p>在实际应用中查询数据，条件查询，结构化查询中，最主要的是<strong>“_search”API</strong>，重要程度等同于SQL中的SELECT语句。</p>
+<h2><span id="ji-ben-sou-suo-kong-sou-suo">基本搜索：空搜索</span><a href="#ji-ben-sou-suo-kong-sou-suo" class="header-anchor">[</a></h2><p>空搜索会查询到ES集群中所有的数据，并默认返回前十条。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /_search</span><br></pre></td></tr></table></figure>
 
+<h2><span id="duo-suo-yin-duo-lei-xing-sou-suo">多索引多类型搜索</span><a href="#duo-suo-yin-duo-lei-xing-sou-suo" class="header-anchor">[</a></h2><p>如果需要的数据文档存放在不同索引或者相同索引不同类型下，可以使用多索引多类型搜索</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/gb/_search</span><br><span class="line">在索引gb的所有类型中搜索</span><br><span class="line"></span><br><span class="line">/gb,us/_search</span><br><span class="line">在索引gb和us的所有类型中搜索</span><br><span class="line"></span><br><span class="line">/g*,u*/_search</span><br><span class="line">在以g或u开头的索引的所有类型中搜索</span><br><span class="line"></span><br><span class="line">/gb/user/_search</span><br><span class="line">在索引gb的类型user中搜索</span><br><span class="line"></span><br><span class="line">/gb,us/user,tweet/_search</span><br><span class="line">在索引gb和us的类型为user和tweet中搜索</span><br><span class="line"></span><br><span class="line">/_all/user,tweet/_search</span><br><span class="line">在所有索引的user和tweet中搜索</span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1><span id="guan-jian-zi-he-api-hui-zong-ji-lu">关键字 和 API汇总记录</span><a href="#guan-jian-zi-he-api-hui-zong-ji-lu" class="header-anchor">[</a></h1><table>
+<h2><span id="fen-ye-sou-suo">分页搜索</span><a href="#fen-ye-sou-suo" class="header-anchor">[</a></h2><p>在请求语句上使用如下API确定分页条件</p>
+<p><code>size</code>: 每页结果数，默认10</p>
+<p><code>from</code>: 跳过开始的结果数，默认0</p>
+<h1><span id="api-he-guan-jian-zi-hui-zong-ji-lu">API 和 关键字 汇总记录</span><a href="#api-he-guan-jian-zi-hui-zong-ji-lu" class="header-anchor">[</a></h1><table>
 <thead>
 <tr>
 <th align="center">API</th>
@@ -658,14 +629,14 @@
 <td align="center">用于对于先后顺序<strong>重要</strong>的更新操作。</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">timeout</td>
+<td align="center">指定相应时间（ms）</td>
 <td align="center"></td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">_all</td>
+<td align="center">表示所有</td>
+<td align="center">具体指”所有什么“要看放在哪个字段</td>
 </tr>
 <tr>
 <td align="center"></td>
@@ -727,14 +698,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
-          
-            <a href="/tags/ES/" rel="tag"># ES</a>
-          
-        </div>
-      
 
       
       
@@ -754,8 +717,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E5%AE%9E%E9%99%85%E7%94%9F%E4%BA%A7%E4%B8%AD%E7%9A%84%E7%BB%8F%E9%AA%8C%E6%80%BB%E7%BB%93/" rel="prev" title="ES在实际生产中的经验总结">
-                ES在实际生产中的经验总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" rel="prev" title="ES踩坑记录">
+                ES踩坑记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -873,7 +836,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">70</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -884,7 +847,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -895,7 +858,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">64</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -944,7 +907,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">ES的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">ES中的“数据”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">2.2.1.</span> <span class="nav-text">文档元数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.3.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">基本操作CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.4.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">批量操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">多文档检索——mget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.2.</span> <span class="nav-text">多功能批量操作—bulk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">关键字 和 API汇总记录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">ES的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">ES中的“数据”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">文档</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">2.2.1.</span> <span class="nav-text">文档元数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">基本操作CRUD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">获取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.3.</span> <span class="nav-text">更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.4.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">批量操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">多文档检索——mget</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.2.</span> <span class="nav-text">多功能批量操作—bulk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">搜索——“_search”</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.1.</span> <span class="nav-text">基本搜索：空搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.2.</span> <span class="nav-text">多索引多类型搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.3.</span> <span class="nav-text">分页搜索</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">API 和 关键字 汇总记录</span></a></li></ol></div>
             
 
           </div>
@@ -1143,7 +1106,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/';
           this.page.identifier = '2020/05/28/数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用/';
-          this.page.title = '二、ES的“语法”、“关键字”等使用';
+          this.page.title = '数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://LJF.disqus.com/embed.js';
