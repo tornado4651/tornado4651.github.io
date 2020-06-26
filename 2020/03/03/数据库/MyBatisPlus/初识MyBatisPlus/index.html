@@ -442,7 +442,7 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="yu-mybatis-de-bi-jiao">与Mybatis的比较：</span><a href="#yu-mybatis-de-bi-jiao" class="header-anchor">[</a></h1><p>MyBatis：</p>
+<h1><span id="yu-mybatis-de-bi-jiao">与Mybatis的比较：</span><a href="#yu-mybatis-de-bi-jiao" class="header-anchor"></a></h1><p>MyBatis：</p>
 <ul>
 <li>需要与Spring的连接包</li>
 </ul>
@@ -450,14 +450,14 @@
 <ul>
 <li>不需要MyBatis</li>
 </ul>
-<h1><span id="mp-de-hello-world-shi-yong">mp的hello world使用</span><a href="#mp-de-hello-world-shi-yong" class="header-anchor">[</a></h1><p>maven依赖：直接引入mybatis-plus即可，不需要mybatis和mybatis-spring的依赖，mp会统统自动配置</p>
+<h1><span id="mp-de-hello-world-shi-yong">mp的hello world使用</span><a href="#mp-de-hello-world-shi-yong" class="header-anchor"></a></h1><p>maven依赖：直接引入mybatis-plus即可，不需要mybatis和mybatis-spring的依赖，mp会统统自动配置</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- mp 依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>使用Spring对mp的配置：（applicationContext.xml中）</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 1:数据源 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"db.properties"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 2: MyBatisPlus配置：MyBatisSqlSessionFactoryBean,只需要更换类名即可，其他与MyBatis的相同，不用更改  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactoryBean"</span> <span class="attr">class</span>=<span class="string">"com.baomidou.mybatisplus.spring.MybatisSqlSessionFactoryBean"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 数据源 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- MP配置 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"configLocation"</span> <span class="attr">value</span>=<span class="string">"classpath:mybatis-config.xml"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 别名处理 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"typeAliasesPackage"</span> <span class="attr">value</span>=<span class="string">"com.tornado4651.mp"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--加入MyBatisPlus的全局配置 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"globalConfig"</span> <span class="attr">ref</span>=<span class="string">"globalConfiguration"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 3:配置MybatisPlus的全局配置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"globalConfiguration"</span> <span class="attr">class</span>=<span class="string">"com.baomidou.mybatisplus.entity.GlobalConfiguration"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 主键自增 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"idType"</span> <span class="attr">value</span>=<span class="string">"0"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 表名前缀转换 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"tablePrefix"</span> <span class="attr">value</span>=<span class="string">"tbl_"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 4:配置 mybatis 扫描 mapper 接口的路径 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"basePackage"</span> <span class="attr">value</span>=<span class="string">"com.tornado4651.mp.mapper"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>上面的配置完成后，就表示MyBatisPlus已经配置到项目中可以做基本的使用了。</p>
-<h1><span id="mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong">MyBatisPlus中的基本CRUD方法使用</span><a href="#mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong" class="header-anchor">[</a></h1><p>MyBatisPlus内置了许多基本的且功能强大的CRUD方法，基本的各类需求已经能够满足，无需开发人员自己动手编写mapper接口中的具体方法和对应的xxxmapper.xml映射文件，只需要将我们的接口继承com.baomidou.mybatisplus.mapper.BaseMapper接口即可。例如编写用户mapper：</p>
+<h1><span id="mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong">MyBatisPlus中的基本CRUD方法使用</span><a href="#mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong" class="header-anchor"></a></h1><p>MyBatisPlus内置了许多基本的且功能强大的CRUD方法，基本的各类需求已经能够满足，无需开发人员自己动手编写mapper接口中的具体方法和对应的xxxmapper.xml映射文件，只需要将我们的接口继承com.baomidou.mybatisplus.mapper.BaseMapper接口即可。例如编写用户mapper：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.tornado4651.mp.mapper;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.mapper.BaseMapper;</span><br><span class="line"><span class="keyword">import</span> com.tornado4651.mp.beans.User;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt; </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>通过继承BaseMapper接口后，可以使用MP自带的CRUD功能，源码中具体如下，方法可分为两类，直接使用 和 传入条件使用。</p>
@@ -469,14 +469,14 @@
 
 
 
-<h1><span id="tiao-jian-gou-zao-qi">条件构造器</span><a href="#tiao-jian-gou-zao-qi" class="header-anchor">[</a></h1><p>EntityWrapper</p>
+<h1><span id="tiao-jian-gou-zao-qi">条件构造器</span><a href="#tiao-jian-gou-zao-qi" class="header-anchor"></a></h1><p>EntityWrapper</p>
 <p>Condition.create()</p>
-<h1><span id="dai-ma-sheng-cheng-gong-neng">代码生成功能</span><a href="#dai-ma-sheng-cheng-gong-neng" class="header-anchor">[</a></h1><p>插件使用：</p>
+<h1><span id="dai-ma-sheng-cheng-gong-neng">代码生成功能</span><a href="#dai-ma-sheng-cheng-gong-neng" class="header-anchor"></a></h1><p>插件使用：</p>
 <p><strong>分页插件</strong>： com.baomidou.mybatisplus.plugins.PaginationInterceptor</p>
 <p><strong>执行分析插件</strong>：com.baomidou.mybatisplus.plugins.SqlExplainInterceptor</p>
 <p><strong>性能分析插件</strong>：com.baomidou.mybatisplus.plugins.PerformanceInterceptor</p>
 <p><strong>乐观锁插件</strong>：com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor</p>
-<h1><span id="quan-ju-cao-zuo">全局操作</span><a href="#quan-ju-cao-zuo" class="header-anchor">[</a></h1><p>自定义全局操作</p>
+<h1><span id="quan-ju-cao-zuo">全局操作</span><a href="#quan-ju-cao-zuo" class="header-anchor"></a></h1><p>自定义全局操作</p>
 <ol>
 <li>注入自己的mapper方法对应的sql语句</li>
 <li>逻辑删除</li>
@@ -640,7 +640,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -651,7 +651,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -662,7 +662,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

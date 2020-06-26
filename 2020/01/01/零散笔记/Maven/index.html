@@ -448,10 +448,10 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="maven-yue-ding-de-mu-lu-jie-gou">maven约定的目录结构</span><a href="#maven-yue-ding-de-mu-lu-jie-gou" class="header-anchor">[</a></h1><p>根目录（工程名）<br>——src目录<br>——|———-|main目录<br>——|———-|————｜java目录<br>——|———-|————｜resource目录<br>——|———-|test目录<br>——|———-|————｜java目录<br>——|———-|————｜resource目录<br>——target目录（mvn编译后自动生成的目录，存放.class和其他报告等文件）<br>—— <font color="Red">pom.xml</font></p>
+<h1><span id="maven-yue-ding-de-mu-lu-jie-gou">maven约定的目录结构</span><a href="#maven-yue-ding-de-mu-lu-jie-gou" class="header-anchor"></a></h1><p>根目录（工程名）<br>——src目录<br>——|———-|main目录<br>——|———-|————｜java目录<br>——|———-|————｜resource目录<br>——|———-|test目录<br>——|———-|————｜java目录<br>——|———-|————｜resource目录<br>——target目录（mvn编译后自动生成的目录，存放.class和其他报告等文件）<br>—— <font color="Red">pom.xml</font></p>
 <p>补充1:约定 &gt; </p>
-<h2><span id="bu-chong-2-eclipse-zhong-ju-ti-web-gong-cheng-shi-tu-de-ju-ti-jie-shi">补充2：eclipse中具体web工程视图的具体解释</span><a href="#bu-chong-2-eclipse-zhong-ju-ti-web-gong-cheng-shi-tu-de-ju-ti-jie-shi" class="header-anchor">[</a></h2><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc3dbwduwqj30o80fzmyh.jpg" alt="eclipse上的项目目录映射"></p>
-<h1><span id="chang-yong-ming-ling">常用命令：</span><a href="#chang-yong-ming-ling" class="header-anchor">[</a></h1><p>mvn clean:                清理</p>
+<h2><span id="bu-chong-2-eclipse-zhong-ju-ti-web-gong-cheng-shi-tu-de-ju-ti-jie-shi">补充2：eclipse中具体web工程视图的具体解释</span><a href="#bu-chong-2-eclipse-zhong-ju-ti-web-gong-cheng-shi-tu-de-ju-ti-jie-shi" class="header-anchor"></a></h2><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc3dbwduwqj30o80fzmyh.jpg" alt="eclipse上的项目目录映射"></p>
+<h1><span id="chang-yong-ming-ling">常用命令：</span><a href="#chang-yong-ming-ling" class="header-anchor"></a></h1><p>mvn clean:                清理</p>
 <p>mvn compile:            编译主程序</p>
 <p>mvn test:                    测试</p>
 <p>man test-compile:    编译测试程序</p>
@@ -459,12 +459,12 @@
 <p>man install:                安装（mvn特有，将自己的项目安装到本地仓库中）</p>
 <p>maven deploy：        自动部署到tomcat（需要配置构建插件）</p>
 <p>mvn site:                    生成站点</p>
-<h1><span id="zuo-biao">坐标</span><a href="#zuo-biao" class="header-anchor">[</a></h1><p><strong>坐标规范：</strong></p>
+<h1><span id="zuo-biao">坐标</span><a href="#zuo-biao" class="header-anchor"></a></h1><p><strong>坐标规范：</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>公司组织域名倒序 + 工程名<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>项目名<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>版本<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>根据坐标在仓库中找到jar包的具体路径：</strong></p>
 <p>【groupId】/【artifaceId】/【version】/【artifactId】-【version】.jar</p>
-<h1><span id="cang-ku">仓库</span><a href="#cang-ku" class="header-anchor">[</a></h1><p>仓库的分类</p>
+<h1><span id="cang-ku">仓库</span><a href="#cang-ku" class="header-anchor"></a></h1><p>仓库的分类</p>
 <ul>
 <li>本地仓库：在自己电脑上部署的仓库</li>
 <li>远程仓库：<ul>
@@ -474,9 +474,9 @@
 </ul>
 </li>
 </ul>
-<h1><span id="maven-yi-lai-de-xiang-guan-wen-ti">maven依赖的相关问题</span><a href="#maven-yi-lai-de-xiang-guan-wen-ti" class="header-anchor">[</a></h1><h2><span id="yi-lai-fang-shi-de-pei-zhi">依赖方式的配置：</span><a href="#yi-lai-fang-shi-de-pei-zhi" class="header-anchor">[</a></h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">scope</span>&gt;</span>依赖名【默认compile】<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1><span id="maven-yi-lai-de-xiang-guan-wen-ti">maven依赖的相关问题</span><a href="#maven-yi-lai-de-xiang-guan-wen-ti" class="header-anchor"></a></h1><h2><span id="yi-lai-fang-shi-de-pei-zhi">依赖方式的配置：</span><a href="#yi-lai-fang-shi-de-pei-zhi" class="header-anchor"></a></h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span><span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">scope</span>&gt;</span>依赖名【默认compile】<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2><span id="yi-lai-fang-shi-de-fan-wei">依赖方式的范围：</span><a href="#yi-lai-fang-shi-de-fan-wei" class="header-anchor">[</a></h2><table>
+<h2><span id="yi-lai-fang-shi-de-fan-wei">依赖方式的范围：</span><a href="#yi-lai-fang-shi-de-fan-wei" class="header-anchor"></a></h2><table>
 <thead>
 <tr>
 <th align="center">取值</th>
@@ -512,26 +512,26 @@
 <td align="center">servlet-api.jar</td>
 </tr>
 </tbody></table>
-<h2><span id="wen-ti-zong-jie">问题总结</span><a href="#wen-ti-zong-jie" class="header-anchor">[</a></h2><p>依赖的冲突：provided范围的依赖是指在调试期间需要，但是服务器中自带，不能一同打包部署，否则会出现“NULLException”报错。</p>
+<h2><span id="wen-ti-zong-jie">问题总结</span><a href="#wen-ti-zong-jie" class="header-anchor"></a></h2><p>依赖的冲突：provided范围的依赖是指在调试期间需要，但是服务器中自带，不能一同打包部署，否则会出现“NULLException”报错。</p>
 <p>依赖的传递性：A项目所有compile类型依赖会给依赖A项目的B项目导入同样的依赖，而其他非compile类型则不会。</p>
 <p>依赖的排除：若A项目依赖B项目，但当我们依赖A时不希望自动依赖B，就可以在A项目中的最后通过如下标签进行排除</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span><span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span><span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>依赖冲突：A项目在某一层依赖junit1.2.17，B项目在某一层中依赖junit 1.2.27，我的项目同时依赖A项目和B项目，那么junit的两个版本就有了冲突。路径长度不同的情况下，maven使用最短路径长度依赖，路径长度相同的情况下，maven优先继承配置文件中靠前的版本。</p>
-<h1><span id="tong-yi-pei-zhi">统一配置</span><a href="#tong-yi-pei-zhi" class="header-anchor">[</a></h1><p>pom.xml配置文件中可以使用properties管理统一的配置，方便统一修改，如Spring各个部分的统一版本号，字符编码等</p>
+<h1><span id="tong-yi-pei-zhi">统一配置</span><a href="#tong-yi-pei-zhi" class="header-anchor"></a></h1><p>pom.xml配置文件中可以使用properties管理统一的配置，方便统一修改，如Spring各个部分的统一版本号，字符编码等</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">自定义的标签名</span>&gt;</span>配置值<span class="tag">&lt;/<span class="name">自定义的标签名</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 引用方法 --&gt;</span></span><br><span class="line">$&#123;自定义的标签名&#125;</span><br></pre></td></tr></table></figure>
 
-<h1><span id="ji-cheng-xiang-mu">继承项目</span><a href="#ji-cheng-xiang-mu" class="header-anchor">[</a></h1><p>区别于properties中的统一配置，只能对一个模块中的依赖进行统一版本号等配置。但如果想要统一管理不同模块下的相同依赖的版本号等，就需要用到继承机制，即创建一个父模块，让所有的子模块都继承该父模块即可在父模块下统一管理某一个依赖，具体配置方法：</p>
+<h1><span id="ji-cheng-xiang-mu">继承项目</span><a href="#ji-cheng-xiang-mu" class="header-anchor"></a></h1><p>区别于properties中的统一配置，只能对一个模块中的依赖进行统一版本号等配置。但如果想要统一管理不同模块下的相同依赖的版本号等，就需要用到继承机制，即创建一个父模块，让所有的子模块都继承该父模块即可在父模块下统一管理某一个依赖，具体配置方法：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 父项目下的pom.xml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>公司组织域名倒序 + 项目名<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>模块名<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>版本<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 子项目下的pom.xml --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 父工程坐标 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">relativePath</span>&gt;</span>以当前项目为基准的父工程pom.xml文件的相对路径/<span class="tag">&lt;/<span class="name">relativePath</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>之后在父项目中配置好具体的统一依赖后，子项目中所有的这个依赖便不再需要写明版本号了</p>
-<h1><span id="ju-he-xiang-mu">聚合项目</span><a href="#ju-he-xiang-mu" class="header-anchor">[</a></h1><p>聚合项目主要用于对多个项目进行统一maven操作，如打包，安装，部署等，一般情况下和继承关系一起配置在一个父项目中，但也可以分开，不是必须在同一个项目中，具体配置：</p>
+<h1><span id="ju-he-xiang-mu">聚合项目</span><a href="#ju-he-xiang-mu" class="header-anchor"></a></h1><p>聚合项目主要用于对多个项目进行统一maven操作，如打包，安装，部署等，一般情况下和继承关系一起配置在一个父项目中，但也可以分开，不是必须在同一个项目中，具体配置：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在总工程下配置 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">models</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">model</span>&gt;</span>要聚合的第一个项目的相对路径<span class="tag">&lt;/<span class="name">model</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">model</span>&gt;</span>要聚合的第二个项目的相对路径<span class="tag">&lt;/<span class="name">model</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">model</span>&gt;</span>要聚合的第三个项目的相对路径<span class="tag">&lt;/<span class="name">model</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">model</span>&gt;</span>......<span class="tag">&lt;/<span class="name">model</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">models</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>这样一来，直接在该总工程下进行maven命令即可一键安装等操作</p>
-<h1><span id="maven-cang-ku-wang-zhi">Maven仓库网址</span><a href="#maven-cang-ku-wang-zhi" class="header-anchor">[</a></h1><p>需要导入依赖坐标的时候就到这个网址查找具体的坐标怎么写</p>
+<h1><span id="maven-cang-ku-wang-zhi">Maven仓库网址</span><a href="#maven-cang-ku-wang-zhi" class="header-anchor"></a></h1><p>需要导入依赖坐标的时候就到这个网址查找具体的坐标怎么写</p>
 <p><a href="https://mvnrepository.com/" target="_blank" rel="noopener">https://mvnrepository.com/</a></p>
 <p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc4ezyxgghj31gp0u0au1.jpg" alt="截屏2020-02-21下午10.57.45"></p>
 
@@ -564,8 +564,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/REST%E8%A7%84%E8%8C%83/" rel="next" title="REST规范">
-                <i class="fa fa-chevron-left"></i> REST规范
+              <a href="/2020/01/01/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Lombok%E8%AE%B0%E5%BD%95/" rel="next" title="Lombok记录">
+                <i class="fa fa-chevron-left"></i> Lombok记录
               </a>
             
           </div>
@@ -693,7 +693,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -704,7 +704,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -715,7 +715,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

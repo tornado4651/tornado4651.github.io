@@ -433,16 +433,16 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="shi-me-shi-dai-li">什么是代理？</span><a href="#shi-me-shi-dai-li" class="header-anchor">[</a></h1><p>代理是指<strong>“代理者”</strong>通过<strong>“被代理人”</strong>的授权，替“被代理人”做出某些行为和事件的过程</p>
+<h1><span id="shi-me-shi-dai-li">什么是代理？</span><a href="#shi-me-shi-dai-li" class="header-anchor"></a></h1><p>代理是指<strong>“代理者”</strong>通过<strong>“被代理人”</strong>的授权，替“被代理人”做出某些行为和事件的过程</p>
 <p>在生活中：</p>
 <p>张三有一套多余的房子想要出租，找到中介，将房子交给中介机构出租，自己什么都不用管。这里的<strong>“张三”</strong>就是<strong>“被代理人”</strong>，<strong>“中介”</strong>就是<strong>“代理者”</strong>。中介可以在履行出租房屋的基础上，做一些如<code>出租前宣传，装修房屋、出租后回首打扫</code>这种在<code>出租房屋</code>这件事本身<strong>前和后</strong>做出一些其他事情。</p>
 <p>在编程中：</p>
 <p>假设A类有一个a方法，我们想要调用，普通的方法是通过A的实例化对象直接调用a方法。但是使用代理模式后：有一个AProxy类，内部可以调用A的a方法，我们使用的时候也不再直接调用a，而是借助Aproxy的实例化对象来调用a方法。这样一来，可以在a方法的前后新增一些有意义的操作。</p>
 <p>而在具体的代码实现中，分为了<strong>“静态代理”</strong>，和<strong>“动态代理”</strong>。</p>
-<h1><span id="jing-tai-dai-li">静态代理</span><a href="#jing-tai-dai-li" class="header-anchor">[</a></h1><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gffaetl7jxj30r60dz74s.jpg" alt="代理模式UML图"></p>
+<h1><span id="jing-tai-dai-li">静态代理</span><a href="#jing-tai-dai-li" class="header-anchor"></a></h1><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gffaetl7jxj30r60dz74s.jpg" alt="代理模式UML图"></p>
 <p>如上图所示，静态代理的主要实现方法在于：</p>
 <p>代理类和真实类都实现了同一个接口，在此之上，代理类内部有一个“被代理类”的成员变量，并通过构造器对其初始化。以此实现调用真正的方法。</p>
-<h1><span id="dong-tai-dai-li">动态代理</span><a href="#dong-tai-dai-li" class="header-anchor">[</a></h1>
+<h1><span id="dong-tai-dai-li">动态代理</span><a href="#dong-tai-dai-li" class="header-anchor"></a></h1>
       
     </div>
     
@@ -601,7 +601,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -612,7 +612,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -623,7 +623,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

@@ -438,14 +438,14 @@
 
 <a id="more"></a>
 
-<h1><span id="fen-ci-he-bu-fen-ci">分词 和 不分词</span><a href="#fen-ci-he-bu-fen-ci" class="header-anchor">[</a></h1><p>在实际生产中，分词搜索有些时候会查询出很多不必要的信息，因此需要在配置文档mapping，和查询时对分词进行限制。</p>
+<h1><span id="fen-ci-he-bu-fen-ci">分词 和 不分词</span><a href="#fen-ci-he-bu-fen-ci" class="header-anchor"></a></h1><p>在实际生产中，分词搜索有些时候会查询出很多不必要的信息，因此需要在配置文档mapping，和查询时对分词进行限制。</p>
 <p><strong>分词查询</strong>：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"match"</span>: &#123;</span><br><span class="line">          <span class="attr">"reportorname"</span>: <span class="string">"tornado4651"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>不分词查询：</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"wildcard"</span>: &#123;</span><br><span class="line">          <span class="attr">"username.keyword"</span>: <span class="string">"tornado4651"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"># 可以借助通配符搜索</span><br><span class="line">GET /test/_search</span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"query"</span>: &#123;</span><br><span class="line">      <span class="attr">"wildcard"</span>: &#123;</span><br><span class="line">          <span class="attr">"username.keyword"</span>: <span class="string">"tornado*"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h1><span id="fan-wei-cha-xun">范围查询</span><a href="#fan-wei-cha-xun" class="header-anchor">[</a></h1><p> <a href="https://www.cnblogs.com/shoufeng/p/11266136.html" target="_blank" rel="noopener">Elasticsearch中如何进行日期(数值)范围查询</a></p>
+<h1><span id="fan-wei-cha-xun">范围查询</span><a href="#fan-wei-cha-xun" class="header-anchor"></a></h1><p> <a href="https://www.cnblogs.com/shoufeng/p/11266136.html" target="_blank" rel="noopener">Elasticsearch中如何进行日期(数值)范围查询</a></p>
 
       
     </div>
@@ -476,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" rel="next" title="数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用">
-                <i class="fa fa-chevron-left"></i> 数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用
+              <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" rel="next" title="数据库/ElasticSearch/三、ES的查询大总结">
+                <i class="fa fa-chevron-left"></i> 数据库/ElasticSearch/三、ES的查询大总结
               </a>
             
           </div>
@@ -486,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" rel="prev" title="数据库/ElasticSearch/三、ES的查询大总结">
-                数据库/ElasticSearch/三、ES的查询大总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/01/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="学习笔记">
+                学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -605,7 +605,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -616,7 +616,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -627,7 +627,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

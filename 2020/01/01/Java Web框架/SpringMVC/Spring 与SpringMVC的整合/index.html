@@ -447,9 +447,9 @@
 
 
 <p>[toc]</p>
-<h1><span id="yi-wei-shi-me-xu-yao-zheng-he">一、为什么需要整合</span><a href="#yi-wei-shi-me-xu-yao-zheng-he" class="header-anchor">[</a></h1><p>Spring框架主要提供思想，并且实现便利的DI和AOP。</p>
+<h1><span id="yi-wei-shi-me-xu-yao-zheng-he">一、为什么需要整合</span><a href="#yi-wei-shi-me-xu-yao-zheng-he" class="header-anchor"></a></h1><p>Spring框架主要提供思想，并且实现便利的DI和AOP。</p>
 <p>而SpringMVC又可以将Spirng很具体的实现在web应用上，但仅仅是处理web上会变的简单高效，后端的整体支持还需要Spring这个大框架的支持</p>
-<h1><span id="er-spring-de-zui-ji-chu-pei-zhi">二、Spring的最基础配置</span><a href="#er-spring-de-zui-ji-chu-pei-zhi" class="header-anchor">[</a></h1><p>Spring主要是IOC控制反转思想，具体来说，就是容器对java对象的自动实例化，自动装配，并在创建好之后存入Spring容器中，开发人员在程序中调用时及时返回，但返回后具体怎么用还是要看开发人员。</p>
+<h1><span id="er-spring-de-zui-ji-chu-pei-zhi">二、Spring的最基础配置</span><a href="#er-spring-de-zui-ji-chu-pei-zhi" class="header-anchor"></a></h1><p>Spring主要是IOC控制反转思想，具体来说，就是容器对java对象的自动实例化，自动装配，并在创建好之后存入Spring容器中，开发人员在程序中调用时及时返回，但返回后具体怎么用还是要看开发人员。</p>
 <p>实现在代码中，可以简单的看作，Spring容器就是自己定义的xml配置文件。Spring的IOC容器创建方法：</p>
 <p>非web环境下：</p>
 <p>Spring的xml配置框架：</p>
@@ -460,7 +460,7 @@
 
 
 
-<h1><span id="san-springmvc-kuang-jia-de-ji-ben-pei-zhi">三、SpringMVC框架的基本配置</span><a href="#san-springmvc-kuang-jia-de-ji-ben-pei-zhi" class="header-anchor">[</a></h1><p>SpringMVC是指Spring大框架中的WEB部分，主要是依靠”org.springframework.web.servlet.DispatcherServlet“这个具体的Servlet实现将web请求转发给SpringMVC组件做进一步处理</p>
+<h1><span id="san-springmvc-kuang-jia-de-ji-ben-pei-zhi">三、SpringMVC框架的基本配置</span><a href="#san-springmvc-kuang-jia-de-ji-ben-pei-zhi" class="header-anchor"></a></h1><p>SpringMVC是指Spring大框架中的WEB部分，主要是依靠”org.springframework.web.servlet.DispatcherServlet“这个具体的Servlet实现将web请求转发给SpringMVC组件做进一步处理</p>
 <p>具体实现：</p>
 <p>web项目的入口web.xml中配置SpringMVC所提供的DespatcherServlet连接到具体的springMVC配置文件中（DispatcherServlet只是基本配置，还有filter等）：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:SpringMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -476,7 +476,7 @@
 
 
 
-<h1><span id="si-spring-he-springmvc-zui-ji-chu-de-zheng-he">四、Spring和SpringMVC最基础的整合</span><a href="#si-spring-he-springmvc-zui-ji-chu-de-zheng-he" class="header-anchor">[</a></h1><p>因为ServletContext是web应用中最基础的组件（Tomcat一启动，ServletContext就被创建了），所以应该创建一个监听器，用于监听ServletContext，监听到ServletContext对像被创建，就立即创建IOC容器。并且为了让所有的controller（handler）能够使用IOC容器自动管理bean对象，所有还要将IOC容器绑定到ServletContext中，以便让所有的组件能共享到IOC容器。</p>
+<h1><span id="si-spring-he-springmvc-zui-ji-chu-de-zheng-he">四、Spring和SpringMVC最基础的整合</span><a href="#si-spring-he-springmvc-zui-ji-chu-de-zheng-he" class="header-anchor"></a></h1><p>因为ServletContext是web应用中最基础的组件（Tomcat一启动，ServletContext就被创建了），所以应该创建一个监听器，用于监听ServletContext，监听到ServletContext对像被创建，就立即创建IOC容器。并且为了让所有的controller（handler）能够使用IOC容器自动管理bean对象，所有还要将IOC容器绑定到ServletContext中，以便让所有的组件能共享到IOC容器。</p>
 <p>具体实现方法：</p>
 <p>在动态web工程的必备配置文件：web.xml中作出如下配置：ContextLoaderListener用于在tomcat启动创建contextServlet时创建一个统一的applicationContext对象，用于以后的调用。DispatcherServlet指定到SpringMVC的具体配置。</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"</span> <span class="attr">id</span>=<span class="string">"WebApp_ID"</span> <span class="attr">version</span>=<span class="string">"2.5"</span>&gt;</span></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">  	<span class="comment">&lt;!-- Bootstraps the root web application context before servlet initialization --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.springframework.web.context.ContextLoaderListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">	<span class="comment">&lt;!-- needed for ContextLoaderListener --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:Spring.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- The front controller of this Spring Web application, responsible for handling all application requests --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:springMVC.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">&lt;!-- Map all requests to the DispatcherServlet for handling --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springDispatcherServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -490,7 +490,7 @@
 
 
 
-<h1><span id="wu-zong-jie">五、总结</span><a href="#wu-zong-jie" class="header-anchor">[</a></h1>
+<h1><span id="wu-zong-jie">五、总结</span><a href="#wu-zong-jie" class="header-anchor"></a></h1>
       
     </div>
     
@@ -524,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/%E5%88%9D%E8%AF%86SpringMVC/" rel="next" title="初识SpringMVC">
-                <i class="fa fa-chevron-left"></i> 初识SpringMVC
+              <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%E7%94%B1%E2%80%9C%E5%B0%8F%E7%B1%B3%E5%93%81%E7%89%8C%E2%80%9D%E5%BC%95%E8%B5%B7%E7%9A%84%E6%80%9D%E8%80%83/" rel="next" title="2020年初对“小米”品牌的重新认识">
+                <i class="fa fa-chevron-left"></i> 2020年初对“小米”品牌的重新认识
               </a>
             
           </div>
@@ -653,7 +653,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -664,7 +664,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -675,7 +675,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

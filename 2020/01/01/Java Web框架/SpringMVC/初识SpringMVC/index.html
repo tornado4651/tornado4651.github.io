@@ -448,12 +448,12 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h2><span id="yi-springmvc-kuang-jia-de-shi-xian">一、SpringMVC框架的实现</span><a href="#yi-springmvc-kuang-jia-de-shi-xian" class="header-anchor">[</a></h2><p>Java Web项目统一由classpath下的web.xml管理，而MVC中的C即指代servlet或filter之一的“前段控制器”，只有这一部分的引入才决定了整个项目的框架是什么。</p>
+<h2><span id="yi-springmvc-kuang-jia-de-shi-xian">一、SpringMVC框架的实现</span><a href="#yi-springmvc-kuang-jia-de-shi-xian" class="header-anchor"></a></h2><p>Java Web项目统一由classpath下的web.xml管理，而MVC中的C即指代servlet或filter之一的“前段控制器”，只有这一部分的引入才决定了整个项目的框架是什么。</p>
 <p>而在SpringMVC框架中，最主要的就是org.springframework.web.servlet.DispatcherServlet的实现：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>springMvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">  		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>/WEB-INF/springMvc-config.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2><span id="er-springmvc-de-qing-qiu-xiang-ying-liu-cheng-ru-xia">二、SpringMVC的请求相应流程如下：</span><a href="#er-springmvc-de-qing-qiu-xiang-ying-liu-cheng-ru-xia" class="header-anchor">[</a></h2><ol>
+<h2><span id="er-springmvc-de-qing-qiu-xiang-ying-liu-cheng-ru-xia">二、SpringMVC的请求相应流程如下：</span><a href="#er-springmvc-de-qing-qiu-xiang-ying-liu-cheng-ru-xia" class="header-anchor"></a></h2><ol>
 <li>用户向浏览器发送请求，请求被Spring的“前端控制器DispatcherServlet”截获</li>
 <li>将URL请求转换为URI，调用“处理器映射器HandlerMapping”，获得Controller配置的相关对象。</li>
 <li>“前端控制器DispatcherServlet”根据获得的Handler，选择合适的“处理器适配器HandlerAdapter”，其代码结构清晰，便于维护，可复用性高。适配器调用具体的Handller进行对请求的实际处理。</li>
@@ -513,8 +513,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/Spring%20%E4%B8%8ESpringMVC%E7%9A%84%E6%95%B4%E5%90%88/" rel="prev" title="Spring+SpringMVC的整合">
-                Spring+SpringMVC的整合 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/01/Java%20Web%E6%A1%86%E6%9E%B6/SpringMVC/SSM%E6%95%B4%E5%90%88/" rel="prev" title="SSM整合">
+                SSM整合 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,7 +632,7 @@ var jiathis_config={
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">70</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -643,7 +643,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -654,7 +654,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
