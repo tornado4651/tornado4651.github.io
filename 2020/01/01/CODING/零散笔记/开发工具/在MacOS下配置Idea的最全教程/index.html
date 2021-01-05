@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Idea教程," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能       环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command +">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在MacOS下配置Idea的最全教程">
+<meta property="og:url" content="http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Tornado4651">
+<meta property="og:description" content="这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能       环境的基本介绍 下载安装与认证 学生认证   正式使用前的习惯设置以及讲解 应用的配置文件说明 初始化配置 开发前的一些习惯配置 基础配置 配置tomcat服务器 配置maven： 配置git     快捷键 设置和查找快捷键 Command Option Shift Comand + Option Command +">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6nc3kw0jj30j20cejsf.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6ndfu1zgj30je0cet9d.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc5l00b8tvj31kh0nbq70.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc5llog1ohj316o0kv77f.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6lqz97ijj30h807y3z5.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6lryycroj30ke0oljww.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6lvks7wtj30nt0gkaeu.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc66htvjdhj30es07hjrh.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc66lzcqa2j30ph0ltacw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc66pq7g7kj30ph0ltabp.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc66rwecx6j30ph0ltq5b.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6ihxp89ij30ke0fa0tc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6ijv4b31j308v07ymxi.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6h7hb0o6j30ue0n6q8o.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6bga6inkj30ue0n60vc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6bkglhh0j30ue0n640v.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6h0pf0o0j30ue0n6gr9.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6gwrbm9vj30ue0n6dls.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6hbx32qyj30ue0n6q8s.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6hm8m2u8j30ue0n6wlc.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggm4r5n0bvj30lq08gmyk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggm4u3snirj31mw0r647m.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gglope31vmj313w0u0diw.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gglp1j8pblj313w0u0q6e.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6ktbfgydj30li0js0vq.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6kxy2zlhj30tv0intbi.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6a75zg3hj30ue0n6tc2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6k02bwqaj30ue0n6juo.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6khnsd6hj30ue0n640x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6k47afm1j30r00jw0u8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6m0s9fcuj30ue0n60uk.jpg">
+<meta property="article:published_time" content="2019-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T07:00:50.229Z">
+<meta property="article:author" content="Tornado4651">
+<meta property="article:tag" content="Idea教程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0082zybply1gc6nc3kw0jj30j20cejsf.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/01/CODING/零散笔记/开发工具/在MacOS下配置Idea的最全教程/"/>
+
+
+
+
+
+  <title>在MacOS下配置Idea的最全教程 | Tornado4651</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tornado4651</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编程从来不是一项技术，而是一种生活思想</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">在MacOS下配置Idea的最全教程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/CODING/零散笔记/开发工具/在MacOS下配置Idea的最全教程/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/" class="leancloud_visitors" data-flag-title="在MacOS下配置Idea的最全教程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>这篇文章详细记录了在Mac OS上使用IDEA开发环境的所有功能</p>
+</blockquote>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#huan-jing-de-ji-ben-jie-shao">环境的基本介绍</a></li>
+<li><a href="#xia-zai-an-zhuang-yu-ren-zheng">下载安装与认证</a><ul>
+<li><a href="#xue-sheng-ren-zheng">学生认证</a></li>
+</ul>
+</li>
+<li><a href="#zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie">正式使用前的习惯设置以及讲解</a><ul>
+<li><a href="#ying-yong-de-pei-zhi-wen-jian-shuo-ming">应用的配置文件说明</a></li>
+<li><a href="#chu-shi-hua-pei-zhi">初始化配置</a></li>
+<li><a href="#kai-fa-qian-de-yi-xie-xi-guan-pei-zhi">开发前的一些习惯配置</a><ul>
+<li><a href="#ji-chu-pei-zhi">基础配置</a></li>
+<li><a href="#pei-zhi-tomcat-fu-wu-qi">配置tomcat服务器</a></li>
+<li><a href="#pei-zhi-maven">配置maven：</a></li>
+<li><a href="#pei-zhi-git">配置git</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#kuai-jie-jian">快捷键</a><ul>
+<li><a href="#she-zhi-he-cha-zhao-kuai-jie-jian">设置和查找快捷键</a></li>
+<li><a href="#command">Command</a></li>
+<li><a href="#option">Option</a></li>
+<li><a href="#shift">Shift</a></li>
+<li><a href="#comand-option">Comand + Option</a></li>
+<li><a href="#command-shift">Command + Shift</a></li>
+<li><a href="#option-shift">Option + Shift</a></li>
+<li><a href="#command-option-shift">Command + Option + Shift</a></li>
+<li><a href="#qi-ta">其他</a></li>
+</ul>
+</li>
+<li><a href="#qi-ta-shi-yong-ji-lu-geng-xin-zhong">其他使用记录（更新中……）</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<a id="more"></a>
+
+<p>[toc]</p>
+<h1><span id="huan-jing-de-ji-ben-jie-shao">环境的基本介绍</span><a href="#huan-jing-de-ji-ben-jie-shao" class="header-anchor"></a></h1><p>MacOS Catalina + Idea2019.3 Utrl版本[2020年2月记录]</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6nc3kw0jj30j20cejsf.jpg" alt="IDEA图标"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ndfu1zgj30je0cet9d.jpg" alt="MacOS系统"></p>
+<h1><span id="xia-zai-an-zhuang-yu-ren-zheng">下载安装与认证</span><a href="#xia-zai-an-zhuang-yu-ren-zheng" class="header-anchor"></a></h1><p>首先，进入<a href="https://www.jetbrains.com/" target="_blank" rel="noopener">jetbrains官网</a>：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc5l00b8tvj31kh0nbq70.jpg" alt="截屏2020-02-22下午11.10.52"></p>
+<h2><span id="xue-sheng-ren-zheng">学生认证</span><a href="#xue-sheng-ren-zheng" class="header-anchor"></a></h2><p>这里提供大家一个薅羊毛的好方法，注册账号后进行学生认证，每年通过edu邮箱认证一次，就可以免费使用该系列软件，而你的大学edu邮箱即使毕业后也可以继续使用</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc5llog1ohj316o0kv77f.jpg" alt="学生认证"></p>
+<p>之后下载dmg文件或者使用homebrew安装即可，第一次使用需要身份认证，用你已经通过学生认证的账号登陆就可以免费使用几乎所有jetbrains系列的开发神器了！</p>
+<h1><span id="zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie">正式使用前的习惯设置以及讲解</span><a href="#zheng-shi-shi-yong-qian-de-xi-guan-she-zhi-yi-ji-jiang-jie" class="header-anchor"></a></h1><h2><span id="ying-yong-de-pei-zhi-wen-jian-shuo-ming">应用的配置文件说明</span><a href="#ying-yong-de-pei-zhi-wen-jian-shuo-ming" class="header-anchor"></a></h2><p>不论使用dmg安装包还是hombrew安装，Mac上idea的使用文件主要有两个：</p>
+<ol>
+<li><p>/Application下的IntelliJ IDEA.app文件，我们右键–&gt;显示包内容打开后可以看到软件的具体配置（windows下直接进入安装目录即可）。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lqz97ijj30h807y3z5.jpg" alt="app包内容">)这里只需要对bin目录下的idea.vmoptions文件进行适当修改即可。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lryycroj30ke0oljww.jpg" alt="idea.vmoptions文件"></p>
+</li>
+<li><p>配置文件路径：用户家目录/Library/Preferences/IntelliJIdea2019.3 /。这个目下存放了所有idea中的用户配置，如果从未打开过，则不会生成，如果之后的使用中有什么问题，删除该目录，即可重新配置idea。<img src="https://tva1.sinaimg.cn/large/0082zybply1gc6lvks7wtj30nt0gkaeu.jpg" alt="idea配置文件路径"></p>
+</li>
+</ol>
+<h2><span id="chu-shi-hua-pei-zhi">初始化配置</span><a href="#chu-shi-hua-pei-zhi" class="header-anchor"></a></h2><p>导入默认设置，如果你以前熟练使用idea并时刻保留着自己独有的一套配置文件，便可以在这里直接选择第一条（config or installation folder）选择你的设置项所在目录导入，快速开发：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66htvjdhj30es07hjrh.jpg" alt="截屏2020-02-23上午11.34.32"></p>
+<p>一系列常规初始化选择，大家可以根据自己的喜好选择设置</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66lzcqa2j30ph0ltacw.jpg" alt="截屏2020-02-23上午11.36.18"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66pq7g7kj30ph0ltabp.jpg" alt="截屏2020-02-23上午11.39.33"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc66rwecx6j30ph0ltq5b.jpg" alt="截屏2020-02-23上午11.43.02"></p>
+<p>简单的初始化设置过后，就到了idea软件主界面：</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ihxp89ij30ke0fa0tc.jpg" alt="主界面"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ijv4b31j308v07ymxi.jpg" alt="配置"></p>
+<p><strong>注意⚠️：这时还不着急新建项目开发，根据我的习惯，在创建项目前进行良好的设置，非常有助于后面项目的创建、导入和维护。</strong></p>
+<h2><span id="kai-fa-qian-de-yi-xie-xi-guan-pei-zhi">开发前的一些习惯配置</span><a href="#kai-fa-qian-de-yi-xie-xi-guan-pei-zhi" class="header-anchor"></a></h2><h3><span id="ji-chu-pei-zhi">基础配置</span><a href="#ji-chu-pei-zhi" class="header-anchor"></a></h3><ul>
+<li><h4><span id="she-zhi-zi-ti">设置字体</span><a href="#she-zhi-zi-ti" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6h7hb0o6j30ue0n6q8o.jpg" alt="设置字体"></p>
+</li>
+<li><h4><span id="she-zhi-gun-lun-gai-bian-zi-ti-da-xiao">设置滚轮改变字体大小</span><a href="#she-zhi-gun-lun-gai-bian-zi-ti-da-xiao" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6bga6inkj30ue0n60vc.jpg" alt="截屏2020-02-23下午2.24.31"></p>
+</li>
+<li><h4><span id="she-zhi-shu-biao-xuan-ting-ti-shi">设置鼠标悬停提示</span><a href="#she-zhi-shu-biao-xuan-ting-ti-shi" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6bkglhh0j30ue0n640v.jpg" alt="设置鼠标悬停提示"></p>
+</li>
+<li><h4><span id="she-zhi-xian-shi-xing-hao-he-fen-ge-fu">设置显示行号和分隔符</span><a href="#she-zhi-xian-shi-xing-hao-he-fen-ge-fu" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6h0pf0o0j30ue0n6gr9.jpg" alt="设置显示行号和分隔符"></p>
+</li>
+<li><h4><span id="you-hua-zi-dong-dao-bao-gong-neng">优化自动导包功能</span><a href="#you-hua-zi-dong-dao-bao-gong-neng" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6gwrbm9vj30ue0n6dls.jpg" alt="优化自动导包功能"></p>
+</li>
+<li><h4><span id="bian-ma-she-zhi">编码设置：</span><a href="#bian-ma-she-zhi" class="header-anchor"></a></h4><p>都设置为UTF-8对中英文的兼容性最好，由于mac默认的是utf-8，所以不需要再更改了，这里只是记录路径，方便查看。windows端默认是GBK，可以从这里改为utf-8。</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6hbx32qyj30ue0n6q8s.jpg" alt="编码设置"></p>
+</li>
+<li><h4><span id="zi-dong-bian-yi-she-zhi">自动编译设置：</span><a href="#zi-dong-bian-yi-she-zhi" class="header-anchor"></a></h4><p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6hm8m2u8j30ue0n6wlc.jpg" alt="自动编译"></p>
+<p>然后设置registry：（快捷键command+option+shift+/）</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggm4r5n0bvj30lq08gmyk.jpg" alt="打开Registry"></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1ggm4u3snirj31mw0r647m.jpg" alt="配置Registry"></p>
+</li>
+<li><h4><span id="she-zhi-wen-jian-tab-duo-xing-xian-shi">设置文件tab多行显示</span><a href="#she-zhi-wen-jian-tab-duo-xing-xian-shi" class="header-anchor"></a></h4><p>  在编写项目时，我们经常会打开很多文件进行编辑，不能每次打开编辑后再关闭，需要编辑时再打开，所以idea默认的将文件标签都显示在一行很不利于我们方便切换已打开的文件。</p>
+<p>  <img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gglope31vmj313w0u0diw.jpg" alt="设置多行文件名"></p>
+</li>
+<li><h4><span id="she-zhi-wen-jian-hu-lue">设置文件忽略</span><a href="#she-zhi-wen-jian-hu-lue" class="header-anchor"></a></h4><p>  在创建一个项目或者模块后，idea会自带很多开发中用不到的软件配置文件(如xxxx.mvn、xxx.iml、xxxx.idea等），这时候在设置里将这些文件根据后置名忽略掉，就会让项目（projects）界面清爽很多。</p>
+<p>  <img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gglp1j8pblj313w0u0q6e.jpg" alt="设置文件忽略"></p>
+</li>
+</ul>
+<pre><code>springboot热部署的额外配置：
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 用于实现热部署插件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>runtime<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>【项目名】<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">fork</span>&gt;</span>true<span class="tag">&lt;/<span class="name">fork</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">addResources</span>&gt;</span>true<span class="tag">&lt;/<span class="name">addResources</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure></code></pre><p>​    </p>
+<h3><span id="pei-zhi-tomcat-fu-wu-qi">配置tomcat服务器</span><a href="#pei-zhi-tomcat-fu-wu-qi" class="header-anchor"></a></h3><p>主界面配置（Configure）–&gt; 新项目的运行配置模版（Run Configuration Template for New Projects）</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6ktbfgydj30li0js0vq.jpg" alt="Run Templation"></p>
+<p>然后根据自己所需创建不同的服务模版，我这里选择的是Tomcat，并添加了本地安装好的Tomcat路径</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6kxy2zlhj30tv0intbi.jpg" alt="截屏2020-02-23下午7.52.19"></p>
+<h3><span id="pei-zhi-maven">配置maven：</span><a href="#pei-zhi-maven" class="header-anchor"></a></h3><p>主界面配置（Configuration） –&gt; 偏好设置（Preferences）–&gt;  Build, Execution, Deployment –&gt; Maven</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6a75zg3hj30ue0n6tc2.jpg" alt="截屏2020-02-23上午11.58.32"></p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6k02bwqaj30ue0n6juo.jpg" alt="截屏2020-02-23下午7.19.04"></p>
+<h3><span id="pei-zhi-git">配置git</span><a href="#pei-zhi-git" class="header-anchor"></a></h3><p>mac系统自带git命令，所以idea会默认指向系统自带的git命令，而windows中则需要自己写入安装git.exe文件的目录。最后可以先使用Test检查是否能用</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6khnsd6hj30ue0n640x.jpg" alt="git"></p>
+<p>登陆github账户以方便操作自己的github上的仓库</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6k47afm1j30r00jw0u8.jpg" alt="github"></p>
+<p>好了！这样一来就可以创建一个项目开始工作了！！！！</p>
+<h1><span id="kuai-jie-jian">快捷键</span><a href="#kuai-jie-jian" class="header-anchor"></a></h1><h2><span id="she-zhi-he-cha-zhao-kuai-jie-jian">设置和查找快捷键</span><a href="#she-zhi-he-cha-zhao-kuai-jie-jian" class="header-anchor"></a></h2><p>Preferen —&gt; KeyMap</p>
+<p><img src="https://tva1.sinaimg.cn/large/0082zybply1gc6m0s9fcuj30ue0n60uk.jpg" alt="快捷键"></p>
+<h2><span id="command">Command</span><a href="#command" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F</kbd></td>
+<td align="left">在当前文件进行文本查找</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>R</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>R</kbd></td>
+<td align="left">在当前文件进行文本替换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Z</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Z</kbd></td>
+<td align="left">撤销</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Y</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Delete</kbd></td>
+<td align="left">删除光标所在行 或 删除选中的行</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>D</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>D</kbd></td>
+<td align="left">复制光标所在行 或 复制选择内容，并把复制内容插入光标位置下面</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>W</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>方向键上</kbd></td>
+<td align="left">递进式选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展选中范围</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>E</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>E</kbd></td>
+<td align="left">显示最近打开的文件记录列表</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>O</kbd></td>
+<td align="left">根据输入的 <strong>类名</strong> 查找类文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>J</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>J</kbd></td>
+<td align="left">插入自定义动态代码模板</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>P</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>P</kbd></td>
+<td align="left">方法参数提示显示</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>U</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>U</kbd></td>
+<td align="left">前往当前光标所在的方法的父类的方法 / 接口定义</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>B</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>B</kbd></td>
+<td align="left">进入光标所在的方法/变量的接口或是定义处，等效于 <code>Ctrl + 左键单击</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>/</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>/</kbd></td>
+<td align="left">注释光标所在行代码，会根据当前不同文件类型使用不同的注释符号</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F1</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F1</kbd></td>
+<td align="left">在光标所在的错误代码处显示错误信息</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F11</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F3</kbd></td>
+<td align="left">选中文件 / 文件夹，使用助记符设定 / 取消书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>F12</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>F12</kbd></td>
+<td align="left">弹出当前文件结构层，可以在弹出的层上直接输入，进行筛选</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Space</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Space</kbd></td>
+<td align="left">基础代码补全，默认在 Windows 系统上被输入法占用，需要进行修改，建议修改为 <code>Ctrl + 逗号</code></td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Delete</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Fn</kbd>+ Delete</td>
+<td align="left">删除光标后面的单词或是中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>BackSpace</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Delete</kbd></td>
+<td align="left">删除光标前面的单词或是中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left">定位到对应数值的书签位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>加号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>加号</kbd></td>
+<td align="left">展开代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>减号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>减号</kbd></td>
+<td align="left">折叠代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>左键单击</kbd></td>
+<td align="left">在打开的文件标题上，弹出该文件路径</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">光标跳转到当前单词 / 中文句的左侧开头位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">光标跳转到当前单词 / 中文句的右侧开头位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">预设中没有该快捷键</td>
+<td align="left">等效于鼠标滚轮向前效果</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">预设中没有该快捷键</td>
+<td align="left">等效于鼠标滚轮向后效果</td>
+</tr>
+</tbody></table>
+<h2><span id="option">Option</span><a href="#option" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>`</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>V</kbd></td>
+<td align="left">显示版本控制常用操作菜单弹出层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F1</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F1</kbd></td>
+<td align="left">显示当前文件选择目标弹出层，弹出层中有很多目标可以进行选择</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>F7</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>F7</kbd></td>
+<td align="left">查询所选对象/变量被引用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Enter</kbd></td>
+<td align="left">IntelliJ IDEA 根据光标所在问题，提供快速修复选择，光标放在的位置不同提示的结果也不同</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Insert</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>N</kbd></td>
+<td align="left">代码自动生成，如生成对象的 set / get 方法，构造函数，toString() 等</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">切换当前已打开的窗口中的子视图，比如Debug窗口中有Output、Debugger等子视图，用此快捷键就可以在子视图中切换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">当前光标跳转到当前文件的前一个方法名位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">当前光标跳转到当前文件的后一个方法名位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left">显示对应数值的选项卡，其中 1 是 Project 用得最多</td>
+</tr>
+</tbody></table>
+<h2><span id="shift">Shift</span><a href="#shift" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>F11</kbd></td>
+<td align="left"><kbd>Command + F3</kbd></td>
+<td align="left">弹出书签显示层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Tab</kbd></td>
+<td align="left"><kbd>Shift + Tab</kbd></td>
+<td align="left">取消缩进</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Shift + Enter</kbd></td>
+<td align="left">开始新一行。光标所在行下空出一行，光标定位到新行位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Shift + 左键单击</kbd></td>
+<td align="left">在打开的文件名上按此快捷键，可以关闭当前打开文件</td>
+</tr>
+</tbody></table>
+<h2><span id="comand-option">Comand + Option</span><a href="#comand-option" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>L</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>L</kbd></td>
+<td align="left">格式化代码，可以对当前文件和整个包目录使用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>O</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Option</kbd> + <kbd>O</kbd></td>
+<td align="left">优化导入的类，可以对当前文件和整个包目录使用</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>T</kbd></td>
+<td align="left">对选中的代码弹出环绕选项弹出层</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>逗号</kbd></td>
+<td align="left">打开 IntelliJ IDEA 系统设置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>Enter</kbd></td>
+<td align="left">光标所在行上空出一行，光标定位到新行</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">退回到上一个操作的地方</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">前进到上一个操作的地方</td>
+</tr>
+</tbody></table>
+<h2><span id="command-shift">Command + Shift</span><a href="#command-shift" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd></td>
+<td align="left">根据输入内容查找整个项目 或 指定目录内文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd></td>
+<td align="left">根据输入内容替换对应内容，范围为整个项目 或 指定目录内文件</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td>
+<td align="left">自动将下一行合并到当前行末尾</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd></td>
+<td align="left">取消撤销</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>方向键下</kbd></td>
+<td align="left">递进式取消选择代码块。可选中光标所在的单词或段落，连续按会在原有选中的基础上再扩展取消选中范围</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd></td>
+<td align="left">通过文件名定位 / 打开文件 / 目录，打开目录需要在输入的内容后面多加一个正斜杠</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd></td>
+<td align="left">对选中的代码进行大 / 小写轮流转换</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd></td>
+<td align="left">对当前类生成单元测试类，如果已经存在的单元测试类则可以进行选择</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd></td>
+<td align="left">复制当前文件磁盘路径到剪贴板</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left">跳转到类型声明处</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Option</kbd> + <kbd>/</kbd></td>
+<td align="left">代码块注释</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>[</kbd></td>
+<td align="left">选中从光标所在位置到它的顶部中括号位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>]</kbd></td>
+<td align="left">选中从光标所在位置到它的底部中括号位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>加号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>加号</kbd></td>
+<td align="left">展开所有代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>减号</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>减号</kbd></td>
+<td align="left">折叠所有代码</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F7</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F7</kbd></td>
+<td align="left">高亮显示所有该选中文本，按Esc高亮消失</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>F12</kbd></td>
+<td align="left">编辑器最大化</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd></td>
+<td align="left">自动结束代码，行末自动添加分号</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Backspace</kbd></td>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Backspace</kbd></td>
+<td align="left">退回到上次修改的地方</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left"><kbd>Control</kbd> + <kbd>Shift</kbd> + <kbd>1,2,3...9</kbd></td>
+<td align="left">快速添加指定数值的书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>左键单击</kbd></td>
+<td align="left">把光标放在某个类变量上，按此快捷键可以直接定位到该类中</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>左方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>左方向键</kbd></td>
+<td align="left">在代码文件上，光标跳转到当前单词 / 中文句的左侧开头位置，同时选中该单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>右方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>右方向键</kbd></td>
+<td align="left">在代码文件上，光标跳转到当前单词 / 中文句的右侧开头位置，同时选中该单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">光标放在方法名上，将方法移动到上一个方法前面，调整方法排序</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">光标放在方法名上，将方法移动到下一个方法前面，调整方法排序</td>
+</tr>
+</tbody></table>
+<h2><span id="option-shift">Option + Shift</span><a href="#option-shift" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd></td>
+<td align="left">选择 / 添加 task</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>左键双击</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>左键双击</kbd></td>
+<td align="left">选择被双击的单词 / 中文句，按住不放，可以同时选择其他单词 / 中文句</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>前方向键</kbd></td>
+<td align="left">移动光标所在行向上移动</td>
+</tr>
+<tr>
+<td align="left"><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left"><kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>后方向键</kbd></td>
+<td align="left">移动光标所在行向下移动</td>
+</tr>
+</tbody></table>
+<h2><span id="command-option-shift">Command + Option + Shift</span><a href="#command-option-shift" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>Option</kbd> + <kbd>V</kbd></td>
+<td align="left">无格式黏贴</td>
+</tr>
+<tr>
+<td align="left"><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>S</kbd></td>
+<td align="left"><kbd>Command</kbd> + <kbd>;</kbd></td>
+<td align="left">打开当前项目设置</td>
+</tr>
+</tbody></table>
+<h2><span id="qi-ta">其他</span><a href="#qi-ta" class="header-anchor"></a></h2><table>
+<thead>
+<tr>
+<th align="left">Win 快捷键</th>
+<th align="left">Mac 快捷键</th>
+<th align="left">介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><kbd>F2</kbd></td>
+<td align="left"><kbd>F2</kbd></td>
+<td align="left">跳转到下一个高亮错误 或 警告位置</td>
+</tr>
+<tr>
+<td align="left"><kbd>F4</kbd></td>
+<td align="left"><kbd>F4</kbd></td>
+<td align="left">编辑源</td>
+</tr>
+<tr>
+<td align="left"><kbd>F11</kbd></td>
+<td align="left"><kbd>F3</kbd></td>
+<td align="left">添加书签</td>
+</tr>
+<tr>
+<td align="left"><kbd>F12</kbd></td>
+<td align="left"><kbd>F12</kbd></td>
+<td align="left">回到前一个工具窗口</td>
+</tr>
+<tr>
+<td align="left"><kbd>Tab</kbd></td>
+<td align="left"><kbd>Tab</kbd></td>
+<td align="left">缩进</td>
+</tr>
+<tr>
+<td align="left"><kbd>ESC</kbd></td>
+<td align="left"><kbd>ESC</kbd></td>
+<td align="left">从工具窗口进入代码文件窗口</td>
+</tr>
+</tbody></table>
+<h1><span id="qi-ta-shi-yong-ji-lu-geng-xin-zhong">其他使用记录（更新中……）</span><a href="#qi-ta-shi-yong-ji-lu-geng-xin-zhong" class="header-anchor"></a></h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Idea%E6%95%99%E7%A8%8B/" rel="tag"># Idea教程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E3%80%90%E8%BD%AC%E3%80%91Redis%E9%9D%A2%E8%AF%95%E5%9B%9E%E7%AD%94/" rel="next" title="【转】Redis面试回答">
+                <i class="fa fa-chevron-left"></i> 【转】Redis面试回答
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/Maven/" rel="prev" title="Maven">
+                Maven <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/head.jpg"
+                alt="Tornado4651" />
+            
+              <p class="site-author-name" itemprop="name">Tornado4651</p>
+              <p class="site-description motion-element" itemprop="description">码字，羽球，摄影；是我简单生活的方式</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tornado4651" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:torando4651@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">环境的基本介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">下载安装与认证</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">学生认证</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">正式使用前的习惯设置以及讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">应用的配置文件说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">初始化配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.3.</span> <span class="nav-text">开发前的一些习惯配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.3.1.</span> <span class="nav-text">基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">设置字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">设置滚轮改变字体大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">设置鼠标悬停提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.4.</span> <span class="nav-text">设置显示行号和分隔符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.5.</span> <span class="nav-text">优化自动导包功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.6.</span> <span class="nav-text">编码设置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.7.</span> <span class="nav-text">自动编译设置：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.8.</span> <span class="nav-text">设置文件tab多行显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">3.3.1.9.</span> <span class="nav-text">设置文件忽略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.3.2.</span> <span class="nav-text">配置tomcat服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.3.3.</span> <span class="nav-text">配置maven：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.3.4.</span> <span class="nav-text">配置git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.1.</span> <span class="nav-text">设置和查找快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.2.</span> <span class="nav-text">Command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.3.</span> <span class="nav-text">Option</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.4.</span> <span class="nav-text">Shift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.5.</span> <span class="nav-text">Comand + Option</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.6.</span> <span class="nav-text">Command + Shift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.7.</span> <span class="nav-text">Option + Shift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.8.</span> <span class="nav-text">Command + Option + Shift</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">4.9.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">其他使用记录（更新中……）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tornado4651</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LJF.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E5%9C%A8MacOS%E4%B8%8B%E9%85%8D%E7%BD%AEIdea%E7%9A%84%E6%9C%80%E5%85%A8%E6%95%99%E7%A8%8B/';
+          this.page.identifier = '2020/01/01/CODING/零散笔记/开发工具/在MacOS下配置Idea的最全教程/';
+          this.page.title = '在MacOS下配置Idea的最全教程';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LJF.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

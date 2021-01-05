@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -312,7 +312,417 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" itemprop="url">【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md</a></h1>
+                <a class="post-title-link" href="/2020/04/02/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/" itemprop="url">日志系统总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-02T00:00:00+08:00">
+                2020-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/04/02/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/04/02/CODING/零散笔记/日志系统总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/04/02/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="日志系统总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>总结目前为止所用到的日志系统的，用法，关系，相关知识，如：SLF4J、logback、log4j等……</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#ri-zhi-xi-tong-de-gai-gua">日志系统的概括</a></li>
+<li><a href="#bu-tong-ri-zhi-xi-tong-de-zheng-he">不同日志系统的整合</a></li>
+<li><a href="#qi-ta">其他</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/02/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/29/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/" itemprop="url">设计模式概括</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-29T23:48:49+08:00">
+                2020-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/29/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/29/CODING/设计模式/设计模式概括/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/29/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/" class="leancloud_visitors" data-flag-title="设计模式概括">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>这篇是关于设计模式的概念性文章，主要记录设计模式的目的原则等</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#she-ji-mo-shi-de-mu-de">设计模式的目的</a></li>
+<li><a href="#oo-ji-chu">OO基础</a><ul>
+<li><a href="#san-da-ji-ben-te-zheng">三大基本特征</a><ul>
+<li><a href="#feng-zhuang">封装</a></li>
+<li><a href="#ji-cheng">继承</a></li>
+<li><a href="#duo-tai">多态</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ji-ben-yuan-ze">基本原则</a><ul>
+<li><a href="#1-dan-yi-zhi-ze-yuan-ze-single-responsibility-principle">1.单一职责原则（single-responsibility principle）</a></li>
+<li><a href="#2-jie-kou-ge-chi-yuan-ze-interface-segregation-principle">2.接口隔离原则(Interface-Segregation principle)</a></li>
+<li><a href="#3-yi-lai-dao-zhi-yuan-ze-dependency-inversion-principle">3.依赖倒置原则（Dependency-Inversion principle）</a></li>
+<li><a href="#4-li-shi-ti-huan-yuan-ze-liskov-substitution-principle">4.里氏替换原则（Liskov-Substitution principle）</a></li>
+<li><a href="#5-kai-fang-feng-bi-yuan-ze-open-closed-principle">5.* * 开放封闭原则* *（Open-Closed principle）</a></li>
+<li><a href="#6-di-mi-te-fa-ze-demeter-principle">6.迪米特法则（Demeter Principle）</a></li>
+<li><a href="#7-he-cheng-fu-yong-yuan-ze-composite-reuse-principle">7.合成复用原则（Composite Reuse Principle）</a></li>
+</ul>
+</li>
+<li><a href="#she-ji-yuan-ze">设计原则</a></li>
+<li><a href="#oo-mo-shi">OO模式</a><ul>
+<li><a href="#ce-lue-mo-shi-dan-li-mo-shi">策略模式（单例模式）</a></li>
+<li><a href="#guan-cha-zhe-mo-shi">观察者模式</a></li>
+<li><a href="#zhuang-shi-zhe-mo-shi">装饰者模式</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/29/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/20/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/20/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" itemprop="url">【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md</a></h1>
         
 
         <div class="post-meta">
@@ -347,7 +757,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
                     <span itemprop="name">报错记录</span>
                   </a>
                 </span>
@@ -365,9 +786,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/20/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/20/报错记录/【转】解决log4j.xml问题httpjakarta.apache.orglog4j uri is not registered问题/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/20/CODING/报错记录/【转】解决log4j.xml问题httpjakarta.apache.orglog4j uri is not registered问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -375,7 +796,7 @@
 
           
           
-             <span id="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md">
+             <span id="/2020/03/20/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="【转】解决log4j.xml问题http//jakarta.apache.org/log4j/ uri is not registered问题.md">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,14 +835,15 @@
 
 <!-- toc -->
 
-
-
+<ul>
+<li><a href="#jie-jue-fang-fa">解决方法</a></li>
+</ul>
 <!-- tocstop -->
 
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/20/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#more" rel="contents">
+            <a class="btn" href="/2020/03/20/CODING/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/%E3%80%90%E8%BD%AC%E3%80%91%E8%A7%A3%E5%86%B3log4j.xml%E9%97%AE%E9%A2%98httpjakarta.apache.orglog4j%20uri%20is%20not%20registered%E9%97%AE%E9%A2%98/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -472,7 +894,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -491,7 +913,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" itemprop="url">jQuery 和 Ajax 知识点记录</a></h1>
+                <a class="post-title-link" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" itemprop="url">jQuery 和 Ajax 知识点记录</a></h1>
         
 
         <div class="post-meta">
@@ -526,7 +948,29 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
                     <span itemprop="name">Web基础</span>
                   </a>
                 </span>
@@ -544,9 +988,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/13/Web基础/jQuery和Ajax知识点记录/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/13/CODING/Java Web框架/Web基础/jQuery和Ajax知识点记录/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -554,7 +998,7 @@
 
           
           
-             <span id="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="jQuery 和 Ajax 知识点记录">
+             <span id="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="jQuery 和 Ajax 知识点记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -592,7 +1036,7 @@
 <!--toc-->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/13/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#more" rel="contents">
+            <a class="btn" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -643,7 +1087,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/06/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -662,7 +1106,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————代理模式</a></h1>
+                <a class="post-title-link" href="/2020/03/06/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————代理模式</a></h1>
         
 
         <div class="post-meta">
@@ -697,7 +1141,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
                     <span itemprop="name">设计模式</span>
                   </a>
                 </span>
@@ -715,9 +1170,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/06/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/06/设计模式/设计模式——代理模式/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/06/CODING/设计模式/设计模式——代理模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -725,7 +1180,7 @@
 
           
           
-             <span id="/2020/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————代理模式">
+             <span id="/2020/03/06/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————代理模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -774,7 +1229,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+            <a class="btn" href="/2020/03/06/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -825,7 +1280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/05/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -844,7 +1299,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————单例模式</a></h1>
+                <a class="post-title-link" href="/2020/03/05/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————单例模式</a></h1>
         
 
         <div class="post-meta">
@@ -879,7 +1334,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
                     <span itemprop="name">设计模式</span>
                   </a>
                 </span>
@@ -897,9 +1363,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/05/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/05/设计模式/设计模式——单例模式/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/05/CODING/设计模式/设计模式——单例模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -907,7 +1373,7 @@
 
           
           
-             <span id="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————单例模式">
+             <span id="/2020/03/05/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————单例模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -967,7 +1433,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+            <a class="btn" href="/2020/03/05/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1018,7 +1484,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1037,7 +1503,202 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" itemprop="url">后期处理中的直方图和曲线图的使用</a></h1>
+                <a class="post-title-link" href="/2020/03/04/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————工厂模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-04T00:00:00+08:00">
+                2020-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/04/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/04/CODING/设计模式/设计模式——工厂模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/04/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————工厂模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>工厂模式是所有设计模式中出现频率超高的模式之一，Spring中也经常用到</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#shi-me-shi-gong-han-mo-shi">什么是“工厂模式”</a></li>
+<li><a href="#shi-li-qian-ti">实例前提</a></li>
+<li><a href="#jian-dan-gong-han-mo-shi">简单工厂模式</a></li>
+<li><a href="#gong-han-fang-fa-mo-shi">工厂方法模式</a></li>
+<li><a href="#chou-xiang-gong-han-mo-shi">抽象工厂模式</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/04/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" itemprop="url">后期处理中的直方图和曲线图的使用</a></h1>
         
 
         <div class="post-meta">
@@ -1090,9 +1751,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/04/摄影/直方图和曲线图/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/04/影视、摄像、后期/直方图和曲线图/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1100,7 +1761,7 @@
 
           
           
-             <span id="/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" class="leancloud_visitors" data-flag-title="后期处理中的直方图和曲线图的使用">
+             <span id="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" class="leancloud_visitors" data-flag-title="后期处理中的直方图和曲线图的使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1151,7 +1812,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/04/%E6%91%84%E5%BD%B1/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#more" rel="contents">
+            <a class="btn" href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1202,7 +1863,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E8%AF%86MyBatisPlus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1221,191 +1882,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————工厂模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-04T00:00:00+08:00">
-                2020-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/04/设计模式/设计模式——工厂模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————工厂模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>工厂模式是所有设计模式中出现频率超高的模式之一，Spring中也经常用到</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#shi-me-shi-gong-han-mo-shi">什么是“工厂模式”</a></li>
-<li><a href="#shi-li-qian-ti">实例前提</a></li>
-<li><a href="#jian-dan-gong-han-mo-shi">简单工厂模式</a></li>
-<li><a href="#gong-han-fang-fa-mo-shi">工厂方法模式</a></li>
-<li><a href="#chou-xiang-gong-han-mo-shi">抽象工厂模式</a></li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————装饰者模式</a></h1>
+                <a class="post-title-link" href="/2020/03/03/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E8%AF%86MyBatisPlus/" itemprop="url">初识MyBatisPlus</a></h1>
         
 
         <div class="post-meta">
@@ -1440,7 +1917,222 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/" itemprop="url" rel="index">
+                    <span itemprop="name">MyBatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/03/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E8%AF%86MyBatisPlus/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/03/CODING/数据库/MyBatis/初识MyBatisPlus/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/03/03/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E8%AF%86MyBatisPlus/" class="leancloud_visitors" data-flag-title="初识MyBatisPlus">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#yu-mybatis-de-bi-jiao">与Mybatis的比较：</a></li>
+<li><a href="#mp-de-hello-world-shi-yong">mp的hello world使用</a></li>
+<li><a href="#mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong">MyBatisPlus中的基本CRUD方法使用</a></li>
+<li><a href="#tiao-jian-gou-zao-qi">条件构造器</a></li>
+<li><a href="#dai-ma-sheng-cheng-gong-neng">代码生成功能</a></li>
+<li><a href="#quan-ju-cao-zuo">全局操作</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/03/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatis/%E5%88%9D%E8%AF%86MyBatisPlus/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/03/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————装饰者模式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T00:00:00+08:00">
+                2020-03-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
                     <span itemprop="name">设计模式</span>
                   </a>
                 </span>
@@ -1458,9 +2150,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/03/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/03/设计模式/设计模式——装饰者模式/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/03/CODING/设计模式/设计模式——装饰者模式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1468,7 +2160,7 @@
 
           
           
-             <span id="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————装饰者模式">
+             <span id="/2020/03/03/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————装饰者模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1522,572 +2214,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/" itemprop="url">初识MyBatisPlus</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-03T00:00:00+08:00">
-                2020-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/" itemprop="url" rel="index">
-                    <span itemprop="name">MyBatisPlus</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/03/数据库/MyBatisPlus/初识MyBatisPlus/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/" class="leancloud_visitors" data-flag-title="初识MyBatisPlus">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#yu-mybatis-de-bi-jiao">与Mybatis的比较：</a></li>
-<li><a href="#mp-de-hello-world-shi-yong">mp的hello world使用</a></li>
-<li><a href="#mybatisplus-zhong-de-ji-ben-crud-fang-fa-shi-yong">MyBatisPlus中的基本CRUD方法使用</a></li>
-<li><a href="#tiao-jian-gou-zao-qi">条件构造器</a></li>
-<li><a href="#dai-ma-sheng-cheng-gong-neng">代码生成功能</a></li>
-<li><a href="#quan-ju-cao-zuo">全局操作</a></li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/03/%E6%95%B0%E6%8D%AE%E5%BA%93/MyBatisPlus/%E5%88%9D%E8%AF%86MyBatisPlus/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" itemprop="url">设计模式————观察者模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-02T00:00:00+08:00">
-                2020-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/02/设计模式/设计模式——观察者模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="设计模式————观察者模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>“观察者模式“是指：在多个对象之间定义一种”一对多”的关系，主要作用是，当其中的“一”对象做出改变时，可以立刻通知所有关注该对象（在该模式下称为“主题”）的观察者们做出更新动作。</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#shi-me-shi-guan-cha-zhe-mo-shi">什么是“观察者模式”</a></li>
-<li><a href="#zi-ji-bian-xie-shi-xian-dai-ma">自己编写实现代码</a></li>
-<li><a href="#shi-yong-java-zi-dai-de-guan-cha-zhe-mo-shi">使用java自带的观察者模式</a><ul>
-<li><a href="#shi-yong-ji-shi-xian-fang-fa">使用及实现方法</a></li>
-<li><a href="#shi-yong-java-zi-dai-guan-cha-zhe-mo-shi-de-te-dian">使用java自带“观察者模式”的特点</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%86%99%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%86%99%E6%B3%95/" itemprop="url">配置主机地址的四种写法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-02T00:00:00+08:00">
-                2020-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">零散笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%86%99%E6%B3%95/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/02/零散笔记/配置主机地址的四种写法/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%86%99%E6%B3%95/" class="leancloud_visitors" data-flag-title="配置主机地址的四种写法">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>今天配置了多次ElasticSearch集群环境，反复更改了很多yml配置文件，其中一条“network.host”因为写法混乱而导致一些小问题，所以总结一下ip地址的配置方法，以做巩固</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#di-zhi-de-si-chong-xie-fa-ji-te-dian-qu-bie">地址的四种写法及特点区别</a><ul>
-<li><a href="#1-localhost">1、localhost</a></li>
-<li><a href="#2-127-0-0-1">2、127.0.0.1</a></li>
-<li><a href="#3-0-0-0-0">3、0.0.0.0</a></li>
-<li><a href="#4-ip-di-zhi-ben-shen-li-192-168-10-10">4、IP地址本身（例：192.168.10.10）</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%9C%B0%E5%9D%80%E7%9A%84%E5%9B%9B%E7%A7%8D%E5%86%99%E6%B3%95/#more" rel="contents">
+            <a class="btn" href="/2020/03/03/CODING/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A3%85%E9%A5%B0%E8%80%85%E6%A8%A1%E5%BC%8F/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -2179,7 +2306,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2201,7 +2328,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2254,7 +2381,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

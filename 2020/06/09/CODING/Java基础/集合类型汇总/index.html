@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="集合,Set,List,Map," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="集合是Java基础中最为重要的部分之一，因此单独写出一篇文章，将常用的几个集合结合工作实际进行记录。       Collection Set List ArrayList List经验总结： 遍历的同时删除List中的元素     Map Map.Entry HashMap 其他">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合类型汇总">
+<meta property="og:url" content="http://yoursite.com/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="Tornado4651">
+<meta property="og:description" content="集合是Java基础中最为重要的部分之一，因此单独写出一篇文章，将常用的几个集合结合工作实际进行记录。       Collection Set List ArrayList List经验总结： 遍历的同时删除List中的元素     Map Map.Entry HashMap 其他">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmwi2bfzvj30em06l0sy.jpg">
+<meta property="article:published_time" content="2020-06-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T08:39:25.669Z">
+<meta property="article:author" content="Tornado4651">
+<meta property="article:tag" content="集合">
+<meta property="article:tag" content="Set">
+<meta property="article:tag" content="List">
+<meta property="article:tag" content="Map">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmwi2bfzvj30em06l0sy.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/06/09/CODING/Java基础/集合类型汇总/"/>
+
+
+
+
+
+  <title>集合类型汇总 | Tornado4651</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tornado4651</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编程从来不是一项技术，而是一种生活思想</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">集合类型汇总</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-09T00:00:00+08:00">
+                2020-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E6%B1%87%E6%80%BB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/09/CODING/Java基础/集合类型汇总/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E6%B1%87%E6%80%BB/" class="leancloud_visitors" data-flag-title="集合类型汇总">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>集合是Java基础中最为重要的部分之一，因此单独写出一篇文章，将常用的几个集合结合工作实际进行记录。</p>
+</blockquote>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#collection">Collection</a></li>
+<li><a href="#set">Set</a></li>
+<li><a href="#list">List</a><ul>
+<li><a href="#arraylist">ArrayList</a></li>
+<li><a href="#list-jing-yan-zong-jie">List经验总结：</a><ul>
+<li><a href="#bian-li-de-tong-shi-shan-chu-list-zhong-de-yuan-su">遍历的同时删除List中的元素</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#map">Map</a></li>
+<li><a href="#map-entry">Map.Entry</a><ul>
+<li><a href="#hashmap">HashMap</a></li>
+<li><a href="#qi-ta">其他</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<a id="more"></a>
+
+<p>[toc]</p>
+<h1><span id="collection">Collection</span><a href="#collection" class="header-anchor"></a></h1><h1><span id="set">Set</span><a href="#set" class="header-anchor"></a></h1><h1><span id="list">List</span><a href="#list" class="header-anchor"></a></h1><h2><span id="arraylist">ArrayList</span><a href="#arraylist" class="header-anchor"></a></h2><p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfmwi2bfzvj30em06l0sy.jpg" alt="ArrayList继承图"></p>
+<p>特点：动态、连续、线性的数组。在保持Java数组线性快速查找的基础上，实现了动态扩容的特点，弥补了Java数组“不能动态扩容，创建时就要指定好空间大小”的缺点</p>
+<p>解决办法：在使用ArrayList时，如果空间不够，ArrayList会再创建一个更大的数组，现将旧的数组内容复制过去，并且在最后一项添加上新的数据。</p>
+<blockquote>
+<ol>
+<li>AbstractList提供了List接口的默认实现（个别方法为抽象方法）。</li>
+<li>List接口定义了列表必须实现的方法。</li>
+<li>实现了RandomAccess接口：提供了随机访问功能。RandmoAccess是java中用来被List实现，为List提供快速访问功能的。在ArrayList中，我们即可以通过元素的序号快速获取元素对象；这就是快速随机访问。</li>
+<li>实现了Cloneable接口：可以调用Object.clone方法返回该对象的浅拷贝。</li>
+<li>实现了 java.io.Serializable 接口：可以启用其序列化功能，能通过序列化去传输。未实现此接口的类将无法使其任何状态序列化或反序列化。序列化接口没有方法或字段，仅用于标识可序列化的语义。</li>
+</ol>
+</blockquote>
+<h2><span id="list-jing-yan-zong-jie">List经验总结：</span><a href="#list-jing-yan-zong-jie" class="header-anchor"></a></h2><h3><span id="bian-li-de-tong-shi-shan-chu-list-zhong-de-yuan-su">遍历的同时删除List中的元素</span><a href="#bian-li-de-tong-shi-shan-chu-list-zhong-de-yuan-su" class="header-anchor"></a></h3><p>当我们想要对某个List进行过滤（一边遍历一边删除不符合条件的数据）时，需要注意一点：不能使用“增强的for循环”搭配List.remove(Object)实现。这样会报出“java.util.ConcurrentModificationException”异常。</p>
+<h1><span id="map">Map</span><a href="#map" class="header-anchor"></a></h1><h1><span id="map-entry">Map.Entry</span><a href="#map-entry" class="header-anchor"></a></h1><p>Entry是Map接口的一个内部接口，主要功能是使用迭代器指向Map中的每一个“键值对”</p>
+<p>源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Entry</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns the key corresponding to this entry.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> the key corresponding to this entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> IllegalStateException implementations may, but are not</span></span><br><span class="line"><span class="comment">         *         required to, throw this exception if the entry has been</span></span><br><span class="line"><span class="comment">         *         removed from the backing map.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function">K <span class="title">getKey</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns the value corresponding to this entry.  If the mapping</span></span><br><span class="line"><span class="comment">         * has been removed from the backing map (by the iterator's</span></span><br><span class="line"><span class="comment">         * &lt;tt&gt;remove&lt;/tt&gt; operation), the results of this call are undefined.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> the value corresponding to this entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> IllegalStateException implementations may, but are not</span></span><br><span class="line"><span class="comment">         *         required to, throw this exception if the entry has been</span></span><br><span class="line"><span class="comment">         *         removed from the backing map.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function">V <span class="title">getValue</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Replaces the value corresponding to this entry with the specified</span></span><br><span class="line"><span class="comment">         * value (optional operation).  (Writes through to the map.)  The</span></span><br><span class="line"><span class="comment">         * behavior of this call is undefined if the mapping has already been</span></span><br><span class="line"><span class="comment">         * removed from the map (by the iterator's &lt;tt&gt;remove&lt;/tt&gt; operation).</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span> value new value to be stored in this entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> old value corresponding to the entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> UnsupportedOperationException if the &lt;tt&gt;put&lt;/tt&gt; operation</span></span><br><span class="line"><span class="comment">         *         is not supported by the backing map</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> ClassCastException if the class of the specified value</span></span><br><span class="line"><span class="comment">         *         prevents it from being stored in the backing map</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> NullPointerException if the backing map does not permit</span></span><br><span class="line"><span class="comment">         *         null values, and the specified value is null</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> IllegalArgumentException if some property of this value</span></span><br><span class="line"><span class="comment">         *         prevents it from being stored in the backing map</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@throws</span> IllegalStateException implementations may, but are not</span></span><br><span class="line"><span class="comment">         *         required to, throw this exception if the entry has been</span></span><br><span class="line"><span class="comment">         *         removed from the backing map.</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function">V <span class="title">setValue</span><span class="params">(V value)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Compares the specified object with this entry for equality.</span></span><br><span class="line"><span class="comment">         * Returns &lt;tt&gt;true&lt;/tt&gt; if the given object is also a map entry and</span></span><br><span class="line"><span class="comment">         * the two entries represent the same mapping.  More formally, two</span></span><br><span class="line"><span class="comment">         * entries &lt;tt&gt;e1&lt;/tt&gt; and &lt;tt&gt;e2&lt;/tt&gt; represent the same mapping</span></span><br><span class="line"><span class="comment">         * if&lt;pre&gt;</span></span><br><span class="line"><span class="comment">         *     (e1.getKey()==null ?</span></span><br><span class="line"><span class="comment">         *      e2.getKey()==null : e1.getKey().equals(e2.getKey()))  &amp;amp;&amp;amp;</span></span><br><span class="line"><span class="comment">         *     (e1.getValue()==null ?</span></span><br><span class="line"><span class="comment">         *      e2.getValue()==null : e1.getValue().equals(e2.getValue()))</span></span><br><span class="line"><span class="comment">         * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment">         * This ensures that the &lt;tt&gt;equals&lt;/tt&gt; method works properly across</span></span><br><span class="line"><span class="comment">         * different implementations of the &lt;tt&gt;Map.Entry&lt;/tt&gt; interface.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span> o object to be compared for equality with this map entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> &lt;tt&gt;true&lt;/tt&gt; if the specified object is equal to this map</span></span><br><span class="line"><span class="comment">         *         entry</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns the hash code value for this map entry.  The hash code</span></span><br><span class="line"><span class="comment">         * of a map entry &lt;tt&gt;e&lt;/tt&gt; is defined to be: &lt;pre&gt;</span></span><br><span class="line"><span class="comment">         *     (e.getKey()==null   ? 0 : e.getKey().hashCode()) ^</span></span><br><span class="line"><span class="comment">         *     (e.getValue()==null ? 0 : e.getValue().hashCode())</span></span><br><span class="line"><span class="comment">         * &lt;/pre&gt;</span></span><br><span class="line"><span class="comment">         * This ensures that &lt;tt&gt;e1.equals(e2)&lt;/tt&gt; implies that</span></span><br><span class="line"><span class="comment">         * &lt;tt&gt;e1.hashCode()==e2.hashCode()&lt;/tt&gt; for any two Entries</span></span><br><span class="line"><span class="comment">         * &lt;tt&gt;e1&lt;/tt&gt; and &lt;tt&gt;e2&lt;/tt&gt;, as required by the general</span></span><br><span class="line"><span class="comment">         * contract of &lt;tt&gt;Object.hashCode&lt;/tt&gt;.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> the hash code value for this map entry</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@see</span> Object#hashCode()</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@see</span> Object#equals(Object)</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@see</span> #equals(Object)</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; in natural order on key.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * &lt;p&gt;The returned comparator is serializable and throws &#123;<span class="doctag">@link</span></span></span><br><span class="line"><span class="comment">         * NullPointerException&#125; when comparing an entry with a null key.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;K&gt; the &#123;<span class="doctag">@link</span> Comparable&#125; type of then map keys</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;V&gt; the type of the map values</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; in natural order on key.</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@see</span> Comparable</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;K extends Comparable&lt;? <span class="keyword">super</span> K&gt;, V&gt; Comparator&lt;Map.Entry&lt;K,V&gt;&gt; comparingByKey() &#123;</span><br><span class="line">            <span class="keyword">return</span> (Comparator&lt;Map.Entry&lt;K, V&gt;&gt; &amp; Serializable)</span><br><span class="line">                (c1, c2) -&gt; c1.getKey().compareTo(c2.getKey());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; in natural order on value.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * &lt;p&gt;The returned comparator is serializable and throws &#123;<span class="doctag">@link</span></span></span><br><span class="line"><span class="comment">         * NullPointerException&#125; when comparing an entry with null values.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span> &lt;K&gt; the type of the map keys</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span> &lt;V&gt; the &#123;<span class="doctag">@link</span> Comparable&#125; type of the map values</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; in natural order on value.</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@see</span> Comparable</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;K, V extends Comparable&lt;? <span class="keyword">super</span> V&gt;&gt; Comparator&lt;Map.Entry&lt;K,V&gt;&gt; comparingByValue() &#123;</span><br><span class="line">            <span class="keyword">return</span> (Comparator&lt;Map.Entry&lt;K, V&gt;&gt; &amp; Serializable)</span><br><span class="line">                (c1, c2) -&gt; c1.getValue().compareTo(c2.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; by key using the given</span></span><br><span class="line"><span class="comment">         * &#123;<span class="doctag">@link</span> Comparator&#125;.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * &lt;p&gt;The returned comparator is serializable if the specified comparator</span></span><br><span class="line"><span class="comment">         * is also serializable.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;K&gt; the type of the map keys</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;V&gt; the type of the map values</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  cmp the key &#123;<span class="doctag">@link</span> Comparator&#125;</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; by the key.</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;K, V&gt; Comparator&lt;Map.Entry&lt;K, V&gt;&gt; comparingByKey(Comparator&lt;? <span class="keyword">super</span> K&gt; cmp) &#123;</span><br><span class="line">            Objects.requireNonNull(cmp);</span><br><span class="line">            <span class="keyword">return</span> (Comparator&lt;Map.Entry&lt;K, V&gt;&gt; &amp; Serializable)</span><br><span class="line">                (c1, c2) -&gt; cmp.compare(c1.getKey(), c2.getKey());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * Returns a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; by value using the given</span></span><br><span class="line"><span class="comment">         * &#123;<span class="doctag">@link</span> Comparator&#125;.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * &lt;p&gt;The returned comparator is serializable if the specified comparator</span></span><br><span class="line"><span class="comment">         * is also serializable.</span></span><br><span class="line"><span class="comment">         *</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;K&gt; the type of the map keys</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  &lt;V&gt; the type of the map values</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@param</span>  cmp the value &#123;<span class="doctag">@link</span> Comparator&#125;</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@return</span> a comparator that compares &#123;<span class="doctag">@link</span> Map.Entry&#125; by the value.</span></span><br><span class="line"><span class="comment">         * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> &lt;K, V&gt; Comparator&lt;Map.Entry&lt;K, V&gt;&gt; comparingByValue(Comparator&lt;? <span class="keyword">super</span> V&gt; cmp) &#123;</span><br><span class="line">            Objects.requireNonNull(cmp);</span><br><span class="line">            <span class="keyword">return</span> (Comparator&lt;Map.Entry&lt;K, V&gt;&gt; &amp; Serializable)</span><br><span class="line">                (c1, c2) -&gt; cmp.compare(c1.getValue(), c2.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>主要使用方法：Entry接口自带getKey()、getValue()方法，无需再用keySet迭代key值，再从map中取出value了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Map&lt;String, String &gt; testMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        testMap.put(<span class="string">"name"</span>, <span class="string">"tornado4651"</span>);</span><br><span class="line">        testMap.put(<span class="string">"password"</span>, <span class="string">"123456"</span>);</span><br><span class="line">        testMap.put(<span class="string">"email"</span>, <span class="string">"tornado4651@qq.com"</span>);</span><br><span class="line"></span><br><span class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; entries = testMap.entrySet();</span><br><span class="line">        <span class="keyword">for</span>(Map.Entry&lt;String, String&gt; entry : entries)&#123;</span><br><span class="line">            String key = entry.getKey();</span><br><span class="line">            String value = entry.getValue();</span><br><span class="line">            System.out.println(<span class="string">"当前键值对："</span> + key + <span class="string">"-----"</span> + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="hashmap">HashMap</span><a href="#hashmap" class="header-anchor"></a></h2><h2><span id="qi-ta">其他</span><a href="#qi-ta" class="header-anchor"></a></h2><p><a href="https://www.cnblogs.com/java-h/p/10969710.html" target="_blank" rel="noopener">map的遍历操作</a></p>
+<p>使maph中存储数据更加灵活的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>移除map中的键值对：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, Object&gt; myMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">Iterator&lt;String&gt; iterator= myMap.keySet().iterator();</span><br><span class="line"><span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">  String key = iterator.next();</span><br><span class="line">  Object value = myMap.get(key);</span><br><span class="line">  <span class="keyword">if</span>(<span class="comment">// 删除的判断操作)&#123;</span></span><br><span class="line">    iterator.remove();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E9%9B%86%E5%90%88/" rel="tag"># 集合</a>
+          
+            <a href="/tags/Set/" rel="tag"># Set</a>
+          
+            <a href="/tags/List/" rel="tag"># List</a>
+          
+            <a href="/tags/Map/" rel="tag"># Map</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/" rel="next" title="Hbase基础——概念、安装、逻辑">
+                <i class="fa fa-chevron-left"></i> Hbase基础——概念、安装、逻辑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C/" rel="prev" title="字符串操作">
+                字符串操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/head.jpg"
+                alt="Tornado4651" />
+            
+              <p class="site-author-name" itemprop="name">Tornado4651</p>
+              <p class="site-description motion-element" itemprop="description">码字，羽球，摄影；是我简单生活的方式</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tornado4651" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:torando4651@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">List经验总结：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">3.2.1.</span> <span class="nav-text">遍历的同时删除List中的元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">Map.Entry</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.1.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">5.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tornado4651</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LJF.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/06/09/CODING/Java%E5%9F%BA%E7%A1%80/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B%E6%B1%87%E6%80%BB/';
+          this.page.identifier = '2020/06/09/CODING/Java基础/集合类型汇总/';
+          this.page.title = '集合类型汇总';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LJF.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

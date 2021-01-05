@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -312,7 +312,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" itemprop="url">数据库/ElasticSearch/三、ES的查询大总结</a></h1>
+                <a class="post-title-link" href="/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/" itemprop="url">Hbase基础——概念、安装、逻辑</a></h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
-                2020-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-02T10:15:52+08:00">
+                2020-06-02
               </time>
             
 
@@ -347,7 +347,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
                     <span itemprop="name">数据库</span>
                   </a>
                 </span>
@@ -358,8 +369,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
-                    <span itemprop="name">ElasticSearch</span>
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/" itemprop="url" rel="index">
+                    <span itemprop="name">HBase</span>
                   </a>
                 </span>
 
@@ -376,9 +387,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                <a href="/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/06/01/数据库/ElasticSearch/三、ES的查询大总结/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/06/02/CODING/数据库/HBase/Hbase基础记录/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +397,7 @@
 
           
           
-             <span id="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="数据库/ElasticSearch/三、ES的查询大总结">
+             <span id="/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="Hbase基础——概念、安装、逻辑">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -419,20 +430,23 @@
       
         
           <blockquote>
-<p>查询功能是在实际工作中经常用到的一项重要功能，因此特意单独列出一篇文章记录</p>
+<p>HBase上手第一天记录</p>
 </blockquote>
 <div class="tocStart"></div>
 
 <!-- toc -->
 
-
-
+<ul>
+<li><a href="#shi-me-shi-hbase">什么是HBase</a></li>
+<li><a href="#hbase-ji-ben-luo-ji-jie-gou">Hbase基本逻辑结构</a></li>
+<li><a href="#hbase-ming-ling-xing-cao-zuo">Hbase命令行操作</a></li>
+</ul>
 <!-- tocstop -->
 
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/06/01/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/#more" rel="contents">
+            <a class="btn" href="/2020/06/02/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/HBase/Hbase%E5%9F%BA%E7%A1%80%E8%AE%B0%E5%BD%95/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -483,7 +497,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -502,7 +516,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" itemprop="url">数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用</a></h1>
+                <a class="post-title-link" href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" itemprop="url">三、ES的查询大总结</a></h1>
         
 
         <div class="post-meta">
@@ -514,7 +528,808 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-28T17:40:33+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/01/CODING/数据库/ElasticSearch/三、ES的查询大总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="三、ES的查询大总结">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>查询功能是在实际工作中经常用到的一项重要功能，因此特意单独列出一篇文章记录</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+
+
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%89%E3%80%81ES%E7%9A%84%E6%9F%A5%E8%AF%A2%E5%A4%A7%E6%80%BB%E7%BB%93/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/01/CODING/Java基础/学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>重头学一遍！三个月内学完！夯实基础，细节!</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#ji-ben-gai-nian">基本概念</a><ul>
+<li><a href="#bian-liang">变量</a></li>
+<li><a href="#shu-ju-lei-xing">数据类型</a></li>
+<li><a href="#luo-ji-yun-suan">逻辑运算</a></li>
+</ul>
+</li>
+<li><a href="#chou-xiang-lei-he-jie-kou">抽象类和接口</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" itemprop="url">ES踩坑记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/01/CODING/数据库/ElasticSearch/ES踩坑记录/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="ES踩坑记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#fen-ci-he-bu-fen-ci">分词 和 不分词</a></li>
+<li><a href="#fan-wei-cha-xun">范围查询</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url">学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-01T00:00:00+08:00">
+                2020-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">Web基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/01/CODING/Java Web框架/Web基础/学习笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/06/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="学习笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>重头学习基础知识，三个月拿下，查漏补缺，注重基础</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#forward-zhuan-fa-he-redire-chong-ding-xiang">forward（转发）和redire（重定向）</a></li>
+<li><a href="#you-guan-servletcontext-zhong-de-get-fang-fa">有关ServletContext中的get方法</a></li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" itemprop="url">二、ES的使用及关键字查询</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-28T00:00:00+08:00">
                 2020-05-28
               </time>
             
@@ -525,6 +1340,50 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -533,9 +1392,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                <a href="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/05/28/数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/05/28/CODING/数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -543,7 +1402,7 @@
 
           
           
-             <span id="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用">
+             <span id="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="二、ES的使用及关键字查询">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -617,7 +1476,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/05/28/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#more" rel="contents">
+            <a class="btn" href="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -668,7 +1527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -687,7 +1546,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" itemprop="url">一、ES基础、安装、使用</a></h1>
+                <a class="post-title-link" href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" itemprop="url">一、ES基础、安装、使用</a></h1>
         
 
         <div class="post-meta">
@@ -722,7 +1581,18 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
                     <span itemprop="name">数据库</span>
                   </a>
                 </span>
@@ -733,7 +1603,7 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
                     <span itemprop="name">ElasticSearch</span>
                   </a>
                 </span>
@@ -751,9 +1621,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                <a href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/05/27/数据库/ElasticSearch/一、ES基础、安装、使用/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/05/27/CODING/数据库/ElasticSearch/一、ES基础、安装、使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -761,7 +1631,7 @@
 
           
           
-             <span id="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="一、ES基础、安装、使用">
+             <span id="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="一、ES基础、安装、使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -824,7 +1694,7 @@
 <div class="tocEnd"></div>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/05/27/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#more" rel="contents">
+            <a class="btn" href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
@@ -1229,7 +2099,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E5%8A%A9%E4%BA%A4%E6%B5%81%E4%BD%93%E9%AA%8C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/11/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1248,294 +2118,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E5%8A%A9%E4%BA%A4%E6%B5%81%E4%BD%93%E9%AA%8C/" itemprop="url">生活随记/互助交流体验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-08T12:02:12+08:00">
-                2020-05-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E5%8A%A9%E4%BA%A4%E6%B5%81%E4%BD%93%E9%AA%8C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/05/08/生活随记/互助交流体验/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E5%8A%A9%E4%BA%A4%E6%B5%81%E4%BD%93%E9%AA%8C/" class="leancloud_visitors" data-flag-title="生活随记/互助交流体验">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1><span id="hu-zhu-jiao-liu-ti-yan">互助交流体验</span><a href="#hu-zhu-jiao-liu-ti-yan" class="header-anchor"></a></h1><blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%94%9F%E6%B4%BB%E4%BD%93%E9%AA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%94%9F%E6%B4%BB%E4%BD%93%E9%AA%8C/" itemprop="url">生活随记/互换工作生活体验</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-08T11:59:12+08:00">
-                2020-05-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%94%9F%E6%B4%BB%E4%BD%93%E9%AA%8C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/05/08/生活随记/互换工作生活体验/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/05/08/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E4%BA%92%E6%8D%A2%E5%B7%A5%E4%BD%9C%E7%94%9F%E6%B4%BB%E4%BD%93%E9%AA%8C/" class="leancloud_visitors" data-flag-title="生活随记/互换工作生活体验">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1><span id="hu-huan-sheng-huo">互换生活</span><a href="#hu-huan-sheng-huo" class="header-anchor"></a></h1><blockquote>
-<p>现代人太需要快生活的节奏了，体验不同的生活，工作。</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/11/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/11/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/" itemprop="url">eclipse中打开spring的xml配置文件只显示beans</a></h1>
+                <a class="post-title-link" href="/2020/04/11/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/" itemprop="url">eclipse中打开spring的xml配置文件只显示beans</a></h1>
         
 
         <div class="post-meta">
@@ -1570,8 +2153,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index">
-                    <span itemprop="name">报错记录</span>
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
                   </a>
                 </span>
 
@@ -1588,9 +2182,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/04/11/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/#comments" itemprop="discussionUrl">
+                <a href="/2020/04/11/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/04/11/报错记录/eclipse中打开spring的xml配置文件只显示beans/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/04/11/CODING/零散笔记/eclipse中打开spring的xml配置文件只显示beans/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1598,7 +2192,7 @@
 
           
           
-             <span id="/2020/04/11/%E6%8A%A5%E9%94%99%E8%AE%B0%E5%BD%95/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/" class="leancloud_visitors" data-flag-title="eclipse中打开spring的xml配置文件只显示beans">
+             <span id="/2020/04/11/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/eclipse%E4%B8%AD%E6%89%93%E5%BC%80spring%E7%9A%84xml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%8F%AA%E6%98%BE%E7%A4%BAbeans/" class="leancloud_visitors" data-flag-title="eclipse中打开spring的xml配置文件只显示beans">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1634,7 +2228,6 @@
             <blockquote>
 <p>在使用了很久idea之后用回eclipse后，发现创建的spring bean config file中的namespace栏中只有bean空间，无法添加其他的命名空间的情况</p>
 </blockquote>
-<p>错误显示：</p>
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gdq9pwzctkj30iu0pomyo.jpg" alt="截屏2020-04-11下午11.57.50"></p>
 <p>可以看到这里没有其他命名空间只有一个beans，修改方法如下：</p>
 <ol>
@@ -1644,394 +2237,6 @@
 <p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gdqa6lfdkbj311c0q212p.jpg" alt="截屏2020-04-11下午4.48.53"></p>
 
           
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/" itemprop="url">日志系统总结</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-02T00:00:00+08:00">
-                2020-04-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">零散笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/04/02/零散笔记/日志系统总结/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/" class="leancloud_visitors" data-flag-title="日志系统总结">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>总结目前为止所用到的日志系统的，用法，关系，相关知识，如：SLF4J、logback、log4j等……</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#ri-zhi-xi-tong-de-gai-gua">日志系统的概括</a></li>
-<li><a href="#bu-tong-ri-zhi-xi-tong-de-zheng-he">不同日志系统的整合</a></li>
-<li><a href="#qi-ta">其他</a></li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/04/02/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E6%97%A5%E5%BF%97%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/" itemprop="url">设计模式概括</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-29T23:48:49+08:00">
-                2020-03-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index">
-                    <span itemprop="name">设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/29/设计模式/设计模式概括/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/" class="leancloud_visitors" data-flag-title="设计模式概括">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">Visitors&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>这篇是关于设计模式的概念性文章，主要记录设计模式的目的原则等</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#she-ji-mo-shi-de-mu-de">设计模式的目的</a></li>
-<li><a href="#oo-ji-chu">OO基础</a><ul>
-<li><a href="#san-da-ji-ben-te-zheng">三大基本特征</a><ul>
-<li><a href="#feng-zhuang">封装</a></li>
-<li><a href="#ji-cheng">继承</a></li>
-<li><a href="#duo-tai">多态</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#ji-ben-yuan-ze">基本原则</a><ul>
-<li><a href="#1-dan-yi-zhi-ze-yuan-ze-single-responsibility-principle">1.单一职责原则（single-responsibility principle）</a></li>
-<li><a href="#2-jie-kou-ge-chi-yuan-ze-interface-segregation-principle">2.接口隔离原则(Interface-Segregation principle)</a></li>
-<li><a href="#3-yi-lai-dao-zhi-yuan-ze-dependency-inversion-principle">3.依赖倒置原则（Dependency-Inversion principle）</a></li>
-<li><a href="#4-li-shi-ti-huan-yuan-ze-liskov-substitution-principle">4.里氏替换原则（Liskov-Substitution principle）</a></li>
-<li><a href="#5-kai-fang-feng-bi-yuan-ze-open-closed-principle">5.* * 开放封闭原则* *（Open-Closed principle）</a></li>
-<li><a href="#6-di-mi-te-fa-ze-demeter-principle">6.迪米特法则（Demeter Principle）</a></li>
-<li><a href="#7-he-cheng-fu-yong-yuan-ze-composite-reuse-principle">7.合成复用原则（Composite Reuse Principle）</a></li>
-</ul>
-</li>
-<li><a href="#she-ji-yuan-ze">设计原则</a></li>
-<li><a href="#oo-mo-shi">OO模式</a><ul>
-<li><a href="#ce-lue-mo-shi-dan-li-mo-shi">策略模式（单例模式）</a></li>
-<li><a href="#guan-cha-zhe-mo-shi">观察者模式</a></li>
-<li><a href="#zhuang-shi-zhe-mo-shi">装饰者模式</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/29/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%A6%82%E6%8B%AC/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
@@ -2119,7 +2324,7 @@
               
                 <a href="/archives%7C%7Carchive">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">76</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2141,7 +2346,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">55</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2194,7 +2399,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

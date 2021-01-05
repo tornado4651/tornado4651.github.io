@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Mac," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="在网上看到一篇很好的管理mac上java版本的文章，遂拷贝。原文链接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
+<meta property="og:url" content="http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="Tornado4651">
+<meta property="og:description" content="在网上看到一篇很好的管理mac上java版本的文章，遂拷贝。原文链接">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt2cntzvj30es07bwg4.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt4krl4kj30ll0eagpj.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt4decckj30rx0dw795.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt54k8upj30ll0ek0vo.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt8pspabj30ll0ekdlp.jpg">
+<meta property="article:published_time" content="2019-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-05T07:00:25.496Z">
+<meta property="article:author" content="Tornado4651">
+<meta property="article:tag" content="Mac">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/00831rSTly1gclt2cntzvj30es07bwg4.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/01/CODING/零散笔记/开发工具/【转】 MacOS  下安装多个版本的-JDK-并统一管理/"/>
+
+
+
+
+
+  <title>【转】 MacOS 下安装多个版本的 JDK 并统一管理 | Tornado4651</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tornado4651</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编程从来不是一项技术，而是一种生活思想</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【转】 MacOS 下安装多个版本的 JDK 并统一管理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">零散笔记</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">开发工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/01/CODING/零散笔记/开发工具/【转】 MacOS  下安装多个版本的-JDK-并统一管理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/" class="leancloud_visitors" data-flag-title="【转】 MacOS 下安装多个版本的 JDK 并统一管理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>在网上看到一篇很好的管理mac上java版本的文章，遂拷贝。<br><a href="https://blog.csdn.net/aigestudio/article/details/99641818" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<div class="toc">
+
+<!-- toc -->
+
+
+
+<!-- tocstop -->
+
+</div>
+
+<a id="more"></a>
+
+<p>[toc]</p>
+<p>现在的 MacOS 都不自带 JDK 了，如果你在未安装 JDK 的 MacOS 中执行 Java 命令会出现如下提示：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ java -version`</span><br><span class="line">No Java runtime present, requesting install.`</span><br></pre></td></tr></table></figure>
+
+<p>然后 MacOS 会提示你 JDK 未安装：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gclt2cntzvj30es07bwg4.jpg" alt="JDK 未安装提示 —— From AigeStudio"></p>
+<p>点击更多信息的话就会去到 Oracle 的 JDK 下载页让你下载安装，在稍微早一点的 MacOS 版本中点击更多信息会让你跳转至 Apple 的 JDK 6 下载页，不管怎么个方式，MacOS 就是要你自己去安装 JDK，自行下载安装包安装 JDK 虽然可行，但是 JDK 的包并非是 app 而是 pkg 的形式，管理、升级和卸载起来都极不方便，因此这里爱哥是很不推荐下载安装包安装 JDK 的，相较而言，使用 brew 提供自动安装和卸载的功能，管理起来也比自行安装方便轻松。如果你还没用过 brew 的话可以参阅 MacOS 安装 brew 并配置 cask。</p>
+<p>使用 brew 安装 JDK 也非常简单，如果你只是安装最新的 JDK，那么直接执行下述命令即可：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ brew cask install java</span><br></pre></td></tr></table></figure>
+
+<p>当然很多时候我们开发环境并不一定只局限于最新版的 JDK，还需要一些低版本的 JDK，如果使用 brew 安装其他版本的 JDK 还需要使用 “homebrew-cask-versions”，该命令行工具用作于安装应用的历史版本，如果你未曾使用过它那么则需要先使用下述命令配置：</p>
+<p>当然很多时候我们开发环境并不一定只局限于最新版的 JDK，还需要一些低版本的 JDK，如果使用 brew 安装其他版本的 JDK 还需要使用 “homebrew-cask-versions”，该命令行工具用作于安装应用的历史版本，如果你未曾使用过它那么则需要先使用下述命令配置：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ brew tap caskroom/versions</span><br></pre></td></tr></table></figure>
+
+<p>然后执行 brew 的 search 命令看看有哪些 JDK 版本可供安装：</p>
+<p>然后执行 brew 的 search 命令看看有哪些 JDK 版本可供安装：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ brew search java</span><br></pre></td></tr></table></figure>
+
+<p>这里爱哥已经安装了 JDK 的最新版 12 以及 8 和 6，可以看到执行搜索命令后会出现已安装的状态标识（该功能实现参阅 巧用 iTerm2 &amp; zsh &amp; oh-my-zsh 打造炫酷的 MacOS 终端环境）系列文章：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gclt4krl4kj30ll0eagpj.jpg" alt="brew 显示已安装的 JDK 版本 —— From AigeStudio"></p>
+<p>安装完所有你需要的 JDK 版本后执行下述命令就可以查看所有已安装的 JDK 版本路径地址：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ /usr/libexec/java_home -V</span><br></pre></td></tr></table></figure>
+
+
+<p>比如这里爱哥安装了三个版本的 JDK （其中 JDK6 区分了 32bit 和 64bit 版本）：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gclt4decckj30rx0dw795.jpg" alt="本机显示已安装的 JDK 版本 —— From AigeStudio"></p>
+<p>得到每个不同的 JDK 路径后我们就可以着手在这些 JDK 之间进行切换，在默认情况下 MacOS 中 Java 使用的是最新的 JDK 版本，可以通过命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ java -version</span><br></pre></td></tr></table></figure>
+
+
+<p>查看，比如这里爱哥使用的最新版本就是 Open JDK 12：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gclt54k8upj30ll0ek0vo.jpg" alt="本机安装的 Open JDK 12 —— From AigeStudio"></p>
+<p>我们可以通过设置系统的环境变量 JAVA_HOME 来在不同的 JDK 版本之间切换，最简单的方式就是通过 “export” 命令手动修改它的值：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ <span class="built_in">export</span> JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+
+
+<p>不过每次都输入这么一长串命令显得太过繁琐不够智能，我们可以在 shell 的配置文件（如果是 bash 则在 ~/.bash_profile；如果是 zsh，则在 ~/.zshrc ）中以指定 alias 的方式简化切换命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># JDK 6、JDK 8、JDK 12 的 export 命令</span></span><br><span class="line"><span class="built_in">export</span> JDK6_HOME=<span class="string">"/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"</span></span><br><span class="line"><span class="built_in">export</span> JDK8_HOME=<span class="string">"/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"</span></span><br><span class="line"><span class="built_in">export</span> JDK12_HOME=<span class="string">"/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># alias 命令链接到 export 命令</span></span><br><span class="line"><span class="built_in">alias</span> jdk6=<span class="string">"export JAVA_HOME=<span class="variable">$JDK6_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk8=<span class="string">"export JAVA_HOME=<span class="variable">$JDK8_HOME</span>"</span></span><br><span class="line"><span class="built_in">alias</span> jdk12=<span class="string">"export JAVA_HOME=<span class="variable">$JDK12_HOME</span>"</span></span><br></pre></td></tr></table></figure>
+<p>修改完 Shell 配置文件后保存并执行 source 命令实时更新配置文件：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ <span class="built_in">source</span> 配置文件路径</span><br><span class="line">（如果是bash则为~/.bash_profile；如果是zsh，则为~/.zshrc）</span><br></pre></td></tr></table></figure>
+
+
+<p>最后我们就可以在 Shell 中使用 jdk6、jdk8、jdk12 命令切换不同的 JDK 版本了。</p>
+<p>使用 export &amp; alias 的方式管理 JDK 固然没问题，但是当我们遇到复杂的场景时这种方式就显得不中用了。比如我们又很多不同的 Java 项目，而这些 Java 项目之间又互相依赖，并且这些 Java 项目都不是使用统一的 JDK 版本。如果我们使用 export &amp; alias 的方式切换 JDK，那么就有可能会导致一些项目可以编译成功一些不能。一种更好的思路是限制 export &amp; alias 的作用范围，即可以将其对 JDK 环境变量的设置作用于某个具体的项目，即作用到具体的目录。这个思路虽好，但是使用 export &amp; alias 的方式实现起来就比较困难。这里爱哥给大家推荐 JEnv 这个小工具，它可以帮我们更好地管理 &amp; 切换不同版本的 JDK。</p>
+<p>JEnv 的安装很简单，你可以直接参考其官方网站。JEnv 目前支持 Linux 和 MacOS 两种操作系统，在 MacOS 下你可以直接使用 brew 进行安装（注：如果你还没用过 brew 的话可以参阅 MacOS 安装 brew 并配置 cask）：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ brew install jenv</span><br></pre></td></tr></table></figure>
+
+
+<p>然后配置 Shell 添加如下配置参数</p>
+<p>然后配置 Shell 添加如下配置参数</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果你是用的 bash 则执行下述命令</span></span><br><span class="line">AigeStudio@aige$ <span class="built_in">echo</span> <span class="string">'export PATH="$HOME/.jenv/bin:$PATH"'</span> &gt;&gt; ~/.bash_profile</span><br><span class="line">AigeStudio@aige$ <span class="built_in">echo</span> <span class="string">'eval "$(jenv init -)"'</span> &gt;&gt; ~/.bash_profile</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果你是用的 zsh 则执行下述命令</span></span><br><span class="line">AigeStudio@aige$ <span class="built_in">echo</span> <span class="string">'export PATH="$HOME/.jenv/bin:$PATH"'</span> &gt;&gt; ~/.zshrc</span><br><span class="line">AigeStudio@aige$ <span class="built_in">echo</span> <span class="string">'eval "$(jenv init -)"'</span> &gt;&gt; ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+
+<p>最后我们使用上述使用到的 /usr/libexec/java_home -V 命令罗列出已经安装的 JDK 路径：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ /usr/libexec/java_home -V</span><br><span class="line">Matching Java Virtual Machines (4):</span><br><span class="line">    12.0.1, x86_64:	<span class="string">"OpenJDK 12.0.1"</span>	/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home</span><br><span class="line">    1.8.0_212, x86_64:	<span class="string">"AdoptOpenJDK 8"</span>	/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home</span><br><span class="line">    1.6.0_65-b14-468, x86_64:	<span class="string">"Java SE 6"</span>	/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</span><br><span class="line">    1.6.0_65-b14-468, i386:	<span class="string">"Java SE 6"</span>	/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+
+
+<p>再使用 jenv add 命令挨个将上述路径添加即可：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv add /Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home</span><br><span class="line">AigeStudio@aige$ jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home</span><br><span class="line">AigeStudio@aige$ jenv add /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+
+
+<p>完成上述配置后使用 JEnv 的 versions 命令查看已经被添加至 JEnv 管理的 JDK 版本：</p>
+<p>完成上述配置后使用 JEnv 的 versions 命令查看已经被添加至 JEnv 管理的 JDK 版本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv versions</span><br><span class="line">  system</span><br><span class="line">  1.6</span><br><span class="line">  1.6.0.65</span><br><span class="line">  1.8</span><br><span class="line">  1.8.0.212</span><br><span class="line">  12.0</span><br><span class="line">* 12.0.1 (<span class="built_in">set</span> by /Users/aige/.jenv/version)</span><br><span class="line">  openjdk64-1.8.0.212</span><br><span class="line">  openjdk64-12.0.1</span><br><span class="line">  oracle64-1.6.0.65</span><br></pre></td></tr></table></figure>
+
+<p>如果看到我们添加的 JDK 6、JDK 8 和 JDK 12 被添加了则表明配置成功。这里需要注意的是，JEnv 会读取 JDK 的不同别名来作为显示。比如上面命令行中罗列出的 1.8、1.8.0.212 以及 openjdk64-1.8.0.212 其实指代的都是 JDK 8。而版本号左边带星号 “*” 的则表示当前执行 Java 命令后会使用到的 JDK 版本。比如上述命令行中 12.0.1 左边有星号，这时我们执行一个 java version 命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ java -version</span><br><span class="line">openjdk version <span class="string">"12.0.1"</span> 2019-04-16</span><br><span class="line">OpenJDK Runtime Environment (build 12.0.1+12)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 12.0.1+12, mixed mode, sharing)</span><br></pre></td></tr></table></figure>
+
+<p>显示的就会是 JDK 12 的版本。</p>
+<p>显示的就会是 JDK 12 的版本。</p>
+<p>JEnv 的精髓是 shell、local 和 global 三个参数命令。shell 用于设置终端窗口生命周期内使用的 JDK 版本；local 用于设置当前目录下使用的 JDK 版本；而 global 用于设置全局使用的 JDK 版本。这三个命令的使用方式都一样：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv shell/<span class="built_in">local</span>/global 1.6</span><br></pre></td></tr></table></figure>
+
+
+<p>上述命令最后的 “1.6” 即我们在 JEnv 中设置的不同 JDK 版本的别名。这里如果我们想在当前终端窗口中使用 JDK 8，我们只需执行：</p>
+<p>上述命令最后的 “1.6” 即我们在 JEnv 中设置的不同 JDK 版本的别名。这里如果我们想在当前终端窗口中使用 JDK 8，我们只需执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv shell 1.8</span><br></pre></td></tr></table></figure>
+
+
+<p>此时我们再执行 java version 命令就会显示使用的是 JDK 8：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv shell 1.8</span><br><span class="line">AigeStudio@aige$ java -version</span><br><span class="line">openjdk version <span class="string">"1.8.0_212"</span></span><br><span class="line">OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_212-b04)</span><br><span class="line">OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.212-b04, mixed mode)</span><br></pre></td></tr></table></figure>
+
+
+<p>shell 命令设置的 JDK 是终端窗口生命周期内有效的，即你一旦退出终端再次进入则会失效。而 local 命令则可以让你在某个目录下执行某个具体版本的 JDK：</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gclt8pspabj30ll0ekdlp.jpg" alt="JEnv 参数命令 local 的使用 —— From AigeStudio"></p>
+<p>local 命令不像 shell 那样有生命周期，一旦在某个目录下使用 local 设置了 JDK 版本，就会在该目录下生成一个 “.java-version” 文件，该文件中记录了当前目录所使用的 JDK 版本，只要你不删除该文件，则设置会一直有效。最后的 global 命令就不说了很好理解。</p>
+<p>shell、local 和 global 命令几乎就是 JEnv 的全部，其它的一些小功能不太常用，你可以参考其官方文档或者直接查看 jenv 的命令帮助：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">AigeStudio@aige$ jenv</span><br><span class="line">jenv 0.5.2</span><br><span class="line">Usage: jenv &lt;<span class="built_in">command</span>&gt; [&lt;args&gt;]</span><br><span class="line"></span><br><span class="line">Some useful jenv commands are:</span><br><span class="line">   commands    List all available jenv commands</span><br><span class="line">   <span class="built_in">local</span>       Set or show the <span class="built_in">local</span> application-specific Java version</span><br><span class="line">   global      Set or show the global Java version</span><br><span class="line">   shell       Set or show the shell-specific Java version</span><br><span class="line">   <span class="built_in">rehash</span>      Rehash jenv shims (run this after installing executables)</span><br><span class="line">   version     Show the current Java version and its origin</span><br><span class="line">   versions    List all Java versions available to jenv</span><br><span class="line">   <span class="built_in">which</span>       Display the full path to an executable</span><br><span class="line">   <span class="built_in">whence</span>      List all Java versions that contain the given executable</span><br><span class="line"></span><br><span class="line">See jenv <span class="built_in">help</span> &lt;<span class="built_in">command</span>&gt; <span class="keyword">for</span> information on a specific <span class="built_in">command</span>.</span><br><span class="line">For full documentation, see: https://github.com/hikage/jenv<span class="comment">#readme</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mac/" rel="tag"># Mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/01/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%A7%91%E6%8A%80/%EF%A3%BF/MacBook%20Pro%E2%80%94%E2%80%94%E6%88%91%E7%9A%84%E8%A3%85%E5%A4%87%E5%A4%A7%E5%8D%87%E7%BA%A7/" rel="next" title="入手Macbook pro，我的装备大升级！">
+                <i class="fa fa-chevron-left"></i> 入手Macbook pro，我的装备大升级！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/%E5%88%9D%E8%AF%86Redis/" rel="prev" title="初识Redis">
+                初识Redis <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/head.jpg"
+                alt="Tornado4651" />
+            
+              <p class="site-author-name" itemprop="name">Tornado4651</p>
+              <p class="site-description motion-element" itemprop="description">码字，羽球，摄影；是我简单生活的方式</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7Carchive">
+              
+                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tornado4651" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:torando4651@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tornado4651</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LJF.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/01/01/CODING/%E9%9B%B6%E6%95%A3%E7%AC%94%E8%AE%B0/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E3%80%90%E8%BD%AC%E3%80%91%20MacOS%20%20%E4%B8%8B%E5%AE%89%E8%A3%85%E5%A4%9A%E4%B8%AA%E7%89%88%E6%9C%AC%E7%9A%84-JDK-%E5%B9%B6%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86/';
+          this.page.identifier = '2020/01/01/CODING/零散笔记/开发工具/【转】 MacOS  下安装多个版本的-JDK-并统一管理/';
+          this.page.title = '【转】 MacOS 下安装多个版本的 JDK 并统一管理';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LJF.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("", "");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
