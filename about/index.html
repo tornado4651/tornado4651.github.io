@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -109,6 +109,10 @@
   <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
 
 
 
@@ -121,19 +125,16 @@
 
 
 
-<meta name="description" content="这是Admin创建的Page">
+<meta name="description" content="关于我 ｜ 一只不起眼的小人物  我们内心中“追求小众”的这种想法，本身就很普遍。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="AAAPage">
-<meta property="og:url" content="http://yoursite.com/Admin%E5%88%9B%E5%BB%BA%E7%9A%84Page/index.html">
+<meta property="og:title" content="Tornado4651">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="这是Admin创建的Page">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://www.desktopwallpaperhd.net/wallpapers/11/9/nature-guowai-tupian-116009.jpg">
-<meta property="article:published_time" content="2020-06-01T09:22:06.000Z">
-<meta property="article:modified_time" content="2020-06-01T09:25:41.328Z">
+<meta property="og:description" content="关于我 ｜ 一只不起眼的小人物  我们内心中“追求小众”的这种想法，本身就很普遍。">
+<meta property="article:published_time" content="2021-01-05T13:56:27.901Z">
+<meta property="article:modified_time" content="2021-01-05T13:56:27.901Z">
 <meta property="article:author" content="Tornado4651">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://www.desktopwallpaperhd.net/wallpapers/11/9/nature-guowai-tupian-116009.jpg">
 
 
 
@@ -149,12 +150,12 @@
     motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '我'
     },
     algolia: {
-      applicationID: '',
+      applicationID: '4HM2HL02JK',
       apiKey: '',
-      indexName: '',
+      indexName: 'for_index',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -163,13 +164,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/Admin创建的Page/"/>
+  <link rel="canonical" href="http://yoursite.com/about/"/>
 
 
 
 
 
-  <title>AAAPage | Tornado4651</title>
+  <title> | Tornado4651</title>
   
 
 
@@ -181,7 +182,7 @@
 
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -204,7 +205,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">编程从来不是一项技术，而是一种生活思想</p>
+        <p class="site-subtitle">编程从来不是一项技术 而是一种生活思想</p>
       
   </div>
 
@@ -229,7 +230,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-circle-o"></i> <br />
+            
+            关于
           </a>
         </li>
       
@@ -239,7 +250,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -249,7 +260,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            Categories
+            目录
           </a>
         </li>
       
@@ -259,15 +270,63 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-testpage">
+          <a href="/testPAGE" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
+            
+            testPAGE
           </a>
         </li>
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -289,7 +348,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">AAAPage</h1>
+	<h1 class="post-title" itemprop="name headline"></h1>
 
 
 
@@ -301,8 +360,9 @@
       <div class="post-body">
         
         
-          <p>这是Admin创建的Page</p>
-<p><img src="http://www.desktopwallpaperhd.net/wallpapers/11/9/nature-guowai-tupian-116009.jpg" alt="测试图片"></p>
+          <h1><span id="guan-yu-wo-yi-zhi-bu-qi-yan-de-xiao-ren-wu">关于我 ｜ 一只不起眼的小人物</span><a href="#guan-yu-wo-yi-zhi-bu-qi-yan-de-xiao-ren-wu" class="header-anchor"></a></h1><blockquote>
+<p> 我们内心中“追求小众”的这种想法，本身就很普遍。</p>
+</blockquote>
 
         
       </div>
@@ -355,8 +415,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -376,7 +445,7 @@
                 <a href="/archives%7C%7Carchive">
               
                   <span class="site-state-item-count">76</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -387,7 +456,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">22</span>
-                  <span class="site-state-item-name">categories</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
@@ -398,7 +467,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">55</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -437,6 +506,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">关于我 ｜ 一只不起眼的小人物</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -450,7 +535,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2020 &mdash; <span itemprop="copyrightYear">2021</span>
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -529,10 +614,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -574,12 +658,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -627,9 +706,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/Admin%E5%88%9B%E5%BB%BA%E7%9A%84Page/index.html';
-          this.page.identifier = 'Admin创建的Page/index.html';
-          this.page.title = 'AAAPage';
+          this.page.url = 'http://yoursite.com/about/index.html';
+          this.page.identifier = 'about/index.html';
+          this.page.title = '';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://LJF.disqus.com/embed.js';
@@ -669,12 +748,25 @@
 
 
 
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
 
   
 
   
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("", "");</script>
+  <script>AV.initialize("czcUUcuBhjggiiRmEX5qC97U-gzGzoHsz", "kMHopWRgEO2tlxGXc2WDdYMz");</script>
   <script>
     function showTime(Counter) {
       var query = new AV.Query(Counter);
@@ -787,6 +879,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
