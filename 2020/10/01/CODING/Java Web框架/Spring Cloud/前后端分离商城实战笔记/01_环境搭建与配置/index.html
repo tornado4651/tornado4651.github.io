@@ -125,14 +125,14 @@
 
 
 
-<meta name="description" content="从零开始搭建一套前后端分离的商城应用。 本篇文章  一、下载、安装、配置虚拟机推荐使用：vertualBox + vegrant 安装虚拟机 https:&#x2F;&#x2F;www.virtualbox.org https:&#x2F;&#x2F;www.vagrantup.com 二、在linux中安装docker1、安装docker12345$ sudo yum install -y yum-utils $ sudo yum-">
+<meta name="description" content="本篇文章主要记录项目部署以及开发所需要的环境及其详细配置方法。       一、下载、安装、配置虚拟机 二、在linux中安装docker 1、安装docker 2、 配置docker的镜像加速器   三、使用docker安装mysql、redis 1、docker安装mysql 2、docker安装redis 3、设置docker，开机自动运行容器   四、其他配置安装 本地：java 本地：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="01、环境搭建与配置">
+<meta property="og:title" content="01_环境搭建与配置">
 <meta property="og:url" content="http://yoursite.com/2020/10/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/01_%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="从零开始搭建一套前后端分离的商城应用。 本篇文章  一、下载、安装、配置虚拟机推荐使用：vertualBox + vegrant 安装虚拟机 https:&#x2F;&#x2F;www.virtualbox.org https:&#x2F;&#x2F;www.vagrantup.com 二、在linux中安装docker1、安装docker12345$ sudo yum install -y yum-utils $ sudo yum-">
+<meta property="og:description" content="本篇文章主要记录项目部署以及开发所需要的环境及其详细配置方法。       一、下载、安装、配置虚拟机 二、在linux中安装docker 1、安装docker 2、 配置docker的镜像加速器   三、使用docker安装mysql、redis 1、docker安装mysql 2、docker安装redis 3、设置docker，开机自动运行容器   四、其他配置安装 本地：java 本地：">
 <meta property="article:published_time" content="2020-09-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-06T07:47:33.309Z">
+<meta property="article:modified_time" content="2021-01-06T11:23:44.580Z">
 <meta property="article:author" content="Tornado4651">
 <meta name="twitter:card" content="summary">
 
@@ -170,7 +170,7 @@
 
 
 
-  <title>01、环境搭建与配置 | Tornado4651</title>
+  <title>01_环境搭建与配置 | Tornado4651</title>
   
 
 
@@ -378,7 +378,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">01、环境搭建与配置</h1>
+          <h1 class="post-title" itemprop="name headline">01_环境搭建与配置</h1>
         
 
         <div class="post-meta">
@@ -474,7 +474,7 @@
 
           
           
-             <span id="/2020/10/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/01_%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="01、环境搭建与配置">
+             <span id="/2020/10/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/01_%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/" class="leancloud_visitors" data-flag-title="01_环境搭建与配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -511,9 +511,40 @@
 
       
         <blockquote>
-<p>从零开始搭建一套前后端分离的商城应用。</p>
-<p>本篇文章</p>
+<p>本篇文章主要记录项目部署以及开发所需要的环境及其详细配置方法。</p>
 </blockquote>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#yi-xia-zai-an-zhuang-pei-zhi-xu-ni-ji">一、下载、安装、配置虚拟机</a></li>
+<li><a href="#er-zai-linux-zhong-an-zhuang-docker">二、在linux中安装docker</a><ul>
+<li><a href="#1-an-zhuang-docker">1、安装docker</a></li>
+<li><a href="#2-pei-zhi-docker-de-jing-xiang-jia-su-qi">2、 配置docker的镜像加速器</a></li>
+</ul>
+</li>
+<li><a href="#san-shi-yong-docker-an-zhuang-mysql-redis">三、使用docker安装mysql、redis</a><ul>
+<li><a href="#1-docker-an-zhuang-mysql">1、docker安装mysql</a></li>
+<li><a href="#2-docker-an-zhuang-redis">2、docker安装redis</a></li>
+<li><a href="#3-she-zhi-docker-kai-ji-zi-dong-yun-xing-rong-qi">3、设置docker，开机自动运行容器</a></li>
+</ul>
+</li>
+<li><a href="#si-qi-ta-pei-zhi-an-zhuang">四、其他配置安装</a><ul>
+<li><a href="#ben-di-java">本地：java</a></li>
+<li><a href="#ben-di-maven-3-6-x">本地：maven（3.6.x）</a></li>
+<li><a href="#idea-cha-jian-an-zhuang">idea插件安装</a></li>
+<li><a href="#vscode-cha-jian">VSCode插件</a></li>
+<li><a href="#an-zhuang-git">安装git</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<a id="more"></a>
+
 <h1><span id="yi-xia-zai-an-zhuang-pei-zhi-xu-ni-ji">一、下载、安装、配置虚拟机</span><a href="#yi-xia-zai-an-zhuang-pei-zhi-xu-ni-ji" class="header-anchor"></a></h1><p>推荐使用：vertualBox + vegrant 安装虚拟机</p>
 <p><a href="https://www.virtualbox.org" target="_blank" rel="noopener">https://www.virtualbox.org</a></p>
 <p><a href="https://www.vagrantup.com" target="_blank" rel="noopener">https://www.vagrantup.com</a></p>
@@ -611,8 +642,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/01/06/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/02%E3%80%81%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" rel="prev" title="CODING/Java Web框架/Spring Cloud/前后端分离商城实战笔记/02、项目框架搭建">
-                CODING/Java Web框架/Spring Cloud/前后端分离商城实战笔记/02、项目框架搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/10/02/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/02_%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA/" rel="prev" title="02_项目框架搭建">
+                02_项目框架搭建 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -730,7 +761,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -994,7 +1025,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2020/10/01/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/01_%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE/';
           this.page.identifier = '2020/10/01/CODING/Java Web框架/Spring Cloud/前后端分离商城实战笔记/01_环境搭建与配置/';
-          this.page.title = '01、环境搭建与配置';
+          this.page.title = '01_环境搭建与配置';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://LJF.disqus.com/embed.js';
