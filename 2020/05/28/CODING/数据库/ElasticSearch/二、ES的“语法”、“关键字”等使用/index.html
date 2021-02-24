@@ -129,17 +129,17 @@
 
 <meta name="description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据     基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   搜索——“_search” 基本搜索：空搜索 多索引多类型搜索 分页搜索   API 和 关键字 汇总记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二、ES的使用及关键字查询">
+<meta property="og:title" content="二、ES的概念与用法">
 <meta property="og:url" content="http://yoursite.com/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Tornado4651">
 <meta property="og:description" content="ElasticSearch的语法和关键字实在是太多太复杂了，因此单独开出一篇文章记录它们的用法       参考链接 ES的概念 ES中的“数据” 文档 文档元数据     基本操作CRUD 创建 获取 更新 删除   批量操作 多文档检索——mget 多功能批量操作—bulk   搜索——“_search” 基本搜索：空搜索 多索引多类型搜索 分页搜索   API 和 关键字 汇总记录">
-<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/008eGmZEly1gmsyy8vbd2j30u00uzafy.jpg">
 <meta property="article:published_time" content="2020-05-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-05T07:14:47.916Z">
+<meta property="article:modified_time" content="2021-01-19T06:59:12.333Z">
 <meta property="article:author" content="Tornado4651">
 <meta property="article:tag" content="ElasticSearch">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/008eGmZEly1gmsyy8vbd2j30u00uzafy.jpg">
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-  <title>二、ES的使用及关键字查询 | Tornado4651</title>
+  <title>二、ES的概念与用法 | Tornado4651</title>
   
 
 
@@ -383,7 +383,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二、ES的使用及关键字查询</h1>
+          <h1 class="post-title" itemprop="name headline">二、ES的概念与用法</h1>
         
 
         <div class="post-meta">
@@ -468,7 +468,7 @@
 
           
           
-             <span id="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="二、ES的使用及关键字查询">
+             <span id="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="二、ES的概念与用法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -559,7 +559,7 @@
 <h2><span id="wen-dang">文档</span><a href="#wen-dang" class="header-anchor"></a></h2><p>通常，我们可以认为<strong>对象(object)</strong>和<strong>文档(document)</strong>是等价相通的。不过，他们还是有所差别：对象(Object)是一个JSON结构体——类似于哈希、hashmap、字典或者关联数组；对象(Object)中还可能包含其他对象(Object)。</p>
 <p> 在Elasticsearch中，<strong>文档(document)</strong>这个术语有着特殊含义。它特指最顶层结构或者<strong>根对象(root object)</strong>序列化成的JSON数据（以唯一ID标识并存储于Elasticsearch中）。</p>
 <h3><span id="wen-dang-yuan-shu-ju">文档元数据</span><a href="#wen-dang-yuan-shu-ju" class="header-anchor"></a></h3><p>一个文档不只有数据。它还包含了<strong>元数据(metadata)</strong>，如：</p>
-<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gfhf0c7fl7j30u00uzjy4.jpg" alt="截屏2020-06-05 下午2.36.08"></p>
+<p><img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmsyy8vbd2j30u00uzafy.jpg" alt="元数据含义"></p>
 <p>关于文档的信息。三个必须的元数据节点是：</p>
 <table>
 <thead>
@@ -805,6 +805,16 @@
     
 
     
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+
+    
 
     
       <div>
@@ -861,8 +871,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/06/01/CODING/Java%E5%9F%BA%E7%A1%80/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="学习笔记">
-                学习笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/06/01/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/ES%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" rel="prev" title="ES踩坑记录">
+                ES踩坑记录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -946,6 +956,10 @@ var jiathis_config={
 
   <aside id="sidebar" class="sidebar">
     
+
+    <!-- 网易云音乐外挂插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66"></iframe>
+    
     <div class="sidebar-inner">
 
       
@@ -980,7 +994,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -991,7 +1005,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1002,7 +1016,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1244,7 +1258,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://yoursite.com/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/';
           this.page.identifier = '2020/05/28/CODING/数据库/ElasticSearch/二、ES的“语法”、“关键字”等使用/';
-          this.page.title = '二、ES的使用及关键字查询';
+          this.page.title = '二、ES的概念与用法';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://LJF.disqus.com/embed.js';

@@ -360,6 +360,220 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" itemprop="url">一、ES基础、安装、使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">
+                2020-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/" itemprop="url" rel="index">
+                    <span itemprop="name">ElasticSearch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/05/27/CODING/数据库/ElasticSearch/一、ES基础、安装、使用/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/" class="leancloud_visitors" data-flag-title="一、ES基础、安装、使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅</p>
+</blockquote>
+<div class="tocStart"></div>
+
+<!-- toc -->
+
+<ul>
+<li><a href="#1-shi-me-shi-elasticsearch">1.什么是ElasticSearch？</a><ul>
+<li><a href="#ji-ben-ming-ci">基本名词</a></li>
+<li><a href="#es-he-rdbms-de-bi-jiao">ES 和 RDBMS 的比较</a></li>
+</ul>
+</li>
+<li><a href="#2-an-zhuang-yu-pei-zhi">2.安装 与 配置</a><ul>
+<li><a href="#shou-dong-ben-ji-mac-an-zhuang-elasticseaerch-yu-kibana">手动本机（Mac）安装Elasticseaerch 与 kibana</a></li>
+<li><a href="#docker-an-zhuang-elasticsearch-yu-kibana">docker安装Elasticsearch 与 Kibana</a></li>
+<li><a href="#pei-zhi-es-ji-qun-he-kibana">配置Es集群和Kibana</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<div class="tocEnd"></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/18/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/%E7%8C%AE%E8%A1%80%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -489,6 +703,8 @@
     </div>
     
     
+    
+
     
 
     
@@ -681,6 +897,8 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
@@ -857,6 +1075,8 @@
     </div>
     
     
+    
+
     
 
     
@@ -1050,6 +1270,8 @@
     </div>
     
     
+    
+
     
 
     
@@ -1275,6 +1497,8 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
@@ -1466,6 +1690,8 @@
 
     
 
+    
+
     <footer class="post-footer">
       
 
@@ -1499,7 +1725,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%20&%20Ajax%20%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tornado4651">
@@ -1518,7 +1744,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" itemprop="url">jQuery 和 Ajax 知识点记录</a></h1>
+                <a class="post-title-link" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%20&%20Ajax%20%E7%AC%94%E8%AE%B0/" itemprop="url">jQuery 和 Ajax 知识点记录</a></h1>
         
 
         <div class="post-meta">
@@ -1593,9 +1819,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#comments" itemprop="discussionUrl">
+                <a href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%20&%20Ajax%20%E7%AC%94%E8%AE%B0/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/13/CODING/Java Web框架/Web基础/jQuery和Ajax知识点记录/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/03/13/CODING/Java Web框架/Web基础/jQuery & Ajax 笔记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1603,7 +1829,7 @@
 
           
           
-             <span id="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/" class="leancloud_visitors" data-flag-title="jQuery 和 Ajax 知识点记录">
+             <span id="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%20&%20Ajax%20%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="jQuery 和 Ajax 知识点记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1641,7 +1867,7 @@
 <!--toc-->
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%E5%92%8CAjax%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B0%E5%BD%95/#more" rel="contents">
+            <a class="btn" href="/2020/03/13/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Web%E5%9F%BA%E7%A1%80/jQuery%20&%20Ajax%20%E7%AC%94%E8%AE%B0/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1651,6 +1877,8 @@
     </div>
     
     
+    
+
     
 
     
@@ -1844,6 +2072,8 @@
     </div>
     
     
+    
+
     
 
     
@@ -2056,188 +2286,6 @@
 
     
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tornado4651">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tornado4651">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" itemprop="url">后期处理中的直方图和曲线图的使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-04T00:00:00+08:00">
-                2020-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/" itemprop="url" rel="index">
-                    <span itemprop="name">影视、摄像、后期</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2020/03/04/影视、摄像、后期/直方图和曲线图/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/" class="leancloud_visitors" data-flag-title="后期处理中的直方图和曲线图的使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <blockquote>
-<p>在b站上看到一位很用心的up——“摄影师泰罗”讲解直方图、曲线图的原理和使用方法。感觉收获满满，终于弄懂了摄影中最为重要的两个概念，因此记录下来，随时查看。</p>
-</blockquote>
-<div class="tocStart"></div>
-
-<!-- toc -->
-
-<ul>
-<li><a href="#b-zhan-de-shi-pin-jiao-xue">B站的视频教学</a></li>
-<li><a href="#zhi-fang-tu">直方图</a><ul>
-<li><a href="#pu-tong-zhi-fang-tu">普通直方图</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<div class="tocEnd"></div>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/03/04/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/%E7%9B%B4%E6%96%B9%E5%9B%BE%E5%92%8C%E6%9B%B2%E7%BA%BF%E5%9B%BE/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
     
 
     <footer class="post-footer">
@@ -2264,7 +2312,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
   </nav>
 
 
@@ -2288,6 +2336,10 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+
+    <!-- 网易云音乐外挂插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66"></iframe>
     
     <div class="sidebar-inner">
 
@@ -2314,7 +2366,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2325,7 +2377,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2336,7 +2388,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

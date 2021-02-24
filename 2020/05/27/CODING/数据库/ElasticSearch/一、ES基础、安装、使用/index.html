@@ -127,14 +127,14 @@
 
 
 
-<meta name="description" content="入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅       什么是ElasticSearch？ 安装 配置 ES 手动本机（Mac）安装 docker安装   安装 配置 KIBANA 直接本机（mac）安装 docker安装kibana   配置ES集群和KIBANA Linux下的完整安装配置过程记录 基本">
+<meta name="description" content="入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅       1.什么是ElasticSearch？ 基本名词 ES 和 RDBMS 的比较   2.安装 与 配置 手动本机（Mac）安装Elasticseaerch 与 kibana docker安装Elasticsearch 与 Kibana 配置Es集群和K">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一、ES基础、安装、使用">
 <meta property="og:url" content="http://yoursite.com/2020/05/27/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%B8%80%E3%80%81ES%E5%9F%BA%E7%A1%80%E3%80%81%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Tornado4651">
-<meta property="og:description" content="入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅       什么是ElasticSearch？ 安装 配置 ES 手动本机（Mac）安装 docker安装   安装 配置 KIBANA 直接本机（mac）安装 docker安装kibana   配置ES集群和KIBANA Linux下的完整安装配置过程记录 基本">
+<meta property="og:description" content="入职公司后，需要从零开始接触ES（ElasticSearch）这一数据库，所以将一路上排坑和记录写在这片入门文章上。以便后期随时查阅       1.什么是ElasticSearch？ 基本名词 ES 和 RDBMS 的比较   2.安装 与 配置 手动本机（Mac）安装Elasticseaerch 与 kibana docker安装Elasticsearch 与 Kibana 配置Es集群和K">
 <meta property="article:published_time" content="2020-05-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-05T07:14:30.467Z">
+<meta property="article:modified_time" content="2021-02-12T11:51:11.015Z">
 <meta property="article:author" content="Tornado4651">
 <meta property="article:tag" content="ElasticSearch">
 <meta name="twitter:card" content="summary">
@@ -510,21 +510,15 @@
 <!-- toc -->
 
 <ul>
-<li><a href="#shi-me-shi-elasticsearch">什么是ElasticSearch？</a></li>
-<li><a href="#an-zhuang-pei-zhi-es">安装 配置 ES</a><ul>
-<li><a href="#shou-dong-ben-ji-mac-an-zhuang">手动本机（Mac）安装</a></li>
-<li><a href="#docker-an-zhuang">docker安装</a></li>
-</ul>
-</li>
-<li><a href="#an-zhuang-pei-zhi-kibana">安装 配置 KIBANA</a><ul>
-<li><a href="#zhi-jie-ben-ji-mac-an-zhuang">直接本机（mac）安装</a></li>
-<li><a href="#docker-an-zhuang-kibana">docker安装kibana</a></li>
-</ul>
-</li>
-<li><a href="#pei-zhi-es-ji-qun-he-kibana">配置ES集群和KIBANA</a></li>
-<li><a href="#linux-xia-de-wan-zheng-an-zhuang-pei-zhi-guo-cheng-ji-lu">Linux下的完整安装配置过程记录</a></li>
-<li><a href="#ji-ben-ming-ci">基本名词</a><ul>
+<li><a href="#1-shi-me-shi-elasticsearch">1.什么是ElasticSearch？</a><ul>
+<li><a href="#ji-ben-ming-ci">基本名词</a></li>
 <li><a href="#es-he-rdbms-de-bi-jiao">ES 和 RDBMS 的比较</a></li>
+</ul>
+</li>
+<li><a href="#2-an-zhuang-yu-pei-zhi">2.安装 与 配置</a><ul>
+<li><a href="#shou-dong-ben-ji-mac-an-zhuang-elasticseaerch-yu-kibana">手动本机（Mac）安装Elasticseaerch 与 kibana</a></li>
+<li><a href="#docker-an-zhuang-elasticsearch-yu-kibana">docker安装Elasticsearch 与 Kibana</a></li>
+<li><a href="#pei-zhi-es-ji-qun-he-kibana">配置Es集群和Kibana</a></li>
 </ul>
 </li>
 </ul>
@@ -535,8 +529,7 @@
 <a id="more"></a>
 
 <p>[toc]</p>
-<h1><span id="shi-me-shi-elasticsearch">什么是ElasticSearch？</span><a href="#shi-me-shi-elasticsearch" class="header-anchor"></a></h1><p>简单的摘抄来一些概念记录，熟练之后再补充自己对ES的心得感悟总结。</p>
-<p>百度定义：</p>
+<h1><span id="1-shi-me-shi-elasticsearch">1.什么是ElasticSearch？</span><a href="#1-shi-me-shi-elasticsearch" class="header-anchor"></a></h1><p>百度定义：</p>
 <blockquote>
 <p>Elasticsearch 是一个分布式、高扩展、高实时的搜索与数据分析引擎。它能很方便的使大量数据具有搜索、分析和探索的能力。充分利用Elasticsearch的水平伸缩性，能使数据在生产环境变得更有价值。Elasticsearch 的实现原理主要分为以下几个步骤，首先用户将数据提交到Elasticsearch 数据库中，再通过分词控制器去将对应的语句分词，将其权重和分词结果一并存入数据，当用户搜索数据时候，再根据权重将结果排名，打分，再将返回结果呈现给用户。</p>
 <p>Elasticsearch是与名为Logstash的数据收集和日志解析引擎以及名为Kibana的分析和可视化平台一起开发的。这三个产品被设计成一个集成解决方案，称为“Elastic Stack”（以前称为“ELK stack”）。</p>
@@ -557,64 +550,7 @@
 <p>而且，所有的这些功能被集成到一个服务里面，你的应用可以通过简单的<code>RESTful API</code>、各种语言的客户端甚至命令行与之交互。</p>
 <p>上手Elasticsearch非常容易。它提供了许多合理的缺省值，并对初学者隐藏了复杂的搜索引擎理论。它开箱即用（安装即可使用），只需很少的学习既可在生产环境中使用。</p>
 </blockquote>
-<h1><span id="an-zhuang-pei-zhi-es">安装 配置 ES</span><a href="#an-zhuang-pei-zhi-es" class="header-anchor"></a></h1><h2><span id="shou-dong-ben-ji-mac-an-zhuang">手动本机（Mac）安装</span><a href="#shou-dong-ben-ji-mac-an-zhuang" class="header-anchor"></a></h2><p>首先下载对应的包：</p>
-<p><a href="https://elasticsearch.cn/download/" target="_blank" rel="noopener">elastic中文社区下载</a></p>
-<p>解压后放入某一路径即可（最好路径全英文）</p>
-<p>启动ES: 命令行进入“&lt;安装目录&gt;/&lt;解压得到的文件夹&gt;/bin”后</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">elasticsearch -d</span></span><br></pre></td></tr></table></figure>
-
-<p>停止ES:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看ES进程号</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> lsof -i:ES的端口号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 根据进程号杀死进程，结束</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 进程号</span></span><br></pre></td></tr></table></figure>
-
-<h2><span id="docker-an-zhuang">docker安装</span><a href="#docker-an-zhuang" class="header-anchor"></a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -it --name elasticsearch -d -p 9200:9200 -p 9300:9300 -p 5601:5601 elasticsearch</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>官方的镜像的网络设置是允许外部访问的即network.host=0.0.0.0</p>
-<p>如果要制定es配置可用通过-E{param=value}指定，或者通过-v “$PWD/config”:/usr/share/elasticsearch/config 映射配置文件地址</p>
-<p>-p 5601:5601 是kibana的端口地址 (我这里kibana的container共用elasticsearch的网络，所以这样设置)</p>
-</blockquote>
-<h1><span id="an-zhuang-pei-zhi-kibana">安装 配置 KIBANA</span><a href="#an-zhuang-pei-zhi-kibana" class="header-anchor"></a></h1><h2><span id="zhi-jie-ben-ji-mac-an-zhuang">直接本机（mac）安装</span><a href="#zhi-jie-ben-ji-mac-an-zhuang" class="header-anchor"></a></h2><ol>
-<li><p>下载对应版本的kibana包：<a href="https://elasticsearch.cn/download/" target="_blank" rel="noopener">elastic中文社区下载</a></p>
-</li>
-<li><p>无需安装，解压后放入elasticsearch的同级目录下</p>
-</li>
-</ol>
-<p>开启kibana</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入kubana安装目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/kibana &amp;</span></span><br></pre></td></tr></table></figure>
-
-<p>关闭kibana: </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看ES进程号</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> lsof -i:kibana的端口号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 根据进程号杀死进程，结束</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 进程号</span></span><br></pre></td></tr></table></figure>
-
-<h2><span id="docker-an-zhuang-kibana">docker安装kibana</span><a href="#docker-an-zhuang-kibana" class="header-anchor"></a></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -it -d -e ELASTICSEARCH_URL=http://127.0.0.1:9200 --name kibana --network=container:elasticsearch kibana</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>–network 指定容器共享elasticsearch容器的网络栈 (使用了–network 就不能使用-p 来暴露端口)</p>
-</blockquote>
-<h1><span id="pei-zhi-es-ji-qun-he-kibana">配置ES集群和KIBANA</span><a href="#pei-zhi-es-ji-qun-he-kibana" class="header-anchor"></a></h1><p>ES集群配置：</p>
-<ul>
-<li>首先将elasticsearch的包复制多份，创建多节点的环境</li>
-<li>打开每一个节点下的配置文件（&lt;es包&gt;/config/elastsearch.yml），进行如下修改：</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 集群名称（所有节点相同）</span></span><br><span class="line"><span class="attr">cluster.name:</span> <span class="string">cluster1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 节点名称，每个节点分别编号（node-1, node-2, node-3等）</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span><br><span class="line"><span class="comment"># 允许该节点成为主节点</span></span><br><span class="line"><span class="attr">node.master:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 允许该节点存储数据</span></span><br><span class="line"><span class="attr">node.data:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储数据的路径设置</span></span><br><span class="line"><span class="attr">path.data:</span> <span class="string">/Users/tornado4651/CS/super/es/elk/elasticsear</span></span><br><span class="line"><span class="comment"># 存储日志的路径设置</span></span><br><span class="line"><span class="attr">path.logs:</span> <span class="string">/Users/tornado4651/CS/super/es/elk/elasticsearch/logs1</span></span><br><span class="line"><span class="comment"># 内存锁设置为true来锁住内存。因为内存交换到磁盘对服务器性能来说是致命的，当jvm开始swapping时es的效率会降低，所以要保证它不swap</span></span><br><span class="line"><span class="attr">bootstrap.memory_lock:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绑定ip地址</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment"># 设置当前节点的对外端口号，每个节点不同（9201、9202、9203....）</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">9201</span></span><br><span class="line"><span class="comment"># 设置集群内部连接端口号，每个节点不同（9301、9302、9303....）</span></span><br><span class="line"><span class="attr">transport.tcp.port:</span> <span class="number">9301</span></span><br><span class="line"><span class="comment"># 这提供了自动集群体验，而无需进行任何配置。数组设置或逗号分隔的设置。每个值的形式应该是host:port或host</span></span><br><span class="line"><span class="comment">#（如果没有设置，port默认设置会transport.profiles.default.port 回落到transport.tcp.port）。</span></span><br><span class="line"><span class="attr">discovery.zen.ping.unicast.hosts:</span> <span class="string">["192.168.20.109:9301",</span> <span class="string">"192.168.20.109:9302"</span><span class="string">,</span> <span class="string">"192.168.20.109:9303"</span><span class="string">]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最小节点数设置，如果没有这种设置,遭受网络故障的集群就有可能将集群分成两个独立的集群，这将导致数据丢失</span></span><br><span class="line"><span class="attr">discovery.zen.minimum_master_nodes:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>KIBANA配置：</p>
-<ul>
-<li>打开KIBANA的配置文件：【&lt;kibana安装目录&gt;/config/kibana.yml】,进行如下配置</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置kibana的端口号</span></span><br><span class="line"><span class="attr">server.port:</span> <span class="number">5601</span></span><br><span class="line"><span class="comment"># 绑定ip地址</span></span><br><span class="line"><span class="attr">server.host:</span> <span class="string">"0.0.0.0"</span></span><br><span class="line"><span class="comment"># 设置监控es集群的某一个节点url</span></span><br><span class="line"><span class="attr">elasticsearch.url:</span> <span class="string">"http://127.0.0.1:9201"</span></span><br><span class="line"><span class="comment"># 设置kibana在集群中的存储索引</span></span><br><span class="line"><span class="attr">kibana.index:</span> <span class="string">".kibana"</span></span><br><span class="line"><span class="comment"># 关闭xpack安全，否则会有安全阻止，关于es的xpack是什么，我会单独再写一篇记录</span></span><br><span class="line"><span class="attr">xpack.security.enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1><span id="linux-xia-de-wan-zheng-an-zhuang-pei-zhi-guo-cheng-ji-lu">Linux下的完整安装配置过程记录</span><a href="#linux-xia-de-wan-zheng-an-zhuang-pei-zhi-guo-cheng-ji-lu" class="header-anchor"></a></h1><p>搭建es</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">Elasticsearch安装</span><br><span class="line"><span class="meta">#</span><span class="bash">解压文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash">tar -zxvf elasticsearch-6.3.2.tar.gz</span></span><br><span class="line"><span class="meta">#</span><span class="bash">复制文件夹</span></span><br><span class="line"><span class="meta">$</span><span class="bash">cp -r elasticsearch-6.3.2 elasticsearch-1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">cp -r elasticsearch-6.3.2 elasticsearch-2</span></span><br><span class="line"><span class="meta">$</span><span class="bash">cp -r elasticsearch-6.3.2 elasticsearch-3</span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建数据存放路径</span></span><br><span class="line"><span class="meta">#</span><span class="bash">应将设置配置为在Elasticsearch主目录之外定位数据目录，以便在不删除数据的情况下删除主目录！</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/data1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/data2</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/data3</span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建日志存放路径</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/logs1</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/logs2</span></span><br><span class="line"><span class="meta">$</span><span class="bash">mkdir /super/es/elk/elasticsearch/logs3</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">修改elasticsearch配置文件</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-1/config/elasticsearch.yml </span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-2/config/elasticsearch.yml </span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-3/config/elasticsearch.yml</span></span><br><span class="line"><span class="meta">#</span><span class="bash">将配置文件以下内容进行修改</span></span><br><span class="line"><span class="meta">#</span><span class="bash">集群的名称</span></span><br><span class="line">cluster.name: es6-1</span><br><span class="line"><span class="meta">#</span><span class="bash">节点名称,其余两个节点分别为node-2 和node-3</span></span><br><span class="line">node.name: node-1</span><br><span class="line"><span class="meta">#</span><span class="bash">指定该节点是否有资格被选举成为master节点，默认是<span class="literal">true</span>，es是默认集群中的第一台机器为master，如果这台机挂了就会重新选举master</span></span><br><span class="line">node.master: true</span><br><span class="line"><span class="meta">#</span><span class="bash">允许该节点存储数据(默认开启)</span></span><br><span class="line">node.data: true</span><br><span class="line"><span class="meta">#</span><span class="bash">索引数据的存储路径</span></span><br><span class="line">path.data: /super/es/elk/elasticsearch/data1 </span><br><span class="line"><span class="meta">#</span><span class="bash">日志文件的存储路径</span></span><br><span class="line">path.logs: /super/es/elk/elasticsearch/logs1 </span><br><span class="line"><span class="meta">#</span><span class="bash">设置为<span class="literal">true</span>来锁住内存。因为内存交换到磁盘对服务器性能来说是致命的，当jvm开始swapping时es的效率会降低，所以要保证它不swap</span></span><br><span class="line">bootstrap.memory_lock: true</span><br><span class="line"><span class="meta">#</span><span class="bash">绑定的ip地址</span></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"><span class="meta">#</span><span class="bash">设置对外服务的http端口，其余两个节点分别为9202 和9203</span></span><br><span class="line">http.port: 9201</span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置节点间交互的tcp端口, 其余两个节点分别为9302 和9303</span></span><br><span class="line">transport.tcp.port: 9301</span><br><span class="line"><span class="meta">#</span><span class="bash">Elasticsearch将绑定到可用的环回地址，并将扫描端口9300到9305以尝试连接到运行在同一台服务器上的其他节点。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">这提供了自动集群体验，而无需进行任何配置。数组设置或逗号分隔的设置。每个值的形式应该是host:port或host</span></span><br><span class="line"><span class="meta">#</span><span class="bash">（如果没有设置，port默认设置会transport.profiles.default.port 回落到transport.tcp.port）。</span></span><br><span class="line"><span class="meta">#</span><span class="bash">请注意，IPv6主机必须放在括号内。默认为127.0.0.1, [::1]</span></span><br><span class="line">discovery.zen.ping.unicast.hosts: ["localhost:9301", "localhost:9302", "localhost:9303"]</span><br><span class="line"><span class="meta">#</span><span class="bash">如果没有这种设置,遭受网络故障的集群就有可能将集群分成两个独立的集群 - 分裂的大脑 - 这将导致数据丢失</span></span><br><span class="line">discovery.zen.minimum_master_nodes: 2</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 调整jvm内存</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-1/config /jvm.options</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-2/config /jvm.options</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/elasticsearch-3/config /jvm.options </span></span><br><span class="line"><span class="meta">#</span><span class="bash">默认是1g官方建议对jvm进行一些修改，不然很容易出现OOM,参考官网改参数配置最好不要超过内存的50% </span></span><br><span class="line">-Xms1g</span><br><span class="line">-Xmx1g</span><br></pre></td></tr></table></figure>
-
-<p>用户设置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">建立es用户并授权</span></span><br><span class="line"><span class="meta">#</span><span class="bash">添加用户</span></span><br><span class="line"><span class="meta">$</span><span class="bash">useradd es</span></span><br><span class="line"><span class="meta">#</span><span class="bash">赋予文件夹权限</span></span><br><span class="line"><span class="meta">$</span><span class="bash">chown -R  es:es  /super/es</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">root用户 修改配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /etc/security/limits.conf</span></span><br><span class="line">*	soft	nofile	65536</span><br><span class="line">*	hard	nofile	65536</span><br><span class="line">*   soft    nproc   4096</span><br><span class="line">*   hard    nproc   4096</span><br><span class="line">*   soft    memlock unlimited </span><br><span class="line">*   hard    memlock unlimited</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /etc/sysctl.conf</span></span><br><span class="line">vm.max_map_count=655360</span><br><span class="line">fs.file-max=655360</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /etc/security/limits.d/*-nproc.conf</span></span><br><span class="line">*          soft    nproc     4096</span><br><span class="line">root       soft    nproc     unlimited</span><br><span class="line"><span class="meta">#</span><span class="bash">启动</span></span><br><span class="line"><span class="meta">#</span><span class="bash">注意：请使用es用户启动 su – es</span></span><br><span class="line"><span class="meta">$</span><span class="bash">/super/es/elasticsearch6-1/bin/elasticsearch -d</span></span><br><span class="line"><span class="meta">$</span><span class="bash">/super/es/elasticsearch6-2/bin/elasticsearch -d</span></span><br><span class="line"><span class="meta">$</span><span class="bash">/super/es/elasticsearch6-3/bin/elasticsearch –d</span></span><br><span class="line"><span class="meta">#</span><span class="bash">验证</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://10.10.1.8:9201/_cat/nodes?v</span></span><br></pre></td></tr></table></figure>
-
-<p>搭建kibana</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line"><span class="meta">$</span><span class="bash">tar -zxvf kibana-6.3.2-linux-x86_64.tar.gz  -C kibana</span></span><br><span class="line"><span class="meta">#</span><span class="bash">修改配置</span></span><br><span class="line"><span class="meta">$</span><span class="bash">vim /super/es/kibana/config/kibana.yml</span></span><br><span class="line"><span class="meta">#</span><span class="bash">端口</span></span><br><span class="line"><span class="meta">$</span><span class="bash">server.port: 5601</span></span><br><span class="line"><span class="meta">#</span><span class="bash">主机</span></span><br><span class="line"><span class="meta">$</span><span class="bash">server.host: <span class="string">"10.10.1.8"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">es的地址</span></span><br><span class="line"><span class="meta">$</span><span class="bash">elasticsearch.url: <span class="string">"http://localhost:9201"</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">kibana在es中的索引</span></span><br><span class="line"><span class="meta">$</span><span class="bash">kibana.index: <span class="string">".kibana"</span></span></span><br><span class="line">启动</span><br><span class="line"><span class="meta">$</span><span class="bash">kibana &amp;</span></span><br><span class="line"><span class="meta">#</span><span class="bash">验证</span></span><br><span class="line"><span class="meta">#</span><span class="bash">http://10.10.1.8:5601</span></span><br></pre></td></tr></table></figure>
-
-<h1><span id="ji-ben-ming-ci">基本名词</span><a href="#ji-ben-ming-ci" class="header-anchor"></a></h1><ul>
+<h2><span id="ji-ben-ming-ci">基本名词</span><a href="#ji-ben-ming-ci" class="header-anchor"></a></h2><ul>
 <li><p><strong>节点</strong> - 它指的是Elasticsearch的单个正在运行的实例。单个物理和虚拟服务器容纳多个节点，这取决于其物理资源的能力，如RAM，存储和处理能力。</p>
 </li>
 <li><p><strong>集群</strong> - 它是一个或多个节点的集合。 集群为整个数据提供跨所有节点的集合索引和搜索功能。</p>
@@ -654,11 +590,64 @@
 <td align="center">列</td>
 </tr>
 </tbody></table>
+<h1><span id="2-an-zhuang-yu-pei-zhi">2.安装 与 配置</span><a href="#2-an-zhuang-yu-pei-zhi" class="header-anchor"></a></h1><h2><span id="shou-dong-ben-ji-mac-an-zhuang-elasticseaerch-yu-kibana">手动本机（Mac）安装Elasticseaerch 与 kibana</span><a href="#shou-dong-ben-ji-mac-an-zhuang-elasticseaerch-yu-kibana" class="header-anchor"></a></h2><p>首先下载对应的包es 与kibana包：</p>
+<p><a href="https://elasticsearch.cn/download/" target="_blank" rel="noopener">elastic中文社区下载</a></p>
+<p>解压后放入某一路径即可（最好路径全英文）</p>
+<p>启动ES: 命令行进入“&lt;安装目录&gt;/&lt;解压得到的文件夹&gt;/bin”后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">elasticsearch -d</span></span><br></pre></td></tr></table></figure>
+
+<p>停止ES:只能使用kill命令强制杀死进程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看ES进程号</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> lsof -i:ES的端口号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 根据进程号杀死进程，结束</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 进程号</span></span><br></pre></td></tr></table></figure>
+
+<p>开启kibana</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入kubana安装目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./bin/kibana &amp;</span></span><br></pre></td></tr></table></figure>
+
+<p>关闭kibana: </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看ES进程号</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> lsof -i:kibana的端口号</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 根据进程号杀死进程，结束</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 进程号</span></span><br></pre></td></tr></table></figure>
+
+<p>##</p>
+<h2><span id="docker-an-zhuang-elasticsearch-yu-kibana">docker安装Elasticsearch 与 Kibana</span><a href="#docker-an-zhuang-elasticsearch-yu-kibana" class="header-anchor"></a></h2><p>ES</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -it --name elasticsearch -d -p 9200:9200 -p 9300:9300 -p 5601:5601 elasticsearch</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>官方的镜像的网络设置是允许外部访问的即network.host=0.0.0.0</p>
+<p>如果要制定es配置可用通过-E{param=value}指定，或者通过-v “$PWD/config”:/usr/share/elasticsearch/config 映射配置文件地址</p>
+<p>-p 5601:5601 是kibana的端口地址 (我这里kibana的container共用elasticsearch的网络，所以这样设置)</p>
+</blockquote>
+<p>kibana</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker run -it -d -e ELASTICSEARCH_URL=http://127.0.0.1:9200 --name kibana --network=container:elasticsearch kibana</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>–network 指定容器共享elasticsearch容器的网络栈 (使用了–network 就不能使用-p 来暴露端口)</p>
+</blockquote>
+<h2><span id="pei-zhi-es-ji-qun-he-kibana">配置Es集群和Kibana</span><a href="#pei-zhi-es-ji-qun-he-kibana" class="header-anchor"></a></h2><p>ES集群配置：</p>
+<ul>
+<li>首先将elasticsearch的包复制多份，创建多节点的环境</li>
+<li>打开每一个节点下的配置文件（&lt;es包&gt;/config/elastsearch.yml），进行如下修改：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 集群名称（所有节点相同）</span></span><br><span class="line"><span class="attr">cluster.name:</span> <span class="string">cluster1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 节点名称，每个节点分别编号（node-1, node-2, node-3等）</span></span><br><span class="line"><span class="attr">node.name:</span> <span class="string">node-1</span></span><br><span class="line"><span class="comment"># 允许该节点成为主节点</span></span><br><span class="line"><span class="attr">node.master:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># 允许该节点存储数据</span></span><br><span class="line"><span class="attr">node.data:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储数据的路径设置</span></span><br><span class="line"><span class="attr">path.data:</span> <span class="string">/Users/tornado4651/CS/super/es/elk/elasticsear</span></span><br><span class="line"><span class="comment"># 存储日志的路径设置</span></span><br><span class="line"><span class="attr">path.logs:</span> <span class="string">/Users/tornado4651/CS/super/es/elk/elasticsearch/logs1</span></span><br><span class="line"><span class="comment"># 内存锁设置为true来锁住内存。因为内存交换到磁盘对服务器性能来说是致命的，当jvm开始swapping时es的效率会降低，所以要保证它不swap</span></span><br><span class="line"><span class="attr">bootstrap.memory_lock:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绑定ip地址</span></span><br><span class="line"><span class="attr">network.host:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line"><span class="comment"># 设置当前节点的对外端口号，每个节点不同（9201、9202、9203....）</span></span><br><span class="line"><span class="attr">http.port:</span> <span class="number">9201</span></span><br><span class="line"><span class="comment"># 设置集群内部连接端口号，每个节点不同（9301、9302、9303....）</span></span><br><span class="line"><span class="attr">transport.tcp.port:</span> <span class="number">9301</span></span><br><span class="line"><span class="comment"># 这提供了自动集群体验，而无需进行任何配置。数组设置或逗号分隔的设置。每个值的形式应该是host:port或host</span></span><br><span class="line"><span class="comment">#（如果没有设置，port默认设置会transport.profiles.default.port 回落到transport.tcp.port）。</span></span><br><span class="line"><span class="attr">discovery.zen.ping.unicast.hosts:</span> <span class="string">["192.168.20.109:9301",</span> <span class="string">"192.168.20.109:9302"</span><span class="string">,</span> <span class="string">"192.168.20.109:9303"</span><span class="string">]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 最小节点数设置，如果没有这种设置,遭受网络故障的集群就有可能将集群分成两个独立的集群，这将导致数据丢失</span></span><br><span class="line"><span class="attr">discovery.zen.minimum_master_nodes:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>KIBANA配置：</p>
+<ul>
+<li>打开KIBANA的配置文件：【&lt;kibana安装目录&gt;/config/kibana.yml】,进行如下配置</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置kibana的端口号</span></span><br><span class="line"><span class="attr">server.port:</span> <span class="number">5601</span></span><br><span class="line"><span class="comment"># 绑定ip地址</span></span><br><span class="line"><span class="attr">server.host:</span> <span class="string">"0.0.0.0"</span></span><br><span class="line"><span class="comment"># 设置监控es集群的某一个节点url</span></span><br><span class="line"><span class="attr">elasticsearch.url:</span> <span class="string">"http://127.0.0.1:9201"</span></span><br><span class="line"><span class="comment"># 设置kibana在集群中的存储索引</span></span><br><span class="line"><span class="attr">kibana.index:</span> <span class="string">".kibana"</span></span><br><span class="line"><span class="comment"># 关闭xpack安全，否则会有安全阻止，关于es的xpack是什么，我会单独再写一篇记录</span></span><br><span class="line"><span class="attr">xpack.security.enabled:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     
     
+    
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
     
 
     
@@ -718,8 +707,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" rel="prev" title="二、ES的使用及关键字查询">
-                二、ES的使用及关键字查询 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/05/28/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/ElasticSearch/%E4%BA%8C%E3%80%81ES%E7%9A%84%E2%80%9C%E8%AF%AD%E6%B3%95%E2%80%9D%E3%80%81%E2%80%9C%E5%85%B3%E9%94%AE%E5%AD%97%E2%80%9D%E7%AD%89%E4%BD%BF%E7%94%A8/" rel="prev" title="二、ES的概念与用法">
+                二、ES的概念与用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -803,6 +792,10 @@ var jiathis_config={
 
   <aside id="sidebar" class="sidebar">
     
+
+    <!-- 网易云音乐外挂插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66"></iframe>
+    
     <div class="sidebar-inner">
 
       
@@ -837,7 +830,7 @@ var jiathis_config={
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">79</span>
+                  <span class="site-state-item-count">84</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -848,7 +841,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -859,7 +852,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -908,7 +901,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">什么是ElasticSearch？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">安装 配置 ES</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">手动本机（Mac）安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">docker安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">安装 配置 KIBANA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.1.</span> <span class="nav-text">直接本机（mac）安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text">docker安装kibana</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">配置ES集群和KIBANA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">Linux下的完整安装配置过程记录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">6.</span> <span class="nav-text">基本名词</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">6.1.</span> <span class="nav-text">ES 和 RDBMS 的比较</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">1.什么是ElasticSearch？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">基本名词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.2.</span> <span class="nav-text">ES 和 RDBMS 的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">2.安装 与 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">手动本机（Mac）安装Elasticseaerch 与 kibana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">docker安装Elasticsearch 与 Kibana</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.3.</span> <span class="nav-text">配置Es集群和Kibana</span></a></li></ol></li></ol></div>
             
 
           </div>

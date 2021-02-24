@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="​    这一个部分，我将商城项目的开发过程中用到的部分简短，无需深入理解的「工具框架」记录下来，方便之后出现同样问题，或者想要深入学习时，反回来查找继续深入。  [toc]      数据校验JSR303 1）简单校验： 2）分组校验：在不同场景下调用同一个接口时校验规则有可能不同，因此使用分组校验区分。 3）自定义校验 4）相关代码：   全局处理 全局异常处理 1、方法 2、相关代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04_后端开发辅助技术记录部分">
+<meta property="og:url" content="http://yoursite.com/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/04_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95%E9%83%A8%E5%88%86/index.html">
+<meta property="og:site_name" content="Tornado4651">
+<meta property="og:description" content="​    这一个部分，我将商城项目的开发过程中用到的部分简短，无需深入理解的「工具框架」记录下来，方便之后出现同样问题，或者想要深入学习时，反回来查找继续深入。  [toc]      数据校验JSR303 1）简单校验： 2）分组校验：在不同场景下调用同一个接口时校验规则有可能不同，因此使用分组校验区分。 3）自定义校验 4）相关代码：   全局处理 全局异常处理 1、方法 2、相关代码：">
+<meta property="article:published_time" content="2020-01-03T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-18T09:02:53.860Z">
+<meta property="article:author" content="Tornado4651">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideDownBigIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '我'
+    },
+    algolia: {
+      applicationID: '4HM2HL02JK',
+      apiKey: '',
+      indexName: 'for_index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/04/CODING/Java Web框架/Spring Cloud/实战项目笔记/04_后端开发辅助技术记录部分/"/>
+
+
+
+
+
+  <title>04_后端开发辅助技术记录部分 | Tornado4651</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tornado4651</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">编程从来不是一项技术 而是一种生活思想</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于我">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-circle-o"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-总目录">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            总目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-编程">
+          <a href="/categories/CODING/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-keyboard-o"></i> <br />
+            
+            编程
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-摄影">
+          <a href="/categories/%E5%BD%B1%E8%A7%86%E3%80%81%E6%91%84%E5%83%8F%E3%80%81%E5%90%8E%E6%9C%9F/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera-retro"></i> <br />
+            
+            摄影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-生活随记">
+          <a href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E8%AE%B0/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-cloud"></i> <br />
+            
+            生活随记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/04_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95%E9%83%A8%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tornado4651">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tornado4651">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">04_后端开发辅助技术记录部分</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-04T00:00:00+08:00">
+                2020-01-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/" itemprop="url" rel="index">
+                    <span itemprop="name">CODING</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/" itemprop="url" rel="index">
+                    <span itemprop="name">Java Web框架</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/Spring-Cloud/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Cloud</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CODING/Java-Web%E6%A1%86%E6%9E%B6/Spring-Cloud/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%E5%95%86%E5%9F%8E%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">前后端分离商城实战笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/04_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95%E9%83%A8%E5%88%86/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/04/CODING/Java Web框架/Spring Cloud/实战项目笔记/04_后端开发辅助技术记录部分/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/04_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95%E9%83%A8%E5%88%86/" class="leancloud_visitors" data-flag-title="04_后端开发辅助技术记录部分">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>​    这一个部分，我将商城项目的开发过程中用到的部分简短，无需深入理解的「工具框架」记录下来，方便之后出现同样问题，或者想要深入学习时，反回来查找继续深入。</p>
+</blockquote>
+<p>[toc]</p>
+<div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#shu-ju-xiao-yan-jsr303">数据校验JSR303</a><ul>
+<li><a href="#1-jian-dan-xiao-yan">1）简单校验：</a></li>
+<li><a href="#2-fen-zu-xiao-yan-zai-bu-tong-chang-jing-xia-diao-yong-tong-yi-ge-jie-kou-shi-xiao-yan-gui-ze-you-ke-neng-bu-tong-yin-ci-shi-yong-fen-zu-xiao-yan-qu-fen">2）分组校验：在不同场景下调用同一个接口时校验规则有可能不同，因此使用分组校验区分。</a></li>
+<li><a href="#3-zi-ding-yi-xiao-yan">3）自定义校验</a></li>
+<li><a href="#4-xiang-guan-dai-ma">4）相关代码：</a></li>
+</ul>
+</li>
+<li><a href="#quan-ju-chu-li">全局处理</a><ul>
+<li><a href="#quan-ju-yi-chang-chu-li">全局异常处理</a><ul>
+<li><a href="#1-fang-fa">1、方法</a></li>
+<li><a href="#2-xiang-guan-dai-ma">2、相关代码：</a></li>
+</ul>
+</li>
+<li><a href="#quan-ju-tong-yi-fan-hui">全局统一返回</a></li>
+<li><a href="#quan-ju-kua-yu-chu-li">全局跨域处理</a></li>
+</ul>
+</li>
+<li><a href="#springcloud-fen-bu-shi-ying-yong-zhong-jie-jue-kua-yu-wen-ti">SpringCloud分布式应用中解决跨域问题</a></li>
+<li><a href="#fen-bu-shi-ying-yong-zhong-de-ji-chu-shu-ju-feng-zhuang">分布式应用中的基础数据封装</a></li>
+<li><a href="#mybatis-luo-ji-shan-chu">mybatis逻辑删除</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<a id="more"></a>
+
+<h1><span id="shu-ju-xiao-yan-jsr303">数据校验JSR303</span><a href="#shu-ju-xiao-yan-jsr303" class="header-anchor"></a></h1><h3><span id="1-jian-dan-xiao-yan">1）简单校验：</span><a href="#1-jian-dan-xiao-yan" class="header-anchor"></a></h3><ul>
+<li>使用<code>javax.validation.constraints</code>包下的注解对bean的字段进行校验标注</li>
+<li>在controller的入参前使用<code>@Value</code>注解标明该入参进行校验</li>
+<li>在需要校验的入参后紧跟<code>BindingResult result</code>的对象，其中包含了该字段的所有校验结果信息</li>
+</ul>
+<h3><span id="2-fen-zu-xiao-yan-zai-bu-tong-chang-jing-xia-diao-yong-tong-yi-ge-jie-kou-shi-xiao-yan-gui-ze-you-ke-neng-bu-tong-yin-ci-shi-yong-fen-zu-xiao-yan-qu-fen">2）分组校验：在不同场景下调用同一个接口时校验规则有可能不同，因此使用分组校验区分。</span><a href="#2-fen-zu-xiao-yan-zai-bu-tong-chang-jing-xia-diao-yong-tong-yi-ge-jie-kou-shi-xiao-yan-gui-ze-you-ke-neng-bu-tong-yin-ci-shi-yong-fen-zu-xiao-yan-qu-fen" class="header-anchor"></a></h3><ul>
+<li>在校验注解中通过<code>groups={xxxx.class}</code>值指定校验的组。</li>
+<li>在controller的入参前使用Spring提供的<code>@Validate(xxxxx.class)</code>注解标注该接口入参所在的校验组别</li>
+<li>注意：默认没有指定分组的校验字段，在指定了分组的情况下不生效，即<code>@Validated({xxxx.class.xxx.class})</code>。只有在单纯校验的情况下生效，即<code>@Validated</code>。</li>
+</ul>
+<h3><span id="3-zi-ding-yi-xiao-yan">3）自定义校验</span><a href="#3-zi-ding-yi-xiao-yan" class="header-anchor"></a></h3><ul>
+<li><p>编写一个自定义的校验注解，借鉴jdk中的jsr303的任意一个校验注解规范编写。</p>
+</li>
+<li><p>编写一个自定义的校验器</p>
+</li>
+<li><p>关联自定义的校验注解和校验器</p>
+</li>
+<li><p>依赖包：</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dependency&gt;</span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.validation<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>validation-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.1.Final<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>相关配置文件名：<code>ValidationMessages.properties</code>（指定默认值时用到）</p>
+</li>
+</ul>
+<h3><span id="4-xiang-guan-dai-ma">4）相关代码：</span><a href="#4-xiang-guan-dai-ma" class="header-anchor"></a></h3><p>校验注解使用类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.gulimall.product.entity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.atguigu.common.valid.AddGroup;</span><br><span class="line"><span class="keyword">import</span> com.atguigu.common.valid.UpdateGroup;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableId;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableName;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.Serializable;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> org.hibernate.validator.constraints.URL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.constraints.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 品牌</span></span><br><span class="line"><span class="comment">   * </span></span><br><span class="line"><span class="comment">   * <span class="doctag">@author</span> liujiafu</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@email</span> liuajiafu@gmail.com</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@date</span> 2020-12-19 23:33:47</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName</span>(<span class="string">"pms_brand"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BrandEntity</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 品牌id</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotNull</span>(message = <span class="string">"修改必须指定id"</span>, groups = &#123;UpdateGroup<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br><span class="line"><span class="class">  @<span class="title">Null</span>(<span class="title">message</span> </span>= <span class="string">"新增不能指定id"</span>, groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br><span class="line"><span class="class">  @<span class="title">TableId</span></span></span><br><span class="line"><span class="class">  <span class="title">private</span> <span class="title">Long</span> <span class="title">brandId</span></span>;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 品牌名</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotBlank</span>(message = <span class="string">"品牌名不能为空"</span>, groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>, <span class="title">UpdateGroup</span>.<span class="title">class</span>&#125;)</span></span><br><span class="line"><span class="class">  <span class="title">private</span> <span class="title">String</span> <span class="title">name</span></span>;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 品牌logo地址</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotEmpty</span>(message = <span class="string">"新增时品牌logo不能为空"</span>, groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>, <span class="title">UpdateGroup</span>.<span class="title">class</span>&#125;)</span></span><br><span class="line"><span class="class">  @<span class="title">URL</span>(<span class="title">message</span> </span>= <span class="string">"logo必须是一个合法的url地址"</span>)</span><br><span class="line">  <span class="keyword">private</span> String logo;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 介绍</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="keyword">private</span> String descript;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 显示状态[0-不显示；1-显示]</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotNull</span></span><br><span class="line">  <span class="keyword">private</span> Integer showStatus;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 检索首字母</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotEmpty</span>(groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br><span class="line"><span class="class">  @<span class="title">Pattern</span>(<span class="title">regexp</span> </span>= <span class="string">"^[a-zA-Z]$"</span>, message=<span class="string">"检索首字母必须是一个字母"</span>, groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>, <span class="title">UpdateGroup</span>.<span class="title">class</span>&#125;)</span></span><br><span class="line"><span class="class">  <span class="title">private</span> <span class="title">String</span> <span class="title">firstLetter</span></span>;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  	 * 排序</span></span><br><span class="line"><span class="comment">  	 */</span></span><br><span class="line">  <span class="meta">@NotNull</span>(groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br><span class="line"><span class="class">  @<span class="title">Min</span>(<span class="title">value</span> </span>= <span class="number">0</span>,message = <span class="string">"排序必须大于等于0"</span>, groups = &#123;AddGroup<span class="class">.<span class="keyword">class</span>, <span class="title">UpdateGroup</span>.<span class="title">class</span>&#125;)</span></span><br><span class="line"><span class="class">  <span class="title">private</span> <span class="title">Integer</span> <span class="title">sort</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>分组校验：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.common.valid;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用于分组校验的工具接口：表示在"新增情况下进行校验"时用到</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AddGroup</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.common.valid;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 用于分组校验的工具接口：表示在"更新情况下进行校验"时用到</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UpdateGroup</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自定义校验：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">package</span> com.atguigu.common.valid;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">import</span> javax.validation.Constraint;</span><br><span class="line">  <span class="keyword">import</span> javax.validation.Payload;</span><br><span class="line">  <span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 自定义校验注解</span></span><br><span class="line"><span class="comment">       */</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Constraint</span>(validatedBy = &#123;ListValueConstraintValidator<span class="class">.<span class="keyword">class</span>&#125;)// 关联自定义校验器，可以指定多个校验器，适配不同的校验</span></span><br><span class="line"><span class="class"><span class="title">public</span> @<span class="title">interface</span> <span class="title">ListValue</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 三个jsr303基本值</span></span><br><span class="line">  <span class="function">String <span class="title">message</span><span class="params">()</span> <span class="keyword">default</span> "</span>&#123;com.atguigu.common.valid.ListValue.message&#125;<span class="string">";//在配置文件ValidationMessages.properties中定义</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Class&lt;?&gt;[] groups() default &#123;&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  Class&lt;? extends Payload&gt;[] payload() default &#123;&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  // 自定义值</span></span><br><span class="line"><span class="string">  int[] value() default &#123;&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.common.valid;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidator;</span><br><span class="line"><span class="keyword">import</span> javax.validation.ConstraintValidatorContext;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 自定义校验器，必须继承ConstraintValidator&lt;&gt;接口，且有两个范型</span></span><br><span class="line"><span class="comment">     * 第一个范型：LsitValue,指定对哪个注解校验</span></span><br><span class="line"><span class="comment">     * 第二个范型：Integer，指定要校验的数据类型</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListValueConstraintValidator</span> <span class="keyword">implements</span> <span class="title">ConstraintValidator</span>&lt;<span class="title">ListValue</span>, <span class="title">Integer</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> Set&lt;Integer&gt; valueSet = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 初始化方法，获得自定义注解中的值</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">(ListValue constraintAnnotation)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获取自定义注解中的自定义值</span></span><br><span class="line">    <span class="keyword">int</span>[] value = constraintAnnotation.value();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> v : value) &#123;</span><br><span class="line">      valueSet.add(v);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断是否校验成功,入参integer表示需要判断的值,constraintValidatorContext是上下文环境信息</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValid</span><span class="params">(Integer integer, ConstraintValidatorContext constraintValidatorContext)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> valueSet.contains(integer);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">***</span> <span class="string">ValidationMessages.properties  ***</span></span><br><span class="line"></span><br><span class="line"><span class="meta">com.atguigu.common.valid.ListValue.message</span>=<span class="string">"必须提交指定的值"</span></span><br></pre></td></tr></table></figure>
+
+<h1><span id="quan-ju-chu-li">全局处理</span><a href="#quan-ju-chu-li" class="header-anchor"></a></h1><h2><span id="quan-ju-yi-chang-chu-li">全局异常处理</span><a href="#quan-ju-yi-chang-chu-li" class="header-anchor"></a></h2><h3><span id="1-fang-fa">1、方法</span><a href="#1-fang-fa" class="header-anchor"></a></h3><p>使用Spring MVC的`@ControllerAdvice进行集中接口异常处理，具体使用方法如下：</p>
+<ol>
+<li>首先创建一个异常处理控制类，使用<code>@ControllerAdvice、@RestControllerAdvice</code>注解标注。</li>
+<li>在该异常处理类中编写具体的异常处理方法，使用<code>@ExceptionHandler(value=xxxx.class)</code>注释标注，其中value指定处理哪种异常类。</li>
+</ol>
+<h3><span id="2-xiang-guan-dai-ma">2、相关代码：</span><a href="#2-xiang-guan-dai-ma" class="header-anchor"></a></h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.gulimall.product.exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.atguigu.common.exception.BizCodeEnume;</span><br><span class="line"><span class="keyword">import</span> com.atguigu.common.utils.R;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"><span class="keyword">import</span> org.springframework.validation.BindingResult;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.MethodArgumentNotValidException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestControllerAdvice;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="comment">//@ResponseBody</span></span><br><span class="line"><span class="comment">//@ControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")</span></span><br><span class="line"><span class="meta">@RestControllerAdvice</span>(basePackages = <span class="string">"com.atguigu.gulimall.product.controller"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GulimallExceptionControllerAdvice</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 处理数据校验异常</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e 捕捉到的异常</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> R.error()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="meta">@ExceptionHandler</span>(value= MethodArgumentNotValidException<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">  <span class="title">public</span> <span class="title">R</span> <span class="title">ValidExceptionHandler</span>(<span class="title">MethodArgumentNotValidException</span> <span class="title">e</span>) </span>&#123;</span><br><span class="line">    log.error(<span class="string">"数据校验出现问题：&#123;&#125;, \n异常类型为：&#123;&#125;"</span>, e.getMessage(), e.getClass());</span><br><span class="line">    BindingResult bindingResult = e.getBindingResult();</span><br><span class="line">    Map&lt;String, String&gt; errorMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    bindingResult.getFieldErrors().forEach((fieldError) -&gt; &#123;</span><br><span class="line">      errorMap.put(fieldError.getField(), fieldError.getDefaultMessage());</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> R.error(BizCodeEnume.VAILD_EXCEPTION.getCode(), BizCodeEnume.VAILD_EXCEPTION.getMsg()).put(<span class="string">"data"</span>, errorMap);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 其他所有异常的捕捉</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> throwable 所捕捉到的异常</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> R.error()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="meta">@ExceptionHandler</span>()</span><br><span class="line">  <span class="function"><span class="keyword">public</span> R <span class="title">ExceptionHandler</span><span class="params">(Throwable throwable)</span></span>&#123;</span><br><span class="line">    Map&lt;String,String&gt; errorMap = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    errorMap.put(throwable.getClass()+<span class="string">""</span>, throwable.getMessage());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> R.error(BizCodeEnume.UNKNOW_EXCEPTION.getCode(), BizCodeEnume.UNKNOW_EXCEPTION.getMsg()).put(<span class="string">"data"</span>,errorMap);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="quan-ju-tong-yi-fan-hui">全局统一返回</span><a href="#quan-ju-tong-yi-fan-hui" class="header-anchor"></a></h2><h2><span id="quan-ju-kua-yu-chu-li">全局跨域处理</span><a href="#quan-ju-kua-yu-chu-li" class="header-anchor"></a></h2><p>只需要为网关微服务加入跨域解决方案即可，具体方法：将<code>org.springframework.web.cors.reactive.CorsWebFilter</code>实例化对象注册到Spring配置类中即可。具体跨域问题其他解决办法可以参考下面的「SpringCloud分布式应用中解决跨域问题」部分。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.atguigu.gulimall.gateway.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.reactive.CorsWebFilter;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 网关的配置类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GulimallCorsConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 该方法的主要作用是：</span></span><br><span class="line"><span class="comment">     *      将springboot的CorsWebFilter类放进容器中，</span></span><br><span class="line"><span class="comment">     *      即可自动产生作用</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> CorsWebFilter对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> CorsWebFilter <span class="title">getCorsWebFilter</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建CorsWebFilter需要传入一个CorsConfigurationSource对象，</span></span><br><span class="line">    <span class="comment">// 但CorsConfigurationSource是一个接口，</span></span><br><span class="line">    <span class="comment">// 所以创建一个其实现类即可</span></span><br><span class="line">    UrlBasedCorsConfigurationSource source = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 配置跨域规则</span></span><br><span class="line">    CorsConfiguration corsConfiguration = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">    corsConfiguration.addAllowedHeader(<span class="string">"*"</span>);</span><br><span class="line">    corsConfiguration.addAllowedMethod(<span class="string">"*"</span>);</span><br><span class="line">    corsConfiguration.addAllowedOrigin(<span class="string">"*"</span>);</span><br><span class="line">    corsConfiguration.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">    source.registerCorsConfiguration(<span class="string">"/**"</span>,corsConfiguration);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> CorsWebFilter(source);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+<h1><span id="springcloud-fen-bu-shi-ying-yong-zhong-jie-jue-kua-yu-wen-ti">SpringCloud分布式应用中解决跨域问题</span><a href="#springcloud-fen-bu-shi-ying-yong-zhong-jie-jue-kua-yu-wen-ti" class="header-anchor"></a></h1><h1><span id="fen-bu-shi-ying-yong-zhong-de-ji-chu-shu-ju-feng-zhuang">分布式应用中的基础数据封装</span><a href="#fen-bu-shi-ying-yong-zhong-de-ji-chu-shu-ju-feng-zhuang" class="header-anchor"></a></h1><h1><span id="mybatis-luo-ji-shan-chu">mybatis逻辑删除</span><a href="#mybatis-luo-ji-shan-chu" class="header-anchor"></a></h1>
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>=== 原创记录，随笔写下，感谢支持～我会不断努力记录更好的文章的😁 ===</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.JPG" alt="Tornado4651 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/05_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83%E9%83%A8%E5%88%86/" rel="next" title="05_后端开发辅助技术记录部分">
+                <i class="fa fa-chevron-left"></i> 05_后端开发辅助技术记录部分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/11/CODING/%E6%95%B0%E6%8D%AE%E5%BA%93/MySQL/Mysql%E5%9F%BA%E7%A1%80/" rel="prev" title="CODING/数据库/MySQL/Mysql基础">
+                CODING/数据库/MySQL/Mysql基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+
+    <!-- 网易云音乐外挂插件-->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25706282&auto=1&height=66"></iframe>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/head.jpg"
+                alt="Tornado4651" />
+            
+              <p class="site-author-name" itemprop="name">Tornado4651</p>
+              <p class="site-description motion-element" itemprop="description">码字，羽球，摄影；是我简单生活的方式</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">54</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/tornado4651" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:torando4651@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">数据校验JSR303</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.0.1.</span> <span class="nav-text">1）简单校验：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.0.2.</span> <span class="nav-text">2）分组校验：在不同场景下调用同一个接口时校验规则有可能不同，因此使用分组校验区分。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.0.3.</span> <span class="nav-text">3）自定义校验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">1.0.4.</span> <span class="nav-text">4）相关代码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text">全局处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">全局异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">2.1.1.</span> <span class="nav-text">1、方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#"><span class="nav-number">2.1.2.</span> <span class="nav-text">2、相关代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.2.</span> <span class="nav-text">全局统一返回</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.3.</span> <span class="nav-text">全局跨域处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">3.</span> <span class="nav-text">SpringCloud分布式应用中解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">4.</span> <span class="nav-text">分布式应用中的基础数据封装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">5.</span> <span class="nav-text">mybatis逻辑删除</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 &mdash; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tornado4651</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://LJF.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2020/01/04/CODING/Java%20Web%E6%A1%86%E6%9E%B6/Spring%20Cloud/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0/04_%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E8%AE%B0%E5%BD%95%E9%83%A8%E5%88%86/';
+          this.page.identifier = '2020/01/04/CODING/Java Web框架/Spring Cloud/实战项目笔记/04_后端开发辅助技术记录部分/';
+          this.page.title = '04_后端开发辅助技术记录部分';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://LJF.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("czcUUcuBhjggiiRmEX5qC97U-gzGzoHsz", "kMHopWRgEO2tlxGXc2WDdYMz");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
